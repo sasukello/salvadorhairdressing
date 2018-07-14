@@ -1,0 +1,142 @@
+/* 
+    Document   : descargas
+    Created on : 11/10/2016, 10:39:18 AM
+    Author     : Salvador
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+table{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cuadroSeccion a{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+p#landingText1 {
+    padding: 10px !important;
+    width: 46%;
+    float: left;
+    margin-top: 20px !important;
+    margin-left: 10% !important;
+    text-align: justify;
+}
+.botones {
+  background: #eb2c2c;
+  background-image: -webkit-linear-gradient(top, #eb2c2c, #f56a86);
+  background-image: -moz-linear-gradient(top, #eb2c2c, #f56a86);
+  background-image: -ms-linear-gradient(top, #eb2c2c, #f56a86);
+  background-image: -o-linear-gradient(top, #eb2c2c, #f56a86);
+  background-image: linear-gradient(to bottom, #eb2c2c, #f56a86);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff !important;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.botones:hover {
+  background: #f56a86;
+  background-image: -webkit-linear-gradient(top, #f56a86, #eb2c2c);
+  background-image: -moz-linear-gradient(top, #f56a86, #eb2c2c);
+  background-image: -ms-linear-gradient(top, #f56a86, #eb2c2c);
+  background-image: -o-linear-gradient(top, #f56a86, #eb2c2c);
+  background-image: linear-gradient(to bottom, #f56a86, #eb2c2c);
+  text-decoration: none;
+}
+
+.cuadroOpciones{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.menuMain {
+    width: 85%;
+    height: 100%;
+}
+
+
+/* OVERRIDE DE BOOTSTRAP.CSS */
+.btn-group-lg>.btn, .btn-lg{
+    padding: 5px 5px !important;
+}
+th{
+    text-align: center;
+}
+
+
+/* CSS PARA LISTADOS */
+
+#lista3 {
+    counter-reset: li; 
+    list-style: none; 
+    *list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+#lista3 ol {
+    margin: 0 0 0 2em; 
+}
+
+#lista3 li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;
+    float: none;
+}
+
+#lista3 li:hover{
+    background: #eee;
+}   
+
+#lista3 li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+#lista3 li:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+
+#lista3 li:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;             
+}
+
+/* FIN DE CSS PARA LISTADOS */

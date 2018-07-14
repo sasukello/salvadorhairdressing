@@ -1,0 +1,35 @@
+	<div class="codrops-top clearfix">
+		<a href="#cms" onclick="moduloFAQ('faq','faq1');"><i class="pe-7s-angle-left-circle pe-5x pe-va wow fadeInUp animated" style="visibility: visible; animation-name: fadeInDown;"></i> <span> Regresar</span></a>
+	</div>
+	<div class="row">
+		<form class="form-horizontal" method="post" action="/intranet/api.php">
+		  <div class="form-group">
+		    <label class="control-label col-sm-5" for="pregunta">Pregunta:</label>
+		    <div class="col-sm-offset-1 col-sm-5">
+		      <input type="text" class="form-control categoNueva" id="preguntanew" name="pregunta" placeholder="Ingrese la Pregunta:">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="control-label col-sm-5" for="pregunta">Respuesta:</label>
+		    <div class="col-sm-offset-1 col-sm-5">
+		      <textarea class="form-control" id="respuesta" name="respuesta" placeholder="Ingrese la Respuesta:"></textarea>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="control-label col-sm-5" for="pregunta">Categoría:</label>
+		    <div class="col-sm-offset-1 col-sm-5">
+		      <select class="form-control" name="categoria"><option>Selecciona una opción...</option>%selectOpc%</select>
+		    </div>
+		  </div>
+		  <div class="form-group"> 
+		    <div class="col-sm-offset-4 col-sm-6">
+		      <button type="submit" class="btn btn-default" id="savefaqitem" name="savefaqitem">Agregar Nueva Pregunta</button>
+		      <input type="hidden" name="action" value="faq">
+		      <input type="hidden" name="datos" value="faq3a">
+		    </div>
+		  </div>
+		</form>
+		<span id="message"></span>
+	</div>
+</body>
+</html>

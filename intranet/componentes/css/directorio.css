@@ -1,0 +1,19 @@
+.table > thead > tr > th, .table > tbody > tr > td {
+    font-size: 15px;
+}
+.table > thead > tr > th {
+    font-weight: bold;
+    padding: 10px 10px;
+}
+.star1{
+    color: red;
+    font-weight: bold;
+}
+.star2{
+	color: orange;
+    font-weight: bold;
+}
+.star4{
+	color: green;
+    font-weight: bold;
+}

@@ -1,0 +1,23 @@
+	<div class="codrops-top clearfix">
+		<a href="#cms" onclick="moduloFAQ('faq','faq1');"><i class="pe-7s-angle-left-circle pe-5x pe-va wow fadeInUp animated" style="visibility: visible; animation-name: fadeInDown;"></i> <span> Regresar</span></a>
+	</div>
+	<div class="row">
+		<form class="form-horizontal" method="post" action="/intranet/api.php">
+		  <div class="form-group">
+		    <label class="control-label col-sm-5" for="categoria">Nombre de Categoría:</label>
+		    <div class="col-sm-offset-1 col-sm-5">
+		      <input type="text" class="form-control categoNueva" id="categorianpt" name="categoria" placeholder="Ingrese el Nombre de la Categoría:">
+		    </div>
+		  </div>
+		  <div class="form-group"> 
+		    <div class="col-sm-offset-4 col-sm-6">
+		      <button type="submit" class="btn btn-default" id="savefaqbtn" name="savefaqbtn">Crear Categoría</button>
+		      <input type="hidden" name="action" value="faq">
+		      <input type="hidden" name="datos" value="faq2a">
+		    </div>
+		  </div>
+		</form>
+		<span id="message"></span>
+	</div>
+</body>
+</html>

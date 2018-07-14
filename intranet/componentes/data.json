@@ -1,0 +1,20 @@
+{
+	"message": "",
+	"value": [
+		{
+			"userName": "ALUGO",
+			"fullname": "Armando Lugo"
+		}, {
+			"userName": "EBRAVO",
+			"fullname": "Enrique Bravo"
+		}, {
+			"userName": "ECOLMENARES",
+			"fullname": "Eduardo Colmenares"
+		}, {
+			"userName": "MFUENMAYOR",
+			"fullname": "Marcos Fuenmayor"
+		}
+	],
+	"code": 200,
+	"redirect": ""
+}
