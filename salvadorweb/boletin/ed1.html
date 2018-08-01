@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<!--
+	@Armando Lugo
+	@Departamento de Sistemas: Salvador Hairdressing
+	
+-->
+<html>
+	<head>
+		<title>Salvador Hairdressing - Boletín Informativo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/magnific-popup.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/main2.css">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+
+
+
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Boletín Salvador</h1>
+						<p>¡Bienvenido a la Excelencia! &nbsp;&bull;&nbsp; Edición #1 &nbsp;&bull;&nbsp;</p><br><br>
+						<!--<nav>
+							<ul>
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+								<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							</ul>
+						</nav>-->
+						<section id="galleryFull" class="galleryFull">
+							<div class="container-fluid">
+								<div class="grid">
+									<div class="row">
+										<div class="gallery-pad no-gutter">
+											<div class="col-sm-12">
+												<div class="row p0">
+													<div class="img-box grid-item" style="width: 50%;">
+														<div class="home_text">
+															<p style="color: black;font-weight: bold;"><button type="button" data-toggle="modal" data-target="#boletin1">Ver Boletín</button></p>
+														</div>
+														<a href="#boletin1" data-toggle="modal" class="inline-popup">
+															<img src="img/5.jpg" class="img-responsive" alt="Responsive image">
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; Salvador Hairdressing: <a href="http://www.salvadorhairdressing.com">Sitio web</a> | <a href="index.html">Otras Ediciones</a></span>
+					</footer>
+
+			</div>
+		</div>
+		<!-- COMIENZO DE MODAL: BOLETIN  -->
+        <div id="boletin1" class="modal fade" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+	                    <button type="button" class="close" data-dismiss="modal">Cerrar</button>
+                       	<h4 class="modal-title" style="color:black;">Edición #1<span id="p1-titulo"></span></h4>
+                    </div>
+                    <div class="modal-body">
+                        <span id="p1-desc"></span>                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+		<script src="assets/js/jquery-3.1.0.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/script2.js"></script>
+
+	</body>
+</html>

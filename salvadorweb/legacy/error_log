@@ -1,0 +1,11 @@
+[27-Dec-2017 15:57:56 UTC] PHP Warning:  include(/demo/c/navbar.php): failed to open stream: No such file or directory in /home/sopor907/public_html/demo/legacy/header.php on line 60
+[27-Dec-2017 15:57:56 UTC] PHP Warning:  include(): Failed opening '/demo/c/navbar.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/sopor907/public_html/demo/legacy/header.php on line 60
+[27-Dec-2017 15:57:56 UTC] PHP Fatal error:  Call to undefined function conceptosbar() in /home/sopor907/public_html/demo/legacy/header.php on line 91
+[27-Dec-2017 15:58:29 UTC] PHP Warning:  include(/demo/c/navbar.php): failed to open stream: No such file or directory in /home/sopor907/public_html/demo/legacy/header.php on line 60
+[27-Dec-2017 15:58:29 UTC] PHP Warning:  include(): Failed opening '/demo/c/navbar.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/sopor907/public_html/demo/legacy/header.php on line 60
+[27-Dec-2017 15:58:29 UTC] PHP Fatal error:  Call to undefined function conceptosbar() in /home/sopor907/public_html/demo/legacy/header.php on line 91
+[27-Dec-2017 16:00:06 UTC] PHP Warning:  include(/demo/c/navbar.php): failed to open stream: No such file or directory in /home/sopor907/public_html/demo/legacy/header.php on line 60
+[27-Dec-2017 16:00:06 UTC] PHP Warning:  include(): Failed opening '/demo/c/navbar.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/sopor907/public_html/demo/legacy/header.php on line 60
+[27-Dec-2017 16:00:06 UTC] PHP Fatal error:  Call to undefined function conceptosbar() in /home/sopor907/public_html/demo/legacy/header.php on line 91
+[27-Dec-2017 12:01:40 America/Caracas] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/sopor907/public_html/eqfw/config/funciones/eqs.datos.php on line 10
+[27-Dec-2017 12:01:40 America/Caracas] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/sopor907/public_html/eqfw/config/funciones/eqs.datos.php on line 10

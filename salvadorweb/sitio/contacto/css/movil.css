@@ -1,0 +1,32 @@
+/* 
+    Document   : movil
+    Created on : 22/04/2016, 05:22:26 PM
+    Author     : Sistemas-PC
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+
+
+    root { 
+        display: block;
+    }
+    #logo{
+        height: 40px;
+    }
+    #container{
+        width: 100%;
+    }
+    .wufoo li {
+    width: 98%;
+    }
+    .wufoo label.desc, .wufoo legend.desc {
+    font-size: 85%;
+    }
+    .wufoo label.choice {
+    font-size: 85%;
+    }
+    form li {
+    padding-left:3%;
+    }
+}

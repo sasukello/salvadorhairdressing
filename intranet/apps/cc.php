@@ -116,15 +116,14 @@ function cargarDatosCC($salon, $estado){
     }
 
     /* CONSULTAR LISTADOS DE CLIENTES EN SALÓN */
-    $sql = "SELECT A.ORIGEN, A.CODIGOCLIENTE, B.CODIGO, B.NOMBRE, B.APELLIDO, B.TELEFONO, B.CORREO, B.FECHANACIMIENTO, B.GENERO, B.CLIENTCARD, B.ESTATUS FROM `MOVIMIENTOSPUNTOS` A INNER JOIN `CLIENTE` B ON A.`CODIGOCLIENTE` = B.`CODIGO` WHERE A.`ORIGEN` = '$salon' AND B.`ESTATUS` = $estado group by A.`CODIGOCLIENTE`";
+    $sql = "SELECT A.ORIGEN, A.CODIGOCLIENTE, B.CODIGO, B.NOMBRE, B.TELEFONO, B.CORREO, B.FECHANACIMIENTO, B.GENERO, B.CLIENTCARD, B.ESTATUS FROM `MOVIMIENTOSPUNTOS` A INNER JOIN `CLIENTE` B ON A.`CODIGOCLIENTE` = B.`CODIGO` WHERE A.`ORIGEN` = '$salon' AND B.`ESTATUS` = $estado group by A.`CODIGOCLIENTE`";
     $result = array();
     $i = 0;
     $search = mysqli_query($dbh, $sql) or die(mysqli_error($dbh));
     $match = mysqli_num_rows($search);
     if ($match > 0) {
         while ($rw = mysqli_fetch_array($search)) {
-            $apellido = trim(' '.$rw['APELLIDO']);
-            $result[$i] = "<tr><td><a href='#mov1' data-toggle='modal' data-id='".$rw['NOMBRE'].$apellido."' data-whatever='".$rw['CODIGOCLIENTE']."'>".$rw['NOMBRE']." <i class='pe-7s-angle-right pe-5x pe-va' style='visibility: visible;font-size: 20px;vertical-align: middle;'></i></a></td><td>".$rw['TELEFONO']."</td><td>".$rw['CORREO']."</td><td>".$rw['FECHANACIMIENTO']."</td><td style='text-align: center;'>".genero($rw['GENERO'])."</td><td>".$rw['CLIENTCARD']."</td><td style='text-align: center;'>".estados($rw['ESTATUS'])."</td></tr>";
+            $result[$i] = "<tr><td><a href='#mov1' data-toggle='modal' data-id='".$rw['NOMBRE']."' data-whatever='".$rw['CODIGOCLIENTE']."'><i class='pe-7s-expand1 pe-5x pe-va' style='visibility: visible;font-size: 20px;vertical-align: middle;'></i> - ".$rw['NOMBRE']."</a></td><td>".$rw['TELEFONO']."</td><td>".$rw['CORREO']."</td><td>".$rw['FECHANACIMIENTO']."</td><td style='text-align: center;'>".genero($rw['GENERO'])."</td><td>".$rw['CLIENTCARD']."</td><td style='text-align: center;'>".estados($rw['ESTATUS'])."</td></tr>";
             $i++;
         }
     } else {

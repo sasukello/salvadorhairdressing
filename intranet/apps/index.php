@@ -1,10 +1,6 @@
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 include "../sec/seguro.php";
-$_SESSION["ubicacion"] = "apps";
+$_SESSION["ubicacion"] = "default";
 $_SESSION["calendar_live"] = 1;
 $_SESSION["tabla_basica"] = 1;
 $arrayMenu = unserialize($_SESSION["accesos"]);
@@ -80,7 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <li><a data-toggle="tab" href="#menu2" onClick="limpiarTab();return;false;"><i class="pe-7s-phone pe-5x pe-va" style="visibility: visible;"></i> <?php echo $crmapp1;?></a></li>
                             <li style="display: none;"><a data-toggle="tab" href="#menu3" onClick="limpiarTab();return;false;"><i class="pe-7s-phone pe-5x pe-va" style="visibility: visible;"></i> Convenios y Promociones</a></li>
                             <li><a data-toggle="tab" href="#forms" onClick="limpiarTab();return;false;"><i class="pe-7s-comment pe-5x pe-va" style="visibility: visible;"></i> Encuestas</a></li>
-                            <?php if($peruser == 50 || $peruser == 1000){ echo'<li><a data-toggle="tab" href="#franquicias" onClick="limpiarTab();return;false;"><i class="pe-7s-box1 pe-5x pe-va" style="visibility: visible;"></i> Franquicias</a></li>';} ?>
                           </ul>
 
                         <div class="tab-content">
@@ -213,26 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-                          </div><!-- FIN ENCUESTAS -->  
-
-                          <!-- TAB. FRANQUICIAS -->  
-                          <div id="franquicias" class="tab-pane fade">
-                            <?php if($peruser == 50 || $peruser == 1000){
-                                echo '<h3><i class="pe-7s-albums pe-5x pe-va" style="visibility: visible;"></i> <strong>Tipo de Franquicias</strong></h3>
-                            <p>Consulta el listado y estado de tus solicitudes de Franquicias según el tipo de Franquiciado:</p>
-                            <div class="col-sm-12 feat-list">
-                                <div class="inner">
-                                  <div id="fq-content">
-                                  <div id="tabla-lista"></div>
-                                    <span id="fq1"><!--img src="/intranet/componentes/images/loading-sm.gif"--><ul><li><a onClick="cargarListadoFranquicias(1);" href="#pendientes">Reporte: Listado de Solicitudes <!--Pendientes--></a></li></ul></span>
-                                    <!--<span id="fq2"><ul><li><a onClick="cargarListadoFranquicias(2);" href="#activas">Reporte: Listado de Solicitudes Activas</a></li></ul></span>
-                                    <span id="fq3"><ul><li><a onClick="cargarListadoFranquicias(3);" href="#finalizadas">Reporte: Listado de Solicitudes Finalizadas</a></li></ul></span>
-                                    <span id="fq4"><ul><li><a onClick="cargarListadoFranquicias(4);" href="#rechazadas">Reporte: Listado de Solicitudes Rechazadas</a></li></ul></span>-->
-                                </div>
-                            </div><br>';
-                            } ?>
-
-                          </div><!-- FIN FRANQUICIAS -->  
+                          </div>
 
                         </div>
                       </div>
@@ -469,19 +445,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $('#r1cc').DataTable({
                     dom: 'Bfrtip',
                     buttons: [
-                        'excel', 'csv', 'pdf'
+                        'excel', 'pdf'
                     ]
                   });
                    $('#r2cc').DataTable({
                     dom: 'Bfrtip',
                     buttons: [
-                        'excel', 'csv', 'pdf'
+                        'excel', 'pdf'
                     ]
                   });
                   $('#r1app').DataTable({
                     dom: 'Bfrtip',
                     buttons: [
-                        'excel', 'csv', 'pdf'
+                        'excel', 'pdf'
                     ]
                   });
                   $('#example').DataTable({
@@ -494,7 +470,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   });
                   $('#r4').DataTable({
                     dom: 'Bfrtlip',
-                    buttons: [ 'excel', 'csv', 'pdf' ]
+                    buttons: [ 'excel', 'pdf' ]
 
                   });
             });

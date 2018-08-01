@@ -1,8 +1,9 @@
 <?php
 error_reporting(1);
 
-include "../sec/seguro.php";
-$_SESSION["ubicacion"] = "default";
+// incude "../sec/seguro.php";
+include "libreria.php";
+$_SESSION["ubicacion"] = "roadmap";
 $_SESSION["calendar_live"] = 0;
 $arrayMenu = unserialize($_SESSION["accesos"]);
 $proyectnew = "";
@@ -16,240 +17,174 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 <!DOCTYPE html>
 <html>
-        <head>
-        <title>Salvador Hairdressing - Intranet</title>
-        <?php include "../componentes/header.php"; ?>
-        <link href="estilos20.css" rel="stylesheet">
 
-        </head>
+<head>
+      <meta charset="utf-8" />
+      <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+      <link rel="icon" type="image/png" href="assets/img/favicon.png">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <title>
+        RoadMap - Corporativo Salvador
+      </title>
+      
+      <link href="estilos20.css" rel="stylesheet">
+      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+      <!--     Fonts and icons     -->
+      <link rel="stylesheet" type="text/css" href="assets/css/material-icons.css" />
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"> -->
+      <!-- CSS Files -->
+      <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+</head>
 
-        <body data-spy="scroll" data-target="#navbar-scroll">
+<body class="" background="assets/img/cover.jpg" style="background-repeat: no-repeat; background-size: cover;">
 
-        <!-- /.preloader 
-        <div id="preloader"></div>-->
-        <div id="top"></div>
+  <div class="wrapper" >
+    
+   <?php include "assets/side-bar.php" ?>
 
-        <?php menu1HeaderIntranet($iduser, $_SESSION['ubicacion'], $arrayMenu); 
-           // include ($_SESSION["idiomaruta"].$_SESSION["idioma"]."/crm.php"); ?>
+     <!-- FIN DEL MENU -->
 
-                        </div>
-                    </div>
-                </div> 
-            </div> 
-        </div>
-
-        <!-- /.seccion principal -->
-        <div id="main">
-            <div class="container">
-                <div class="row">
-                    <div class="text-center titl text-center"><i class="pe-7s-note2"> </i><span> RoadMap </span></div>
-                    <div class="col-md-12 col-sm-12 text-center feature-title">
-
-                            <!-- / CONDICION REGISTRO EXITOSO JP -->
-                       
-                        <?php
-                        if ($proyectnew=='1'){
-
-                        $mensaje = 'Registro exitoso';
-                        echo '<div class="alert alert-success">  '.$mensaje.' </div>';
-                        }
-                        if ($proyectnew=='0'){
-
-                        $mensaje = 'Fallo Registro';
-                        echo '<div class="alert alert-danger">  '.$mensaje.' </div>';
-                        }
-                        ?>
-                                           
-
-
-                        <!-- / Reporte de Proyectos -->
-                        <div class="col-md-6">
-                            <div class="panel box-v6">
-                                <div class="panel-heading">
-                                  <br><h4>Reporte de Proyectos:
-                                    <span class="icon-options-vertical icons pull-right"></span>
-                                  </h4>
-                                </div>
-                                    <span id="texto"></span>
-                                    <span id="texto2"></span>
-                            </div>
-                        </div>
-
-                      <!--Menú-->
-                      <div class="col-md-5 col-md-offset-1">
-                        <div class='or-spacer col-md-12 col-sm-12 text-center barr'>
-                          <div class='mask'></div>
-                          <span><i>Menú</i></span>
-                        </div>
-
-                        <div class='col-sm-11 feat-list barra'>
-                            
-                            <div class='inner'>
-                                <a class="col-md-10"><i class='pe-7s-plus pe-5x pe-va wow fadeInUp' data-wow-delay='0.2s'></i><h4>Nuevo Proyecto</h4></a>
-                                <p class="col-md-10">Si estás gestionando un nuevo proyecto, agregalo a tu historial de proyectos.</p>
-                            </div>
-                            <div class="col-md-10">
-                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#newproject">Agregar</button>
-                            </div>
-                        </div>
-
-                        <div class='col-sm-11 feat-list barra'>
-                            <div class='inner'>
-                                <a class="col-md-10"><i class='pe-7s-folder pe-5x pe-va wow fadeInUp' data-wow-delay='0.2s'></i><h4>Historial de Proyectos</h4></a>
-                                <p class="col-md-10">Visualiza todos los proyectos en los cuales hayas participado.</p>
-                            </div>
-                            <div class="col-md-10">
-                            <a href="proyectos.php" class="btn btn-info" role="button">Ver</a>
-                            </div>
-                        </div>
-
-                        <div class='col-sm-11 feat-list barra'>
-                            <div class='inner'>
-                                <a class="col-md-10"><i class='pe-7s-tools pe-5x pe-va wow fadeInUp' data-wow-delay='0.2s'></i><h4>Agregar una Nueva Opción</h4></a>
-                                <p class="col-md-10">Si estás gestionando un nuevo proyecto, agregalo a tu historial.</p>
-                            </div>
-                            <div class="col-md-10">
-                            <button type="button" class="btn btn-info">Opción</button>
-                            </div>
-                        </div>
-                    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="#pablo"><h1><i class="pe-7s-note2"> </i>  Roadmap</h1></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#pablo">
+                  <i class="material-icons">dashboard</i>
+                  <p class="d-lg-none d-md-block">
+                    Stats
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">notifications</i>
+                  <span class="notification">5</span>
+                  <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                  <a class="dropdown-item" href="#">Another Notification</a>
+                  <a class="dropdown-item" href="#">Another One</a>
                 </div>
-            </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pablo">
+                  <i class="material-icons">person</i>
+                  <p class="d-lg-none d-md-block">
+                    Account
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+    <div class="content" id="contentRoadmap">
+        <div class="container-fluid row">
+<?php include "../cms/library/common.php"; echo proyectos(1); echo proyectos(3);  ?>
         </div>
     </div>
-
-         <!-- COMIENZO DE MODAL: VER PROYECTO  -->
-        <div id="infopr" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-
+    </div>
+          
+          
+      
+            <div id="minimodal" class="modal fade" role="dialog">
+              <div class="modal-dialog modal-md">
                 <!-- Modal content-->
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"><b>Proyecto - <span id="prtit"></span></b><span class="pe-7s-note modpr"></span></h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="index.php" id="beta_form" method="post" class="form-horizontal">
-                            <div class="form-group">
-                                <label class="control-label col-sm-12" for="filtroventa" style="text-align: center;">Información Detallada del Proyecto.</label>
-                                <br><br><div class="col-sm-12">
-                                    <div class="list-group">
-                                    <span class="list-group-item"><strong>Nombre: </strong> <span id="prtit1"></span></span>
-                                        <span id="modalprcontent"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
-                    </div>
+                  <div class="modal-header">
+                    <h4 class="modal-title"><span id="m-titulo"></span></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <span id="m-body"></span>
+                  </div>
+                  
                 </div>
-
-            </div>
-        </div>
-        <!-- FIN DE MODAL: VER PROYECTO -->
-
-<!-- COMIENZO DE MODAL: NUEVO PROYECTO JP  -->
-        <div id="newproject" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"><b>Información Detallada del Nuevo Proyecto. - <span id="prtit"></span></b><span class="pe-7s-note modpr"></span></h4>
-                    </div>
-
-                   <form method="post" action="libreria.php"> 
-                   <div class="modal-body">
-                        <div class="form-group">
-                               
-                                <div class="col-sm-12">
-                                    <div class="list-group">
-                                    <span class="list-group-item"><strong>
-                                        <!-- FORMULARIO JP  -->
-                                                Nombre : <input type="text" name="nombrepr" class="form-control" required> 
-                                                Categoria : 
-                                                    <select class="form-control form-control-sm" name="categoriapr" required>
-                                                        <option value="">Seleccionar</option>
-                                                        <option value="1">Publicidad</option>    
-                                                        <option value="2">Academia</option>    
-                                                        <option value="3">Recursos Humanos</option>    
-                                                        <option value="4">Recepcion</option>    
-                                                        <option value="5">Sistemas</option>  
-                                                    </select>
-                                                Responsable : <input type="text" name="responsable" class="form-control" required>
-                                                Fecha Estimada de Cierre:<br><input class="form-control" type="date" name="fechacierre" required> 
-                                                <label for="descripcion">Breve Descripción : </label><textarea class="form-control" name="descripcion" id="descripcion" rows="3" required></textarea><br>  
-                                                   
-                                                
-                                                
-                                                <input type="submit" name="valider" class="btn btn-info" value="Guardar"> 
-                                                <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
-
-                                        
-
-                                                    <span id="modalprcontent"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                   
-                                </div>
-                                <div class="modal-footer">
-                                 <!--   <input type="submit" name="valider" class="btn btn-info" value="Guardar"> 
-                                    <button type="button" class="btn" data-dismiss="modal">Cerrar</button> --> 
-                                </div>
-                                 </form>
-                            </div>
-
-                        </div>
-                    </div>
-        <!-- FIN DE MODAL: NUEVO PROYECTO JP -->
-
-
-
-
-        <!-- COMIENZO DE MODAL: VER ACTIVIDADES  -->
-        <div id="actipr" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"><b>Actividades para - <span id="practtit"></span></b></h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="index.php" id="beta_form" method="post" class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <div class="list-group">
-                                        <span id="modalpracti"></span>
-                                    </div>
-                                    <div style="text-align: right;">
-                                    <a href="#" data-toggle="modal" data-target="#tarea" class="opciones">Añadir Actividad</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
-                    </div>
                 </div>
-
             </div>
-        </div>
-        <!-- FIN DE MODAL: VER ACTIVIDADES -->
 
-        <?php include "../componentes/footer.php"; ?>
-        <script src="/intranet/componentes/js/roadmap.js" type="text/javascript"></script>     
-        <script>
-            $(document).ready(function() {
-                initLoad(<?php echo "'".$iduser."'";?>);
-            });
-        </script>
+            <!-- COMIENZO DE MODAL: NUEVO PROYECTO JP  -->
+            <div id="newproject" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-md">
+             <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                          
+                          <h4 class="modal-title"><b>  Información Detallada del Nuevo Proyecto.<span id="prtit"></span></b><span class="pe-7s-note modpr"></span></h4><button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <form method="post" action="libreria.php"> 
+                        <div class="modal-body">
+                        <!-- FORMULARIO NUEVO -->
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Nombre de Proyecto</label>
+                                    <input type="text" class="form-control" required name="nombrepr">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Categoria</label>
+                                        <select class="form-control form-control-sm" name="categoriapr" required><option value="">Seleccionar</option>
+                                              <?php echo listadocategoria(); ?>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Region</label>
+                                    <select class="form-control form-control-sm" required name="regionpr"><option value="">Seleccionar</option>
+                                      <?php echo listadoregiones(); ?>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Responsable</label>
+                                    <input type="text" class="form-control" required name="responsable">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Fecha estimada de cierre</label>
+                                    <br><input class="form-control" type="date" name="fechacierre" required> 
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Breve descripción: </label>
+                                    <textarea class="form-control" name="descripcion" id="descripcion" rows="3" required></textarea><br>
+                                </div>
+                            </div>
+                            <input type="submit" name="valider" class="btn btn-info" value="Guardar"> 
+                            <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+                    </form>
+                </div>
+                </div> 
+            </div>
+            <!-- FIN DE MODAL: NUEVO PROYECTO JP -->       
+
+
+ <?php include ('assets/footer.php') ?>
+    
     </body>
 </html>
-<?php ob_end_flush(); ?>

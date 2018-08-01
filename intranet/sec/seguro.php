@@ -23,10 +23,10 @@ if (session_status() === PHP_SESSION_NONE) {
         if($hash == "s6a5486dasdas31"){
             $bandera = true;
         } else{
-        //header("location:/intranet/logout.php");
+        header("location:/intranet/logout.php");
         }
     } else{
-      // header("location:/intranet/logout.php");
+       header("location:/intranet/logout.php");
     }
 }
 

@@ -107,9 +107,7 @@ $time = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
             } else if($_SESSION["ubicacion"] == "live"){
                 echo '<script src="/intranet/componentes/js/liveplus.js" type="text/javascript"></script>';
                 echo '<script src="/intranet/componentes/select/jquery.multi-select.js" type="text/javascript"></script>';
-            } else if($_SESSION["ubicacion"] == "apps"){
-                echo '<script src="/intranet/componentes/select/jquery.multi-select.js" type="text/javascript"></script>';
-            } ?> ?>    
+            } ?>    
         <script> new WOW().init(); </script>
         <script>$(window).on('load', function() {
             $("#preloader").fadeOut("slow");;

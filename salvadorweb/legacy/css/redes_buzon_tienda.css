@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* CSS Document */
+
+#redes_sociales {
+	float:left;
+	/*border:1px solid gray;*/
+	width:270px;
+	height:32px;
+	margin:12px 0 0 40px
+}
+
+
+#fb {
+	width:29px;
+	height:29px;
+	float:left;
+	background-image:url(../images/fb.png);
+	filter:alpha(opacity=100);
+  	opacity:1;
+}
+
+#fb:hover {
+ 	filter:alpha(opacity=80);
+  	opacity:.8;
+	background-image:url(../images/fb.png)
+}
+
+
+#tw {
+	width:29px;
+	height:29px;
+	float:left;
+	background-image: url(../images/tw.png);
+	filter:alpha(opacity=100);
+  	opacity:1;
+}
+
+#tw:hover {
+ 	filter:alpha(opacity=80);
+  	opacity:.8;
+	background-image:url(../images/tw.png)
+}
+
+
+#ig{
+	width:29px;
+	height:29px;
+	float:left;
+	background-image: url(../images/ig.png);
+	filter:alpha(opacity=100);
+  	opacity:1;
+}
+
+#pin:hover {
+ 	filter:alpha(opacity=80);
+  	opacity:.8;
+	background-image:url(../images/pin.png)
+}
+
+#pin{
+	width:29px;
+	height:29px;
+	float:left;
+	background-image: url(../images/pin.png);
+	filter:alpha(opacity=100);
+  	opacity:1;
+}
+
+#ig:hover {
+ 	filter:alpha(opacity=80);
+  	opacity:.8;
+	background-image:url(../images/ig.png)
+}
+
+
+#buzon_btn {
+	margin:0px 0px 0px 0px;
+	width:216px;
+	height:65px;
+	float:left;
+	background-image: url(../images/buzon_btn.jpg);
+	border-top:2px solid white;
+	filter:alpha(opacity=100);
+  	opacity:1;
+}
+
+#buzon_btn:hover {
+filter:alpha(opacity=80);
+  	opacity:.8;
+}
+
+#tienda_btn {
+	margin:0px 0px 0px 0px;
+	width:216px;
+	height:65px;
+	float:left;
+	background-image: url(../images/tienda_btn.jpg);
+	border-top:2px solid white;
+	filter:alpha(opacity=100);
+  	opacity:1;
+}
+
+#tienda_btn:hover {
+filter:alpha(opacity=80);
+  	opacity:.8;
+}
