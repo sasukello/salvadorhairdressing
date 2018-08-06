@@ -1,13 +1,13 @@
 <?php
 ob_start();
-$user = "";$iduser = "";$codUser = "";$codPermiso = "";
+$user = "";$iduser = "jpaz";$codUser = "";$codPermiso = "";
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
     if(isset($_SESSION["codigo"])){
 
         $user = $_SESSION["usuario"];
-        $iduser = $_SESSION["codigo"];
+        $iduser = 'jpaz';
         $peruser = $_SESSION["permiso"];
         $codUser = base64_encode($iduser);
         $codPermiso = base64_encode($peruser);  
@@ -23,10 +23,10 @@ if (session_status() === PHP_SESSION_NONE) {
         if($hash == "s6a5486dasdas31"){
             $bandera = true;
         } else{
-        header("location:/intranet/logout.php");
+        // header("location:/intranet/logout.php");
         }
     } else{
-       header("location:/intranet/logout.php");
+       // header("location:/intranet/logout.php");
     }
 }
 

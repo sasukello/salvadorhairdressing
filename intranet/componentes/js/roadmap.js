@@ -167,7 +167,7 @@ function deleteactivity($id){
 
 
 } else {
-    alert('no se me elimino un sevillo');
+    alert('Error al eliminar actividad');
 }
 }
 })
@@ -238,7 +238,7 @@ function editminuta($id, $paso, $nombre){
     
     if($paso == 1){ //agregar actividad
        
-                        document.getElementById("hito"+$id+"").innerHTML = '<li class"list-group-item clist"><span class="col-sm-8"><input type="text"  class="form-control" id="nuevonombre" placeholder="'+$nombre+'"></span><span class="col-sm-4" onclick="editminuta('+$id+', 2, 0)" style="cursor:pointer;"></input><a style="color:green;">Guardar</a><i class="material-icons" style="color:green; text-decoration: underline;">done</i></span></li><br>';
+                        document.getElementById("hito"+$id+"").innerHTML = '<li class"list-group-item clist"><span class="col-sm-8"><input type="text"  class="form-control" id="nuevonombre" value="'+$nombre+'"></span><span class="col-sm-4" onclick="editminuta('+$id+', 2, 0)" ></input><button style="cursor:pointer; float:right;" class="btn btn-info btn-sm"><i class="material-icons">done</i>Guardar</button></span></li><br>';
                      
     }
     if($paso ==2){ //insert en database
@@ -250,7 +250,20 @@ function editminuta($id, $paso, $nombre){
                 success: function(response) {           
                    // document.getElementById("modalpracti").innerHTML = response;
                 if (response != 0) { 
-                       alert('Se modifico sin novedad');
+                    setTimeout(function(){ $('#minimodal').modal('hide'); }, 100);
+                       $.notify({
+      icon: "add_alert",
+      message: "El Hito ha sido <b>Modificado</b> satisfactoriamente."
+
+    }, {
+      type: 'success',
+      timer: 500,
+      placement: {
+        from: 'top',
+        align: 'center'
+      }
+    });
+
 
                 
                 

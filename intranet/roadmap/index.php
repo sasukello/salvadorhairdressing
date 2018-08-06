@@ -1,11 +1,11 @@
 <?php
 error_reporting(1);
 
-// incude "../sec/seguro.php";
+include "../sec/seguro.php";
 include "libreria.php";
 $_SESSION["ubicacion"] = "roadmap";
 $_SESSION["calendar_live"] = 0;
-$arrayMenu = unserialize($_SESSION["accesos"]);
+// $arrayMenu = unserialize($_SESSION["accesos"]);
 $proyectnew = "";
 include "../sec/libfunc.php";
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo"><h1><i class="pe-7s-note2"> </i>  Roadmap</h1></a>
+            <a class="navbar-brand" href="#pablo"><h1><i class="pe-7s-note2"> </i>  Roadmap  </h1></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -71,17 +71,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
               <li class="nav-item dropdown">
                 <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
+                  <span class="notification">!</span>
                   <p class="d-lg-none d-md-block">
                     Some Actions
                   </p>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" style="width: 350;">
+                  
+                 <div class="card" style="width: 270px;"> <div class="card-header card-header-info">Ultimas Actividades:</div>
+                                  <?php include "../cms/library/common.php"; echo rellenoActividadesUsuario($iduser); ?>
+</div>
                 </div>
               </li>
               <li class="nav-item">
@@ -99,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       <!-- End Navbar -->
     <div class="content" id="contentRoadmap">
         <div class="container-fluid row">
-<?php include "../cms/library/common.php"; echo proyectos(1); echo proyectos(3);  ?>
+<?php echo proyectos(1,$iduser); echo proyectos(3, $iduser);  ?>
         </div>
     </div>
     </div>
@@ -175,6 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                     <textarea class="form-control" name="descripcion" id="descripcion" rows="3" required></textarea><br>
                                 </div>
                             </div>
+                            <input type="hidden" name="user" value="<?php echo $iduser;?>">
                             <input type="submit" name="valider" class="btn btn-info" value="Guardar"> 
                             <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
                     </form>
