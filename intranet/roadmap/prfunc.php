@@ -46,7 +46,7 @@ foreach ($acti as $ac) {   //listado de minutas
 }
   $texto .=  '<span id="newminutaspace0"></span></ul>
                       <span id="newminutaspace"></span>
-                       <span class="addminActi"><a href="#" class="btn btn-primary" onClick="newminuta1('.$idmisc.',0,1)";><i class="pe-7s-plus"></i> <span id="min1" style="vertical-align: text-bottom;">Nueva Minuta</span></a></span></div>
+                       <span class="addminActi"><a href="#" class="btn btn-primary" onClick="newminuta1('.$idmisc.',0,1)";><i class="pe-7s-plus"></i> <span id="min1" style="vertical-align: text-bottom;">Nuevo Hito</span></a></span></div>
                     </div>';
 	$texto3 = $texto.''.$texto2. '</div></div></ul></span>';
     return $texto3;

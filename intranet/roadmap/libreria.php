@@ -11,7 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $responsable = $_POST['responsable'];
         $fechacierre = $_POST['fechacierre'];
         $descripcion = ucfirst($_POST['descripcion']);
-       	$proyectonuevo = crearproyecto($nombrepr, $regionpr, $categoriapr, $responsable, $fechacierre, $descripcion);
+        $user = ($_POST['user']);
+       	$proyectonuevo = crearproyecto($nombrepr, $regionpr, $categoriapr, $responsable, $fechacierre, $descripcion, $user);
        if ($proyectonuevo==1){
        		header('Location: index.php?e=1');
       } else {
@@ -109,12 +110,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
   }
 
-function crearproyecto($nombrepr, $regionpr, $categoriapr, $responsable, $fechacierre, $descripcion)
+function crearproyecto($nombrepr, $regionpr, $categoriapr, $responsable, $fechacierre, $descripcion, $user)
 				{
 					include "../cms/library/common.php";
 					$sql = "INSERT INTO intranet_roadmap(nombrepr, regionpr, categoriapr, descripcion, fechaest, fechapr) VALUES ('$nombrepr', $regionpr, $categoriapr, '$descripcion','$fechacierre', NOW())";
 					$busqueda = miActionSQL($sql);
 					if ($busqueda==1){
+            $last_id = "SELECT MAX(idpr) AS id FROM intranet_roadmap";
+            $ultimo_id = json_decode(miBusquedaSQL($last_id), true, 512, JSON_UNESCAPED_UNICODE);
+            $id = $ultimo_id[0]['id'];
+            $sql3 = "INSERT INTO intranet_roadmap_users (prid, userid) VALUES ($id, '$user')";
+            $busqueda3 = miActionSQL($sql3);
 					$mensaje=1;
 					} else {
 						$mensaje= $busqueda;
@@ -305,22 +311,22 @@ function listadoregiones() {    //listado que sale en el select de 'nuevo proyec
         return $proyectos;
 
 }
-function proyectos($where) {
+function proyectos($where, $iduser) {
         switch ($where) {
           case '1':
               $titulo = "Ultimos Proyectos Agregados";
-              $relleno = rellenoUltimos();
+              $relleno = rellenoUltimos($iduser);
               $fecha = "Fecha de Creado";
               $color = "info";
             break;
           case '2':
-              $relleno = rellenoTodos();
+              $relleno = rellenoTodos($iduser);
               $titulo = "Proyectos";
               $fecha = "Fecha de Creado";
               $color = "info";
               break;
           case '3':
-              $relleno = rellenoModificados();
+              $relleno = rellenoModificados($iduser);
               $titulo = "Modificados Recientemente";
               $fecha = "Última Modificación";
               $color = "danger";
@@ -370,9 +376,9 @@ function rellenoTodos(){
                 }
         return $proyectos3;
 } 
-function rellenoUltimos(){
+ function rellenoUltimos($iduser){
 
-  $query2 = "SELECT * FROM intranet_roadmap ORDER by idpr DESC LIMIT 5";
+  $query2 = "SELECT * FROM intranet_roadmap INNER JOIN intranet_roadmap_users ON intranet_roadmap.idpr = intranet_roadmap_users.prid  WHERE userid ='".$iduser."' ORDER by idpr DESC LIMIT 5";
           $result3 = (array) json_decode(miBusquedaSQL($query2), true) ;
 
   foreach ($result3 as $pr3) {
@@ -391,10 +397,11 @@ function rellenoUltimos(){
             <td>'.$pr3['fechapr'].'</td></tr>'; 
                 }
         return $proyectos3;
-}  
-function rellenoModificados(){
+} 
 
-  $query2 = "SELECT * FROM intranet_roadmap ORDER by fechamodif DESC LIMIT 5";
+function rellenoModificados($iduser){
+
+  $query2 = "SELECT * FROM intranet_roadmap INNER JOIN intranet_roadmap_users ON intranet_roadmap.idpr = intranet_roadmap_users.prid  WHERE userid ='".$iduser."' ORDER by fechamodif DESC LIMIT 5";
           $result3 = (array) json_decode(miBusquedaSQL($query2), true) ;
 
   foreach ($result3 as $pr3) {
@@ -412,6 +419,28 @@ function rellenoModificados(){
             <td>'.$pr3['fechamodif'].'</td></tr>'; 
                 }
         return $proyectos3;
+}
+function rellenoUltimosusuario($iduser){
+
+  $query6 = "SELECT * FROM intranet_roadmap INNER JOIN intranet_roadmap_users ON intranet_roadmap.idpr = intranet_roadmap_users.prid  WHERE userid ='".$iduser."' ORDER by idpr DESC LIMIT 5";
+          $result6 = (array) json_decode(miBusquedaSQL($query6), true) ;
+
+ foreach ($result6 as $rs6){    
+              $proyectos5 .= '<a style="cursor: pointer;" onclick="cargarProyecto('.$rs6["idpr"].')" class="dropdown-item">'.$rs6["nombrepr"].'</a>
+                 '; 
+                }
+        return $proyectos5;
+}
+function rellenoActividadesUsuario($iduser){
+
+  $query6 = "SELECT * FROM intranet_roadmap LEFT JOIN intranet_roadmap_actividades ON intranet_roadmap.idpr = intranet_roadmap_actividades.valuepr INNER JOIN intranet_roadmap_users ON intranet_roadmap.idpr = intranet_roadmap_users.prid WHERE userid ='".$iduser."' ORDER by intranet_roadmap_actividades.id DESC LIMIT 5";
+          $result6 = (array) json_decode(miBusquedaSQL($query6), true) ;
+
+ foreach ($result6 as $rs6){    
+              $proyectos5 .= '<a style="cursor: pointer; margin:10px 20px; padding:4px 8px;" onclick="cargarProyecto('.$rs6["valuepr"].')"><h5 style="margin-bottom:0px; text-transform: capitalize;">'.$rs6["value1"].'</h5><span style="float:right;"><h7>Proyecto: '.$rs6["nombrepr"].'</h7></span></a>
+                 '; 
+                }
+        return $proyectos5;
 }
 function listarcategoria($categoria) {
   include "../cms/library/common.php";
@@ -535,27 +564,23 @@ function verproyecto($id) {
           $activid = "SELECT * FROM intranet_roadmap LEFT JOIN intranet_roadmap_actividades ON intranet_roadmap.idpr = intranet_roadmap_actividades.valuepr WHERE intranet_roadmap.idpr = $id ";
           $activid2  = miBusquedaSQL($activid);
           $result2 = (array) json_decode(miBusquedaSQL($activid), true) ;
-          //$queryAct = "SELECT id, value1 FROM intranet_roadmap_actividades WHERE valuepr = $id";
-          //$resultAct = (array) json_decode(miBusquedaSQL($queryAct), true) ;
-
-          //foreach ($result2 as $prueba) {
-            //echo $prueba ." ";
-          //}
+          
+        $query4 = "SELECT * FROM intranet_roadmap_categorias WHERE id_categoria = ".$result2[0]['categoriapr']."";
+        $result5 = (array) json_decode(miBusquedaSQL($query4), true) ;
+        $categoria = $result5[0]['nombre'];
+        
+        $query6 = "SELECT * FROM intranet_roadmap_regiones WHERE id_region = ".$result2[0]['regionpr']."";
+        $result6 = (array) json_decode(miBusquedaSQL($query6), true) ;
+        $region = $result6[0]['nombre_region'];
+        
+          $query7 = "SELECT * FROM intranet_roadmap INNER JOIN intranet_roadmap_users ON intranet_roadmap.idpr = intranet_roadmap_users.prid WHERE prid = $id";
+          $result3 = (array) json_decode(miBusquedaSQL($query7), true) ;
+          foreach ($result3 as $rs3){
+                $responsable.= "- ".ucwords($rs3['userid'])."<br>";
+          }
           
 
 
-          $actividades='';
-          if ($result2[0]['categoriapr']==1) {
-            $categoria='Publicidad';
-          } else if ($result2[0]['categoriapr']==2) {
-            $categoria='Academia';
-          } else if ($result2[0]['categoriapr']==3) {
-            $categoria='Recursos Humanos';
-          } else if ($result2[0]['categoriapr']==4) {
-            $categoria='Recepcion';
-          } else if ($result2[0]['categoriapr']==5) {
-            $categoria='Sistemas';
-          }
 
           if ($result2[0]['estado']==0) {
             $estado='Asignado';
@@ -565,19 +590,7 @@ function verproyecto($id) {
             $estado='Terminado';
           } 
 
-          if ($result2[0]['regionpr']=='0') {
-            $region='Venezuela';
-          } else if ($result2[0]['regionpr']=='1') {
-            $region='Panama';
-          } else if ($result2[0]['regionpr']=='2') {
-            $region='Aruba';
-          }else if ($result2[0]['regionpr']=='3') {
-            $region='Estados Unidos';
-          }else if ($result2[0]['regionpr']=='4') {
-            $region='Kazajistan';
-          }
-
-          if ($result2[0]['fechacierre']='0000-00-00') {
+         if ($result2[0]['fechacierre']='0000-00-00') {
             $fechacierre='Fecha Aun no Programada';
           } else {
             $fechacierre=$result2[0]['fechacierre'];
@@ -591,8 +604,8 @@ function verproyecto($id) {
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h3 class="card-title ">'.$result2[0]['nombrepr'].'</h3>
-                  <p class="card-category">'.$categoria.'</p>
+                  <h2 class="card-title" style="text-transform: capitalize;">'.$result2[0]['nombrepr'].'</h2>
+                  <h4 class="card-category">'.$categoria.'</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -605,19 +618,13 @@ function verproyecto($id) {
                       <tbody>
                         <tr>
                            <td>'.$region.'</td>
+                          <td>'.$result2[0]['fechapr'].'</td>
                           <td>'.$fechacierre.'</td>
-                          <td>
-                            '.$result2[0]['fechapr'].'
-                          </td>
                          
                         </tr>
                          <thead class=" text-primary">
-                        <th width="300">
-                          Descripción
-                        </th>
-                        <th>
-                          Encargado
-                        </th>
+                         <th>Encargado(s)</th>
+                         <th>Sponsor</th>
                         <th>
                           Estado
                         </th>
@@ -625,19 +632,25 @@ function verproyecto($id) {
                         
                       </thead>
                         <tr>
+                          
                           <td>
-                            '.$result2[0]['descripcion'].'
+                            '.$responsable.'
                           </td>
-                          <td>
-                            Minerva Hooper
-                          </td>
+                          <td>Salvador</td>
                           <td>
                             '.$estado.'
                           </td>
                          
                           
                         </tr>
-                        
+                        <thead class=" text-primary">
+                        <th>
+                          Descripción
+                        </th>
+                        </thead>
+                        <td>
+                            '.$result2[0]['descripcion'].'
+                          </td>
                       </tbody>
                     </table><a href="modificar.php?idp='.$id.'"><button class="btn btn-info btn-sm">Modificar Proyecto</button></a>
                   </div>
