@@ -93,16 +93,19 @@
         }  
     });
     $(".boton3").click(function (e) {
-        /*var group1 = validateN_empty('group1');
-        var group2 = validateN_empty('group2');
-        var group3 = validateN_empty('group3');
-        var group4 = validateN_empty('group4');*/
+        var group1 = validateR_empty('group1');
+        var group2 = validateR_empty('group2');
+        //var group3 = validateR_empty('group3');
+        var group4 = validateR_empty('group4');
         var comments = validate_empty('comments', 'language');
 
-        if (comments == 1) {
+        if (comments == 1 && group1 == 1 && group2 == 1 && group4 == 1) {
           var $active = $('.wizard .nav-tabs li.active');
           $active.next().removeClass('disabled');
           nextTab($active);
+          form.submit();
+        } else {
+          event.preventDefault();
         }
     });
     $(".prev-step").click(function (e) {

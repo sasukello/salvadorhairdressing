@@ -2,6 +2,12 @@
 <html lang="es_VE">
 
     <?php 
+
+
+      /*$path = $_SERVER['DOCUMENT_ROOT'];
+      $path .= "/library/AltoRouter.php";
+      require $path;*/
+
       $language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
       putenv("LC_ALL=$language");
       setlocale(LC_ALL, $language);

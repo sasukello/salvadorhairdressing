@@ -6,7 +6,6 @@
 
   <!-- /.light-wrapper -->
   <footer class="footer inverse-wrapper" id="footer">
-    <div class="padding-20">
     <div class="row text-center">
               <ul>
                 <li class="footlist"><?php echo _('<a class="link-footer" href="/nosotros.php">NOSOTROS</a>'); ?></li>
@@ -43,7 +42,6 @@
         </div> -->      
       </div>
       <!-- /.row --> 
-    </div>
     <!-- .container -->
     
     <div class="sub-footer">
@@ -138,3 +136,17 @@
       $('[data-toggle="tooltip"]').tooltip();   
   });
 </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b35294fd0b5a547968246ef/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->

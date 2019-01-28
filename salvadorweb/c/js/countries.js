@@ -305,6 +305,7 @@ var venezuela = {
     "S65": "C.C. Plaza 75 - Kids",
     "S66": "C.C. Cima ",
     "S67": "C.C. Camoruco",
+    "S80": "5 de Julio"
 
 }
 
@@ -325,6 +326,9 @@ var panama = {
     "S69": "Altaplaza - UOMO",
     "S70": "Obarrio - Express",
     "S74": "Brisas Mall - UOMO",
+    "S75": "Town Center - Instituto",
+    "S76": "Albrook - UOMO",
+    "S83": "Concordia - Eyebrows & Makeup"
 }
 
 var usa = {
@@ -336,11 +340,16 @@ var repdom = {
     "S35": "Sambil Santo Domingo - UOMO"
 }
 
-var ecuador = {
+/*var ecuador = {
     "S61": "Village Plaza - Kids",
     "S62": "Mall del Sur - Kids"
-}
+}*/
 
 var curazao = {
     "S63": "Sambil Curazao - Express"
+}
+
+var italy = {
+    "S81": "Modica, Sicilia - Barber Shop",
+    "S82": "Modica, Sicilia - Kids"
 }

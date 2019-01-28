@@ -11,9 +11,9 @@
       if($_SERVER["REQUEST_METHOD"] == "GET"){
         if(isset($_GET["e"])){
           if ($_GET["e"] == 0) {
-            $mensajealert = '<div class="dark-wrapper"><div class="container" style="margin-top: 50px;"><div class="row"><div class="alert alert-success"><strong>'. _('¡Mensaje Enviado Exitosamente!</strong> Gracias por querer formar parte de nuestro equipo de trabajo, evaluaremos toda la información suministrada y pronto nos comunicaremos contigo.').'</div></div></div></div>';
+            $mensajealert = '<div class="dark-wrapper"><div class="container" style="margin-top: 50px;"><div class="row"><div class="alert alert-success alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>'. _('¡Mensaje Enviado Exitosamente!</strong> Gracias por querer formar parte de nuestro equipo de trabajo, evaluaremos toda la información suministrada y pronto nos comunicaremos contigo.').'</div></div></div></div>';
           } elseif ($_GET["e"] == 1) {
-            $mensajealert = '<div class="dark-wrapper"><div class="container" style="margin-top: 50px;"><div class="row"><div class="alert alert-danger"><strong>'. _('¡Lo sentimos, ha ocurrido un error inesperado!</strong> Te invitamos a completar la información nuevamente para así recibir todos tus datos.').'</div></div></div></div>';
+            $mensajealert = '<div class="dark-wrapper"><div class="container" style="margin-top: 50px;"><div class="row"><div class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>'. _('¡Lo sentimos, ha ocurrido un error inesperado!</strong> Te invitamos a completar la información nuevamente para así recibir todos tus datos.').'</div></div></div></div>';
           }
         }
       }
@@ -26,7 +26,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="UX WEB VE">
-<title>The Academy - Salvador Hairdressing</title>
+<title><?php echo _('Trabaja con Nosotros'); ?> - Salvador Hairdressing</title>
 
     <?php include '../c/header.php'; ?>
     <?php include '../library/funciones.php'; ?>
@@ -52,6 +52,12 @@
     <!--/.container -->
   </div>
   </div>
+
+  <?php 
+    if(isset($_GET["e"])){
+      echo $mensajealert;
+    } 
+  ?>
 
 
   <div class="dark-wrapper">

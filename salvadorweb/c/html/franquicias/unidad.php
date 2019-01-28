@@ -118,7 +118,7 @@
     <h6 for="quest68"><?php echo _('¿Dedicación a tiempo completo?'); ?></h6>
     <div class="text-left">
       <input name="quest68" type="radio" id="69" value="69" /><label for="69"><?php echo _('Si'); ?></label>
-      <input name="quest68" type="radio" id="70" value="70" /><label for="70" disabled><?php echo _('No'); ?></label>
+      <input name="quest68" type="radio" id="70" value="70" disabled /><label for="70"><?php echo _('No'); ?></label>
       <label>Para enviar este formulario es necesario que posea disponibilidad a tiempo completo.</label>
     </div>                                    
     <span id="errorquest68"></span>

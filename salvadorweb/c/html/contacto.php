@@ -176,7 +176,7 @@
                                         <p class="mb-0"><input name="group3[]" type="checkbox" id="18" value="12" /><label for="18"><?php echo _('Ninguno'); ?></label></p>
                                       </div>
                                     </div>
-                                    <!--span id="errorgroup3"></span-->
+                                    <span id="errorgroup3"></span>
                                   </div>
                                 </div>
                               </div>

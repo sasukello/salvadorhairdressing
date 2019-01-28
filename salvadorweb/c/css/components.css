@@ -46,11 +46,48 @@ hr.style16:after {
   color: #8c8b8b; 
   font-size: 18px; 
 }
-
-.modal-dialog{
-    margin-top: 10%;
+/****************  Boton Emprende con Nosotros - Modelos de Negocios  *****************/
+#menu {
+  position: fixed;
+  left: 50px;
+  bottom: 15px;
+  width: 3.4em;
+  height: 3.4em;
+  margin: -2.5em 0 0 0;
+  z-index: 5;
+  background: #e32028;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  text-align: left;
+  padding: 0.5em 2.5em 0.5em 0.5em;
+  box-shadow: 1px 3px 3px black;
+  border-radius: 50%;
 }
-
-.acadinput{
-  padding-left: 30% !important;
+.texto-fq{
+  margin-top: -60px;
+  margin-left: -34px;
+  width: 120px;
+  text-align: center;
+  font-size: 16px;
 }
+.icono-fq{
+  font-size: 30px;
+  padding: 18px 8px;
+  color: #fff!important;
+}
+@media only screen and (max-width: 600px) {
+  .texto-fq{
+    display: none;
+  }
+  .icono-fq{
+    padding: 5px 6px;
+    font-size: 22px;
+  }
+  #menu{
+    left: 15px;
+    width: 50px;
+    height: 50px;
+  }
+}
+/****************  Boton Emprende con Nosotros - Modelos de Negocios  *****************/

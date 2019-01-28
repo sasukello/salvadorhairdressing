@@ -73,6 +73,26 @@ function validate_empty($campoid){ // FUNCIONA SOLO CON LOS ID, NO CON LOS NAME
   return $result;
 }
 
+function validateR_empty($campoid){ // FUNCIONA SOLO CON LOS ID, NO CON LOS NAME
+  if($('input[name='+$campoid+']:checked').length == 0){
+    var compare = document.getElementById("language").value;
+
+    if (compare == 'en_US') {
+      document.getElementById("error"+$campoid+"").innerHTML ="<i style='color:red;'>Complete this field</i>";
+    } else if (compare == 'es_VE') {
+      document.getElementById("error"+$campoid+"").innerHTML ="<i style='color:red;'>Completa este campo</i>";
+    } else if (compare == 'it_IT') {
+      document.getElementById("error"+$campoid+"").innerHTML ="<i style='color:red;'>Completa questo campo</i>";
+    } 
+    $result = 0;
+
+  } else {
+      document.getElementById("error"+$campoid+"").innerHTML ="";
+      $result = 1;
+  }
+  return $result;
+}
+
 function listaSalon($id) {
   $('#salones').html('<div style="text-align: center;"><img src="/c/img/loading.gif" width="32px" height="32px"></div>');
   $.ajax({

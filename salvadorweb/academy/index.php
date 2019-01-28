@@ -8,16 +8,6 @@
       bindtextdomain("salvador_web", "../locale");
       textdomain("salvador_web");
 
-      if($_SERVER["REQUEST_METHOD"] == "GET"){
-        if(isset($_GET["e"])){
-          if ($_GET["e"] == 0) {
-            $mensajealert = '<div class="dark-wrapper"><div class="container" style="margin-top: 50px;"><div class="row"><div class="alert alert-success"><strong>'. _('¡Mensaje Enviado Exitosamente!</strong> Gracias por querer formar parte de nuestro equipo de trabajo, evaluaremos toda la información suministrada y pronto nos comunicaremos contigo.').'</div></div></div></div>';
-          } elseif ($_GET["e"] == 1) {
-            $mensajealert = '<div class="dark-wrapper"><div class="container" style="margin-top: 50px;"><div class="row"><div class="alert alert-danger"><strong>'. _('¡Lo sentimos, ha ocurrido un error inesperado!</strong> Te invitamos a completar la información nuevamente para así recibir todos tus datos.').'</div></div></div></div>';
-          }
-        }
-      }
-
      ?>
 
 <head>
@@ -51,11 +41,6 @@
     </div>
   </div>
 
-  <?php
-      if (isset($mensajealert)) {
-        echo $mensajealert;
-      }
-  ?>
   <div class="dark-wrapper">
     <div class="container inner">
       <div class="row">
@@ -71,33 +56,7 @@
     </div>
   </div>
 
-
-
-  <div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(/c/img/careers/main.jpg);">
-    
-  </div>
-
-
-  <div class="dark-wrapper">
-    <div class="container inner">
-
-      <div class="blog row">
-        <div class="col-md-12">
-         <div class="col-sm-7">
-          <div class="row">
-
-          </div>
-          
-
-        </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-    <div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(/c/img/main/franquicias-main-1.jpg);">
+  <div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(/c/img/main/franquicias-main-1.jpg);">
     <div class="overlay">
     <div class="container inner text-center">
       <div class="headline text-center">
@@ -108,27 +67,11 @@
     <!--/.container -->
   </div>
   </div>
-  <main></main>
 
-  <div class="slide-portfolio-overlay"></div><!-- overlay that appears when slide portfolio content is open -->
-
+  
  <?php
     include '../c/footer.php';
   ?>
 
 </body>
-
-<div class="slide-portfolio-item-content dark-wrapper slide-portfolio-item-form">
-  <div class="slide-portfolio-item-detail">
-    <div class="inner2">
-
-      <input type="hidden" name="langsw" id="langsw" value="<?php echo $language; ?>">
-      <span id="contentslideform"></span>
-
-    </div>
-  </div>
-</div>
-
-<a href="#0" class="slide-portfolio-item-content-close"><i class="budicon-cancel-1"></i></a> <!-- close slide portfolio content -->
-
 </html>

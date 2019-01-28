@@ -3,6 +3,7 @@
     display: none;
   }
 </style>
+<meta charset="utf-8">
 
 <!--   Big container   -->
       <div class="container margin-contact">
@@ -52,7 +53,7 @@
                       </ul>
                   </div>
 
-                  <form action="/c/api.php" name="franquicias" id="franquicias" method="POST">
+                  <form action="/c/api.php" name="franquicias" id="franquicias" method="POST" charset="UTF-8">
                       <div class="tab-content">
                           <div class="tab-pane active" role="tabpanel" id="step1">
                               <div class="text-center">

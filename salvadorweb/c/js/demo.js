@@ -53,10 +53,11 @@ $(function () {
     var pty = $.map(panama, function (value, key) { return { value: value, data: { key2: key, category: 'Panamá' } }; });
     var us = $.map(usa, function (value, key) { return { value: value, data: { key2: key, category: 'USA' } }; });
     var rd = $.map(repdom, function (value, key) { return { value: value, data: { key2: key, category: 'Rep. Dominicana' } }; });
-    var ec = $.map(ecuador, function (value, key) { return { value: value, data: { key2: key, category: 'Ecuador' } }; });
+    //var ec = $.map(ecuador, function (value, key) { return { value: value, data: { key2: key, category: 'Ecuador' } }; });
     var crz = $.map(curazao, function (value, key) { return { value: value, data: { key2: key, category: 'Curazao' } }; });
+    var it = $.map(italy, function (value, key) { return { value: value, data: { key2: key, category: 'Italia' } }; });
 
-    var regiones = ve.concat(pty).concat(us).concat(rd).concat(ec).concat(crz);
+    var regiones = ve.concat(pty).concat(us).concat(rd).concat(crz).concat(it);
 
     // Initialize autocomplete with local lookup:
     $('#autocomplete').devbridgeAutocomplete({

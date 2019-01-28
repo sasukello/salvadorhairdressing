@@ -3,6 +3,7 @@
     display: none;
   }
 </style>
+<meta charset="utf-8">
 
 <!--   Big container   -->
       <div class="container margin-contact">
