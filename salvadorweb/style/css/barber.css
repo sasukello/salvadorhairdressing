@@ -1,0 +1,160 @@
+.two-lines {
+  margin: 0;
+  padding-bottom: 7px;
+  position: relative;
+  border-bottom: 2px solid #e2d7c3;
+}
+
+.two-lines:before {
+  position: absolute;
+  background: #716142;
+  height: 2px;
+  content: '';
+  width: 50px;
+  bottom: -2px;
+  left: 0;
+}
+.just-services{
+  font-family: 'MicroSquareRegular'!important;
+  font-size: 36px;
+  padding-bottom: 15px;
+}
+.title-services{
+  color: #716142; 
+  padding-bottom: 10px;
+  font-weight: normal;
+  margin-bottom: 35px;
+}
+.marc{
+  border: 2px solid #716142;
+}
+.pr-0{
+  padding-right: 0;
+}
+.pl-0{
+  padding-left: 0;
+}
+.horario{
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+    border-radius: 90%;
+    margin-right: 33px;
+    text-align: center;
+    background: #5b8068;
+    color: #fff;
+    padding-top: 45px;
+}
+.two-lines2 {
+  padding-bottom: 7px;
+  position: relative;
+  border-bottom: 3px solid #e2d7c3;
+  width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  top: -10px;
+}
+
+.two-lines2:before {
+  position: absolute;
+  background: #716142;
+  height: 3px;
+  content: '';
+  width: 50px;
+  bottom: -3px;
+  left: 160px;
+}
+.title-brb{
+  font-family: 'MicroSquareRegular';
+  text-transform: uppercase;
+  font-size: 40px;
+  padding: 10px 0 20px;
+  font-weight: bold;
+}
+.advice-div{
+  background-color: #e2d7c3; 
+  padding: 30px; 
+  border-radius: 15px; 
+  border: 5px dashed #716142;
+}
+.advice-txt{
+  padding: 0; 
+  margin: 0; 
+  text-align: center; 
+  text-transform: uppercase;
+}
+.body-wrapper{
+  background-color: #fff;
+}
+.head-page{
+  padding: 370px 0 0 0;
+}
+.logo-settings{
+  background: #fff; 
+  padding: 10px; 
+  margin-bottom: -50px;
+}
+.light-color-brb{
+  color: #e2d7c3;
+}
+.bg-typed{
+  background: #716142;
+  padding: 2%;
+}
+.bg-dscp{
+  background-image: linear-gradient(to top, #716142 0%, #f5e4be 100%);
+}
+.mt-0{
+  margin-top: 0;
+}
+.mb-0{
+  margin-bottom: 0;
+}
+.week-txt{
+  font-size: 45px; 
+  font-family: 'MicroSquareRegular'!important; 
+  font-weight: bold;  
+}
+.prs-pd{
+  padding: 100px 0 100px 0;
+}
+.map{
+  height: 360px;
+}
+.footer{
+  background-color: #e2d7c3;
+}
+.redes-settings{
+  border-bottom: 2px solid; 
+  width: 80px; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+.size-iconp{
+  color: #716142;
+}
+.sub-footer{
+  background-color: #716142;
+}
+.pr-0{
+  padding-right: 0;
+}
+@media (max-width: 760px) {
+    .pl-0{
+      padding-left: 15px;
+    }
+    .pr-0{
+      padding-right: 15px;
+    }
+}
+@media (max-width: 460px) {
+    .two-lines2{
+      width: 200px;
+    }
+    .two-lines2:before{
+      left: 75px;
+    }
+    .title-brb{
+      font-size: 30px;
+    }
+}

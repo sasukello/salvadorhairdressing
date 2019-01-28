@@ -1,0 +1,841 @@
+﻿@charset "utf-8";
+@font-face {
+	font-family: riesling;	
+	src: url(../fonts/riesling.ttf) format("truetype");		
+}
+
+@font-face {
+	font-family: glasket500;	
+	src: url(../fonts/glasket500.ttf) format("truetype");		
+}
+
+@font-face {
+	font-family: Turkish;	
+	src: url(../fonts/Turkish_Microgramma.ttf) format("truetype");		
+}
+
+body {
+	width: 100%;
+	text-align:left;
+	font-family:"Century Gothic";
+	font-size:12px;
+	background-color:#d6d4d5;
+	/*background-image:url(../images/bg.jpg);*/
+	/*background-repeat:no-repeat;*/
+	color:#1b1b1b;
+	margin:0;
+}
+.item_formulario label{margin:0 10px;}
+
+html{
+	width:100%;
+	margin:0;
+	}
+/* ELEMENTOS HTML */
+input,select,textarea{
+	color:#252525;
+	font-family:"Century Gothic";
+	margin:3px 0px;
+	/*width:50%*/
+}
+
+button {
+border:1px solid red;
+}
+
+button:disabled,input:disabled,select:disabled,textarea:disabled{
+	color:#aaa;
+}
+
+
+input[type=radio],[type=checkbox],img,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,form,label,img{
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+li{
+	list-style-position:inside;
+}
+
+
+
+/*button,input[type=button],input[type=submit],input[type=reset]{
+	border:1px solid #ccc;
+	background:#eaeaea;
+	color:#666;
+    padding:2px;
+}
+button:hover,input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover{
+	color:#fc0606;
+}
+*/
+
+
+/*-------------------------------BOTON------------------------------------------------------*/
+
+
+
+button,input[type=button],input[type=submit],input[type=reset]{
+	border:1px solid #ccc;
+	background:#fc0606;
+	color:#eaeaea;
+    padding:5px;
+}
+button:hover,input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover{
+	color:#fff;
+	cursor:pointer;
+}
+
+
+a:active,a:visited,a:link{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+}
+
+
+#AVA_WRAPPER{
+height:auto;
+width:100%;
+overflow:auto;	
+padding:0px;
+margin:0px;
+}
+
+/* ENCABEZADO DE PAGINA */
+
+#AVA_HEADER {
+	font-size:12px;
+	font-weight:200;
+	clear:both;
+	width:100%;
+	overflow:hidden;
+	height:155px;
+	/* background-color:#a5dcf0; */
+	}
+	
+	
+/*#AVA_HEADER a:active,a:visited,a:link {
+	color:#252525;
+	margin-right:5px;
+	margin-left:5px;
+	}*/
+	
+	#AVA_HEADER a:hover {
+	color:#fc0606;
+	}
+   
+	/* MENU DEL TOPE */
+	#AVA_HEADER .MENU{ /* contenedor de elementos del menu */
+		background:#fff;
+		width:900px;
+		height:36px;
+   	}
+#AVA_HEADER .MENU div{ /* elementos del menu */
+			width:96px;
+			font-family:glasket500;
+			font-size:24px;
+			padding:0 0 0px ;
+			float:left;
+			/*background:#CC3333;*/
+			color:#b0b0b0;
+			margin:5px 30px 0 0;
+			/*border:1px solid #CCcc33;
+			border-bottom:0px;*/
+			cursor:pointer;
+   		}
+#AVA_HEADER .MENU div:hover {
+	font-size:27px;
+	/*background-image:url(../images/bg_over_menu.jpg);
+	background-repeat: no-repeat;
+	background-position: 0 16px;*/
+			}
+
+
+	
+/**************************************************************************************** CONTENIDO *****************************************************************/
+
+
+#AVA_CONTENEDOR_PRINCIPAL {
+	clear:both;
+	width:100%;
+	overflow:hidden;
+	padding:0;
+    height:auto !important;
+    height:100%;
+    margin:0 auto;
+	/*border:1px solid red;*/
+}
+
+
+
+/* TITULOS */
+.AVA_TITULO {
+	font-family:"Turkish";
+	font-size:20px;
+	color:#fc0606;	
+	font-weight:bold;
+}
+
+/* SUBTITULOS */
+.AVA_SUBTITULO {
+	
+	font-family:"Turkish";
+	font-size:14px;
+	color:#fc0606;	
+	font-weight:bold;
+}
+
+
+		.AVA_BOX div:nth-child(1){ /* titulo */
+			background-color:#666;
+			color:#fff;
+		        font-weight:bold;
+		        border-radius: 10px 10px 0 0;
+		        -moz-border-radius: 10px 10px 0 0;
+		        -webkit-border-radius: 10px 10px 0 0;
+		}
+			.AVA_BOX div:nth-child(1) div{ /* viñeta del titulo */
+	        		float:left;
+				background-image:url(../images/arrow.png);
+                		background-repeat:no-repeat;
+			        height:16px;
+        			width:16px;
+				margin-right:5px;
+				padding:0;
+			}
+*/
+
+
+.AVA_BOX{
+   color:#333;
+   font-size:8pt;
+   font-weight:normal;
+   min-width:150px;
+   max-width:350px;
+   overflow:auto;
+}
+.AVA_BOX dt{
+   font-size:12px;
+   background-color:#DF0174;
+   color:#fff;
+   padding:5px;
+}
+.AVA_BOX dt div{
+   float:left;
+   top:2px;
+   left:2px;
+   width:16px;
+   height:16px;
+   background:url(arrow.png) no-repeat;
+   margin-right:5px;
+}
+
+
+.AVA_BOX dd{
+   border:#aaa solid;
+   margin:0;
+   border-width:0 1px 1px;
+   padding:4px 6px 6px;
+   background:#fff;
+}
+
+
+
+
+/* *****************************************************************************PIE DE PAGINA******************************************************************** */
+
+
+
+#AVA_PIE {
+	clear:both;
+	width:100%;
+	color:#606060;
+	font-size:11px;
+	overflow:hidden;
+	font-family:"Century Gothic";
+	height:134px;
+	font-weight: normal;
+	
+}
+	#AVA_PIE  a {
+	color:#606060;
+	font-weight:bold;
+	font-family:"Century Gothic";
+	font-size:11px;
+	margin-right:14px;
+	
+	}
+	
+		#AVA_PIE  a:hover {
+		text-decoration:underline;
+	
+	}
+
+. sinmargen{
+	color:#606060;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	margin:0px;
+
+	}
+
+/*----------------------------REDES--------------------------------*/
+
+div#facebook{
+ background-image:url(../images/facebook.jpg);	
+}
+div#facebook:hover{
+ background-image:url(../images/facebook_color.jpg);	
+}
+
+div#twitter{
+ background-image:url(../images/twitter.jpg);	
+}
+div#twitter:hover{
+ background-image:url(../images/twitter_color.jpg);	
+}
+
+
+
+
+
+/* *************************************************************************MENSAJES DE ERROR, EXITO Y ALERTA************************************************* */
+.AVA_MENSAJE {
+	background:url(../images/deg.png) repeat-x;
+	border:1px solid #d8d8d8;
+	padding:5px;
+        overflow:hidden;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+}
+	.AVA_MENSAJE a {
+		color:#FF6600;
+	}
+	.AVA_MENSAJE div{
+		float:left;
+	}
+		.AVA_MENSAJE div.AVA_MENSAJE_ERROR{ /* imagen error */
+	        	margin-right:5px;
+			background:url(../images/warning.png) no-repeat; 
+			width:18px;
+			height:18px;
+		}
+		.AVA_MENSAJE div.AVA_MENSAJE_EXITO{ /* imagen exito */
+	        	margin-right:5px;
+			background:url(../images/warning.png) no-repeat; 
+			width:18px;
+			height:18px;
+		}
+		.AVA_MENSAJE div.AVA_MENSAJE_ALERTA{ /* imagen alerta */
+	        	margin-right:5px;
+			background:url(../images/warning.png) no-repeat; 
+			width:18px;
+			height:18px;
+		}
+
+
+
+/* GRILLAS */
+.AVA_GRILLA {
+	border:1px solid #d8d8d8;
+	padding:0;
+}
+
+	.AVA_GRILLA_TITULO,table.AVA_GRILLA th { /* cabecera de la grilla (titulos) */
+		background-color:#666;
+	        color:#fff;
+		padding:5px;
+		text-align:center;
+	}
+
+	.AVA_GRILLA_CONTENIDO,table.AVA_GRILLA tr { /* lineas de la grilla */
+		background-color:#fff;
+		border:1px solid #d8d8d8;
+	}
+
+	table.AVA_GRILLA td { /* filas de la grilla */
+		padding:5px;
+	}
+/*AGREGADOS*/
+
+.menu_lateral {
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	width:100%;
+	line-height:17px;
+	text-align: left;
+	vertical-align: middle;
+	padding-top: 3px;
+	padding-left: 20px;
+
+}
+
+.menu_lateral:hover {
+	background-image:url(../images/point.png);
+	background-repeat:no-repeat;	
+	background-position: 6px 7px;
+	}
+	
+.menu_lateral a {
+	text-decoration:none;
+	color: #164d63;
+}
+
+.menu_lateral a:hover {
+	color: #75baa9;
+	text-decoration: none;
+
+}
+.news_link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+
+.news_link:hover{
+ color:#F00;
+ text-decoration: underline; 
+}
+.dotted_line {
+	float:left;
+	width:auto;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #333;
+	height: 3px;
+	margin-bottom:10px;
+}
+
+
+.banner_index_box {
+	float:left;
+	width:165px;
+	Height:102px;
+	margin-top: 0px;
+  	filter:alpha(opacity=100);
+  	opacity:1;
+}
+.banner_index_box:hover {
+  filter:alpha(opacity=80);
+  opacity:.8;
+}
+
+
+/**************************************************************/
+/******************* ERICK agregados *************************/
+/*************************************************************/
+
+.services_box{
+	float:left;
+	width:260px;
+	background-color:#fff;
+	margin:10px;
+}
+
+.border-header-center {
+	clear:both;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-color: #c4c4c4;
+	border-left-color: #c4c4c4;
+	border-right-style: solid;
+	border-left-style: solid;
+}
+
+
+.line_cont {
+margin:5px 0;
+}
+
+.border-header-center {
+	clear:both;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-color: #c4c4c4;
+	border-left-color: #c4c4c4;
+	border-right-style: solid;
+	border-left-style: solid;
+}
+.border-footer {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-color: #c4c4c4;
+	border-left-color: #c4c4c4;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #c4c4c4;
+}
+
+
+#AVA_HEADER span.language a {
+color:#fc0606;
+}
+
+#AVA_HEADER span.language a:hover{
+	color:#000;	
+}
+
+
+
+.button {
+	background-color:#F9F9F9;
+	height:20px;
+	border: 1px solid #ccc;
+	display:block;
+	padding-top: 1px;
+	padding-right: 5px;
+	padding-bottom: 1px;
+	padding-left: 5px;
+	line-height:20px;
+ 	cursor:pointer;	
+}
+
+.button:hover a {
+	color:#fc0606;	
+
+}
+
+
+
+
+.img_sec {
+	background-color:#e7fbfc;
+	width:265px;
+	height:217px;
+	float: right;
+	margin-top:20px;
+	margin-right:0px;
+	margin-bottom:0px;
+	margin-left:0px;
+	border:0px solid #5cabd2;
+}
+
+.photo div.img_photo {
+	width:136px;
+	height:102px;
+	margin:5px auto;
+	border:1px solid #ccc;
+}
+
+.photo div.img_text {
+	width:140px;
+	height:30px;
+	margin:4px auto;
+	text-align:center;
+}
+
+.images {
+width:280px;
+float:right;
+margin-right:30px;
+margin-top:68px;
+}
+
+.banner_product{
+  width:260px;
+  float:left;
+  /*filter:alpha(opacity=100);
+  opacity:1;*/
+
+}
+
+.banner_product div.banner_image{
+  width:126x;
+  height:130px;
+  float:left;
+  margin:5px 10px 0 10px;
+ /* filter:alpha(opacity=100);
+  opacity:1;*/
+
+}
+.banner_product div.banner_text{
+  width:146px;
+  height:100px;
+  float:left;
+  margin:34px 5px 0 110px;
+  filter:alpha(opacity=100);
+  /* opacity:1;
+  text-align:left;*/
+
+
+}
+
+.carrusel {
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #5e9bee;
+	border-bottom-color: #5e9bee;
+}
+
+
+.client {
+	width:162px;
+	height:140px;
+	float:left;
+	font-size:11px;
+	text-align:left;
+	border-color:#E2E2E2;
+	border-style:solid;
+	border-width:1px;
+
+}
+.client  div.logo {
+	width:152px;
+	height:60px;
+	float:left;
+	margin-left:5px;
+	margin-bottom:5px;
+
+}
+.client  div.text {
+	width:152px;
+	height:70px;
+	float:left;
+	margin-left:5px;
+
+}
+
+.contact_box {
+	width:250px;
+	height:260px;
+	float:left;
+	margin: 10px 0 0 0px;
+	border:solid;
+	border-width:0px;
+	border-color:#e4e4e4;
+	padding:0px;
+}
+
+
+.banner_index{
+  width:335px;
+  height:113px;
+  float:left;
+  margin:5px 4px;
+  filter:alpha(opacity=100);
+  opacity:1;
+
+}
+.numbers{
+	width:840px;
+	height:21px;
+	float:left;
+	background-color:#FFF;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #d9d9d9;
+	border-bottom-color: #d9d9d9;
+}
+
+
+
+.banner_index:hover {
+  filter:alpha(opacity=60);
+  opacity:.6;
+}
+
+.redes{
+  filter:alpha(opacity=80);
+  opacity:.8;
+}
+
+.redes:hover {
+  filter:alpha(opacity=100);
+  opacity:1;
+}
+
+.pregunta {
+	/*border:1px solid red;*/
+	float:left;margin-top:10px;}
+
+.option {
+float:left;
+margin:1px 3px 0px 0px;
+}
+
+
+/**************************************************************/
+/******************* edwin agregados *************************/
+/*************************************************************/
+
+
+.exito{
+  background-color:#63CD00;
+  border:1px solid #3cab09;
+  background-image: url(../images/acepta.png);
+  background-repeat:no-repeat;
+ 
+  /*margin:0 auto;*/
+    width:99.5%;
+    padding:1px 1px 1px 1px;
+}
+
+.exito div{
+  color:#FFFFFF;	
+  padding:5px;
+ margin-left:32px;  
+}
+
+
+.error{
+  background-color:#fe4a4b;
+  border:1px solid #eb3536;
+  background-image: url(../images/error2.png);
+  background-repeat:no-repeat;
+  float:left;
+  /*margin:0 auto;*/
+  width:99.5%;
+  padding:1px 1px 1px 1px;
+}
+
+.error div{
+  color:#FFFFFF;	
+  padding:5px;
+ margin-left:32px;   	
+}
+
+
+
+
+
+.marco{
+border: 1px solid #ccc;
+float:left;
+margin-right:10px;
+padding:0px;
+}
+
+.marco  img{
+ max-height:150px;
+ max-width:200px;
+ margin-right:-5px;
+ margin-bottom:-4px;
+}
+
+#languages {
+width:430px;
+height:16px;
+float:right;
+font-size:10px;
+margin:40px 50px 0 0;
+}
+
+#social {
+float:right;
+width:272px;
+height:30px;
+margin:5px 208px 0 0;
+}
+
+.flagimg {
+	width:20px;
+	height:12px;
+	margin:3px 5px 0 0;
+	float:left;
+	}
+	
+	.name_flag {
+	width:18px;
+	height:12px;
+	margin:2px 0 0 0;
+	float:left;;
+	}
+	
+
+		
+.fs {
+	margin:10px 0 0 20px;
+	background-color:#fff;
+	height:190px;
+	width:120px;
+	float:left;
+	cursor:pointer;
+		}
+		
+.fs div.text{
+	color:#F00;
+	font-weight:bold;
+	margin:5px 0 0 0px;
+	background-color:#fff;
+	height:16px;
+	width:120px;
+	text-align:center;
+		}
+
+
+/*-----------------------------------------FORMULARIOS FRANQUICIADOS------------------------------*/
+.contenedor {
+width:877px;
+min-height:450px;
+height:auto;
+overflow:auto;
+margin:auto;
+
+
+}
+	
+.contenedor_formulario {
+	width:100%;
+	height:auto;
+	overflow:auto;
+	float:left;
+	margin:8px 0;
+	}	
+	
+.titulo_formulario {
+	color:#fff;
+	font-weight:bold;
+	background-color:#F00;
+	height:auto;
+	width:99%;
+	float:left;
+	padding:3px 0px 3px 3px;
+}
+
+.item_formulario {
+	height:auto;
+	overflow:auto;
+	width:99%;
+	margin:10px 0;
+	}
+.gray_form_bg {
+	background-color:#f4f6f8;
+	height:30px;
+}
+
+/*****************************************************************************************/
+/************************************* franquicias ***************************************/
+/*****************************************************************************************/
+
+.operador{
+	display:none;
+}
+.inversionista{
+	display:none;
+}
+.master{
+	display:none;
+}
+.estilista{
+	display:none;
+}
+.flag{
+width:99%;
+height:88%;
+display:none;
+}
+
+.oculto{
+display:none;
+}

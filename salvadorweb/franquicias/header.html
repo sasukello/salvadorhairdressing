@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>SALVADOR | Peluquerías</title>
+
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+            <style type="text/css">
+
+                .custom-date-style {
+                    background-color: red !important;
+                }
+
+            </style>
+            <style>
+                body{
+                    <?
+                    $f=array("/legacy/images/bg.jpg","/legacy/images/bg2.jpg","/legacy/images/bg3.jpg","/legacy/images/bg4.jpg");
+                    ?>
+                    background: url('<?=$f[rand(0,3)];?>') no-repeat;
+                    background-position: center top;
+                    background-color:#e8e8e8;
+                    background-position: center top;
+                }
+            </style>
+            <link href="/legacy/css/style.css" rel="stylesheet" type="text/css" />
+            <link href="/legacy/css/redes_buzon_tienda.css" rel="stylesheet" type="text/css" />  
+            <script language="JavaScript" type="text/javascript" src="/style/js/jquery.min.js"></script>
+    </head>
+    <body >
+        <div id="AVA_WRAPPER">
+            <div id="AVA_HEADER">
+                <div id="cont_header" class="border-header-center" style="width:997px; height:155px; margin:0 auto; background-color:#FFF; background-position:top; background-repeat:repeat-x; padding:0px 0 0 0px">
+                    <div id="logo_salvador" style="width:219px;height:66px; float:left;margin: 30px 0 0 60px"><a href="/index.php" target="_self"><img src="/legacy/images/logo.jpg" width="219" height="66" border="0" /></a></div>
+                    <div id="contactanos_ad" style="width: 100px;height: 75px;float: left;margin: 20px 0 10px 130px;"><a href="/contacto.php"><img src="/legacy/images/boton-gif.gif" height="100%" width="100%"></a></div>
+                    <br>
+                    <div id="social">
+                        <iframe src="//www.facebook.com/plugins/like.php?locale=es_LA&href=http%3A%2F%2Fwww.facebook.com%2FSalvadorPeluquerias&amp;send=false&amp;layout=standard&amp;width=300&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:35px;" allowTransparency="true"></iframe>
+                    </div> 
+                    <div id="line1" style="height:6px;width:991px;float:left; margin:0 0 0 3px"><img src="/legacy/images/line_header.jpg" width="991" height="6" /></div>
+                    <div id=" MENU" class="MENU" style="float:left; margin:5px 0 0 60px">
+                        <div style="margin-left:15px; width: 70px;"><a href="/nosotros.php">NOSOTROS</a></div>
+                        <div style="margin-left:15px"><a href="/servicios.php">SERVICIOS</a></div>
+                       <!-- <div style="width:65px"><a href="equipo.php">EQUIPO</a></div>-->
+                        <div><a href="/franquicias.php">FRANQUICIAS </a></div>
+                        <div><a href="/ubicaciones">UBICACIONES</a></div>
+                        <div><a href="/contacto.php">CONT&Aacute;CTENOS</a></div>
+                        <div><a href='/cc/' style="padding: 0px;margin-left: 10px;"><img src="/legacy/images/cc-boton-header-1-mini.png" width="115px" style="margin-top: -10px;"></a></div>
+                    </div>
+                    <div id="line2" style="height:6px;width:991px;float:left; margin:0 0 0 3px"><img src="/legacy/images/line_header.jpg" width="991" height="6" /></div>	
+                </div>
+            </div>
+        </div>

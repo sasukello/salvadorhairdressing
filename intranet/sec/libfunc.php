@@ -36,12 +36,8 @@ function intra_uno($user, $contra){
         $_SESSION["permiso"] = $manage[0]->NIVEL;
         $_SESSION["todoinfo"] = $final;
 
-        /*$path = $_SERVER['DOCUMENT_ROOT'];
-        $path .= "/library/funciones.php";
-        include_once($path);*/
-
-        //$_SESSION["idiomaruta"] = "/home/sopor907/public_html/intranet/lang/";
-        $_SESSION["idiomaruta"] = "C:/xampp/htdocs/Salvador/intranet/lang/";
+        $_SESSION["idiomaruta"] = "/home/sopor907/public_html/intranet/lang/";
+        //$_SESSION["idiomaruta"] = "C:/xampp/htdocs/Salvador/intranet/lang/";
 
 
         $_SESSION["hash"] = "s6a5486dasdas31";
@@ -84,8 +80,8 @@ function hacerpost($url, $parametros, &$resultado){
     }
     else {
         //Dio error
-        //$resultado = "";
-        return $remote_server_output."".$resultado;
+        $resultado = "";
+        return $remote_server_output;
     }
 }
 
@@ -251,17 +247,6 @@ function menuheader($ubicacion, $accesos){
         </div>
        <?php break;
        case 'cms':?>
-        <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
-            <ul class="nav navbar-nav">
-                <?php foreach($accesos as $a){
-                    menu3($a);
-                } ?>
-                <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
-                <?php echo $useroptions;?>
-            </ul>
-        </div>
-       <?php break;
-       case 'apps':?>
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
             <ul class="nav navbar-nav">
                 <?php foreach($accesos as $a){

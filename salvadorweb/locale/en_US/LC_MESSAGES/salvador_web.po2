@@ -1,0 +1,1863 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: salvador_web\n"
+"POT-Creation-Date: 2018-03-08 12:34-0400\n"
+"PO-Revision-Date: 2018-03-08 21:31-0400\n"
+"Last-Translator: Armando Lugo <alugox@gmail.com>\n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.5\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__;_p:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: ../ajax\n"
+"X-Poedit-SearchPathExcluded-1: ../style\n"
+
+#: academy/index.php:25 app/index.php:25 careers/index.php:25 contacto.php:25
+#: contacto2.php:25 franquicias.php:32 franquicias/faq/index.php:25
+#: fsmag.php:25 intranet/login.php:38 modelos/index.php:26
+#: mysteryshopper/index.php:32 mysteryshopper/index1bu.php:72 nosotros.php:26
+#: salvadoracademy/index.php:25 servicios.php:25 ubicaciones/index.php:25
+msgid "Cargando"
+msgstr "Loading"
+
+#: academy/index.php:51
+msgid "La formación de nuestra esencia"
+msgstr "Shaping our Essence"
+
+#: academy/index.php:65 careers/index.php:18 careers/index.php:67
+msgid "Trabaja con Nosotros"
+msgstr "Work With Us"
+
+#: academy/index.php:81
+msgid "Una ventana a tú futuro"
+msgstr "A Window to Your Future"
+
+#: academy/index.php:82
+msgid ""
+"<h5 class=\"text-center\">¿Quieres ser parte de una de las franquicias con "
+"mayor crecimiento en Latinoamérica?</h5>\n"
+"            <p>Constantemente nos encontramos en la búsqueda de personal en "
+"las siguientes áreas:"
+msgstr ""
+"<h5 class=\"text-center\">Do you want to join one of Latin America's biggest "
+"growing Franchise?</h5><p>We are constantly searching for new talent in the "
+"following areas:"
+
+#: academy/index.php:85
+msgid "BARBERO"
+msgstr "BARBER"
+
+#: academy/index.php:86
+msgid "Si eres..."
+msgstr ""
+"The Barbers of our team, must be kind and polite, have the ease of talking "
+"with customers. Experience in hair cutting is required with particular "
+"attention to North American latest trendy styles, shaving and adjustment of "
+"beard, knowledge of traditional cuts and the traditional culture of "
+"barberies (which also provides rigorous order and cleanliness of your work "
+"station and strumnti ). You must know the color of the hair to meet the "
+"needs of fashion and customers.</p>\n"
+"<p>We seek excellent proffesionals with great communication and "
+"interpersonal skills, with the know-how to diagnose the conditions of the "
+"hair and scalp and the ability to offer products to better advise the "
+"client. Knowledge of the English language. Must have a licence or permit for "
+"the exercise of the activity.</p>"
+
+#: academy/index.php:88
+msgid "ESTILISTA"
+msgstr "BASIC MANICURIST"
+
+#: academy/index.php:89
+msgid "El Estilista Salvador embarca varias áreas..."
+msgstr ""
+"A basic manicurist of our team needs to be kind and polite, have the ease of "
+"talking with customers. Must know lastest hair and massages techniques to "
+"diagnose the condition of the skin around the nails and the ability to offer "
+"products to better advise the client.\n"
+"<p>A summary of the profile of a basic manicurist of our team:</p>\n"
+"<ul><li>Cut, profile and polish the nails.</li>\n"
+"<li>Condition the skin around the nails with oils and creams.</li>\n"
+"<li>Know the massages techniques in hands or arms to improve circulation.</"
+"li>\n"
+"<li>Tailor-made nail reinforcement treatments</li></ul>"
+
+#: academy/index.php:91
+msgid "GERENTE DE NEGOCIOS/ STORE MANAGER"
+msgstr "STORE MANAGER"
+
+#: academy/index.php:92
+msgid ""
+"El Gerente de Negocios debe estar apegado a nuestros valores de marca..."
+msgstr ""
+"The Store Manager must be someone with a strong customer service orientation "
+"and capable of achieving the predefined objectives. Excellent communication "
+"and interpersonal skills, as well as being able to speak English fluently "
+"(any other languages are a plus). Team work ability, be collaborative and "
+"knowing of sales techniques it's what we seek for this position. "
+
+#: academy/index.php:95
+msgid ""
+"Si sientes que tienes lo necesario para formar parte de nuestro equipo, "
+"rellena uno de los siguientes formularios y comienza tu camino al éxito con "
+"nosotros."
+msgstr ""
+"If you feel confident to be part of our team, fill one of the following "
+"forms, and start your path to success with us."
+
+#: academy/index.php:107 academy/index.php:123 careers/index.php:106
+#: index.php:18 index.php:30 nosotros.php:128
+msgid "¡Bienvenido a la Excelencia!"
+msgstr "Welcome to the Excellence!"
+
+#: app/index.php:18
+msgid "App Móvil"
+msgstr "Mobile App"
+
+#: c/footer.php:46 footer.php:17
+msgid "Síguenos"
+msgstr "Follow Us"
+
+#: c/footer.php:84 footer.php:52
+msgid "<a class=\"link-footer\" href=\"/nosotros.php\">NOSOTROS</a>"
+msgstr ""
+"<a class=\"link-footer\" href=\"/nosotros.php?lang=en_US\">ABOUT US</a>"
+
+#: c/footer.php:85 footer.php:53
+msgid "<a class=\"link-footer\" href=\"/servicios.php\">SERVICIOS</a>"
+msgstr ""
+"<a class=\"link-footer\" href=\"/servicios.php?lang=en_US\">SERVICES</a>"
+
+#: c/footer.php:86 footer.php:54
+msgid "<a class=\"link-footer\" href=\"/modelos/\">MODELOS DE NEGOCIO</a>"
+msgstr ""
+"<a class=\"link-footer\" href=\"/modelos/?lang=en_US\">BUSINESS MODELS</a>"
+
+#: c/footer.php:87
+msgid "<a class=\"link-footer\" href=\"/franquicias.php\">FRANQUICIAS</a>"
+msgstr ""
+"<a class=\"link-footer\" href=\"/franquicias.php?lang=en_US\">FRANCHISES</a>"
+
+#: c/footer.php:88 footer.php:56
+msgid "<a class=\"link-footer\" href=\"/ubicaciones\">UBICACIONES</a>"
+msgstr ""
+"<a class=\"link-footer\" href=\"/ubicaciones/?lang=en_US\">LOCATIONS</a>"
+
+#: c/footer.php:89
+msgid "<a class=\"link-footer\" href=\"/novedades\">NOVEDADES</a>"
+msgstr ""
+"<a class=\"link-footer\" href=\"/nosotros.php?lang=en_US\">ABOUT US</a>"
+
+#: c/footer.php:90 footer.php:57
+msgid "<a class=\"link-footer\" href=\"/contacto.php\">CONTACTO</a>"
+msgstr ""
+"<a class=\"link-footer\" href=\"/contacto.php?lang=en_US\">CONTACT US</a>"
+
+#: c/footer.php:108 footer.php:69
+msgid "© 2011-2017 Salvador Hairdressing. Todos los derechos reservados."
+msgstr "© 2011-2017 Salvador Hairdressing. All Rights Reserved."
+
+#: c/minititulares.php:2 minititulares.php:2
+msgid "Últimas Novedades"
+msgstr "Latest News"
+
+#: c/navbar.php:10 navbar.php:12
+msgid "<a href=\"/\">Inicio</a>"
+msgstr "<a href=\"/?lang=en_US\">Home</a>"
+
+#: c/navbar.php:12 navbar.php:14 nosotros.php:19
+msgid "Nosotros"
+msgstr "About Us"
+
+#: c/navbar.php:14
+msgid ""
+"<li><a href=\"/nosotros.php\">Nuestra Marca</a></li>\n"
+"            <li><a href=\"/modelos\">Modelos de Negocio</a></li>\n"
+"            <li><a href=\"/servicios.php\">Nuestros Servicios</a></li>\n"
+"            <li><a href=\"/fsmag.php\">FS magazine</a></li>\n"
+"            <li><a href=\"/salvadoracademy\">Salvador Academy</a></li>"
+msgstr ""
+"<li><a href=\"/nosotros.php?lang=en_US\">Our Brand</a></li><li><a href=\"/"
+"modelos/?lang=en_US\">Business Models</a></li><li><a href=\"/servicios.php?"
+"lang=en_US\">Our Services</a></li><li><a href=\"/fsmag.php?lang=en_US\">FS "
+"magazine</a></li><li><a href=\"/salvadoracademy/?lang=en_US\">Salvador "
+"Academy</a></li>"
+
+#: c/navbar.php:21 navbar.php:23
+msgid ""
+"<a href=\"http://www.salvadorhairdressing.com/franquicias.php\">Franquicias</"
+"a>"
+msgstr ""
+"<a href=\"http://www.salvadorhairdressing.com/franquicias.php?lang=en_US"
+"\">Franchises</a>"
+
+#: c/navbar.php:23 index.php:285 navbar.php:25
+msgid "<a href=\"/ubicaciones\">Ubicaciones</a>"
+msgstr "<a href=\"/ubicaciones/?lang=en_US\">Locations</a>"
+
+#: c/navbar.php:25 navbar.php:27
+msgid "<a href=\"/contacto.php\">Contacto</a>"
+msgstr "<a href=\"/contacto.php?lang=en_US\">Contact Us</a>"
+
+#: c/navbar.php:27 navbar.php:29
+msgid "Aplicaciones"
+msgstr "Apps & More"
+
+#: c/navbar.php:29 navbar.php:31
+msgid "<a href=\"/app/\">Salvador Hairdressing App</a>"
+msgstr "<a href=\"/app/?lang=en_US\">Salvador Hairdressing App</a>"
+
+#: c/navbar.php:30 navbar.php:32
+msgid "<a href=\"/cc\">ClientCard</a>"
+msgstr "<a href=\"/cc/?lang=en_US\">ClientCard</a>"
+
+#: c/navbar.php:31 navbar.php:33
+msgid "<a href=\"/mysteryshopper\">Mystery Shopper</a>"
+msgstr "<a href=\"/mysteryshopper/?lang=en_US\">Mystery Shopper</a>"
+
+#: contacto.php:19 contacto2.php:19
+msgid "Contáctanos"
+msgstr "Contact Us"
+
+#: contacto.php:34
+msgid "Contacto"
+msgstr "Contact Us"
+
+#: contacto.php:35
+msgid "¿Qué te pareció tu visita a nuestros salones? Envíanos tus comentarios."
+msgstr "What did you think of your visit? Let us know of your experience."
+
+#: contacto.php:42
+msgid ""
+"<figure class=\"borde-ads\"><a href=\"#\"><img src=\"/c/img/ads/contact1.jpg"
+"\" alt=\"\" /> </a></figure>\n"
+"            <div class=\"caption bottom-right\">\n"
+"              <div class=\"title\">\n"
+"                <h3 class=\"main-title layer\">Aceite de Argán de Salvador</"
+"h3>\n"
+"              </div>"
+msgstr ""
+"<figure class=\"borde-ads\"><a href=\"#\"><img src=\"/c/img/ads/contact1.jpg"
+"\" alt=\"\" /> </a></figure>\n"
+"            <div class=\"caption bottom-right\">\n"
+"              <div class=\"title\">\n"
+"                <h3 class=\"main-title layer\">Salvador Argan Oil</h3>\n"
+"              </div>"
+
+#: contacto.php:56
+msgid "¡25 tonos especialmente para tí!"
+msgstr "25 color tones just for you!"
+
+#: contacto.php:69
+msgid "Client Card: ¡Activa tu Cuenta!"
+msgstr "ClientCard: Activate your account!"
+
+#: footer.php:55
+msgid "<a class=\"link-footer\" href=\"/franquicias\">FRANQUICIAS</a>"
+msgstr ""
+"<a class=\"link-footer\" href=\"/franquicias.php?lang=en_US\">FRANCHISES</a>"
+
+#: franquicias.php:19
+msgid "Franquicias"
+msgstr "Franchises"
+
+#: franquicias.php:50 franquicias/index.php:46
+msgid "Solicita tu Franquicia"
+msgstr "Request Your Franchise"
+
+#: franquicias.php:51 franquicias/index.php:47
+msgid "Preguntas Frecuentes"
+msgstr "Frequent Ask Questions"
+
+#: franquicias/faq/index.php:18 franquicias/faq/index.php:35
+msgid "FAQ: Preguntas Frecuentes"
+msgstr "FAQ"
+
+#: franquicias/faq/index.php:42
+msgid "Regresar a Franquicias"
+msgstr "Return to Franchises"
+
+#: fsmag.php:59 ubicaciones/index.php:190
+msgid "Edición 37"
+msgstr "37th Edition"
+
+#: fsmag.php:60
+msgid "Revista fs magazine. Edición 37."
+msgstr "FS magazine - #37."
+
+#: fsmag.php:70
+msgid "Visítanos"
+msgstr "Visit Us"
+
+#: fsmag.php:72
+msgid ""
+"Somos un espacio de lectura para los apasionados de la belleza, con todas "
+"las novedades en diversos temas y los análisis de expertos en looks y "
+"tendencias, traemos a nuestros lectores los mejores complementos presentando "
+"lo más actual del mundo de la moda y las pasarelas."
+msgstr ""
+"We are a reading space dedicated to those passioned by beauty, we offer news "
+"and noveltys in a wide arrange of topics. Expert analysis on trends and "
+"today's fashion looks. We bring our readers the most current in the world of "
+"fashion and it's runaways."
+
+#: index.php:68
+msgid ""
+"<h3>Tips: Aceite de Argán Salvador</h3>\n"
+"                  <p>El cabello dañado, normalmente también está seco, "
+"especialmente cuando es rizado. Para una hidratación profunda, nuestro "
+"Aceite de Argán es el indicado. Le devuelve el brillo a tu cabello sin dejar "
+"residuos de grasa.</p>"
+msgstr ""
+"<h3>Tips: Salvador Hairdressing's Argan Oil</h3><p>Damaged hair it's usually "
+"very dry, specially when it's curly. For a deep hidration our Argan Oil it's "
+"<b>the one</b>. It brings back your hair's natural glow without leaving any "
+"trace.</p>"
+
+#: index.php:83
+msgid ""
+"<h3>¡Llegó el gran día!</h3>\n"
+"                  <p>Hoy recibimos con felicidad y orgullo el <b>Mara De "
+"Oro</b> como Franquicia venezolana con mayor expansión internacional.</p>"
+msgstr ""
+"<h3>It's the Big Day!</h3><p>Today we are happy and proud to announce we "
+"just received the <b>Mara De Oro</b> for being \"Venezuela's Franchise with "
+"Greater International Expansion\".</p>"
+
+#: index.php:99
+msgid ""
+"<h3>¡Sé un cliente VIP!</h3>\n"
+"                <p>Solicita tu ClientCard en tu salón preferido para que te "
+"conviertas en un cliente VIP. Acumula puntos que puedes cambiar por "
+"descuentos en los servicios.</p><h3 class=\"text-right\"><a href=\"http://"
+"salvadorhairdressing.com/cc/\" target=\"_blank\">¡Conoce más aquí!</a></h3>"
+msgstr ""
+"<h3>Become VIP!</h3><p>Request your ClientCard in your favorite Salvador "
+"Hairdressing's salon and become a VIP. Save points for discounts on your "
+"payments and more! </p><h3 class=\"text-right\"><a href=\"http://"
+"salvadorhairdressing.com/cc/?lang=en_US\" target=\"_blank\">Learn more!</a></"
+"h3>"
+
+#: index.php:113
+msgid ""
+"<h3 class=\"section-title text-center\">Un mundo, <span style=\"font-style: "
+"underline;\">tú mundo</span></h3>"
+msgstr ""
+"<h3 class=\"section-title text-center\">One world, <span style=\"font-style: "
+"underline;\">your world</span></h3>"
+
+#: index.php:123
+msgid "Conoce nuestros 6 Modelos de Negocio y Franquicias."
+msgstr "Get to know Our Six Business Models."
+
+#: index.php:136
+msgid ""
+"<h3>Bienvenido a la Excelencia Salvador</h3>\n"
+"              <p>¡Celebra nuestro 60° Aniversario con nosotros!</p>\n"
+"              <p><a href=\"/modelos/\"><b>Conoce aquí todo sobre nuestros "
+"Modelos de Negocio y Franquicias.</b></a></p>"
+msgstr ""
+"<h3>Welcome to the Excellence!</h3><p>Celebrate our 60th Anniversary with us!"
+"</p><p><a href=\"/modelos/?lang=en_US\"><b>Get to know everything about our "
+"Business Models and Franchises.</b></a></p>"
+
+#: index.php:147
+msgid "¡Sé un Mystery Shopper!"
+msgstr "Become a Mystery Shopper!"
+
+#: index.php:159
+msgid ""
+"<h3>Sé un Mystery Shopper para Salvador Hairdressing</h3>\n"
+"              <p>Forma parte de nuestro exclusivo programa de Clientes "
+"Misteriosos.</p>\n"
+"              <p><a href=\"/mysteryshopper\"><b>¡Aplica ahora!</b></a></p>"
+msgstr ""
+"<h3>Become a Mystery Shopper for Salvador Hairdressing</h3><p>Become part of "
+"our exclusive program of Mystery Shoppers.</p><p><a href=\"/mysteryshopper/?"
+"lang=en_US\"><b>Apply now!</b></a></p>"
+
+#: index.php:171
+msgid "¡Programa tu cita con nuestra App para dispositivos móvil!"
+msgstr "Schedule your appointment with our mobile App!"
+
+#: index.php:184
+msgid ""
+"<h3>Conoce todo sobre la App Salvador Hairdressing</h3>\n"
+"              <p>Programa tus citas con días de antelación, consulta "
+"nuestros servicios disponibles, así como el salón Salvador más cerca de tu "
+"localidad. ¡Todo desde la palma de tu mano!</p>\n"
+"              <p><a href=\"/app\"><b>¡Empieza ahora!</b></a></p>"
+msgstr ""
+"<h3>Meet our Mobile App</h3><p>Schedule your appointments with days in "
+"advance. Check our available services, as well as your nearest Salvador "
+"Hairdressing's salon. All from the palm of your hand!</p><p><a href=\"/app/?"
+"lang=en_US\"><b>Start now!</b></a></p>"
+
+#: index.php:207
+msgid "<h3>¿Quieres ser VIP?</h3>"
+msgstr "<h3>Do You Want to Become a VIP?</h3>"
+
+#: index.php:208
+#, no-php-format
+msgid ""
+"Acumula puntos al tener una ClientCard Salvador, los cuales podrás cambiar "
+"por descuentos de hasta el 75% en el pago de tu factura."
+msgstr ""
+"Start gaining points the moment you get your \"ClientCard\" by Salvador. "
+"Exchange those points for up to 75% percent of discount on your payment."
+
+#: index.php:209
+msgid "<a href=\"/cc\">¡Conoce más!</a>"
+msgstr "<a href=\"/cc/?lang=en_US\">Learn more!</a>"
+
+#: index.php:216
+msgid ""
+"<img src=\"c/img/main/4c.jpg\" alt=\"\" /> \n"
+"              <div class=\"desc\">\n"
+"                    <p class=\"desc_content\" style=\"\"><b>¡Aprende un arte!"
+msgstr ""
+"<img src=\"c/img/main/4c.jpg\" alt=\"\" /><div class=\"desc\"><p class="
+"\"desc_content\" style=\"\"><b>Learn the Art of Styling!"
+
+#: index.php:230
+msgid ""
+"<h3>Academia Salvador - <i>Aprende un arte</i></h3>\n"
+"              <p>Formamos estilistas con iniciativas que mejoren la calidad "
+"de vida y estilo de los profesionales, bajo el sello del Grupo Salvador.</"
+"p>\n"
+"              <p><b><a href=\"http://www.salvadoracademy.com\" target="
+"\"_blank\">Visitar Web</a></b></p>"
+msgstr ""
+"<h3>Salvador Academy - <i>Learn the Art of Styling</i></h3><p>We form "
+"professionals in the Art of Styling, with the passion to improve people's "
+"quality of life, under our quality seal.</p><p><b><a href=\"http://www."
+"salvadoracademy.com/?lang=en_US\" target=\"_blank\">Visit our Web</a></b></p>"
+
+#: index.php:241
+msgid "Esmaltes Salvador Professional"
+msgstr "Salvador Professional Nail Enamel"
+
+#: index.php:253
+msgid ""
+"<h3>Esmaltes Salvador Profesional</h3>\n"
+"              <p>Conoce los 23 tonos de los nuevos Esmaltes de la línea "
+"Salvador Professional.</p>\n"
+"              <p><b><a href=\"#\">¡Conócelos!</a></b></p>"
+msgstr ""
+"<h3>Salvador Professional Nail Enamel</h3><p>Meet the 25 color tones from "
+"the newest member of our Salvador Professional's line of products.</"
+"p><p><b><a href=\"#\">Get to know them!</a></b></p>"
+
+#: index.php:286
+msgid "<a href=\"/ubicaciones\"> Cada vez más cerca de tí</a>"
+msgstr "<a href=\"/ubicaciones/?lang=en_US\"> Always close to you</a>"
+
+#: intranet/login.php:31 intranet/login.php:48
+msgid "Intranet"
+msgstr ""
+
+#: intranet/login.php:55
+msgid "¡Bienvenido!"
+msgstr "Welcome to the Excellence!"
+
+#: library/funciones.php:102 library/funciones.php:300
+msgid "Dirección"
+msgstr "Address"
+
+#: library/funciones.php:103
+msgid "Teléfonos"
+msgstr "Phones"
+
+#: library/funciones.php:109
+msgid "Síguenos en:"
+msgstr "Follow Us:"
+
+#: library/funciones.php:125
+msgid "Ubicación no disponible."
+msgstr "Location not avalaible."
+
+#: library/funciones.php:141
+msgid "Panamá"
+msgstr "Panama"
+
+#: library/funciones.php:144 ubicaciones/index.php:67
+msgid "Estados Unidos"
+msgstr "U.S.A (Miami)"
+
+#: library/funciones.php:147
+msgid "República Dominicana"
+msgstr "Dominican Republic"
+
+#: library/funciones.php:150
+msgid "Colombia"
+msgstr "Colombia"
+
+#: library/funciones.php:153
+msgid "Ecuador"
+msgstr ""
+
+#: library/funciones.php:156
+msgid "Curazao"
+msgstr "Curacao"
+
+#: library/funciones.php:159
+msgid "México"
+msgstr "Mexico"
+
+#: library/funciones.php:162
+msgid "Perú"
+msgstr "Peru"
+
+#: library/funciones.php:175
+msgid "pty"
+msgstr ""
+
+#: library/funciones.php:178
+msgid "usa"
+msgstr "usa"
+
+#: library/funciones.php:181
+msgid "rd"
+msgstr ""
+
+#: library/funciones.php:184
+msgid "col"
+msgstr ""
+
+#: library/funciones.php:187
+msgid "ec"
+msgstr ""
+
+#: library/funciones.php:190
+msgid "crz"
+msgstr ""
+
+#: library/funciones.php:193
+msgid "mex"
+msgstr ""
+
+#: library/funciones.php:196
+msgid "per"
+msgstr ""
+
+#: library/funciones.php:210 modelos/index.php:19
+msgid "Modelos de Negocio"
+msgstr "Business Models"
+
+#: library/funciones.php:222
+msgid "Nuestros Modelos de Negocio"
+msgstr "Our Business Models"
+
+#: library/funciones.php:299
+msgid "Teléfono"
+msgstr "Phones"
+
+#: library/funciones.php:310
+msgid "No hay Resultados"
+msgstr "No results"
+
+#: modelos/index.php:50
+msgid "<a href=\"/modelos/instituto.php\">"
+msgstr "<a href=\"/modelos/instituto.php?lang=en_US\">"
+
+#: modelos/index.php:145
+msgid "<a href=\"/modelos/express.php\">"
+msgstr "<a href=\"/modelos/express.php?lang=en_US\">"
+
+#: modelos/index.php:211
+msgid "<a href=\"/modelos/uomo.php\">"
+msgstr "<a href=\"/modelos/uomo.php?lang=en_US\">"
+
+#: modelos/index.php:288
+msgid "<a href=\"/modelos/kids.php\">"
+msgstr "<a href=\"/modelos/kids.php?lang=en_US\">"
+
+#: modelos/index.php:354
+msgid "<a href=\"/modelos/nailsbar.php\">"
+msgstr "<a href=\"/modelos/nailsbar.php?lang=en_US\">"
+
+#: modelos/index.php:431
+msgid "<a href=\"/modelos/beautystore.php\">"
+msgstr "<a href=\"/modelos/beautystore.php?lang=en_US\">"
+
+#: mysteryshopper/index.php:83
+msgid "LAVORA CON NOI"
+msgstr "LAVORA CON NOI"
+
+#: mysteryshopper/index.php:86
+msgid ""
+"¿Quieres ser parte del Equipo de Profesionales de <b>Salvador Hairdressing</"
+"b>? Rellena el siguiente formulario, y estaremos en contacto contigo."
+msgstr ""
+"Do you want to be part of <b>Salvador Hairdressing's</b> Professional Team? "
+"Fill out the following form and we'll be in touch with you."
+
+#: mysteryshopper/index1bu.php:65
+msgid "Mystery Shopper"
+msgstr "Become a Mystery Shopper!"
+
+#: navbar.php:16
+msgid ""
+"<li><a href=\"/nosotros.php\">Nuestra Marca</a></li>\n"
+"            <li><a href=\"/modelos\">Modelos de Negocio</a></li>\n"
+"            <li><a href=\"/servicios.php\">Nuestros Servicios</a></li>\n"
+"            <li><a href=\"/fsmag.php\">fs Magazine</a></li>\n"
+"            <li><a href=\"http://www.salvadoracademy.com\">Academia "
+"Salvador</a></li>"
+msgstr ""
+"<li><a href=\"/nosotros.php?lang=en_US\">Our Brand</a></li><li><a href=\"/"
+"modelos/?lang=en_US\">Business Models</a></li><li><a href=\"/servicios.php?"
+"lang=en_US\">Our Services</a></li><li><a href=\"/fsmag.php?lang=en_US\">fs "
+"Magazine</a></li><li><a href=\"http://www.salvadoracademy.com?lang=en_US"
+"\">Salvador Academy</a></li>"
+
+#: nosotros.php:75
+msgid "Misión"
+msgstr "Mission"
+
+#: nosotros.php:77
+msgid ""
+"Exceder las expectativas de toda la familia, al proveer un servicio de "
+"belleza personalizado e integral, basado en la excelencia y a la vanguardia "
+"de las últimas innovaciones y tendencias, respaldados por recursos de "
+"calidad comprobada, los más reconocidos aliados comerciales y el más "
+"calificado, ético y responsable capital humano, con alto sentido de "
+"responsabilidad social."
+msgstr ""
+"To consolidate our integral beauty service to the latest avant-garde "
+"innovations and trends, focused on exceeding the whole family’s "
+"expectations, relying on the best resources, our commercial allies’ support "
+"and the most qualified, ethical and responsible human resource."
+
+#: nosotros.php:86
+msgid "Visión"
+msgstr "Vision"
+
+#: nosotros.php:88
+msgid ""
+"Ser el concepto de belleza integral dirigido a toda la familia, más "
+"reconocido a nivel nacional e internacional, por nuestra trayectoria, "
+"calidad de atención y excelencia profesional."
+msgstr ""
+"To expand our experience, tradition, and quality service of integral beauty, "
+"for the whole family, both nationally and internationally."
+
+#: nosotros.php:97
+msgid "Valores"
+msgstr "Values"
+
+#: nosotros.php:100
+msgid ""
+"<li>Humildad</li>\n"
+"                    <li>Innovación</li>\n"
+"                    <li>Honestidad</li>\n"
+"                    <li>Responsabilidad</li>\n"
+"                    <li>Pasión</li>\n"
+"                    <li>Profesionalismo</li>\n"
+"                    <li>Dedicación</li>\n"
+"                    <li>Constancia</li>\n"
+"                    <li>Trabajo en Equipo</li>\n"
+"                    <li>Integridad</li>\n"
+"                    <li>Responsabilidad Social</li>"
+msgstr ""
+"<li>Humility</li>\n"
+"                    <li>Innovation</li>\n"
+"                    <li>Honesty</li>\n"
+"                    <li>Responsibility</li>\n"
+"                    <li>Passion</li>\n"
+"                    <li>Profesionalism</li>\n"
+"                    <li>Dedication</li>\n"
+"                    <li>Constancy</li>\n"
+"                    <li>Team Work</li>\n"
+"                    <li>Integrity</li>\n"
+"                    <li>Social Labour</li>"
+
+#: salvadoracademy/index.php:36
+msgid "Salvador Academy"
+msgstr ""
+
+#: salvadoracademy/index.php:43 salvadoracademy/index.php:64
+msgid "¡Aprende un Arte, Sé un Profesional!"
+msgstr "Become a Professional, Learn an Art!"
+
+#: salvadoracademy/index.php:63
+msgid "¡Inscríbete ya!"
+msgstr "Sign Up Now!"
+
+#: salvadoracademy/index.php:65
+msgid ""
+"Nuestra Misión es Liderizar en el mercado de la capacitación y formación de "
+"capital humano, con sello de excelencia, en servicios de belleza integral, "
+"con iniciativas innovadoras que mejoren la calidad de vida y estilo de los "
+"profesionales."
+msgstr ""
+"Our mission it's to lead in the formation and capacitation market. With a "
+"seal of quality in integral beauty services, innovatives initiatives that "
+"improves beauty proffesionals' quality of life and style."
+
+#: salvadoracademy/index.php:76
+msgid "Cursos Destacados"
+msgstr "Pinned Courses"
+
+#: salvadoracademy/index.php:77
+msgid "Consulta nuestras ofertas más populares entre nuestros estudiantes:"
+msgstr "Check our most popular courses amongst our students:"
+
+#: salvadoracademy/index.php:85
+msgid "Barbería"
+msgstr "Baber"
+
+#: salvadoracademy/index.php:100
+msgid "Maquillaje"
+msgstr "Make-up course"
+
+#: servicios.php:19
+msgid "Servicios"
+msgstr "Services"
+
+#: servicios.php:36
+msgid "Servicios Exclusivos"
+msgstr "Exclusive Services"
+
+#: servicios.php:54
+msgid "Cabello"
+msgstr "Hairstyle"
+
+#: servicios.php:59
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Crea tu propio estilo "
+"con los cortes que son tendencia en el mundo de la belleza.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Corte</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Create your own style "
+"with today's trendy haircuts.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Haircut</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:67
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Utilizando productos de "
+"calidad alistamos tu cabello para el estilo que prefieras.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Shampoo</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"With only the highest "
+"quality products in the market, we leave your hair ready for any style you "
+"want.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Shampoo</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:75
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Luce sensacional con el "
+"cabello a tu medida (corto, mediano, largo o extra largo).\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Secado</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Give your hair an "
+"amazing look.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Blow</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:83
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Profesionales "
+"especializados en peinados para toda ocasión.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Peinado</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Our team of "
+"professionals are ready for every occasion.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Hairstyles</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:91
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Tendencias en ondas "
+"permanentes, según sea tu estilo.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Permanente</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Permanent</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:99
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Coloración para todos "
+"los estilos, con los mejores productos del mercado.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Tinte</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Coloring for every "
+"hairstyle, with the market's best products.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Dye</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:107
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Cambia tu look con el "
+"mejor High lights y luce radiante en todo momento.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Mechas</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Change your look, and "
+"give your hair a glowing look.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Wicks</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:115
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Si tienes tu estilo, "
+"tenemos las más innovadoras técnicas para lograr lisos impactantes.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Desriz</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Our latest techniques "
+"can make your hair look impactful.\"><div class=\"card card-services\"><h4 "
+"class=\"text-white\">Hair Straightening</h4></div></a>"
+
+#: servicios.php:123
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Tu cabello maltratado "
+"ya no es un problema, confía en la experiencia de nuestros profesionales."
+"\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Tratamientos</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Your mistreated hair is "
+"no longer a problem, let our team of experienced professionals take care of "
+"your hair.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Treatments</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:131
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Protege el cabello en "
+"el uso de herramientas térmicas, este tratamiento reproduce los efectos de "
+"la queratina en el cabello.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Thermolisis</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Protect your hair with "
+"the use of thermic tools and techniques, which replicate the effects of "
+"keratin on your hair.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Thermoliss</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:139
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Con productos "
+"reconocidos a nivel mundial, realizamos innovadores tratamientos de "
+"queratina.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Kerathermi</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"With the market's most "
+"recognizable products, ask for our innovative keratin treatments.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Kerathermi</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:147
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Juego de luces y "
+"sombras que crean profundidad, volumen y texturas en tu cabello.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Coloración Técnica</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Lights and shadows that "
+"créate depth, volumen and texture in your hair.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Technical Color "
+"Treatment</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:155
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Técnicas para lisos "
+"extremos.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Planchado</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Techniques for the "
+"straightening of hair.\"><div class=\"card card-services\"><h4 class=\"text-"
+"white\">Ironing</h4></div></a>"
+
+#: servicios.php:163
+msgid ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Tratamientos "
+"fortificantes anti-rotura para cabellos frágiles proporcionando fuerza a la "
+"fibra capilar.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Tratamiento Antiquiebre</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#cabello\" data-toggle=\"tooltip\" title=\"Fortifying treatments "
+"that prevent your hair from breaking.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Vector Force Anti-Break "
+"Treat.</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:181
+msgid "<img src=\"c/img/services/manos1.jpg\" style=\"max-width: 100%;\">"
+msgstr "<img src=\"c/img/services/manos1.jpg\" style=\"max-width: 100%;\">"
+
+#: servicios.php:183
+msgid "Manos y Pies"
+msgstr "Hands & Feets"
+
+#: servicios.php:187
+msgid ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Luce uñas y manos "
+"perfectas con nuestras técnicas de manicure.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Mant. de Uñas</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Shine your perfect nails "
+"and hands with our manicure techniques.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Nail Maintenance</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:195
+msgid ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Diferentes técnicas que "
+"te hacen lucir diferente, sistema de uñas en gel, esculpidas, baño en resina."
+"\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Sistema de Uñas</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Gel nails, sculpted or "
+"bathed in resin.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Nail System</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:203
+msgid ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Cambia el look de tus "
+"uñas cada semana con los colores y los esmaltes que prefieras.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Cambio de Esmalte</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Change your nails look "
+"frequently with the colors and enamels you prefer.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Polish Change</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:211
+msgid ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"El tradicional sistema de "
+"uñas también encuéntralos aquí.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Uñas Postizas</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#manos\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Artificial Nails</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:219
+msgid ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Cuida tu sistema cada "
+"cierto tiempo, con nuestro mantenimiento de uñas.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Adicionales</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#manos\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Additional</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:227
+msgid ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Desde lo más chic hasta "
+"las decoraciones más clásicas.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Decoraciones</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"From the most chic style "
+"to more classical combinations.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Decorations</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:235
+msgid ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Cuidado para tus pies con "
+"tratamientos especiales.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Pedi Spa</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#manos\" data-toggle=\"tooltip\" title=\"Carement for your feets "
+"with special treatments.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Pedi Spa</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:259
+msgid ""
+"<img src=\"c/img/services/depilacion.jpg\" style=\"max-width: 100%;\">\n"
+"              <div class=\"content-details1 fadeIn-right\">\n"
+"                <h1 class=\"text-white\">Depilación</h1>"
+msgstr ""
+"<img src=\"c/img/services/depilacion.jpg\" style=\"max-width: 100%;\">\n"
+"              <div class=\"content-details1 fadeIn-right\">\n"
+"                <h1 class=\"text-white\">Waxing</h1>"
+
+#: servicios.php:266
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Axilas perfectas y "
+"sin vellos en sólo 5 minutos.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Axila</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Perfect armpits in "
+"just 5 minutes.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Armpit</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:274
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Técnica de pinzas o "
+"cera, para una delineación perfecta.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Cejas</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Waxing or tweezers "
+"techniques, for a perfect delineation.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Eyebrows</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:282
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Labios sensuales y "
+"sin vellos.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Bozo</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Sexy and hairless "
+"lips.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Down</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:290
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Tratamiento de cera "
+"caliente que alivia los dolores de las manos y pies. También tiene el "
+"beneficio de suavizar la piel.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Parafinas</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Hot wax treatments "
+"that help relieve hand and feets pain.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Paraffin Wax</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:298
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Elimina los vellos "
+"que crecen en la barbilla y que recubren esa parte de la cara.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Mentón</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Chin Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:306
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Distintas técnicas "
+"depilatorias, para depilar los vellos indeseados de las orejas y el interior "
+"de nariz.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Nariz y "
+"Orejas</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Ear and Nose Waxing</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:314
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Un rostro sin vellos "
+"es sinónimo de higiene y perfección.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Cara</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Face Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:322
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Luce una sexi línea "
+"del bikini con nuestra depilación exacta.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Ingle</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Shine a sexy bikini "
+"line with our waxing service.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Groin Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:330
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Los vellos de las "
+"piernas ya no son un problema, tenemos las más novedosas técnicas de "
+"depilación de piernas completas o media pierna.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Piernas</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Full/Half Leg Waxing</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:338
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Depilación de la "
+"línea de vellos que sobresale del bikini.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Semi Ingle</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Semi-Groin Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:346
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Elige la que te haga "
+"sentir más femenina y sexy.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Línea del "
+"Bikini</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Bikini-Line Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:354
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Resulta muy "
+"importante  en algunas épocas del año, pues es una de las zonas visibles del "
+"cuerpo en la playa.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Barriga</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Show your best looks "
+"whenever you go to the beach or pool.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Belly Hair Removal</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:362
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Para quienes desean "
+"los brazos libres de vellos.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Brazos</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Arm Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:370
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"En el rostro también "
+"aparecen incómodos pelitos que nos pueden jugar malas pasadas. Elimínelos ya."
+"\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Rostro</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Face Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:378
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"La imagen del hombre "
+"depilado, cada vez está más de moda. Elimina los vellos de tus pectorales."
+"\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Pecho</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Chest Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:386
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Elimina los vellos "
+"que aparecen en la espalda.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Espalda</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Back Chasing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:394
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Depilación de vellos "
+"en la zona del abdomen.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Depilación de Abdomen</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Ab Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:402
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Porque ellos buscan "
+"una barba perfecta.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Facial</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"For those who seek "
+"the perfect beard.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Facial Waxing</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:420
+msgid ""
+"<img src=\"c/img/services/rostro.jpg\" style=\"max-width: 100%;\">\n"
+"              <div class=\"content-details1 fadeIn-left\">\n"
+"                <h1 class=\"text-white\">Rostro</h1>"
+msgstr ""
+"<img src=\"c/img/services/rostro.jpg\" style=\"max-width: 100%;\">\n"
+"              <div class=\"content-details1 fadeIn-left\">\n"
+"                <h1 class=\"text-white\">Face</h1>"
+
+#: servicios.php:427
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Mejora el aspecto de tu "
+"piel eliminando los famosos “puntos negros” o “barritos” que se van "
+"acumulando con el tiempo.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Limpieza de Cutis</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Mejora el aspecto de tu "
+"piel eliminando los famosos “puntos negros” o “barritos” que se van "
+"acumulando con el tiempo.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Facial Cleaning</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:435 servicios.php:611
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Consigue un rostro "
+"perfecto para toda ocasión con nuestros profesionales de la belleza.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Maquillaje</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Get a perfect make-up "
+"for every ocasion.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Make-up</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:443
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Técnica empleada para "
+"corregir la forma de las cejas, no de un modo definitivo pero sí durante "
+"varios años.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Cejas Permanentes</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Permanent Eyebrows</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:451
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Logra una definición "
+"perfecta en tus cejas, haciendo que la ceja se vea poblada y uniforme.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Cejas Semi-Permanentes</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Semi-Permanent Eyebrows</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:459
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Es un tratamiento de "
+"masaje no invasivo, que mejora el estado de nuestro rostro, reduciendo la "
+"retención de líquidos.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Drenaje Linfático Facial</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"A non-invasive massage "
+"treatment, which helps reduce liquid retention on the face.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Facial Lymphatic "
+"Drainage</h4></div></a>"
+
+#: servicios.php:467
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Logra una piel sana, "
+"limpia y radiante con nuestro tratamiento de hidratación\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Hidratación</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Achieve a healthy, clean "
+"and radiant skin with our hidration treatment.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Hidration</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:475
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Soluciones integrales "
+"para combatir el acné, eligiendo el procedimiento que más se ajuste a tu "
+"tipo de piel.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Anti-Acné</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Anti-Acne</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:483
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Tendencia de "
+"tratamientos anti-arrugas, utilizando técnicas  que te ayuden a combatir los "
+"signos de la edad.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Anti-Edad</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Anti-Age</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:507
+msgid ""
+"<img src=\"c/img/services/masajes.jpg\" style=\"max-width: 100%;\">\n"
+"              <div class=\"content-details1 fadeIn-right\">\n"
+"                <h1 class=\"text-white\">Masajes</h1>"
+msgstr ""
+"<img src=\"c/img/services/masajes.jpg\" style=\"max-width: 100%;\">\n"
+"              <div class=\"content-details1 fadeIn-right\">\n"
+"                <h1 class=\"text-white\">Massages</h1>"
+
+#: servicios.php:514
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Logra hidratación, "
+"una piel más densa y más nutrida. Tiene efectos anticelulíticos, ayuda "
+"contra el estrés y mejora la elasticidad de tu piel.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Choco-Terapia</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Choco Therapy</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:522
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Excelente para "
+"limpiar y purificar tu piel, el vino ayuda a estimular la circulación, "
+"reducir el abdomen y reafirmar los glúteos.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Vino-Terapia</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Wine Therapy</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:530
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Tratamiento a base "
+"de agua del mar. Mejora el sistema inmunológico, la circulación e  "
+"hidratación de la piel.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Talaso-Terapia</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Sea water treatment, "
+"it improves your immunological system, body circulation and skin hydration."
+"\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Thalasso-therapy</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:538
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Masaje a base de "
+"cañas de bambú, logrando la relajación física, combate el cansancio y el "
+"agotamiento; remodela la silueta; elimina la celulitis, y mejora la "
+"circulación.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Bambú-Terapia</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\"><div class=\"card card-services\"><h4 class=\"text-"
+"white\">Bamboo Therapy</h4></div></a>"
+
+#: servicios.php:546
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"El Masaje a base de "
+"coco es un excelente elemento hidratante y relajante. Su ralladura es "
+"perfecta para exfoliar y el  aceite de coco es un gran lubricante para el "
+"cuerpo.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Coco-Terapia</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Coconut-base massage "
+"it's an excellent hydrating and relaxing option for your body.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Coco-Therapy</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:554
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Esta técnica "
+"consiste en pequeños golpes enérgicos en las zonas afectadas como el "
+"abdomen, los muslos, los glúteos o las caderas. Reduce el volumen y grasa "
+"localizada.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Masajes para Flacidez</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Reduces volume and "
+"localized body fat in your abs, thighs, buttocks or hips.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Massage for Flaccidity</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:562
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Olvídate de la piel "
+"de naranja. Realiza este tratamiento que acompañamos de productos eficaces "
+"para eliminar la celulitis.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Masajes Anticelulítico</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Join us in our "
+"series of treatments to eliminate the cellulite in your body.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Anti-Cellulite Massages</"
+"h4></div></a>"
+
+#: servicios.php:570
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Acción manual para "
+"mejorar tu energía y activando sensaciones  en emocional, mental, espiritual."
+"\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Masajes Anti-Stress "
+"Energético</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"It's time to make "
+"better of your daily energy while activating your senses.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Energetic Anti-Stress "
+"Massage</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:578
+msgid ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Tratamiento de "
+"exfoliación corporal con masaje hidratante.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Masaje Hidratante con "
+"Exfoliación</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#depilacion\" data-toggle=\"tooltip\" title=\"Body exfoliation "
+"treatment with moisturizing massage.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Moisturizing Massage with "
+"Exfoliation</h4></div></a>"
+
+#: servicios.php:596
+msgid ""
+"<img src=\"c/img/services/domicilio2.jpg\" style=\"max-width: 100%;\">\n"
+"              <div class=\"content-details1 fadeIn-left\">\n"
+"                <h1 class=\"text-white\">Servicios a Domicilio</h1>"
+msgstr ""
+"<img src=\"c/img/services/domicilio2.jpg\" style=\"max-width: 100%;\">\n"
+"              <div class=\"content-details1 fadeIn-left\">\n"
+"                <h1 class=\"text-white\">Home Services</h1>"
+
+#: servicios.php:603
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Crea tu propio estilo "
+"con los cortes que son tendencia en el mundo de la belleza.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Corte</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Create your own style "
+"with today's trendy haircuts.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Haircut</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:619
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Luce uñas y manos "
+"perfectas con nuestras técnicas de manicure.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Manicure</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Show your perfect nails "
+"and hands with out manicure techniques.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Manicure</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:627
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Cuidado para tus pies "
+"con tratamientos especiales.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Pedicure</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Carement for your feets "
+"with our special treatments.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Pedicure</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:635
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Luce sensacional con el "
+"cabello a tu medida (corto, mediano, largo o extra largo).\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Secado</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Give your hair an "
+"amazing look.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Blow</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:643
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Técnica de pinzas o "
+"cera, para una delineación perfecta.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Cejas</h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Waxing or tweezers "
+"techniques, for a perfect delineation.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Eyebrows</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:651
+msgid ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Consigue un rostro "
+"perfecto para una ocasión especial con nuestros profesionales de la belleza."
+"\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Maquillaje para Novia</"
+"h4> \n"
+"                        </div>\n"
+"                      </a>"
+msgstr ""
+"<a href=\"#rostro\" data-toggle=\"tooltip\" title=\"Get the most perfect "
+"face for the most special ocassion, only with our beauty professionals.\">\n"
+"                        <div class=\"card card-services\">\n"
+"                          <h4 class=\"text-white\">Bride Makeup</h4> \n"
+"                        </div>\n"
+"                      </a>"
+
+#: servicios.php:663
+msgid "Solicitar"
+msgstr "Request here"
+
+#: ubicaciones/index.php:18
+msgid "Ubicaciones"
+msgstr "Locations"
+
+#: ubicaciones/index.php:36
+msgid "Ubica un Salón Salvador"
+msgstr "Find a Location Near You"
+
+#: ubicaciones/index.php:41
+msgid "Encuentra un salón."
+msgstr "Find a salon."
+
+#: ubicaciones/index.php:44
+msgid "Buscar un salón Salvador"
+msgstr "Search a Salvador salon"
+
+#: ubicaciones/index.php:45
+msgid "Buscar"
+msgstr "Search"
+
+#: ubicaciones/index.php:55
+msgid "Estamos en..."
+msgstr "We're in..."
+
+#: ubicaciones/index.php:60
+msgid "Republica Dominicana"
+msgstr "Dominican Republic"
+
+#: ubicaciones/index.php:206
+msgid "Maquina Salvador"
+msgstr "Salvador Professional's Trim Machine"
+
+#: ubicaciones/index.php:207
+msgid "Tienda On Line"
+msgstr "Online Store"
+
+#~ msgid ""
+#~ "<li><a href=\"/nosotros.php\">Nuestra Marca</a></li>\n"
+#~ "            <li><a href=\"/modelos\">Modelos de Negocio</a></li>\n"
+#~ "            <li><a href=\"/servicios.php\">Nuestros Servicios</a></li>\n"
+#~ "            <li><a href=\"/fsmag.php\">FS magazine</a></li>"
+#~ msgstr ""
+#~ "<li><a href=\"/nosotros.php?lang=en_US\">Our Brand</a></li><li><a href=\"/"
+#~ "modelos/?lang=en_US\">Business Models</a></li><li><a href=\"/servicios."
+#~ "php?lang=en_US\">Our Services</a></li><li><a href=\"/fsmag.php?lang=en_US"
+#~ "\">FS magazine</a></li><li><a href=\"http://www.salvadoracademy.com?"
+#~ "lang=en_US\">Salvador Academy</a></li>"
+
+#~ msgid "Hello World2"
+#~ msgstr "Hola mundo 2"
+
+#~ msgid "Esta página está en castellano"
+#~ msgstr "This page it's in English"
+
+#, fuzzy
+#~| msgid "Hello World2"
+#~ msgid "Hello World"
+#~ msgstr "Hola mundo 2"
+
+#~ msgid "You have %d message"
+#~ msgid_plural "You have %d messages"
+#~ msgstr[0] "You have %d message"
+#~ msgstr[1] "You have %d messages"

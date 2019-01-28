@@ -70,7 +70,6 @@ error_reporting(1);
 	      		case 'asignEnc':
 	      			require 'cms/library/common.php';
 	      			require 'sec/forms.php';
-	      			require 'sec/libfunc.php';
 
 	      			$datos = base64_decode($_POST["datos"]);
 	      			$datosj = json_decode($datos, true);
