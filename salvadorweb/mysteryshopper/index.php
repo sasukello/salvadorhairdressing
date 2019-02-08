@@ -14,8 +14,41 @@
           session_unset();
           session_destroy();
       }
-     ?>
-
+      $estado = "";
+      $mensaje = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['ms_pasouno'])) {
+        require_once "../sitio/sec/ms/libfunc.php";
+        $tipo = $_POST["tipo"];
+        if ($tipo == 'a') {
+            $user = $_POST["email"];
+            pasouno($user);
+        } else if($tipo == 'b') {
+            $user = $_POST["email"];
+            $pass = $_POST["password"];
+            pasocc($user, $pass);
+        }
+    }
+}
+if (isset($_GET["e"])) {
+    $estado = $_GET["e"];
+    if($estado == 0){
+        $mensaje = "<div class='alert alert-danger'><strong>Hubo un problema</strong> al guardar tu información. Por favor, intenta de nuevo.</div>";
+    } else if($estado == 1){
+        $mensaje = "<div class='alert alert-success'><strong>¡Tus datos han sido guardados éxitosamente!</strong> Espera nuestro correo de aprobación en los próximos días.</div>";
+    } else if($estado == 2){
+        $mensaje = "<div class='alert alert-warning'>Tu cuenta <strong>no se encuentra aprobada</strong>.</div>";
+    } else if($estado == 3){
+        $mensaje = "<div class='alert alert-warning'>Tu cuenta <strong>aún no se encuentra aprobada.</strong> Debes esperar nuestro correo de aprobación.</div>";
+    } else if($estado == 4){
+        $mensaje = "<div class='alert alert-warning'>El participante fue <strong>rechazado éxitosamente</strong></div>";
+    } else if($estado == 5){
+        $mensaje = "<div class='alert alert-danger'>Hubo un erorr en la conexión al sitio de <strong>Mystery Shopper</strong>. Por favor, intenta realizar las operaciones desde tu Cuenta Corporativa.</div>";
+    } else if($estado == 6){
+        $mensaje = "<div class='alert alert-success'>¡El participante fue <strong>aprobado éxitosamente</strong>!</div>";
+    }  
+}
+?>
 <head>
 <?php include '../c/ganalytics.html'; ?>  
 <meta charset="utf-8">
@@ -32,9 +65,7 @@
 <div id="preloade2r"><div class="textload"><?php echo _('Cargando'); ?></div><div id="status"><div class="spinner"></div></div></div>
 <main class="body-wrapper">
   <div class="row">
-
     <?php include '../c/navbar.php'; ?>
-
   <div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(/c/img/academy/bg1.jpg);">
     <div class="container inner text-center">
       <div class="headline text-center">
@@ -44,58 +75,45 @@
     </div>
     <!--/.container --> 
   </div>
-
-  
-  <div class="dark-wrapper">
-
-    <div class="container inner nopadding-bottom">
-      <div class="row">
-        <div class="col-sm-5">
-          <figure><img src="/c/img/academy/bg.jpg" alt="" /></figure>
-        </div>
-        <div class="col-sm-7">
-          <h3 class="section-title">The Academy</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.  Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
-          <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+<div class="dark-wrapper">
+  <div class="container inner">
+    <diw class="row">
+      <div class="col-md-7 blog-content">
+        <div class="box text-center">
+          <h3 class="post-title padding-bottom3"  style="color: #e32028;">Mystery Shopper</h3>
+          <div class="post-content text-left">
+            <p style="text-align: justify;">Salvador se esfuerza en prestar a su clientela un servicio de excelencia, demostrando en todo momento que día a día nos enfocamos en superarnos a nosotros mismos y a las expectativas de quienes requieren de nuestros servicios y productos.
+            <br><br>Por este motivo, nace el programa <b>Mystery Shopper de Salvador Hairdressing</b>, con la finalidad de obtener una evaluación completa de parte de nuestros clientes al momento de visitar nuestras unidades de negocio.
+            <br><br>Te invitamos a ser una herramienta clave en nuestro objetivo de mejora continua, siendo nuestro Mystery Shopper (Cliente Misterioso), y así ayudarnos a detectar aquellos aspectos que debemos mejorar.</p>
+          </div>
+          <!-- .post-footer --> 
         </div>
       </div>
-    </div>
-
-
-    <div class="container inner2 nopadding-bottom">
-      <div class="blog row">
-        <div class="col-md-12">
-          <div class="col-md-7">
-            
-          </div>
-
-          <div class="col-md-4 col-md-offset-1 blog-content">
-            <div class="item post">
-              <!--<figure class="main marginbt0"><img src="/c/img/academy/bg2.jpg" alt="" /></figure>-->
-              <div class="gallery-wrapper main marginbt0">
-                  <div class="basic-slider marginbt0">
-                    <div class="item"><img src="/c/img/academy/bg2.jpg" alt="" /></div>
-                    <div class="item"><img src="/c/img/academy/bg2.jpg" alt="" /></div>
-                  </div>
-                  <!-- /.basic-slider --> 
+      <div class="col-md-5">
+         <div class="signup-header wow fadeInUp" style="margin: 0 5% 0 5%;">
+            <h3 id="ingresaemail" class="form-title text-center" style="padding-top:20% !important"><strong>INGRESA TU CORREO ELÉCTRONICO...</strong></h3>
+            <?php echo $mensaje;?>
+            <form class="form-header" role="form" method="POST" id="ms_email">
+                <input type="hidden" name="u" value="503bdae81fde8612ff4944435">
+                <input type="hidden" name="id" value="bfdba52708">
+                <div class="form-group">
+                    <input class="form-control input-lg" name="email" id="email" type="text" placeholder="Ingresa tu correo eléctronico" required>
                 </div>
-              <div class="box text-center">
-                <div class="category cat16" style="z-index: 1;"><span><a target="_blank" href="#"><h3 class="marginbt0 text-white"><?php echo _('LAVORA CON NOI'); ?></h3></a></span></div>
-                <h4 class="post-title"><br><small><i><b>Trabaja con Nosotros</b></i></small></a></h4>
-                
-                <p style="font-size: 16px;"><br><?php echo _('¿Quieres ser parte del Equipo de Profesionales de <b>Salvador Hairdressing</b>? Rellena el siguiente formulario, y estaremos en contacto contigo.'); ?></p>
-                <p><button class="btn btn-active">INGRESA AQUÍ</button></p>
-              </div>            
-            </div>  
-          </div>
-
+                <input type="hidden" name="tipo" value="a">
+                <div class="form-group last">
+                    <input type="submit" name="ms_pasouno" class="btn btn-warning btn-block btn-lg" value="COMENZAR">
+                </div>
+                <p class="privacy text-center">
+                  <a href="#" onclick="cambiarLabel()">¿Usuario Corporativo?</a> -  <a href="#" onclick="regresarLabel()" style="text-decoration: none;">Participante</a><br>Tu información no será compartida. Lee nuestra <a href="privacy.html">política de privacidad</a>.
+                </p>
+            </form>
         </div>
       </div>
     </div>
   </div>
- <?php 
-    include '../c/footer.php';
-
+</div>
+<?php 
+  include '../c/footer.php';
 ?>
 </body>
 </html>
