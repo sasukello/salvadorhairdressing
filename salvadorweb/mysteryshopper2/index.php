@@ -18,7 +18,7 @@
       $mensaje = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['ms_pasouno'])) {
-        require_once "funcionesMistery/funciones.php";
+        require_once "../sitio/sec/ms/libfunc.php";
         $tipo = $_POST["tipo"];
         if ($tipo == 'a') {
             $user = $_POST["email"];
@@ -91,9 +91,9 @@ if (isset($_GET["e"])) {
       </div>
       <div class="col-md-5">
          <div class="signup-header wow fadeInUp" style="margin: 0 5% 0 5%;">
-            <h3 id="ingresaemail" class="form-title text-center" style="padding-top:10% !important"><strong>INGRESA TU CORREO ELÉCTRONICO...</strong></h3>
+            <h3 id="ingresaemail" class="form-title text-center" style="padding-top:20% !important"><strong>INGRESA TU CORREO ELÉCTRONICO...</strong></h3>
             <?php echo $mensaje;?>
-            <form action="index.php" class="form-header" role="form" method="POST" id="ms_email">
+            <form action="" class="form-header" role="form" method="POST" id="ms_email">
                 <input type="hidden" name="u" value="503bdae81fde8612ff4944435">
                 <input type="hidden" name="id" value="bfdba52708">
                 <div class="form-group">
@@ -115,15 +115,5 @@ if (isset($_GET["e"])) {
 <?php 
   include '../c/footer.php';
 ?>
-<script>    
-    function cambiarLabel(){
-      document.getElementById("ingresaemail").innerHTML = "<strong>INGRESA TU USUARIO CORPORATIVO...</strong>";
-      document.getElementsByName("email")[0].placeholder= "Ingresa tu Usuario Corporativo";
-    }
-    function regresarLabel(){
-      document.getElementById("ingresaemail").innerHTML = "<strong>INGRESA TU CORREO ELÉCTRONICO...</strong>";
-      document.getElementsByName("email")[0].placeholder= "Ingresa tu correo eléctronico";
-    } 
-</script> 
 </body>
 </html>

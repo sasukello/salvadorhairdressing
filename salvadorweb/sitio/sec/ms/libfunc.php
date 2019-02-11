@@ -201,6 +201,4 @@ function hacerpost($url, $parametros, &$resultado){
         return $remote_server_output;
     }
 }
-
-
 ?>
