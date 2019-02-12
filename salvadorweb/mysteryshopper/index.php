@@ -66,7 +66,7 @@ if (isset($_GET["e"])) {
 <main class="body-wrapper">
   <div class="row">
     <?php include '../c/navbar.php'; ?>
-  <div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(/c/img/academy/bg1.jpg);">
+  <div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(images/bg.jpg);">
     <div class="container inner text-center">
       <div class="headline text-center">
         <h2>Mystery Shopper</h2>

@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               <div class="row">
                                 <div class="col-md-6 col-sm-12 inner-addon left-addon">                	
         						<i class="fa fa-id-card" id="icon-input"></i>
-                                  <input type="text" name="cedula" id="cedula" class="form-control" placeholder="<?php echo _('Número de Identificacion'); ?>" required>
+                                  <input type="text" name="cedula" id="cedula" class="form-control" placeholder="<?php echo _('Número de Identificación'); ?>" required>
                                   <span id="errorcedula"></span>
                                 </div>
                                 <div class="col-md-6 col-sm-12 inner-addon left-addon">
@@ -120,12 +120,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               <div class="row">
                               	<div class="col-md-6 col-sm-12 inner-addon left-addon">
                               		<i class="fa fa-key" id="icon-input"></i>
-                              		<input type="password" name="password" id="password" class="form-control" placeholder="<?php echo _('Contraseña')?>" required>
+                              		<input type="password" name="password" id="password" class="form-control" placeholder="<?php echo _('Contraseña');?>" required>
                               		<span id="errorpassword"></span>
                               	</div>
                               	<div class="col-md-6 col-sm-12 inner-addon left-addon">
                               		<i class="fa fa-key" id="icon-input"></i>
-                              		<input type="password" name="confir_passw" id="confir_passw" class="form-control" placeholder="<?php echo _('Confirma tu contraseña')?>">
+                              		<input type="password" name="confir_passw" id="confir_passw" class="form-control" placeholder="<?php echo _('Confirma tu contraseña');?>">
                               		<span id="errorpasswordconfir"></span>
                               	</div>
                               </div>
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               	<div class="col-md-6 col-sm-12 inner-addon left-addon">
                               		<!-- <i class="fa fa-caret-down" id="icon-input"></i> -->
                               		<select class="form-control" name="paises" id="paises">
-                              			<option value="">Seleccione su país</option>
+                              			<option value=""><?php echo _('Seleccione su país');?></option>
                               			<option value="1">VENEZUELA</option>
                               			<option value="2">PANAMA</option>
                               			<option value="3">ESTADOS UNIDOS</option>
@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               	</div>
                               	<div class="col-md-6 col-sm-12 inner-addon left-addon">
                               		<i class="fa fa-globe" id="icon-input"></i>
-                              		<input type="text" name="estado" id="estado" class="form-control" placeholder="<?php echo _('Estado')?>" required>
+                              		<input type="text" name="estado" id="estado" class="form-control" placeholder="<?php echo _('Estado');?>" required>
                               		<span id="errorestado"></span>
                               	</div>
                               </div>
@@ -158,11 +158,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               	<div class="col-md-6 col-sm-12 inner-addon left-addon">
                               	<i class="fa fa-globe" id="icon-input"></i>
                               	<input type="text" name="ciudad" id="ciudad" class="form-control"
-                              	placeholder="<?php echo _('Ciudad')?>" required>
+                              	placeholder="<?php echo _('Ciudad');?>" required>
                               	<span id="errorcity"></span>
                               	</div>
                               	<div class="col-md-2 col-sm-12 inner-addon left-addon">
-                              		<?php echo _("Fecha de Nacimiento")?>
+                              		<?php echo _("Fecha de Nacimiento");?>
                               	</div>
                               	<div class="col-md-4 col-sm-12 inner-addon left-addon">
                               		<i class="fa fa-calendar-alt" id="icon-input"></i>
