@@ -22,7 +22,7 @@ function pasouno($user){
         // header("Location: http://gruposalvador.dyndns.org/sitio/sec/ms/logserv.php?u=".base64_encode($user  )."");
 
         $resulta = "";
-        $error = hacerpost("https://gruposalvador.dyndns.org/sitio/sec/ms/logserv.php?", "u=".base64_encode($user),$resulta);
+        $error = hacerpost("http://gruposalvador.dyndns.org/sitio/sec/ms/logserv.php?", "u=".base64_encode($user),$resulta);
         if ($error == ""){
             var_dump($resulta);
         } else{
