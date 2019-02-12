@@ -28,18 +28,16 @@ function pasoserver($user){
         $nivel = $array2[0]->NIVEL;
         
         if ($codigo != "") {
+
             // USUARIO CORPORATIVO ENCONTRADO, INICIO SESIÓN
-            session_start();    
-            $_SESSION["codigo"] = $codigo;
-            $_SESSION["nombre"] = $nombre;
-            $_SESSION["nivel"] = $nivel;
-            header("location: http://www.salvadorhairdressing.com/mysteryshopper/login.php?t=2&uu=".  base64_encode($codigo));
-            return;
+            // header("location: http://www.salvadorhairdressing.com/mysteryshopper/login.php?t=2&uu=".  base64_encode($codigo));
+            return 1;
         } else if ($codigo == "") {
             // NO ES USUARIO CORPORATIVO, LLEVO A PANTALLA DE REGISTRO
-            session_start();    
-            $userc = base64_encode($user);
-            header("Location: http://www.salvadorhairdressing.com/mysteryshopper/registro.php?uu=$userc");
+            // session_start();    
+            // $userc = base64_encode($user);
+            // header("Location: http://www.salvadorhairdressing.com/mysteryshopper/registro.php?uu=$userc");
+            return 0;
         }
         return;
 }
@@ -177,10 +175,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $instruccion = $_POST["intranet"];
         $user = $_POST["uuu"];
         echo comprobacionserverIntranet($user);
-
-
     }
-} else if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    else if(isset($_POST['u'])) {
+        $user = base64_decode($_POST['u']);
+        echo pasoserver($user); 
+    }
+} 
+else if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if(isset($_GET['u'])){
         $user = base64_decode($_GET['u']);
         pasoserver($user);
