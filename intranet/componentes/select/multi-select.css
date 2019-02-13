@@ -1,5 +1,5 @@
 .ms-container{
-  background: transparent url('../img/switch.png') no-repeat 50% 50%;
+  background: transparent url('../images/switch.png') no-repeat 50% 50%;
   width: 370px;
 }
 
@@ -38,7 +38,8 @@
   -moz-border-radius: 3px;
   border-radius: 3px;
   position: relative;
-  height: 200px;
+  /*height: 200px;*/
+  height: 300px;
   padding: 0;
   overflow-y: auto;
 }
@@ -66,7 +67,10 @@
   margin: 0;
   padding: 5px 0px 0px 5px;
   cursor: pointer;
-  color: #999;
+  /*color: #999;*/
+  background-color: gainsboro;
+  color: #000;
+  font-weight: 600;
 }
 
 .ms-container .ms-selectable li.ms-elem-selectable,

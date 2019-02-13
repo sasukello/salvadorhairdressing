@@ -333,7 +333,7 @@ from (Select vta.fechaventa,
 
        vta.ColetillaTipo,
 
-       vta.ClienteNombre,
+       Coalesce(vta.ClienteNombre, '') || ' ' || Coalesce(vta.ClienteApellido, '') as ClienteNombre,
 
        vta.ClienteRIF,
 
@@ -493,7 +493,7 @@ from (Select vta.fechaventa,
 
        vta.ColetillaTipo,
 
-       vta.ClienteNombre,
+       Coalesce(vta.ClienteNombre, '') || ' ' || Coalesce(vta.ClienteApellido, '') as ClienteNombre,
 
        vta.ClienteRIF,
 
@@ -699,7 +699,7 @@ function ventadetalle($fechas, $filtro){
 
                            ColetillaTipo,
 
-                           ClienteNombre,
+                           Coalesce(ClienteNombre, '') || ' ' || Coalesce(ClienteApellido, '') as ClienteNombre,
 
                            ClienteRIF,
 
@@ -831,7 +831,7 @@ from (Select vta.fechaventa,
 
        vta.ColetillaTipo,
 
-       vta.ClienteNombre,
+       Coalesce(vta.ClienteNombre, '') || ' ' || Coalesce(vta.ClienteApellido, '') as ClienteNombre,
 
        vta.ClienteRIF,
 
@@ -983,7 +983,7 @@ from (Select vta.fechaventa,
 
        vta.ColetillaTipo,
 
-       vta.ClienteNombre,
+       Coalesce(vta.ClienteNombre, '') || ' ' || Coalesce(vta.ClienteApellido, '') as ClienteNombre,
 
        vta.ClienteRIF,
 
@@ -1777,7 +1777,7 @@ function nombrelinea($codigolinea){
 } //Consulta nombre linea
 
 function clientesenespera(){
-   $sql = "select correlativo, clientenombre, clientecodigo, clientetelf, clientecorreo, horaimpresion, (Select count(*) from vta where vta.ClienteCodigo=vtatemp.ClienteCodigo) as Visitas from VTATEMP where fechaventa = current_date";
+   $sql = "select correlativo, Coalesce(ClienteNombre, '') || ' ' || Coalesce(ClienteApellido, '') as ClienteNombre, clientecodigo, clientetelf, clientecorreo, horaimpresion, (Select count(*) from vta where vta.ClienteCodigo=vtatemp.ClienteCodigo) as Visitas from VTATEMP where fechaventa = current_date";
    $arsql[] = $sql;
    return urlsafe_b64encode(serialize($arsql));
 } //Consulta los clientes en espera
@@ -1785,7 +1785,7 @@ function clientesenespera(){
 function listadoclientes($desde, $hasta){  
    $sql = "select * from
 (select * from
-        (select codigo, nombre, telefono, direccion, fechanacimiento,
+        (select codigo, Coalesce(Nombre, '') || ' ' || Coalesce(Apellido, '') as nombre, telefono, direccion, fechanacimiento,
                correo, iif(coalesce(clientecodigobarra, '') = '', 'F', 'V') as tieneclientcard
         from (select distinct(clientecodigo) as codigocliente from vta where fechaventa >= ".$desde." and fechaventa <= ".$hasta." and tipo = 'FAC') cp
 
@@ -1812,7 +1812,7 @@ datosconvp.codigo = promgasto.clientecodigo";
 } //Consulta LISTADO DE CLIENTES
 
 function listadoclientesdetalles($clientes){  
-   $sql = "select periodo, clientecodigo, ayo, mes, coalesce(vp, 0) as Visitas, coalesce(promgasto, 0) as PromGastos, NOMBRE, TELEFONO, CORREO from
+   $sql = "select periodo, clientecodigo, ayo, mes, coalesce(vp, 0) as Visitas, coalesce(promgasto, 0) as PromGastos, Coalesce(Nombre, '') || ' ' || Coalesce(Apellido, '') as NOMBRE, TELEFONO, CORREO from
 (select clientecodigo, ayo, mes, cast(ayo as varchar(4))||cast(mes as varchar(2)) as Periodo,
        (Select count(*) as visitasperiodo from vta where extract(year from fechaventa) = ayo and extract(month from fechaventa) = mes and vta.clientecodigo = listado.clientecodigo) vp,
        (Select avg(total) as gastopromedioperiodo from vta where extract(year from fechaventa) = ayo and extract(month from fechaventa) = mes and vta.clientecodigo = listado.clientecodigo) promgasto
@@ -1838,7 +1838,7 @@ select clientecodigo,
 } //Consulta de detalles de clientes
 
 function clientesservicios($clientes){  
-   $sql = "select clientecodigo, NOMBRE, TELEFONO, CORREO, nombreasociados, descripcion, serviciosrealizados from
+   $sql = "select clientecodigo, Coalesce(Nombre, '') || ' ' || Coalesce(Apellido, '') as NOMBRE, TELEFONO, CORREO, nombreasociados, descripcion, serviciosrealizados from
 (select clientecodigo, ASOCIADOs.nombre as nombreasociados, descripcion, serviciosrealizados
 from
 (select clientecodigo,
@@ -1873,7 +1873,7 @@ function clientesperdidos($dias, $visitas){
    //Ubica los clientes que tengan mas de $dias sin ir al salon
    //y mas de $visitas  visitas
    $sql = "select * from (
-select codigo, nombre,
+select codigo, Coalesce(Nombre, '') || ' ' || Coalesce(Apellido, '') as nombre,
        telefono,
        correo,
        direccion,
@@ -2133,7 +2133,7 @@ function conciliaciondiaria($fecha, $asociados){
    Tipo,
    Descripcion,
    CorrelativoPrincipal,
-   (Select ClienteNombre from vta
+   (Select Coalesce(ClienteNombre, '') || ' ' || Coalesce(ClienteApellido, '') as ClienteNombre from vta
     where correlativo = correlativoprincipal and vta.tipo = vtadte.tipo) as Cliente,
    (Select Correlativopos from vta
     where correlativo = correlativoprincipal and vta.tipo = vtadte.tipo) as Control
@@ -2191,7 +2191,7 @@ from
        (Select Nombre from asociados a  where a.codigo = vd.asociado) as Nombre,
        (Select Estatus from asociados a  where a.codigo = vd.asociado) as Estatus,
        v.clientecodigo,
-       V.clientenombre,
+       Coalesce(V.ClienteNombre, '') || ' ' || Coalesce(V.ClienteApellido, '') as ClienteNombre,
        (Select Telefono from clientes c  where c.codigo = v.clientecodigo) as Telefono,
        (Select Correo   from clientes c  where c.codigo = v.clientecodigo) as Correo,
        sum(iif(vd.tipo = 'DEV', cantidad * -1, cantidad)) as Realizados,

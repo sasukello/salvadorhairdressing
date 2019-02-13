@@ -55,6 +55,7 @@ $('#miniprompt').on('show.bs.modal', function (event) {
 
         document.getElementById("mini-titulo").innerHTML = "<h4>Encuesta: xxxxxx</h4>";
         document.getElementById("mini-body").innerHTML = "Descripción: xxxxxx";
+        document.getElementById("mini-result").innerHTML = "";
         document.getElementById("mini-footer").innerHTML = "<input type='hidden' value='"+datosenc+"'><button type='button' class='btn btn-default' data-dismiss='modal'>Cerrar</button>";
         loadEncuestasCRM(datos, 2);
     } else if(tipo === "2" || tipo === 2){ // ASIGNAR ENCUESTA A USUARIO
@@ -63,7 +64,8 @@ $('#miniprompt').on('show.bs.modal', function (event) {
 
         document.getElementById("mini-titulo").innerHTML = "<h4>Asignar Encuesta a...</h4>";
         document.getElementById("mini-body").innerHTML = "<div align='center'>Cargando Información.<br><img src='/intranet/componentes/images/loading-sm.gif'></div><br>";
-        document.getElementById("mini-footer").innerHTML = "<input type='hidden' value=''><button type='button' class='btn btn-default' data-dismiss='modal'>Cerrar</button>";
+        document.getElementById("mini-result").innerHTML = "";
+        document.getElementById("mini-footer").innerHTML = "<button type='button' class='btn btn-default' style='display:none;vertical-align: sub;'>Asignar Encuestas</button><button type='button' class='btn btn-default' data-dismiss='modal'>Cerrar</button>";
         //loadEncuestasCRM(datos, 2);
         $.ajax({
             method : "POST",
@@ -72,29 +74,16 @@ $('#miniprompt').on('show.bs.modal', function (event) {
             success:function(html) {
              document.getElementById("mini-body").innerHTML = html;
 
-            (function() {
-                $("#testNoBtn").bsSuggest({
-                    url: "/intranet/componentes/data.json",
-                    /*effectiveFields: ["userName", "shortAccount"],
-                    searchFields: [ "shortAccount"],*/
-                    effectiveFieldsAlias:{userName: "USUARIO "},
-                    effectiveFieldsAlias:{fullname: "Nombre Completo "},
-                    ignorecase: true,
-                    showHeader: true,
-                    showBtn: false,
-                    delayUntilKeyup: true,
-                    idField: "fullname",
-                    keyField: "userName",
-                    clearable: true
-                }).on('onDataRequestSuccess', function (e, result) {
-                    console.log('onDataRequestSuccess: ', result);
-                }).on('onSetSelectValue', function (e, keyword, data) {
-                    console.log('onSetSelectValue: ', keyword["key"], data);
-                    loadEncuestasCRM(keyword["key"]+";"+datosenc, 4);
-                }).on('onUnsetSelectValue', function () {
-                    console.log("onUnsetSelectValue");
-                });
-            }());
+             $('#optgroup').multiSelect({ 
+
+                afterSelect: function(values){
+                    document.getElementById("mini-result").innerHTML = "<div class='text-center'><button type='button' onclick='loadEncuestasCRM(0,4);' class='btn btn-default'>Asignar Encuestas</button></div>";
+                },
+                afterDeselect: function(values){
+                    alert("Deselect value: "+values);
+                }
+
+            });
         },
             error: function(data) {                   
                document.getElementById("mini-body").innerHTML ='Error '+data;
@@ -103,10 +92,27 @@ $('#miniprompt').on('show.bs.modal', function (event) {
     } else if(tipo == "3" || tipo == 3){
         //document.getElementById("mini-body").innerHTML ='Hola ';
         document.getElementById("mini-titulo").innerHTML = "<h4>Ver Respuestas de la Encuesta:</h4>";
+        document.getElementById("mini-result").innerHTML = "";
         //document.getElementById("mini-body").innerHTML = "Descripción: xxxxxx";
         document.getElementById("mini-footer").innerHTML = "<input type='hidden' value='"+datosenc+"'><button type='button' class='btn btn-default' data-dismiss='modal'>Cerrar</button>";
         loadEncuestasCRM(encid, 5);
 
+    } else if (tipo == "f1") { // CARGAR INFO MODAL SOLICITUDES DE FRANQUICIAS
+        document.getElementById("mini-titulo").innerHTML = "<h4>Consulta de Solicitud</h4>";
+        document.getElementById("mini-result").innerHTML = "";
+        document.getElementById("mini-body").innerHTML = "<div align='center'><img src='/intranet/componentes/images/loading-sm.gif'></div>";
+        document.getElementById("mini-footer").innerHTML = "<button type='button' class='btn btn-default' data-dismiss='modal'>Cerrar</button>";
+        $.ajax({
+            method : "POST",
+            url: '/intranet/apps/crm/franquicias.php',
+            data:{idfq: ui, tipof: 'f1'},
+            success:function(html) {
+                document.getElementById("mini-body").innerHTML = '<span id="datos">'+html+'</span><span id="datosback"></span>';
+            },
+            error: function(data) {                   
+                document.getElementById("tabla-lista").innerHTML ='Error ' + html;
+            }
+        });
     }
 });
 
@@ -173,7 +179,7 @@ function mostrarB($num){
     } else if($num == '202'){
         document.getElementById("contenido-modal11b").innerHTML = "<p><div class='form-group'><div class='col-sm-offset-4 col-sm-6'><input type='submit' name='subcc1' class='btn btn-active'></div></div></p>";
     }  else {
-        document.getElementById("contenido-modal4").innerHTML = "<p><div class='form-group'><div class='col-sm-offset-4 col-sm-6'><input type='submit' name='subcc1' class='btn btn-active'></div></div></p>";
+        document.getElementById("contenido-modal4").innerHTML = "<p><div class='form-group'><div class='col-sm-offset-4 col-sm-6'><input type='submit' name='subcc1' class='btn btn-active' value='Consulta por Salón'></div></div></p><p><div class='form-group'><div class='col-sm-offset-4 col-sm-6'><input type='submit' name='subccregion' class='btn btn-active' value='Consulta por Región Seleccionada'></div></div></p>";
     }        
 }
 
@@ -491,7 +497,7 @@ function loadEncuestasCRM($id, $paso){
                     }
 
                     document.getElementById("formspace").innerHTML = response[1];
-                    document.getElementById("formspace3").innerHTML = response[2];
+                    // document.getElementById("formspace3").innerHTML = response[2];
                 }
             });
         } else if($paso == 2){
@@ -524,28 +530,38 @@ function loadEncuestasCRM($id, $paso){
 
         } else if($paso == 4){ /* GUARDAR ASIGNACIÓN DE USUARIO A ENCUESTA FRANQ */
 
-            var nuevo = $id.split(";");
-            console.log(nuevo[1]);
+            const usuarios = $('#optgroup').val();
+            const keepme = b64EncodeUnicode($('#keepmedata').val());
 
-            var elementExists = !!document.getElementById("user"+nuevo[0]);
+            //console.log(usuarios);
+
+            /*var elementExists = !!document.getElementById("user"+nuevo[0]);
             if(elementExists == true){
                 warnme("Este usuario ya se encuentra asignado a esta encuesta.", "warning");
-            } else{
-                document.getElementById("newUserA").innerHTML += '<span id="user'+nuevo[0]+'" class="badge ">'+nuevo[0]+'</span> ';
+            } else{*/
+                //document.getElementById("newUserA").innerHTML += '<span id="user'+nuevo[0]+'" class="badge ">'+nuevo[0]+'</span> ';
                 $.ajax({
                     method : "POST",
                     url: '/intranet/api.php',
-                    data:{action:'saveUserEnc', who: nuevo[0], datos: nuevo[1]}, // who = id de nuevo user --- datos = id de user + id encuesta
+                    data:{action:'saveUserEnc', who: usuarios, datos: keepme}, // who = id de nuevo user --- datos = id de user + id encuesta
                     success:function(html) {
-                        console.log(html);
-                        $("#user"+nuevo[0]).addClass("badge-success");
-                        
+                        if(html == 1 || html == "1"){
+                            $("#miniprompt").modal("hide");
+                            warnme("<strong>¡Encuesta Asignada satisfactoriamente!</strong>","success");
+
+                            //document.getElementById("newUserA").innerHTML += html;
+                        } else if(html == 0 || html == "0"){
+                            warnme("<strong>Hubo un error al asignar la Encuesta a este Usuario.</strong> Por favor, intente de nuevo","warning");
+                        }
+                        //console.log(html);
+                        //$("#user"+nuevo[0]).addClass("badge-success");
+                        //document.getElementById("newUserA").innerHTML += html;
                         /*document.getElementById("mini-titulo").innerHTML = "<h4>Encuesta: xxxxxx</h4>";
                         document.getElementById("mini-body").innerHTML = "Descripción: xxxxxx";
                         document.getElementById("mini-body").innerHTML = html;*/
                     }
                 });
-            }
+            //}
 
         } else if($paso == 5){
             $.ajax({
@@ -611,3 +627,104 @@ String.prototype.trim = function() {
       }
       return $result;
     }
+
+function cargarFranquicias($id, $funcion) {
+    if ($id === "") {
+        document.getElementById("report1b").innerHTML = "";
+        return;
+    } else {
+        document.getElementById("report1b").innerHTML = "<div align='center'><img src='/intranet/componentes/images/loading-sm.gif'></div><br>";
+        mostrar($id, $funcion);
+    }
+};
+
+function cargarListadoFranquicias($tipo){
+    document.getElementById("tabla-lista").innerHTML = "<div align='center'><img src='/intranet/componentes/images/loading-sm.gif'></div><br>";
+    /*document.getElementById('fq1').style.display = "block";
+    document.getElementById('fq2').style.display = "block";
+    document.getElementById('fq3').style.display = "block";
+    document.getElementById('fq4').style.display = "block";*/
+    $.ajax({
+        method : "POST",
+        url: '/intranet/apps/crm/franquicias.php',
+        data:{tipof:'fq01'/*+$tipo*/},
+        success:function(html) {
+            document.getElementById("tabla-lista").innerHTML = html;
+            document.getElementById('fq'+$tipo).style.display = "none";
+            $('#franq').DataTable({
+                dom: 'Bfrtlip',
+                buttons: [ 'copy', 'excel', 'pdf' ]
+            });
+        },
+        error: function(data) {                   
+            document.getElementById("tabla-lista").innerHTML ='Error ' + html;
+        }
+    });
+};
+
+function cargarPreguntas(variable){
+    var info = b64EncodeUnicode(document.getElementById("datos").innerHTML);
+    document.getElementById("datosback").innerHTML = '<input type="hidden" id="backdatos" value="'+info+'">';
+    document.getElementById("datos").innerHTML = "<div align='center'><img src='/intranet/componentes/images/loading-sm.gif'></div><br>";
+    $.ajax({
+        method : "POST",
+        url: '/intranet/apps/crm/franquicias.php', 
+        data:{tipof: 'q1', idfq: variable},
+        success:function(html) {
+            document.getElementById('datos').innerHTML = html;
+            //document.getElementById('datosper').style.display = "none";
+        },
+        error: function(data) {                   
+            document.getElementById("tabla-lista").innerHTML ='Error ' + html;
+        }
+    });
+};
+
+
+/*segunda funcion del formulario*/
+
+function cargarPreguntas2(variable){
+    var info = b64EncodeUnicode(document.getElementById("datos").innerHTML);
+    document.getElementById("datosback").innerHTML = '<input type="hidden" id="backdatos" value="'+info+'">';
+    document.getElementById("datos").innerHTML = "<div align='center'><img src='/intranet/componentes/images/loading-sm.gif'></div><br>";
+    $.ajax({
+        method : "POST",
+        url: '/intranet/apps/crm/franquicias.php', 
+        data:{tipof: 'q2', idfq: variable},
+
+        
+
+        success:function(html) {
+            document.getElementById('datos').innerHTML = html;
+            //document.getElementById('datosper').style.display = "none";
+        },
+        error: function(data) {                   
+            document.getElementById("tabla-lista").innerHTML ='Error ' + html;
+        }
+    });
+};
+
+
+
+function cargarRespuestas(variable){
+    var info = b64EncodeUnicode(document.getElementById("datos").innerHTML);
+    document.getElementById("datosback").innerHTML = '<input type="hidden" id="backdatos" value="'+info+'">';
+    document.getElementById("datos").innerHTML = "<div align='center'><img src='/intranet/componentes/images/loading-sm.gif'></div><br>";
+    $.ajax({
+        method : "POST",
+        url: '/intranet/apps/crm/franquicias.php',
+        data:{tipof: 'r1', idfq: variable},
+        success:function(html) {
+            document.getElementById('datos').innerHTML = html;
+            //document.getElementById('datosper').style.display = "none";
+        },
+        error: function(data) {                   
+            document.getElementById("tabla-lista").innerHTML ='Error ' + html;
+        }
+    });
+};
+
+function goBackDatos(){
+    document.getElementById("datos").innerHTML = "<div align='center'><img src='/intranet/componentes/images/loading-sm.gif'></div><br>";
+    document.getElementById("datos").innerHTML = b64DecodeUnicode(document.getElementById('backdatos').value);
+};

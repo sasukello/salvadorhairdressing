@@ -10,7 +10,7 @@ function cargar($id) {
         mostrarSalones($id);
     }
 };
-function mostrarSalones($id) {
+function mostrarSalones($id) { 
     if ($id === "") {
         document.getElementById("salonesHidden").innerHTML = "";
         return;

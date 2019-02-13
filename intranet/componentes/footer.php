@@ -57,8 +57,8 @@ $time = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
         <?php 
 
         if(isset($_SESSION['tv']) || isset($_SESSION["tabla_basica"]) || isset($_SESSION["filtros_ventas"]) ){ ?>
-        <script src="/intranet/componentes/datatables/jquery.dataTables.js" type="text/javascript"></script>
-        <script src="/intranet/componentes/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+        <script src="/intranet/componentes/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+        <script src="/intranet/componentes/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
         <?php if(isset($_SESSION["tabla_completa"])){ if($_SESSION["tabla_completa"] === "1"){?>
             <script src="/intranet/componentes/datatables/btn/dataTables.buttons.min.js" type="text/javascript"></script>
             <script src="/intranet/componentes/datatables/btn/buttons.bootstrap.min.js" type="text/javascript"></script>
@@ -89,7 +89,7 @@ $time = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
         <?php } if(isset($_SESSION["servicio"])){ ?>
             <script src="/intranet/componentes/js/servicios.js" type="text/javascript"></script>
             <script src="/intranet/componentes/js/asociado.js" type="text/javascript"></script>
-        <?php } if(isset($_SESSION["calendar_live"]) && $_SESSION["calendar_live"] == 1){ ?>
+        <?php } if(isset($_SESSION["calendar_live"]) && $_SESSION["calendar_live"] == 1) { ?>
             <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
             <link rel="stylesheet" type="text/css" href="/intranet/componentes/css/jquery.datetimepicker.css"/>
             <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -107,7 +107,9 @@ $time = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
             } else if($_SESSION["ubicacion"] == "live"){
                 echo '<script src="/intranet/componentes/js/liveplus.js" type="text/javascript"></script>';
                 echo '<script src="/intranet/componentes/select/jquery.multi-select.js" type="text/javascript"></script>';
-            } ?>    
+            } else if($_SESSION["ubicacion"] == "apps"){
+                echo '<script src="/intranet/componentes/select/jquery.multi-select.js" type="text/javascript"></script>';
+            } ?>
         <script> new WOW().init(); </script>
         <script>$(window).on('load', function() {
             $("#preloader").fadeOut("slow");;

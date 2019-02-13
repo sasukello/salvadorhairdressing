@@ -4,7 +4,7 @@
 //*********************************************
 
 set_time_limit(30);
-error_reporting(1);
+//error_reporting(1);
 function validate_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -14,6 +14,10 @@ function validate_input($data) {
 
 function intra_uno($user, $contra){
     $resulta = "";
+    $user = mb_strtoupper($user, "UTF-8");
+    if ($user == "MAÑEZ") {
+        $user = "MANEZ";
+    }
     $error = hacerpost("http://gruposalvador.dyndns.org/intra/sec/apilive.php?", "usuario=$user&clave=$contra&funcion=opcionespermitidas", $resulta);
     if ($error == ""){
         if (session_status() === PHP_SESSION_NONE) {
@@ -29,6 +33,10 @@ function intra_uno($user, $contra){
             $accesos[$i] = $manage[$i]->NOMBREITEM;
         }
 
+        if($manage[0]->CODIGO == "MANEZ"){
+            $manage[0]->CODIGO = "MAÑEZ";
+        }
+
         $_SESSION["accesos"] = serialize($accesos);
         $_SESSION["codigo"] = $manage[0]->CODIGO;
         $_SESSION["usuario"] = $manage[0]->NOMBRECOMPLETO;
@@ -36,8 +44,8 @@ function intra_uno($user, $contra){
         $_SESSION["permiso"] = $manage[0]->NIVEL;
         $_SESSION["todoinfo"] = $final;
 
-        $_SESSION["idiomaruta"] = "/home/sopor907/public_html/intranet/lang/";
-        //$_SESSION["idiomaruta"] = "C:/xampp/htdocs/Salvador/intranet/lang/";
+        //$_SESSION["idiomaruta"] = "/home/sopor907/public_html/intranet/lang/";
+        $_SESSION["idiomaruta"] = "C:/xampp/htdocs/Salvador/intranet/lang/";
 
 
         $_SESSION["hash"] = "s6a5486dasdas31";
@@ -257,6 +265,17 @@ function menuheader($ubicacion, $accesos){
             </ul>
         </div>
        <?php break;
+        case 'apps':?>
+        <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+            <ul class="nav navbar-nav">
+                <?php foreach($accesos as $a){
+                    menu3($a);
+                } ?>
+                <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
+                <?php echo $useroptions;?>
+            </ul> 
+        </div>
+       <?php break;
     }
 }
 
@@ -469,17 +488,20 @@ function regionBanderas($id){
         case '304':
             echo "<a href='?r=$id' data-toggle='tooltip' data-placement='top' title='Curazao'><img alt='crz' src='/images/flags/cu128.png' class='wow fadeInUp' data-wow-delay='0.7s'></a>";
             break;
-        case '376':
+        /*case '376':
             echo "<a href='?r=$id' data-toggle='tooltip' data-placement='top' title='México'><img alt='mex' src='/images/flags/mex.png' class='wow fadeInUp' data-wow-delay='0.8s'></a>";
-            break;
+            break;*/
         case '378':
             echo "<a href='?r=$id' data-toggle='tooltip' data-placement='top' title='Perú'><img alt='per' src='/images/flags/per.png' class='wow fadeInUp' data-wow-delay='0.9s'></a>";
             break;
-        case '380':
+        /*case '380':
             echo "<a href='?r=$id' data-toggle='tooltip' data-placement='top' title='Chile'><img alt='chl' src='/images/flags/chile128.png' class='wow fadeInUp' data-wow-delay='1s'></a>";
-            break;
-        case '382':
+            break;*/
+        /*case '382':
             echo "<a href='?r=$id' data-toggle='tooltip' data-placement='top' role='button' title='Costa Rica'><img alt='ven' src='/images/flags/cr128.png' class='wow fadeInUp' data-wow-delay='1.1s'></a>";
+            break;*/
+        case '430':
+            echo "<a href='?r=$id' data-toggle='tooltip' data-placement='top' role='button' title='Italia'><img alt='ven' src='/images/flags/ita128.png' class='wow fadeInUp' data-wow-delay='1.2s'></a>";
             break;
         default:
             break;
@@ -779,12 +801,12 @@ function opcionesLlamar($op, $salon){
 
 function menu1HeaderIntranet($usuario, $ubicacion, $accesos){
     ?>
-        <div class="fullscreen landing parallax" style="background-image:url('/intranet/componentes/images/bg/bg7b.jpg');background-repeat: no-repeat;height:175px;" data-img-width="2000" data-img-height="1333" data-diff="100">
+        <div class="fullscreen landing parallax" style="background-image:url('/intranet/componentes/images/bg/miniheader.jpg');background-repeat: no-repeat;height:175px;" data-img-width="2000" data-img-height="1333" data-diff="100">
             <div class="overlay">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7 col-sm-6">
-                            <div class="logo wow fadeInDown"> <a href="/intranet"><img src="/images/60-años-min.png" alt="logo"></a>
+                            <div class="logo wow fadeInDown"> <a href="/intranet"><img src="/intranet/componentes/images/s-white.png" alt="logo"></a>
                                 <h1 class="wow fadeInLeft" style="float: right;margin:0px;">
                                 Intranet
                                 </h1>
