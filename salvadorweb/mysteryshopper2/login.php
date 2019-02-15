@@ -13,8 +13,8 @@ $tlogin="";
 
 if(isset($_GET["t"])){
     $tlogin = $_GET["t"];
-    if($tlogin == "1"){
-        if(isset($_SESSION["email"])){
+    if($tlogin == "1"){ 
+        if(isset($_SESSION["email"])){ 
             $user = $_SESSION["email"];
             if(isset($_GET["e"])){
                 $emsg = $_GET["e"];
@@ -115,9 +115,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <form class="form-header" role="form" method="POST" id="ms_email">
                                     <input type="hidden" name="u" value="503bdae81fde8612ff4944435">
                                     <input type="hidden" name="id" value="bfdba52708">
-                <?php 
-                        if(isset($msg)){
-                            echo $msg;
+                        <?php 
+                            if(isset($msg)){
+                                echo $msg;
                         }
                 if($tlogin == "1"){
                     echo "<div class='form-group'>
@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           <input class='form-control input-lg' name='email' id='email' type='text' value='$user' placeholder='Usuario Corporativo' readonly required>
                             </div>
                             <div class='form-group'>
-                                <input class='form-control input-lg' name='password' id='password' type='password' placeholder='Ingresa tu contrasela' autofocus required>
+                                <input class='form-control input-lg' name='password' id='password' type='password' placeholder='Ingresa tu contraseña' autofocus required>
                             </div>
                                 <input type='hidden' name='tipo' value='d'>
 
@@ -147,8 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }?>
                     <p class="privacy text-center">Tu información no será compartida. Lee nuestra <a href="privacy.html">política de privacidad</a>.</p>
                                 </form>
-                            </div>				
-
+                            </div>
                         </div>
                     </div>
                 </div> 

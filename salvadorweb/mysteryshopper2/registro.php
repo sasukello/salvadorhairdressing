@@ -26,6 +26,7 @@ if (isset($_GET["e"])) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['pasotres'])) {
+        var_dump("entrando aqui");
         procesoRegistro();
     }
 }
@@ -107,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               </div>
                               <div class="row">
                                 <div class="col-md-6 col-sm-12 inner-addon left-addon">                	
-        						<i class="fa fa-id-card" id="icon-input"></i>
+        						              <i class="fa fa-id-card" id="icon-input"></i>
                                   <input type="text" name="cedula" id="cedula" class="form-control" placeholder="<?php echo _('Número de Identificacion'); ?>" required>
                                   <span id="errorcedula"></span>
                                 </div>
