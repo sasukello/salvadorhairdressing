@@ -1,5 +1,5 @@
 <?php
-function enviarMailBienvenida($emailDestino){
+function enviarMailBienvenida($emailDestino,$passwordDestino){
 
     require_once "../../mysteryshopper/etc/phpmailer/class.phpmailer.php";
     require_once "../../mysteryshopper/etc/phpmailer/class.smtp.php";
@@ -39,11 +39,11 @@ function enviarMailBienvenida($emailDestino){
                       </tr>
                       <tr class='tr1'>
                         <td class='td1'><b>Usuario:</b></td>
-                        <td class='td1'>$email</td>
+                        <td class='td1'>$toemail</td>
                       </tr>
                       <tr class='tr1'>
                         <td class='td1'><b>Contraseña:</b></td>
-                        <td class='td1'>$password</td>
+                        <td class='td1'>$passwordDestino</td>
                       </tr>
                     </table>
                   </td>

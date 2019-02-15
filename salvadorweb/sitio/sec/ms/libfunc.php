@@ -31,6 +31,7 @@ function pasouno($user){
 }
 
 function procesoRegistro(){
+    // var_dump($_POST);
     require_once "libcon.php";
     require_once "libmail.php";
 
@@ -131,6 +132,7 @@ function comprobarLoginCorpIntranet($user){
 }
 
 function comprobarLoginPart($user, $password){
+   
     require_once "libcon.php";
     $dbh = dbconn();
     mysqli_set_charset($dbh, 'utf8');

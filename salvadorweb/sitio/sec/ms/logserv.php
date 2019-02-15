@@ -12,34 +12,35 @@ function pasoserver($user){
         $sql = "SELECT CODIGO, NOMBRECOMPLETO, CLAVE, NIVEL FROM usuarios WHERE CODIGO = '$nombre'";
         $result = ibase_query($con, $sql);
 
+        $codigo = ""; $nombre = ""; $nivel = ""; $final = "";
+
         $rawdata = array();
         $i = 0;
 
         while ($row = ibase_fetch_object($result)) {
-            $rawdata[$i] = $row;
-            $i++;
+            $codigo = $row->CODIGO;
+            $nombre = $row->NOMBRECOMPLETO;
+            $nivel = $row->NIVEL;
         }
 
-        $array = json_encode($rawdata);
-        $array2 = json_decode($array);
+        //$array = json_encode($rawdata);
+        //$array2 = json_decode($array);
 
-        $codigo = $array2[0]->CODIGO;
-        $nombre = $array2[0]->NOMBRECOMPLETO;
-        $nivel = $array2[0]->NIVEL;
+        
         
         if ($codigo != "") {
 
             // USUARIO CORPORATIVO ENCONTRADO, INICIO SESIÓN
             // header("location: http://www.salvadorhairdressing.com/mysteryshopper/login.php?t=2&uu=".  base64_encode($codigo));
-            return 1;
+            $final = 1;
         } else if ($codigo == "") {
             // NO ES USUARIO CORPORATIVO, LLEVO A PANTALLA DE REGISTRO
             // session_start();    
             // $userc = base64_encode($user);
             // header("Location: http://www.salvadorhairdressing.com/mysteryshopper/registro.php?uu=$userc");
-            return 0;
+            $final = 0;
         }
-        return;
+        return $final;
 }
 
 function comprobacionserver($user, $password){
@@ -179,12 +180,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else if(isset($_POST['u'])) {
         $user = base64_decode($_POST['u']);
         echo pasoserver($user); 
+    } else {
+        echo "Acceso Denegado por POST!";
     }
 } 
 else if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if(isset($_GET['u'])){
-        $user = base64_decode($_GET['u']);
-        pasoserver($user);
+        //$user = base64_decode($_GET['u']);
+        //pasoserver($user);
     } else if(isset($_GET['uu'])){
         $user2 = base64_decode($_GET['uu']);
         $pass2 = base64_decode($_GET['pp']);
@@ -200,6 +203,5 @@ else if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 }
 
-
-
 ?>
+

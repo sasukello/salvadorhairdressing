@@ -120,10 +120,11 @@ if(isset($_GET["e"])){
                     <div class="col-md-6 wow slideInRight">
                         <h2>Mystery Shopper: Participante</h2>
                         
-        <?php if(isset($_GET["e"])){
-            echo "<div class='$clase'>
-            <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-            $msg</div>";        
+        <?php 
+            if(isset($_GET["e"])){
+                echo "<div class='$clase'>
+                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                $msg</div>";        
         }?>
         <b>¡Bienvenido a nuestro grupo de Mistery Shoppers!</b>
         <br><br>ESTADO DE PARTICIPACIÓN: <?php consultaPartEstado($iduser); ?>

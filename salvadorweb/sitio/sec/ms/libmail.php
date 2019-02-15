@@ -14,7 +14,7 @@ function enviarAvisoNuevoUsuario($email, $nombrec, $pais, $dir1, $phone, $nac, $
           $age = getEdad($nac);
           $mailcod = base64_encode($email);
     //$to = "mgiurdanella@gmail.com";
-    $to = "alugox@gmail.com";
+    $to = "ceo@salvadorhairdressing.com";
     $subject = "Salvador Hairdressing: Mystery Shopper - ¡Nueva Solicitud de Participante!";
 
     $htmlContent1 = file_get_contents("../sitio/sec/ms/correos/nuevoregistro.php");

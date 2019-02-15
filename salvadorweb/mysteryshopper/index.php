@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html lang="es_VE">
+<?php 
+      ob_start();
+      error_reporting(E_ALL);
+      ini_set("display_errors", 1);
 
-    <?php 
       $language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
       putenv("LC_ALL=$language");
       setlocale(LC_ALL, $language);
       bindtextdomain("salvador_web", "../locale");
       textdomain("salvador_web");
 
-      if (session_status() === PHP_SESSION_NONE) {
-          session_start();
-      } else{
-          session_unset();
-          session_destroy();
-      }
+     
       $estado = "";
       $mensaje = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['ms_pasouno'])) {
-        require_once "funcionesMistery/funciones.php";
+       
+        include "funcionesMistery/funciones.php";
         $tipo = $_POST["tipo"];
         if ($tipo == 'a') {
+            // header("Location: https://www.google.com/");
             $user = $_POST["email"];
             pasouno($user);
         } else if($tipo == 'b') {
@@ -49,6 +47,8 @@ if (isset($_GET["e"])) {
     }  
 }
 ?>
+<!DOCTYPE html>
+<html lang="es_VE">
 <head>
 <?php include '../c/ganalytics.html'; ?>  
 <meta charset="utf-8">
@@ -62,11 +62,11 @@ if (isset($_GET["e"])) {
 
 </head>
 <body>
-<div id="preloade2r"><div class="textload"><?php echo _('Cargando'); ?></div><div id="status"><div class="spinner"></div></div></div>
+<div id="preloade2r"><div class="textload"><?php echo _('Cargando Index'); ?></div><div id="status"><div class="spinner"></div></div></div>
 <main class="body-wrapper">
   <div class="row">
     <?php include '../c/navbar.php'; ?>
-  <div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(/c/img/academy/bg1.jpg);">
+  <div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(images/bg.jpg);">
     <div class="container inner text-center">
       <div class="headline text-center">
         <h2>Mystery Shopper</h2>
