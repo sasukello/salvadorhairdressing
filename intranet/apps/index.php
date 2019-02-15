@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <li><a data-toggle="tab" href="#menu2" onClick="limpiarTab();return;false;"><i class="pe-7s-phone pe-5x pe-va" style="visibility: visible;"></i> <?php echo $crmapp1;?></a></li>
                             <li style="display: none;"><a data-toggle="tab" href="#menu3" onClick="limpiarTab();return;false;"><i class="pe-7s-phone pe-5x pe-va" style="visibility: visible;"></i> Convenios y Promociones</a></li>
                             <li><a data-toggle="tab" href="#forms" onClick="limpiarTab();return;false;"><i class="pe-7s-comment pe-5x pe-va" style="visibility: visible;"></i> Encuestas</a></li>
-                            <?php if($peruser){ echo'<li><a data-toggle="tab" href="#franquicias" onClick="limpiarTab();return;false;"><i class="pe-7s-box1 pe-5x pe-va" style="visibility: visible;"></i> Franquicias</a></li>';} ?>
+                            <?php if($peruser == 50 || $peruser == 1000){ echo'<li><a data-toggle="tab" href="#franquicias" onClick="limpiarTab();return;false;"><i class="pe-7s-box1 pe-5x pe-va" style="visibility: visible;"></i> Franquicias</a></li>';} ?>
                           </ul>
 
                         <div class="tab-content">
@@ -232,7 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                           <!-- TAB. FRANQUICIAS -->  
                           <div id="franquicias" class="tab-pane fade">
-                            <?php if($peruser){
+                            <?php if($peruser == 50 || $peruser == 1000){
                                 echo '<h3><i class="pe-7s-albums pe-5x pe-va" style="visibility: visible;"></i> <strong>Tipo de Franquicias</strong></h3>
                             <p>Consulta el listado y estado de tus solicitudes de Franquicias según el tipo de Franquiciado:</p>
                             <div class="col-sm-12 feat-list">

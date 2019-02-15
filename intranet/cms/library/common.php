@@ -51,8 +51,8 @@ function miBusquedaSQL($sql){
 
     function dbconn() {
     // Create connection
-    //$link = mysqli_connect('www.salvadorpeluquerias.com', 'sopor907_admin', 'salvaAdmin2', 'sopor907_cp');
-    $link = mysqli_connect('localhost', 'root', '', 'sopor907_cp');
+    $link = mysqli_connect('www.salvadorhairdressing.com', 'sopor907_admin', 'salvaAdmin2', 'sopor907_cp');
+    //$link = mysqli_connect('localhost', 'root', '', 'sopor907_cp');
 
     // Check connection
     if (!$link) {

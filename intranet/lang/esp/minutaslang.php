@@ -17,7 +17,7 @@ $trmnpendienteverificacion="Pendiente por verificación";
 $trmninfominuta="Más Información";
 $trreapertura="Reapertura de Minuta";
 $trindiquerazonapertura="Indique la razon de la reapertura";
-$trmnabrir="Abrir";
+$trmnabrir="Guardar";
 $trmnverificarminuta="Verificar minuta, al presionar se cerrara definitivamente";
 $trmncerrarminuta="Cerrar Minuta, al presionar quedara en espera de verificación para el cierre.";
 $trmnabrirminuta="Abrir Minuta, volvera al estado de abierto, ya que no fue un cierre satisfactorio.";
@@ -41,4 +41,4 @@ $trmndestacadacerrar="Cerrar";
 $trmndestacadamantener="Mantener";
 $trmnmail1="¿Enviar Minutas por Correo?";
 $trmnmail2="Cerrar";
-$trmnmail3="Mantener";?>
+?>

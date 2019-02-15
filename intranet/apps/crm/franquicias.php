@@ -53,12 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		    case 'r1':
 		    	$idf = $_POST['idfq'];
 		    	echo cargarFormAdicional($idf);
-					break;
-
-					//segundo formulario
-					case 'q2':
-					$idf = $_POST['idfq'];
-		    	echo cargarCuestFranq2($idf); 
+		    	break;
 
 		    break;
 
@@ -188,8 +183,6 @@ function cargarInfoFranq($id){
 		$idfranq = $ct['idform'];
 	}
 
-
-	//modal de los reporte de cliente
 	$result = '<div class="row">
 				  <div class="col-sm-12">
 				  	<div class="list-group" id="datosper">
@@ -241,8 +234,8 @@ function cargarInfoFranq($id){
 						if ($contenido['tipo'] !== 's5') {
 							$result .= '<div class="col-sm-12 pt-10">
 							   <div class="text-center">
-								 <button type="button" onclick="cargarPreguntas(\''.$idfranq.'\');" class="btn btn-default">Formulario 1</button>
-							   		<button type="button" onclick="cargarPreguntas2(\''.$idfranq.'\');" class="btn btn-default">Formulario 2</button>
+							   		<button type="button" onclick="cargarPreguntas(\''.$idfranq.'\');" class="btn btn-default">Ver Solicitud</button>
+							   		<button type="button" onclick="cargarRespuestas(\''.$idfranq.'\');" class="btn btn-default">Ver Segundo Formulario</button>
 							   </div>
 							</div>';
 						}
@@ -347,9 +340,6 @@ function cargarCuestFranq($id){
 				  </div>
 				</div>';
 			break;
-		
-
-
 
 		case 's2':
 			$result = '<div class="row">
@@ -583,106 +573,6 @@ function cargarCuestFranq($id){
 
 	return $result;
 }
-
-
-
-/*cargar segundo formulario*/ 
-function cargarCuestFranq2($id){
-	include "../../cms/library/common.php";
-
-	$sql = "SELECT respuestas2 FROM `web_franquicias_forms` WHERE idform=$id";
-	$all = (array) json_decode(miBusquedaSQL($sql), true, 512, JSON_UNESCAPED_UNICODE);
-
-	foreach ($all as $a) {
-		$all = json_decode($a['respuestas2'], true, 512, JSON_UNESCAPED_UNICODE);
-		$tipofranq = $all['tipo'];
-	}
-
-	$result = '<div class="row">
-	<div class="col-sm-12">
-		<div class="list-group" id="datosper">
-			<div class="form-group row list-group-item sel" style="background: #dcdcdc;">
-				 <div class="col-sm-12"><b>Encuesta:</b> Salvador Franquicias</div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Con qué frecuencia utiliza el correo electrónico?</b></div>
-					 <div>'.changeNum($all['quest1']).'.</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Conoce el término de franquicia?</b></div>
-					 <div>'.$all['quest2'].'.</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Qué haría usted para impulsar los primeros 6 meses de desarrollo del negocio?</b></div>
-					 <div>'.changeNum($all['quest3']).'.</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Con qué frecuencia quiere manejar su negocio?</b></div>
-					 <div>'.changeNum($all['quest4']).'. '.$all['ansq4'].'</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Considera que tiene un buen manejo de personal?</b></div>
-					 <div>'.changeNum($all['quest5']).'.</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Maneja directamente sus operaciones financieras?</b></div> //botton check
-					 <div>'.changeNum($all['quest6']).'. '.$all['ansq6'].'</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Tiene experiencia con crédito bancario?</b></div> //botton check
-					 <div>'.changeNum($all['quest7']).'. '.$all['ansq7'].'</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Es usted dinámico al gestionar solicitudes, proveedores y solución de conflictos?</b></div> //botton check
-					 <div>'.changeNum($all['quest8']).'. '.$all['ansq8'].'</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Cuáles son sus aspiraciones de crecimiento con Salvador Hairdressing en los próximos 5, 10 y 15 años?</b></div>
-					 <div>'.changeNum($all['quest9']).'.</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Es usted bueno en el área de ventas?</b></div> //check botton
-					 <div>'.changeNum($all['quest10']).'.</div>
-				 </div>
-		</div>
-		<div class="form-group row list-group-item sel">
-				 <div class="col-sm-12">
-					 <div><b>¿Fuente de ingresos actual?</b></div> //casilla y check botton
-					 <div>'.changeNum($all['quest11']).'. '.$all['ansq11'].'</div>
-				 </div>
-		</div>
-		<div class="col-sm-12 pt-10">
-			<div class="text-center">
-					<button type="button" onclick="goBackDatos();" class="btn btn-default">Volver</button>
-			</div>
-		</div>
-		</div>
-	</div>
-</div>';
-
-return $result;
-}
-
-
 
 function cargarFormAdicional($idf){
 	include "../../cms/library/common.php";

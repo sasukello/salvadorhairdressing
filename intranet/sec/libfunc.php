@@ -44,8 +44,8 @@ function intra_uno($user, $contra){
         $_SESSION["permiso"] = $manage[0]->NIVEL;
         $_SESSION["todoinfo"] = $final;
 
-        //$_SESSION["idiomaruta"] = "/home/sopor907/public_html/intranet/lang/";
-        $_SESSION["idiomaruta"] = "C:/xampp/htdocs/Salvador/intranet/lang/";
+        $_SESSION["idiomaruta"] = "/home/sopor907/public_html/intranet/lang/";
+        //$_SESSION["idiomaruta"] = "C:/xampp/htdocs/Salvador/intranet/lang/";
 
 
         $_SESSION["hash"] = "s6a5486dasdas31";
@@ -273,7 +273,7 @@ function menuheader($ubicacion, $accesos){
                 } ?>
                 <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
                 <?php echo $useroptions;?>
-            </ul> 
+            </ul>
         </div>
        <?php break;
     }

@@ -1,186 +1,289 @@
 <?php
-error_reporting(1);
-
-// incude "../sec/seguro.php";
-include "libreria.php";
-$_SESSION["ubicacion"] = "roadmap";
-$_SESSION["calendar_live"] = 0;
+include "../sec/seguro.php";
+$_SESSION["ubicacion"] = "default";
+$_SESSION["calendar_live"] = 1;
 $arrayMenu = unserialize($_SESSION["accesos"]);
-$proyectnew = "";
+
 include "../sec/libfunc.php";
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET['e'])) { 
-        $proyectnew = $_GET['e'];
-    }
-}
+
+
 ?>
 
 <!DOCTYPE html>
 <html>
+        <head>
+        <title>Salvador Hairdressing - Intranet</title>
+        <?php include "../componentes/header.php"; ?>
+        </head>
 
-<head>
-      <meta charset="utf-8" />
-      <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-      <link rel="icon" type="image/png" href="assets/img/favicon.png">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-      <title>
-        RoadMap - Corporativo Salvador
-      </title>
-      
-      <link href="estilos20.css" rel="stylesheet">
-      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-      <!--     Fonts and icons     -->
-      <link rel="stylesheet" type="text/css" href="assets/css/material-icons.css" />
-      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"> -->
-      <!-- CSS Files -->
-      <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
-</head>
+        <body data-spy="scroll" data-target="#navbar-scroll">
 
-<body class="" background="assets/img/cover.jpg" style="background-repeat: no-repeat; background-size: cover;">
+        <!-- /.preloader 
+        <div id="preloader"></div>-->
+        <div id="top"></div>
 
-  <div class="wrapper" >
-    
-   <?php $ubi="proyectos"; include "assets/side-bar.php"; ?>
+        <?php menu1HeaderIntranet($iduser, $_SESSION['ubicacion'], $arrayMenu); 
+           // include ($_SESSION["idiomaruta"].$_SESSION["idioma"]."/crm.php"); ?>
 
-     <!-- FIN DEL MENU -->
-
-    <div class="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo"><h1><i class="pe-7s-note2"> </i>  Roadmap</h1></a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end">
-            
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- End Navbar -->
-    <div class="content" id="contentRoadmap">
-        <div class="container-fluid">
-
-            <?php echo proyectos(2); ?>
-        </div>
-    </div>
-    </div>
-          
-          
-      
-            <div id="minimodal" class="modal fade" role="dialog">
-              <div class="modal-dialog modal-md">
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title"><span id="m-titulo"></span></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <div class="modal-body">
-                    <span id="m-body"></span>
-                  </div>
-                  
-                </div>
-                </div>
-            </div>
-
-            <!-- COMIENZO DE MODAL: NUEVO PROYECTO JP  -->
-            <div id="newproject" class="modal fade" role="dialog">
-                <div class="modal-dialog modal-md">
-             <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                          
-                          <h4 class="modal-title"><b>  Información Detallada del Nuevo Proyecto.<span id="prtit"></span></b><span class="pe-7s-note modpr"></span></h4><button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
                     </div>
-                    <form method="post" action="libreria.php"> 
-                        <div class="modal-body">
-                        <!-- FORMULARIO NUEVO -->
-                            <div class="col-md-5">
-                                <div class="form-group">
-                                    <label class="bmd-label-floating">Nombre de Proyecto</label>
-                                    <input type="text" class="form-control" required name="nombrepr">
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="form-group">
-                                    <label class="bmd-label-floating">Categoria</label>
-                                        <select class="form-control form-control-sm" name="categoriapr" required><option value="">Seleccionar</option>
-                                              <option value="1">Publicidad</option>    
-                                              <option value="2">Academia</option>    
-                                              <option value="3">Recursos Humanos</option>    
-                                              <option value="4">Recepcion</option>    
-                                              <option value="5">Sistemas</option>  
-                                        </select>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="form-group">
-                                    <label class="bmd-label-floating">Responsable</label>
-                                    <input type="text" class="form-control" required name="responsable">
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="form-group">
-                                    <label class="bmd-label-floating">Fecha estimada de cierre</label>
-                                    <br><input class="form-control" type="date" name="fechacierre" required> 
-                                </div>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="form-group">
-                                    <label class="bmd-label-floating">Breve descripción: </label>
-                                    <textarea class="form-control" name="descripcion" id="descripcion" rows="3" required></textarea><br>
-                                </div>
-                            </div>
-                            <input type="submit" name="valider" class="btn btn-info" value="Guardar"> 
-                            <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
-                    </form>
-                </div>
                 </div> 
-            </div>
-            <!-- FIN DE MODAL: NUEVO PROYECTO JP -->       
+            </div> 
+        </div>
+
+        <!-- /.seccion principal -->
+        <div class="container">
+          <h3 class="titl">Todos los Proyectos</h3>
+          <div class="row">
+              <!--Nueva Franquicia-->
+              <div class="col-md-6">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading2 clickable">
+                          <h1 class="panel-title" style="font-size: 18px;">Nueva Franquicia</h1>
+                          <span class="pull-right" style="padding-right: 10px;"><i class="pe-7s-plus"></i></span>
+                      </div>
+                      <div class="panel-body" style="border: 1px solid #428bca">          
+                          <div class="panel box-v6">
+                            <div class="col-md-12 padding-0 pad" style="height:127px;">
+                                <div class="col-md-12 col-sm-12 box-v6-content-bg pad" data-progress="100%"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-0 box-v6-content pad">
+                                  <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <span data-letters="MG"></span><span data-letters="EC"></span>
+                                      <h4>Nombre del Proyecto 1</h4>
+                                  </div>
+                                  <div class="col-md-5 col-sm-5 text-center box-v6-progress">
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;"> 70 % Completo
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Última Modificación: 14/09/2017</p>
+                                  </div>
+                                </div>
+                            </div>
+                             <div class="col-md-12 padding-0 pad" style="height:127px;">
+                                <div class="col-md-12 col-sm-12 box-v6-content-bg pad" data-progress="100%"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-0 box-v6-content pad">
+                                  <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <span data-letters="MG"></span><span data-letters="EC"></span><span data-letters="AL"></span>
+                                      <h4>Nombre del Proyecto 2</h4>
+                                  </div>
+                                  <div class="col-md-5 col-sm-5 text-center box-v6-progress">
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:56%"> 56 % Completo
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Última Modificación: 14/09/2017</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!--Proyecto Sistemas-->
+              <div class="col-md-6">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading2 clickable">
+                          <h2 class="panel-title" style="font-size: 18px;">
+                              Proyecto Sistemas</h2>
+                          <span class="pull-right" style="padding-right: 10px;"><i class="pe-7s-plus"></i></span>
+                      </div>
+                      <div class="panel-body" style="border: 1px solid #428bca">  
+                          <div class="panel box-v6">
+                            <div class="col-md-12 padding-0 pad" style="height:127px;">
+                                <div class="col-md-12 col-sm-12 box-v6-content-bg pad" data-progress="100%"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-0 box-v6-content pad">
+                                  <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <span data-letters="AL"></span><span data-letters="EC"></span><span data-letters="MC"></span><span data-letters="EJ"></span>
+                                      <h4>Nombre del Proyecto 1</h4>
+                                  </div>
+                                  <div class="col-md-5 col-sm-5 text-center box-v6-progress">
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:14%"> 14 % Completo
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Última Modificación: 14/09/2017</p>
+                                  </div>
+                                </div>
+                            </div>
+                             <div class="col-md-12 padding-0 pad" style="height:127px;">
+                                <div class="col-md-12 col-sm-12 box-v6-content-bg pad" data-progress="100%"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-0 box-v6-content pad">
+                                  <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <span data-letters="MG"></span><span data-letters="EC"></span>
+                                      <h4>Nombre del Proyecto 2</h4>
+                                  </div>
+                                  <div class="col-md-5 col-sm-5 text-center box-v6-progress">
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:92%"> 92 % Completo
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Última Modificación: 14/09/2017</p>
+                                  </div>
+                                </div>
+                            </div>
+                             <div class="col-md-12 padding-0 pad" style="height:127px;">
+                                <div class="col-md-12 col-sm-12 box-v6-content-bg pad" data-progress="100%"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-0 box-v6-content pad">
+                                  <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <span data-letters="MG"></span><span data-letters="EC"></span>
+                                      <h4>Nombre del Proyecto 3</h4>
+                                  </div>
+                                  <div class="col-md-5 col-sm-5 text-center box-v6-progress">
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:42%"> 42 % Completo
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Última Modificación: 14/09/2017</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+           
+          <div class="row">
+              <!--Nueva Franquicia-->
+              <div class="col-md-6">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading2 clickable">
+                          <h2 class="panel-title" style="font-size: 18px;">
+                              Categoría 3</h2>
+                          <span class="pull-right" style="padding-right: 10px;"><i class="pe-7s-plus"></i></span>
+                      </div>
+                      <div class="panel-body" style="border: 1px solid #428bca">      
+                          <div class="panel box-v6">
+                            <div class="col-md-12 padding-0 pad" style="height:127px;">
+                                <div class="col-md-12 col-sm-12 box-v6-content-bg pad" data-progress="100%"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-0 box-v6-content pad">
+                                  <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <span data-letters="MG"></span><span data-letters="EC"></span><span data-letters="AL"></span>
+                                      <h4>Nombre del Proyecto 1</h4>
+                                  </div>
+                                  <div class="col-md-5 col-sm-5 text-center box-v6-progress">
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:56%"> 56 % Completo
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Última Modificación: 14/09/2017</p>
+                                  </div>
+                                </div>
+                            </div>
+                             <div class="col-md-12 padding-0 pad" style="height:127px;">
+                                <div class="col-md-12 col-sm-12 box-v6-content-bg pad" data-progress="100%"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-0 box-v6-content pad">
+                                  <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <span data-letters="AL"></span><span data-letters="EC"></span><span data-letters="MC"></span><span data-letters="EJ"></span>
+                                      <h4>Nombre del Proyecto 2</h4>
+                                  </div>
+                                  <div class="col-md-5 col-sm-5 text-center box-v6-progress">
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:14%"> 14 % Completo
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Última Modificación: 14/09/2017</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!--Proyecto Sistemas-->
+              <div class="col-md-6">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading2 clickable">
+                          <h2 class="panel-title" style="font-size: 18px;">
+                              Categoría 4</h2>
+                          <span class="pull-right" style="padding-right: 10px;"><i class="pe-7s-plus"></i></span>
+                      </div>
+                      <div class="panel-body" style="border: 1px solid #428bca">
+                          <div class="panel box-v6">
+                            <div class="col-md-12 padding-0 pad" style="height:127px;">
+                                <div class="col-md-12 col-sm-12 box-v6-content-bg pad" data-progress="100%"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-0 box-v6-content pad">
+                                  <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <span data-letters="MG"></span><span data-letters="EC"></span>
+                                      <h4>Nombre del Proyecto 1</h4>
+                                  </div>
+                                  <div class="col-md-5 col-sm-5 text-center box-v6-progress">
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;"> 70 % Completo
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Última Modificación: 14/09/2017</p>
+                                  </div>
+                                </div>
+                            </div>
+                             <div class="col-md-12 padding-0 pad" style="height:127px;">
+                                <div class="col-md-12 col-sm-12 box-v6-content-bg pad" data-progress="100%"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-0 box-v6-content pad">
+                                  <div class="col-md-7 col-sm-7 col-xs-7">
+                                    <span data-letters="MG"></span><span data-letters="EC"></span><span data-letters="AL"></span>
+                                      <h4>Nombre del Proyecto 2</h4>
+                                  </div>
+                                  <div class="col-md-5 col-sm-5 text-center box-v6-progress">
+                                    <div class="progress">
+                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:56%"> 56 % Completo
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Última Modificación: 14/09/2017</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+
+        <div class="text-right"><button class="btn btn-info" onclick="goBack()">Regresar</button></div>
 
 
- <?php include ('assets/footer.php') ?>
-    
+        <?php include "../componentes/footer.php"; ?>
     </body>
 </html>
+<?php ob_end_flush(); ?>
+
+<script type="text/javascript">
+$(document).on('click', '.panel-heading span.clickable', function (e) {
+    var $this = $(this);
+    if (!$this.hasClass('panel-collapsed')) {
+        $this.parents('.panel').find('.panel-body').slideUp();
+        $this.addClass('panel-collapsed');
+        $this.find('i').removeClass('pe-7s-less').addClass('pe-7s-plus');
+    } else {
+        $this.parents('.panel').find('.panel-body').slideDown();
+        $this.removeClass('panel-collapsed');
+        $this.find('i').removeClass('pe-7s-plus').addClass('pe-7s-less');
+    }
+});
+$(document).on('click', '.panel div.clickable', function (e) {
+    var $this = $(this);
+    if (!$this.hasClass('panel-collapsed')) {
+        $this.parents('.panel').find('.panel-body').slideUp();
+        $this.addClass('panel-collapsed');
+        $this.find('i').removeClass('pe-7s-less').addClass('pe-7s-plus');
+    } else {
+        $this.parents('.panel').find('.panel-body').slideDown();
+        $this.removeClass('panel-collapsed');
+        $this.find('i').removeClass('pe-7s-plus').addClass('pe-7s-less');
+    }
+});
+$(document).ready(function () {
+    $('.panel-heading span.clickable').click();
+    $('.panel div.clickable').click();
+});
+</script>
+
+<!--GoBack-->
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+<!---->

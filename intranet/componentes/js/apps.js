@@ -497,7 +497,7 @@ function loadEncuestasCRM($id, $paso){
                     }
 
                     document.getElementById("formspace").innerHTML = response[1];
-                    // document.getElementById("formspace3").innerHTML = response[2];
+                    document.getElementById("formspace3").innerHTML = response[2];
                 }
             });
         } else if($paso == 2){
@@ -668,7 +668,7 @@ function cargarPreguntas(variable){
     document.getElementById("datos").innerHTML = "<div align='center'><img src='/intranet/componentes/images/loading-sm.gif'></div><br>";
     $.ajax({
         method : "POST",
-        url: '/intranet/apps/crm/franquicias.php', 
+        url: '/intranet/apps/crm/franquicias.php',
         data:{tipof: 'q1', idfq: variable},
         success:function(html) {
             document.getElementById('datos').innerHTML = html;
@@ -679,32 +679,6 @@ function cargarPreguntas(variable){
         }
     });
 };
-
-
-/*segunda funcion del formulario*/
-
-function cargarPreguntas2(variable){
-    var info = b64EncodeUnicode(document.getElementById("datos").innerHTML);
-    document.getElementById("datosback").innerHTML = '<input type="hidden" id="backdatos" value="'+info+'">';
-    document.getElementById("datos").innerHTML = "<div align='center'><img src='/intranet/componentes/images/loading-sm.gif'></div><br>";
-    $.ajax({
-        method : "POST",
-        url: '/intranet/apps/crm/franquicias.php', 
-        data:{tipof: 'q2', idfq: variable},
-
-        
-
-        success:function(html) {
-            document.getElementById('datos').innerHTML = html;
-            //document.getElementById('datosper').style.display = "none";
-        },
-        error: function(data) {                   
-            document.getElementById("tabla-lista").innerHTML ='Error ' + html;
-        }
-    });
-};
-
-
 
 function cargarRespuestas(variable){
     var info = b64EncodeUnicode(document.getElementById("datos").innerHTML);
