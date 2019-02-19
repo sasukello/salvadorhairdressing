@@ -62,7 +62,7 @@ if (isset($_GET["e"])) {
 
 </head>
 <body>
-<div id="preloade2r"><div class="textload"><?php echo _('Cargando Index'); ?></div><div id="status"><div class="spinner"></div></div></div>
+<div id="preloade2r"><div class="textload"><?php echo _('Cargando'); ?></div><div id="status"><div class="spinner"></div></div></div>
 <main class="body-wrapper">
   <div class="row">
     <?php include '../c/navbar.php'; ?>
