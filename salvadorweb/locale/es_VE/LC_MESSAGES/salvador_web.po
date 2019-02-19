@@ -38,7 +38,7 @@ msgstr ""
 #: salvadoracademy/index - copia.php:25 salvadoracademy/index.php:25
 #: servicios.php:25 ubicaciones/index.php:25
 msgid "Cargando"
-msgstr ""
+msgstr "Cargando"
 
 #: academy/index.php:46
 msgid "The Academy"

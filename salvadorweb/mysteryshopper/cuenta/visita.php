@@ -38,7 +38,11 @@ include '../etc/func.php';
  /*
  * Pantalla de Resumen de Visita - Mistery Shopper.
  */
-
+ $language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
+      putenv("LC_ALL=$language");
+      setlocale(LC_ALL, $language);
+      bindtextdomain("salvador_web", "../../locale");
+      textdomain("salvador_web");
 ?>  
 <!DOCTYPE html>
 <html lang="es_VE">

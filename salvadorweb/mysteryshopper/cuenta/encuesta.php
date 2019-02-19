@@ -72,7 +72,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     }
 }
-
+ $language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
+      putenv("LC_ALL=$language");
+      setlocale(LC_ALL, $language);
+      bindtextdomain("salvador_web", "../../locale");
+      textdomain("salvador_web");
 /*
  * Pantalla de Encuesta para aplicar a ser Mistery Shopper.
  */
