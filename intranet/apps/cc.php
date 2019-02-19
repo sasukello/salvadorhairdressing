@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 function opcionLista($salon){?>
     <h3>Selecciona la Opción a Consultar:</h3>
         <div class="btn-group">
@@ -105,25 +108,103 @@ function r1($datossalon, $estado){
     return;
 }
 
+function rregion($region, $estado){
+    include "../sec/seguro.php";
+    //list($idsalon,$rutalive) = explode(";",$datossalon);
+    //$nomb = base64_decode($rutalive);
+    $nuevoestado = 0;
+    switch ($estado) {
+        case '0':
+            $nuevoestado = 100;
+            break;
+        case '1':
+            $nuevoestado = 101;
+            break;
+        default:
+            # code...
+            break;
+    }
+    $miresultado = cargarDatosCC($region, $nuevoestado);
+    echo "<h3>Reporte de Clientes con ClientCard:</h3>
+        <p><b>Consulta para la Región:</b> <label style= 'color:#d34a4a'>".  /*$_SESSION["datossalon"]["NOMBREEMPRESA"]*/ $region."</label></p>
+        <p><div class='dataTables_wrapper form-inline dt-bootstrap'>
+        <table id='r1cc' class='table table-striped table-bordered dt-responsive nowrap'>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>F. Nacimiento</th>
+                <th>Género</th>
+                <th>N° de ClientCard</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+        <tbody>";
+    foreach($miresultado as $mr){
+        echo $mr;
+    }
+    echo "</tbody></table></div></p>";
+    return;
+}
+
 function cargarDatosCC($salon, $estado){
     include "../sec/libcon.php";
     $dbh = dbconncc();
     mysqli_set_charset($dbh, 'utf8');
 
     if (!$dbh) {
-        die('Error en Conexión: ' . mysqli_error($dbh));
+        die('<tr><td>Error en Conexión: ' . mysqli_error($dbh).'</td></tr>');
         exit;
     }
 
-    /* CONSULTAR LISTADOS DE CLIENTES EN SALÓN */
-    $sql = "SELECT A.ORIGEN, A.CODIGOCLIENTE, B.CODIGO, B.NOMBRE, B.TELEFONO, B.CORREO, B.FECHANACIMIENTO, B.GENERO, B.CLIENTCARD, B.ESTATUS FROM `MOVIMIENTOSPUNTOS` A INNER JOIN `CLIENTE` B ON A.`CODIGOCLIENTE` = B.`CODIGO` WHERE A.`ORIGEN` = '$salon' AND B.`ESTATUS` = $estado group by A.`CODIGOCLIENTE`";
+    if($estado == 1 || $estado == 0){
+        /* CONSULTAR LISTADOS DE CLIENTES EN SALÓN */
+        $sql = "SELECT A.ORIGEN, A.CODIGOCLIENTE, B.CODIGO, B.NOMBRE, B.APELLIDO, B.TELEFONO, B.CORREO, B.FECHANACIMIENTO, B.GENERO, B.CLIENTCARD, B.ESTATUS FROM `MOVIMIENTOSPUNTOS` A INNER JOIN `CLIENTE` B ON A.`CODIGOCLIENTE` = B.`CODIGO` WHERE A.`ORIGEN` = '$salon' AND B.`ESTATUS` = $estado group by A.`CODIGOCLIENTE`";
+        $step = 1;
+    } else if($estado == 100 || $estado == 101){
+        /* CONSULTAR LISTADOS DE CLIENTES POR REGIÓN */
+        $step = 2;
+        $nuevoestado = 0;
+        switch ($estado) {
+        case '100':
+            $nuevoestado = 0;
+            break;
+        case '101':
+            $nuevoestado = 1;
+            break;
+        default:
+            # code...
+            break;
+    }
+
+        $sqlsalones = "SELECT A.CODIGO FROM SALONES A INNER JOIN REGIONES B ON A.REGIONSALON = B.CODREGION";
+        $resultsalones = (array) json_decode(miBusquedaSQL($sqlsalones), true);
+        $lista="";
+        $out = array();
+
+        foreach ($resultsalones as $rs => $scod) {
+            array_push($out, "'".$scod['CODIGO']."'");
+        }
+
+        $lista = implode(', ', $out);
+
+        $sql = "SELECT A.ORIGEN, A.CODIGOCLIENTE, B.CODIGO, B.NOMBRE, B.APELLIDO, B.TELEFONO, B.CORREO, B.FECHANACIMIENTO, B.GENERO, B.CLIENTCARD, B.ESTATUS FROM `MOVIMIENTOSPUNTOS` A INNER JOIN `CLIENTE` B ON A.`CODIGOCLIENTE` = B.`CODIGO` WHERE A.`ORIGEN` IN (".$lista.") AND B.`ESTATUS` = $nuevoestado group by A.`CODIGOCLIENTE`";
+    }
+
+
     $result = array();
     $i = 0;
     $search = mysqli_query($dbh, $sql) or die(mysqli_error($dbh));
     $match = mysqli_num_rows($search);
     if ($match > 0) {
         while ($rw = mysqli_fetch_array($search)) {
-            $result[$i] = "<tr><td><a href='#mov1' data-toggle='modal' data-id='".$rw['NOMBRE']."' data-whatever='".$rw['CODIGOCLIENTE']."'><i class='pe-7s-expand1 pe-5x pe-va' style='visibility: visible;font-size: 20px;vertical-align: middle;'></i> - ".$rw['NOMBRE']."</a></td><td>".$rw['TELEFONO']."</td><td>".$rw['CORREO']."</td><td>".$rw['FECHANACIMIENTO']."</td><td style='text-align: center;'>".genero($rw['GENERO'])."</td><td>".$rw['CLIENTCARD']."</td><td style='text-align: center;'>".estados($rw['ESTATUS'])."</td></tr>";
+            $apellido = trim(' '.$rw['APELLIDO']);
+
+            $telefono = formatPhone1($rw['TELEFONO'], $salon, $step);
+            //$telefono = 1;
+
+            $result[$i] = "<tr><td><a href='#mov1' data-toggle='modal' data-id='".$rw['NOMBRE'].$apellido."' data-whatever='".$rw['CODIGOCLIENTE']."'>".$rw['NOMBRE']." <i class='pe-7s-angle-right pe-5x pe-va' style='visibility: visible;font-size: 20px;vertical-align: middle;'></i></a></td><td>".$telefono."</td><td>".$rw['CORREO']."</td><td>".$rw['FECHANACIMIENTO']."</td><td style='text-align: center;'>".genero($rw['GENERO'])."</td><td>".$rw['CLIENTCARD']."</td><td style='text-align: center;'>".estados($rw['ESTATUS'])."</td></tr>";
             $i++;
         }
     } else {
@@ -223,6 +304,82 @@ INNER JOIN (
         
     }
     return $result;
+}
+
+function formatPhone1($numero, $salon, $step){
+    if($step==1){
+        $sqlOrigen = "SELECT REGIONSALON FROM SALONES WHERE CODIGO = '".$salon."'";
+        $busquedaOrigen = (array) json_decode(miBusquedaSQL($sqlOrigen), true);
+        //if (preg_match("~^04\d+$~", $numero)) {
+        $numbers = array($numero => $busquedaOrigen[0][0]);
+
+    } else if ($step == 2) {
+        $numbers = array($numero => $salon);
+    }
+
+        $formato = formatPhone2($numbers);
+    //}
+    return $formato;
+}
+
+function formatPhone2($numbers){
+
+//An array of country codes:
+    //Get a full list at: https://plugins.svn.wordpress.org/mediaburst-ecommerce-sms-notifications/tags/1.2.1/country-calling-codes.php
+    $country_codes = array(
+    
+    'AR' => '54',
+    'BR' => '55',
+    'CA' => '1',
+    '380' => '56', // chile
+    '249' => '57', // colombia
+    '382' => '506', // costa rica
+    '304' => '599', //curazao
+    '72' => '1809', // rep dom
+    '72' => '1829', // rep dom
+    '72' => '1849', // rep dom
+    '302' => '593', // ecuador
+    '430' => '39', // italia 
+    '376' => '52', // mexico
+    '2' => '507', // panama
+    '378' => '51', // peru
+    '3' => '1', // usa
+    '1' => '58', // venezuela
+    );
+
+    
+    //The default country code if the recipient's is unknown:
+    $default_country_code  = '1';
+
+    //Loop through the numbers and make them international format:
+    foreach ( $numbers as $n => $c )
+    {
+        //Remove any parentheses and the numbers they contain:
+        $n = preg_replace("/\([0-9]+?\)/", "", $n);
+
+        //Strip spaces and non-numeric characters:
+        $n = preg_replace("/[^0-9]/", "", $n);
+
+        //Strip out leading zeros:
+        $n = ltrim($n, '0');
+
+        //Look up the country dialling code for this number:
+        if ( array_key_exists($c, $country_codes)  ) {
+            $pfx = $country_codes[$c];
+        } else {
+            $pfx = $default_country_code;
+        }
+
+        //Check if the number doesn't already start with the correct dialling code:
+        if ( !preg_match('/^'.$pfx.'/', $n)  ) {
+            $n = $pfx.$n;
+        }
+
+        //return the converted number:
+        return $n;
+
+        //Outputs: 17123456781 447123456782 447123456783 447123456784 447123456785 17123456786
+        }
 }
 
 function cargarMovCC($idC){

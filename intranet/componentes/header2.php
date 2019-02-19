@@ -11,7 +11,7 @@ if(isset($iduser)){
 
 ?>
 
-<div class="fullscreen landing parallax" style="background-image:url('/intranet/componentes/images/bg/bg7b.jpg');background-repeat: no-repeat;height:175px;" data-img-width="2000" data-img-height="1333" data-diff="100">
+<div class="fullscreen landing parallax" style="background-image:url('/intranet/componentes/images/bg/miniheader.jpg');background-repeat: no-repeat;height:175px;" data-img-width="2000" data-img-height="1333" data-diff="100">
             <div class="overlay">
                 <div class="container">
                     <div class="row">
@@ -19,7 +19,7 @@ if(isset($iduser)){
 
                      
                          <!-- /.logo -->
-                         <div class="logo wow fadeInDown"> <a href=""><img src="/images/60-años-min.png" alt="logo"></a>
+                         <div class="logo wow fadeInDown"> <a href=""><img src="/intranet/componentes/images/s-white.png" alt="logo"></a>
 
                          <!-- /.main title-->
                             <h1 class="wow fadeInLeft" style="float: right;margin:0px;">

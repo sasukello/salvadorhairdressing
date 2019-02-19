@@ -310,25 +310,18 @@ echo '
                 <div class="col-sm-6">
                     
                     <select name="modulo" class="form-control" tabindex="2" required>
-                                                        <option value="">-Selecciona un Modulo-</option>';
-                                                             $scanned_directory = array_diff(scandir($directory.$cargaridioma), array("..", "."));
-                                                             foreach ($scanned_directory as $direct){
-                                                                if (!(is_dir($directory.$cargaridioma."/".$direct))) {
-                                                                   $direct=substr($direct, 0, -4); 
-                                                                   echo "<option value=$direct ";
-                                                                      if($direct==$modulo){
-                                                                        echo "selected";
-                                                                      }
-                                                                   echo">$direct</option>";}
-                                                             }//foreach
-                                                         
-                                                        
-
-
+                      <option value="">-Selecciona un Modulo-</option>';
+                           $scanned_directory = array_diff(scandir($directory.$cargaridioma), array("..", "."));
+                           foreach ($scanned_directory as $direct){
+                              if (!(is_dir($directory.$cargaridioma."/".$direct))) {
+                                 $direct=substr($direct, 0, -4); 
+                                 echo "<option value=$direct ";
+                                    if($direct==$modulo){
+                                      echo "selected";
+                                    }
+                                 echo">$direct</option>";}
+                           }//foreach
 echo '                    </select>
-
-                    
-
                 </div></div>';}  //Carga el listado de modulos activos
         elseif (isset($nuevomodulo)) {
 

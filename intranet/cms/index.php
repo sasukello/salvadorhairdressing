@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <h4><i>FS Magazine</i></h4>
                                     </div>
                                 </div>-->
-                                <!--<div class="col-lg-4 col-sm-6">
+                                <div class="col-lg-4 col-sm-6">
                                     <a href="cicara" class="gallery-box">
                                         <img src="../componentes/images/cms/cicara/2.jpg" class="img-responsive" alt="Image 1">
                                         <div class="gallery-box-caption">
@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="caption text-center">
                                         <h4>Cicara Caffe</h4>
                                     </div>
-                                </div>-->
+                                </div>
                                 <div class="clearfix hidden-lg"> </div>
                                 <!--<div class="col-lg-4 col-sm-6">
                                     <a href="index-2.php" class="gallery-box">

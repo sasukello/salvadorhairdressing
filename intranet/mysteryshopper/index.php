@@ -3,24 +3,7 @@ ob_start();
 
 include "../sec/seguro.php";
 
-$arrayMenu = unserialize($_SESSION["accesos"]);
 $_SESSION["ubicacion"] = "default";
-
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-    if(isset($_SESSION["codigo"])){
-        $user = $_SESSION["usuario"];
-        $iduser = $_SESSION["codigo"];
-        $hash = $_SESSION["hash"];
-        if($hash == "s6a5486dasdas31"){
-            $bandera = true;
-        } else{
-        header("location:logout.php");
-        }
-    } else{
-       header("location:logout.php");
-    }
-}
 
 include "../sec/libfunc.php";
 require_once "../../mysteryshopper/etc/func.php";
@@ -65,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $msg = "<strong>Hubo un error al enviar las invitaciones. Intenta de nuevo.</strong><br>";
             $clase = "alert alert-danger alert-dismissable fade in";
         } else{
-             $msg = "<strong>¡Correos enviados!.</strong><br>";
+             $msg = "<strong>Sucedió algo inesperado!.</strong><br>".$referir;
             $clase = "alert alert-warning alert-dismissable fade in";
         }
     }
