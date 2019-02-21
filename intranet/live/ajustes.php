@@ -192,17 +192,17 @@ if (isset($message)){
                     
                     <select name="idioma" class="form-control" tabindex="1">
 
-                                                        <option value="">-Selecciona un Idioma-</option> <?php
-                                                        
-                                                             $scanned_directory = array_diff(scandir($directory), array('..', '.'));
-                                                             foreach ($scanned_directory as $direct){
-                                                              if (is_dir($directory.$direct)) {
-                                                                 echo "<option value=$direct ";
-                                                                    if($direct==$_SESSION["idioma"]){
-                                                                      echo "selected";
-                                                                    }
-                                                                 echo">$direct</option>";}
-                                                             }//foreach
+                      <option value="">-Selecciona un Idioma-</option> <?php
+                      
+                           $scanned_directory = array_diff(scandir($directory), array('..', '.'));
+                           foreach ($scanned_directory as $direct){
+                            if (is_dir($directory.$direct)) {
+                               echo "<option value=$direct ";
+                                  if($direct==$_SESSION["idioma"]){
+                                    echo "selected";
+                                  }
+                               echo">$direct</option>";}
+                           }//foreach
                                                          
   echo '</select></div>
                 </div><br><div class="row text-center">

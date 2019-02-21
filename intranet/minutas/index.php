@@ -7,17 +7,15 @@ $arrayMenu = unserialize($_SESSION["accesos"]);
 
 include $_SESSION["idiomaruta"].$_SESSION["idioma"]."/minutaslang.php";
 include "../sec/libfunc.php";
-
+include "component/library.php";
 
 //caragaminsalon();
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $valoregion = $_POST["valoregion"];
 
     if (isset($_POST['minutasalon'])) {
-
         $salones = 1;
 
     } elseif (isset($_POST['submitSalon'])){
@@ -30,11 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (isset($_POST['minutacomite'])){
       $comitecargarminuta = 'comite';
     }
-
-
-
-
-
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -47,138 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 }
 
-
-function caragaminsalon(){
-  //Cargar privilegio de usuario
-  //81= VERIFICAR REGION
-  //85= VERIFICAR SALON
-  $error = hacerpost("http://gruposalvador.dyndns.org/intra/sec/apiminutas.php?", "funcion=selectall&iduser=".$_SESSION["codigo"], $resulta);
-  $nombrearray = json_decode($resulta, true);
-     if ($error==""){
-         $accesosminuta = $nombrearray;          
-     }
-     else
-     {
-         $accesosminuta = array();         
-     } 
-
-     var_dump($accesosminuta);
-     return;
-
-}
-
-
-function cargarprivilegiosusuario(){
-  //Cargar privilegio de usuario
-  //81= VERIFICAR REGION
-  //85= VERIFICAR SALON
-  $error = hacerpost("http://gruposalvador.dyndns.org/intra/sec/apiminutas.php?", "funcion=privilegiosusuarios&iduser=".$_SESSION["codigo"], $resulta);
-  $nombrearray = json_decode($resulta, true);
-     if ($error==""){
-         $accesosminuta = $nombrearray;          
-     }
-     else
-     {
-         $accesosminuta = array();         
-     } 
-
-     $_SESSION["accesosminuta"] = $accesosminuta;
-     
-
-}
-
-
-function cargarnombresalon($idsalon){
-     global $salonnombre;
-     global $salonalias;
-     $error = hacerpost("http://gruposalvador.dyndns.org/intra/sec/apilive.php?", "funcion=nombresalon&idsalon=".$idsalon, $resulta);
-     $nombrearray = json_decode($resulta, true);
-     if ($error==""){
-         $salonnombre = $nombrearray[0]["NOMBRE"]; 
-         $salonalias  = $nombrearray[0]["PREFIJORESPALDO"];
-     }
-     else
-     {
-         $salonnombre = $error; 
-         $salonalias  = $error;
-     }     
-}
-
-function cargarnombreregion($idregion){
-     global $regionnombre;
-     $error = hacerpost("http://gruposalvador.dyndns.org/intra/sec/apilive.php?", "funcion=nombreregion&idregion=".$idregion, $resulta);
-     $nombrearray = json_decode($resulta, true);
-     if ($error==""){
-         $regionnombre = $nombrearray[0]["DESCRIPCION"]; 
-     }
-     else
-     {
-         $regionnombre = $error; 
-     }     
-}
-
-
-//Carga las minutas del salon
-function cargarminutasalon($idsalon ){
-   include $_SESSION["idiomaruta"].$_SESSION["idioma"]."/minutaslang.php"; 
-   include_once "script.php";
-   $error = hacerpost("http://gruposalvador.dyndns.org/intra/sec/apiminutas.php?", "funcion=minutasalon&idsalon=".$idsalon."&iduser=".$_SESSION["codigo"], $resulta);
-
-
-   ?>
-    <input type = "hidden" name = "salones" value = "<?php echo $idsalon ?>">
-    
-   <?php 
-   if ($error == "") {
-
-      $registros = (array)json_decode($resulta, true); 
-      datosminuta($registros, "", "salon");
-      //var_dump($registros);
-   }
-   else
-
-      echo "Ha ocurrido el siguiente " . $error;  
-}
-
-function cargarminutacomite(){
-   include $_SESSION["idiomaruta"].$_SESSION["idioma"]."/minutaslang.php"; 
-   include_once "script.php";
-   $error = hacerpost("http://gruposalvador.dyndns.org/intra/sec/apiminutas.php?", "funcion=minutacomite&idsalon=".$idsalon."&iduser=".$_SESSION["codigo"], $resulta);
-   
-   if ($error == "") {
-      $registros = (array)json_decode($resulta, true); 
-      datosminuta($registros, "", "comite");
-   }
-   else
-      echo "Ha ocurrido el siguiente " . $error;  
-}
-
-//Carga las minutas de la region
-function cargarminutaregion($idregion ){
-   include $_SESSION["idiomaruta"].$_SESSION["idioma"]."/minutaslang.php"; 
-   include_once "script.php";
-   $error = hacerpost("http://gruposalvador.dyndns.org/intra/sec/apiminutas.php?", "funcion=minutaregion&idregion=".$idregion."&iduser=".$_SESSION["codigo"], $resulta);
-   ?>
-    <input type = "hidden" name = "regiones" value = "<?php echo $idregion ?>">
-    
-   <?php 
-   if ($error == "") {
-
-      $registros = (array)json_decode($resulta, true); 
-      //var_dump($registros);
-      datosminuta($registros, "", "region");
-   }
-   else
-
-      echo "Ha ocurrido el siguiente " . $error;  
-}
-
 ?>
 <!DOCTYPE html>
 <html>
         <head>
         <title>Minutas - Salvador Hairdressing (Intranet)</title>
-        <?php   include "../componentes/header.php"; ?>
+        <?php include "../componentes/header.php"; ?>
 
         <!-- CSS Tether -->
         <link rel="stylesheet" href="../componentes/plugins/tether/shepherd-theme-arrows.css" />
@@ -367,16 +234,25 @@ function cargarminutaregion($idregion ){
                                        if ((in_array("Salon1", array_column($_SESSION["accesosminuta"], 'NOMBREITEM'))) || (in_array("Region1", array_column($_SESSION["accesosminuta"], 'NOMBREITEM'))))  {
                                           regionCargar($iduser);
                                        }
-                                       
+
+                                      echo '<div class="row"><p></p>';
+
                                       if (in_array("Comite1", array_column($_SESSION["accesosminuta"], 'NOMBREITEM'))) {
-                                        echo '<p></p><div class="col-sm-offset-4 col-sm-6">';
+                                        echo '<div class="col-sm-offset-1 col-sm-10 col-md-4 col-lg-3">';
                                         echo '
                                           <p>'.$trmnseleccioneminutacomite.'</p>
-                                          <button type="submit" class="btn" name="minutacomite" style="color:red;height:50px; width:200px">'.$trminutacomite.'</button>
+                                          <button type="submit" class="btn bouton-image monBouton" name="minutacomite" style="color:red;height:50px; width:200px">'.$trminutacomite.'</button>
                                           ';
-                                        echo '</div>';
+                                        echo '</div></div>';
                                         }
-                                        
+                                      if (in_array("Comite1", array_column($_SESSION["accesosminuta"], 'NOMBREITEM'))) {
+                                        echo '<div class="row"><p></p><div class="col-sm-offset-1 col-sm-10 col-md-4 col-lg-3 pt-10">';
+                                        echo '
+                                          <p>Ver Minutas de Operaciones:</p>
+                                          <a href="operaciones"><button type="button" class="btn bouton-image monBouton" name="minutaoperacion" style="color:red;height:50px; width:200px">Minutas de Operaciones</button></a>
+                                          ';
+                                        echo '</div></div>';
+                                        }
 
                                     }//Carga la lista de regiones?>
 

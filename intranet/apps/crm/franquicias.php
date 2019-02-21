@@ -50,6 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		    break;
 
+		    case 'r1':
+		    	$idf = $_POST['idfq'];
+		    	echo cargarFormAdicional($idf);
+		    	break;
+
 		    break;
 
 	    }
@@ -230,6 +235,7 @@ function cargarInfoFranq($id){
 							$result .= '<div class="col-sm-12 pt-10">
 							   <div class="text-center">
 							   		<button type="button" onclick="cargarPreguntas(\''.$idfranq.'\');" class="btn btn-default">Ver Solicitud</button>
+							   		<button type="button" onclick="cargarRespuestas(\''.$idfranq.'\');" class="btn btn-default">Ver Segundo Formulario</button>
 							   </div>
 							</div>';
 						}
@@ -566,6 +572,21 @@ function cargarCuestFranq($id){
 	}
 
 	return $result;
+}
+
+function cargarFormAdicional($idf){
+	include "../../cms/library/common.php";
+
+	$sql = "SELECT respuestas2 FROM `web_franquicias_forms` WHERE idform=$id";
+	$all = (array) json_decode(miBusquedaSQL($sql), true, 512, JSON_UNESCAPED_UNICODE);
+	$i=0;
+	foreach ($all as $a) {
+		$all = json_decode($a['respuestas2'], true, 512, JSON_UNESCAPED_UNICODE);
+		$tipofranq = $all['tipo'];
+		echo $i++;
+	}
+
+	return;
 }
 
 function changeNum($valor){

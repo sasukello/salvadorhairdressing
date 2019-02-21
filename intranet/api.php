@@ -70,6 +70,7 @@ error_reporting(1);
 	      		case 'asignEnc':
 	      			require 'cms/library/common.php';
 	      			require 'sec/forms.php';
+	      			require 'sec/libfunc.php';
 
 	      			$datos = base64_decode($_POST["datos"]);
 	      			$datosj = json_decode($datos, true);
@@ -84,11 +85,10 @@ error_reporting(1);
 	      			require 'sec/forms.php';
 	      			$newuser = $_POST["who"];
 	      			$datos = base64_decode($_POST["datos"]);
-	      			$datos2 = (array) json_decode($datos, true);
 	      			//var_dump($datos2);
 	      			//var_dump($newuser);
 
-	      			asignarUsers2($datos2, $newuser);
+	      			echo asignarUsers2($datos, $newuser);
 	      			break;
 	      		case 'getEncResp':
 	      			require 'cms/library/common.php';

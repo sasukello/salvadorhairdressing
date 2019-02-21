@@ -1,5 +1,5 @@
 <?php 
-function pasouno($user){    
+function pasouno($user){
     require_once "../library/libcon.php";
     $dbh = conex();
     mysqli_set_charset($dbh, 'utf8');
@@ -10,28 +10,40 @@ function pasouno($user){
     }   
 
     $sql = "SELECT * FROM ms_usuario WHERE correo = '".$user."' LIMIT 1;";
+
     $search = mysqli_query($dbh, $sql);
     $match1 = mysqli_num_rows($search);
     if ($match1 > 0) {
         // SI ENCUENTRA COINCIDENCIA -> YA REGISTRADO
-        session_start();    
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $_SESSION["email"] = $user;
-        header("location:/mysteryshopper/login.php?t=1");
-    }else {
+          // session_unset();
+          // session_destroy();
+          // session_start();
+        
+        header("Location: /mysteryshopper/login.php?t=1");
+        
+    } else {
         // SI NO ENCUENTRA COINCIDENCIA -> VERIFICA SI ES USUARIO CORPORATIVO
         // header("Location: http://gruposalvador.dyndns.org/sitio/sec/ms/logserv.php?u=".base64_encode($user  )."");
 
         $resulta = "";
-        $error = hacerpost("http://gruposalvador.dyndns.org/sitio/sec/ms/logserv.php?", "u=".base64_encode($user),$resulta);
-        if ($error == ""){
-            var_dump($resulta);
-        } else{
-            var_dump($error);
+        $error = hacerpost("http://gruposalvador.dyndns.org/sitio/sec/ms/logserv.php?","u=".base64_encode($user),$resulta);
+
+        $numero=(int) $error; // si es 1 encontro usuario 
+        if ($error == 0 ) {  //Usuario es nuevo       
+            $userc = base64_encode($user);
+            header("Location: /mysteryshopper/registro.php?uu=$userc"); 
+        }else if ($error == 1) { // Es un usuario registrado
+            header("Location: /mysteryshopper/login.php?t=2&uu=".base64_encode($user)); 
+        }else{
+            echo "Entre aqui".$error."-";
         }
         return;
     }
 }
-
 function procesoRegistro(){
     require_once "../libcon.php";
     require_once "../libmail.php";
@@ -64,7 +76,7 @@ function procesoRegistro(){
                 VALUES ('$docfiscal', '$nombre', '$apellido', '$email', '$password', $pais, '$estado', '$ciudad', '$phone', '$nacimiento', '$direccion', 0, '$fechaactual')";
 
         if (mysqli_query($dbh, $sql)) {            
-            enviarAvisoNuevoUsuario($email, $nombre." ". $apellido, $pais, $estado." ".$ciudad, $phone,                    $nacimiento,$direccion);
+            enviarAvisoNuevoUsuario($email, $nombre." ". $apellido, $pais, $estado." ".$ciudad,                    $phone,$nacimiento,$direccion);
             header('location: /mysteryshopper/index.php?e=1');
             //header('location: /mysteryshopper/cuenta/mailcontroller.php?reg=1');
             exit;

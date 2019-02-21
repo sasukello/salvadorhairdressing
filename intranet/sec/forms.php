@@ -184,28 +184,6 @@ function saveEncuestaResult($codigo, $idencuesta, $iduser){
 
 function asignarUsers1($user, $idencuesta){
 
-
-	
-
-    if(file_exists('../componentes/data.json'))  
-   	{
-        $current_data = file_get_contents('../componentes/data.json');  
-        $array_data = json_decode($current_data, true);  
-        $extra = array(  
-             'userName' => "Este es el usuario de prueba",  
-             'fullname' => "Este es el nombre completo de prueba"  
-        );
-        $array_data[] = $extra;  
-        $final_data = json_encode($array_data);  
-        if(file_put_contents('../componentes/data.json', $final_data))  
-        {
-             $message = "<label class='text-success'>File Appended Success fully</p>";  
-        }
-   	} else {
-        $error = 'JSON File not exits';  
-   	}
-
-
 	$sql1 = "SELECT * FROM intranet_encuestas_user WHERE idencuesta = $idencuesta;";
 
 	$res1 = (array) json_decode(miBusquedaSQL($sql1), true);
@@ -219,41 +197,68 @@ function asignarUsers1($user, $idencuesta){
 			$ret1 .= ' <span id="user'.$re["idusuario"].'" class="badge badge-success">'.$re["idusuario"].'</span> ';
 		}
 	}
+
+	$res1json = json_encode($res1);
+
+	$usersC = getUsersCorporativo($res1json);
+	//var_dump($usersC);
 	$ret1 .= "</p><p><span id='newUserA'></span></p>";
 
 	$ret2 =	'<div class="form-group row">
-        <label for="testNoBtn" class="col-sm-2 col-form-label">Usuario:</label>
+	<input type="hidden" id="keepmedata" value="'.$user.';'.$idencuesta.'">
+        <label for="optgroup" class="col-sm-2 col-form-label">Usuario:</label>
             <div class="col-lg-6">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="testNoBtn">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>';
+                <select name="optgroup" id="optgroup" multiple="multiple">
+				  <optgroup label="Franquiciados">';
+	$ret3="";
+	foreach ($usersC as $uc) {
+		if($uc["CORREOEMPRESA"] !== NULL){
+			$ret3 .= '<option value="'.$uc["CODIGO"].'">'.$uc["NOMBRECOMPLETO"].' -- '.$uc["SALARIO"].'</option>';	
+		}
+	}
 
+	$ret2 .= $ret3."</select></div></div></div>";
 
+    //var_dump($usersC);
 	//echo "U: ".$user." - E: ".$idencuesta;
-	return $ret1." ".$ret2;
+	return $ret1." ".$ret2;	
+
+}
+
+function getUsersCorporativo($usuario){
+	$resulta = "";
+    $error = hacerpost("http://gruposalvador.dyndns.org/intra/sec/apilive.php?", "usuario=$usuario&funcion=listapersonal", $resulta);
+    if ($error == ""){
+        $final = $resulta;
+        $manage = (array) json_decode($final, true);
+        /*foreach ($manage as $region) {
+            echo regionBanderas($region->CODIGO);
+        }*/
+        return $manage;
+    }
+    else{
+        $msg = "<b>Ha ocurrido un error:</b> " . $error;
+        return $msg;
+    }
 }
 
 function asignarUsers2($data, $user){
+	
 
-	//$userid = base64_decode($data["user"]);
-	$formuid = $data["form"];
-	$sql1 = "INSERT INTO intranet_encuestas_user (idencuesta, idusuario) VALUES (".$formuid.", '".$user."');";
+	list($myid, $formid) = explode(";", $data); 
+	$sql1="";
+	foreach ($user as $u) {
+		$sql1 = "INSERT INTO intranet_encuestas_user (idencuesta, idusuario) VALUES (".$formid.", '".$u."'); ";
+		$res1 = miActionSQL($sql1);
+	}
 
-	$res1 = miActionSQL($sql1);
-
-	echo $res1;
-
-
-	return;
+	if($res1 == 1 || $res1 == "1"){
+		$msg = 1;
+	} else{
+		$msg = 0;
+	}
+	return $msg;
 }
 
 class Car {

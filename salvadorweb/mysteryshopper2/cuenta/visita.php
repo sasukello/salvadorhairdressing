@@ -148,7 +148,7 @@ include '../etc/func.php';
         </footer>
 
         <!-- /.javascript files -->
-        <script src="/mysteryshopper/js/jquery.js"></script>
+        <script src="/mysteryshopper/js/jquery.js"></script>|
         <script src="/mysteryshopper/js/bootstrap.min.js"></script>
         <script src="/mysteryshopper/js/custom.js"></script>
         <script src="/mysteryshopper/js/jquery.sticky.js"></script>
@@ -157,7 +157,8 @@ include '../etc/func.php';
         <script src="/mysteryshopper/js/funciones.js"></script>
         <script>
             $(document).ready(function(){
-                $('[data-toggle="popover"]').popover(); 
+                $('[data-toggle="popover"]').popover();
+
             });
         </script>
         <script>

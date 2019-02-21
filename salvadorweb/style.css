@@ -164,7 +164,7 @@ iframe {
 /*-----------------------------------------------------------------------------------*/
 body {
     overflow-x: hidden;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -294,7 +294,7 @@ h4.post-title {
 	font-weight: normal;
 }
 .inner {
-    padding-top: 100px;
+    padding-top: 56px;
     padding-bottom: 100px;
 }
 .inner2 {
