@@ -68,6 +68,18 @@
 	<div id="fh5co-featured-menu">
 		<div class="container">
 			<div class="row">
+				<div class="col-md-2 col-sm-6 col-xs-6 col-xxs-12 fh5co-item-wrap" style="float: right;">
+					<div class="fh5co-item animate-box">
+						<a href="#" data-toggle="modal" data-id="36" data-target="#myModal"><img src="/componentes//images/ediciones/036.jpg" class="img-responsive"></a>
+						<p><a href="#" data-toggle="modal" data-id="36" data-target="#myModal"><b>Edición 36</b></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fh5co-featured-menu">
+		<div class="container">
+			<div class="row">
 				<div class="col-md-2 col-sm-6 col-xs-6 col-xxs-12 fh5co-item-wrap">
 					<div class="fh5co-item animate-box">
 						<a href="#" data-toggle="modal" data-id="35" data-target="#myModal"><img src="/componentes//images/ediciones/035.jpg" class="img-responsive"></a>

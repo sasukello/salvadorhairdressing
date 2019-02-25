@@ -340,7 +340,10 @@
 		if ($numero=="") {
 			document.getElementById("espaciorevista").innerHTML = "Edición no disponible para vista previa.";
 		} else{
-			if ($numero=="35") {
+			if ($numero=="36") {
+				document.getElementById("espaciorevista").innerHTML = "<iframe style='width:100%; height:600px;' src='//e.issuu.com/embed.html#30851590/52454257' frameborder='0' allowfullscreen></iframe>";
+				document.getElementById("titulorevista").innerHTML = "Edición 36";
+			} else if ($numero=="35") {
 				document.getElementById("espaciorevista").innerHTML = "<iframe style='width:100%; height:600px;' src='//e.issuu.com/embed.html#3474702/52530331' frameborder='0' allowfullscreen></iframe>";
 				document.getElementById("titulorevista").innerHTML = "Edición 35";
 			} else if ($numero=="34") {

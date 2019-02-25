@@ -42,7 +42,7 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2 style="padding-bottom: 3%">Edición Actual</h2>
-					<iframe style="width:100%; height:600px;" src="//e.issuu.com/embed.html#30851590/52454257" frameborder="0" allowfullscreen></iframe>
+					<iframe style="border:none;width:100%;height:600px;" src="//e.issuu.com/embed.html#30851590/68009322" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
