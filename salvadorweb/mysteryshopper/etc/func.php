@@ -71,7 +71,7 @@ function listarPostEncuestas($iduser, $fecha, $idvisita, $tipo){
         exit;
     }
     if($tipo == 1){
-    echo "<br><h4>Encuestas Post-Visitas:</h4>
+    echo "<br><h4 style='padding: 15px;'>Encuestas Post-Visitas:</h4>
     <h6>Puedes consultar las encuestas, más sólo podrán ser respondidas a partir del día de tu visita.</h6>";} else
     if($tipo == 2){
     echo "<br><br><h4>Encuestas Post-Visitas:</h4>";  
