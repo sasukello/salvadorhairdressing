@@ -193,7 +193,16 @@ function reportePostVisita($idencuestarespuesta, $idusuario){
                     $id_num = $i - 1;
                     echo "<li class='list-group-item'><span class='badge'>PREGUNTA #$id_num</span> <h6>".$rw3[$i]."</h6></li>";
                     if($rw[$j] == 1){$clase = "success";$si++;} else if($rw[$j] == 2){$clase = "danger";$no++;}
-                    echo "<li class='list-group-item list-group-item-$clase'><strong>Comentario:</strong> ".$rw[$k]."</li>";
+                    if ($clase == "success") {
+                        
+                    echo "<li class='list-group-item list-group-item-$clase'><strong>Comentario:</strong><span style='float:right;'>R=SI</span> " .$rw[$k]."</li>";
+
+                    }else if ($clase == "danger"){
+
+                       echo "<li class='list-group-item list-group-item-$clase'><strong>Comentario:</strong><span style='float:right;'>R=NO</span> " .$rw[$k]."</li>"; 
+                    }
+
+
                     //echo "Otro: ".$rw[$j];
                     $i++;
                     $j++;$k++;
@@ -371,6 +380,7 @@ function inputLocal($correo){
 }
 
 function procesarEncuestaPart($usuario, $tipo){
+    
     $nombre = $_SESSION["nombre"];
     $apellido = $_SESSION["apellido"];
     $id = $_SESSION["id"];
@@ -381,6 +391,7 @@ function procesarEncuestaPart($usuario, $tipo){
             
     require_once "../../sitio/sec/ms/libcon.php";
     
+
     //enviarRecordatorioProgr
     $dbh = dbconn();
     mysqli_set_charset($dbh, 'utf8');
@@ -398,7 +409,8 @@ function procesarEncuestaPart($usuario, $tipo){
         die(mysqli_error($dbh));
         header('location: /mysteryshopper/cuenta/index.php?e=3');
         exit;
-    }        
+    }
+
 }
 
 function procesarPostEncuesta($usuario, $pvid){
