@@ -30,8 +30,8 @@
 					<ul class="fh5co-footer-links">
 						<li><i>Gerencia de Comercialización y Ventas:</i></li>
 						<li>marketing@fsinter.com</li>
-						<li>ventas@fsinter.com</li>
-						<li>+58 424 658 10 04</li>
+						<!-- <li>ventas@fsinter.com</li> -->
+						<li>+58 424 622 78 00</li>
 						<br>
 						<li><i>Distribución Internacional:</i></li>
 						<li>Corporativo Salvador C.A.</li>

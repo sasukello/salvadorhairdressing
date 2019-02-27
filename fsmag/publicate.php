@@ -129,12 +129,12 @@
                             Maracaibo, Venezuela<br></p>
 
                             <h4>Teléfonos</h4>
-                            <p>Local: +58 261 000 00 00<br>
-                            Móvil: +58 424 658 10 04</p>
+                            <p>Local: +58 261 935 04 71 Ext. 26<br>
+                            Móvil: +58 424 622 78 00</p>
 
                             <h4>Correo Electrónico</h4>
                             <p>marketing@fsinter.com<br>
-                            ventas@fsinter.com</p>
+                           <!--  ventas@fsinter.com --></p>
                         </div>
                     </div>
                 </div>
