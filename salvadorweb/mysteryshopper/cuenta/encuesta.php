@@ -94,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php include '../../c/header.php'; ?>
     <?php include '../../library/funciones.php'; ?>
+<style>.midiv{padding-top: 56px !important;padding-bottom: 44px !important;}</style>
 </head>
 <body>
 <div id="preloade2r"><div class="textload"><?php echo _('Cargando'); ?></div><div id="status"><div class="spinner"></div></div></div>
@@ -111,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 </div>
 <div class="dark-wrapper">
-  <div class="container inner">
+  <div class="container inner midiv">
     <div class="row ">
       <div class='alert alert-warning alert-dismissable fade in'>
           <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>Aviso de Confidencialidad:</b> La información recolectada en este programa, así como tus datos son confidenciales. <b>Salvador Hairdressing</b> nunca revelará tu identidad a terceros. Igualmente, como participante, estás comprometido a no revelar tu involucramiento en este programa.

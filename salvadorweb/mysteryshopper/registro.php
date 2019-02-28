@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="es_VE">
 <?php
 /*
  * Plantilla donde se le pide al usuario Rellenar el formularios con sus datos personales.
  */
 ob_start();
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 $user="";
 $estado="";
-// include '../sitio/sec/ms/libfunc.php';
-include "funcionesMistery/funciones.php";
+include '../sitio/sec/ms/libfunc.php';
+//include "funcionesMistery/funciones.php";
 
 if (isset($_GET["e"])) {
     $estado = $_GET["e"];
@@ -26,9 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         procesoRegistro();
     }
 }
-?>
-
-<?php 
   $language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
   putenv("LC_ALL=$language");
   setlocale(LC_ALL, $language);
@@ -41,6 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
  ?>
+<!DOCTYPE html>
+<html lang="es_VE">
 <head>
 <?php include '../c/ganalytics.html'; ?>  
 <meta charset="utf-8">
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class="wizard">
                   <div class="text-center pt-50">
                       <h2 class="mb-5"><?php echo _('Formulario de Registro'); ?></h2>
-                      <p class="mb-0"><?php echo _('¿Qué te pareció tu visita a nuestros salones? Haznos llegar tus comentarios.'); ?></p>
+                      <p class="mb-0"><?php echo _('Ayudanos a mejorar nuestros servicios. Haznos llegar tus comentarios.'); ?></p>
                   </div>
                    <form action="" method="POST">
                      <input type="hidden" name="u" value="503bdae81fde8612ff4944435">

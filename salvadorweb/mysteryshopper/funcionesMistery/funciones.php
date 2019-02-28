@@ -35,7 +35,7 @@ function pasouno($user){
         $numero=(int) $error; // si es 1 encontro usuario 
         if ($error == 0 ) {  //Usuario es nuevo       
             $userc = base64_encode($user);
-            header("Location: /mysteryshopper/registro.php?uu=$userc"); 
+            header("Location: /mysteryshopper/registro.php?uu=$userc");     
         }else if ($error == 1) { // Es un usuario registrado
             header("Location: /mysteryshopper/login.php?t=2&uu=".base64_encode($user)); 
         }else{
@@ -45,10 +45,10 @@ function pasouno($user){
     }
 }
 function procesoRegistro(){
-    require_once "../libcon.php";
-    require_once "../libmail.php";
+    require_once "../../sitio/sec/ms/libcon.php";
+    require_once "../../sitio/sec/ms/libmail.php";
 
-    $dbh = conex();
+    $dbh = dbconn();
     mysqli_set_charset($dbh, 'utf8');
 
     if (!$dbh) {

@@ -1,7 +1,6 @@
 <?php 
       ob_start();
-      error_reporting(E_ALL);
-      ini_set("display_errors", 1);
+     
 
       $language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
       putenv("LC_ALL=$language");
@@ -41,7 +40,7 @@ if (isset($_GET["e"])) {
     } else if($estado == 4){
         $mensaje = "<div class='alert alert-warning'>El participante fue <strong>rechazado éxitosamente</strong></div>";
     } else if($estado == 5){
-        $mensaje = "<div class='alert alert-danger'>Hubo un erorr en la conexión al sitio de <strong>Mystery Shopper</strong>. Por favor, intenta realizar las operaciones desde tu Cuenta Corporativa.</div>";
+        $mensaje = "<div class='alert alert-danger'>Hubo un error en la conexión al sitio de <strong>Mystery Shopper</strong>. Por favor, intenta realizar las operaciones desde tu Cuenta Corporativa.</div>";
     } else if($estado == 6){
         $mensaje = "<div class='alert alert-success'>¡El participante fue <strong>aprobado éxitosamente</strong>!</div>";
     }  
@@ -91,7 +90,7 @@ if (isset($_GET["e"])) {
       </div>
       <div class="col-md-5">
          <div class="signup-header wow fadeInUp" style="margin: 0 5% 0 5%;">
-            <h3 id="ingresaemail" class="form-title text-center" style="padding-top:10% !important"><strong>INGRESA TU CORREO ELÉCTRONICO...</strong></h3>
+            <h3 id="ingresaemail" class="form-title text-center" style="padding-top:10% !important"><strong><?php echo _('INGRESA TU CORREO ELÉCTRONICO...'); ?></strong></h3>
             <?php echo $mensaje;?>
             <form action="index.php" class="form-header" role="form" method="POST" id="ms_email">
                 <input type="hidden" name="u" value="503bdae81fde8612ff4944435">
