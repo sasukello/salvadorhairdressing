@@ -14,28 +14,19 @@
 	cabecera("ediciones");
 	?>
 
-	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image: url(/componentes//images/portada3.jpg);" data-stellar-background-ratio="0.5">
+	<div id="fh5co-started" class="fh5co-section animate-box" style="background-image: url(/componentes//images/portada5.jpg); padding-top: 10%; height: 720px;" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<div class="display-t js-fullheight">
-						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-							<h1><em>En Portada</em></h1>
-							<h2>&ldquo; Quantum ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ab debitis sit itaque totam, a maiores nihil, nulla magnam porro minima officiis! &rdquo;</h2>
-							<p class="author" style="font-size: 22px;"><cite>&mdash; Mariángel Ruiz</cite></p>
-							<a href="#fh5co-contact" class="btn btn-elegant">Ver Edición</a>
-						</div>
-					</div>
-
-					<!--h class="espaciado">En Portada</h1>
-					<p style="font-size: 22px;"> &ldquo; Quantum ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ab debitis sit itaque totam, a maiores nihil, nulla magnam porro minima officiis! &rdquo;</p>
-					<p class="author"><cite>&mdash; Mariángel Ruiz</cite></p>
-					<a href="#fh5co-contact" class="btn btn-elegant">Contáctanos</a-->
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2 class="espaciado">En Portada</h2>
+					<p> &ldquo; Nos quedamos en Venezuela, hasta que Dios decida. No descarto emprender proyectos en el exterior, pero amo trabajar en mí país, esto me hace feliz &rdquo;</p>
+						<p class="author"><cite>&mdash; Gesaria Laprieta</cite></p>
+					<p><a href="#" class="btn btn-primary btn-outline">Ver Edición</a></p>
 				</div>
 			</div>
 		</div>
-	</header>
+	</div>
 
 	<div id="fh5co-contact" class="fh5co-section animate-box margen">
 		<div class="container">
