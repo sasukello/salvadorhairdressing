@@ -9,8 +9,10 @@
     <link href="/intranet/componentes/css/owl.carousel.css" rel="stylesheet">
     <link href="/intranet/componentes/css/css-index.css" rel="stylesheet" media="screen"> -->
     <link href="/intranet/componentes/css/css-index-red.css" rel="stylesheet" media="screen">
-    <link href="/intranet/componentes/css/est-plugins.css" rel="stylesheet" media="screen">
     <link href="/intranet/componentes/css/estilos.css" rel="stylesheet" media="screen">
+    <?php if ($_SESSION["ubicacion"] != "academia"): ?>
+    <?php endif; ?> 
+    <link href="/intranet/componentes/css/est-plugins.css" rel="stylesheet" media="screen">
     <!-- Google Fonts -->
     <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 

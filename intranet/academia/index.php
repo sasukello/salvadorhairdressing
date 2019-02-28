@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 include "../sec/seguro.php";
 include "../sec/libfunc.php";
 include "includes/admin.php";
+include 'includes/respuestas.php'; 
 
 $datos = datosPanelesDashboard();
 $_SESSION["ubicacion"] = "academia";
@@ -26,6 +27,7 @@ if (isset($_SESSION["usuario"])) {
     <!-- CSS Tether -->
     <link rel="stylesheet" href="../componentes/plugins/tether/shepherd-theme-arrows.css" />
     <link rel="stylesheet" href="componentes/css/font-awesome.min.css">
+    <link rel="stylesheet" href="componentes/css/style-main.css">
     <!-- CSS | DataTables -->
     <link rel="stylesheet" type="text/css" href="componentes/DataTables/datatables.min.css" />
     <link rel="stylesheet" type="text/css" href="componentes/DataTables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css" />
@@ -52,7 +54,7 @@ if (isset($_SESSION["usuario"])) {
                 <div class="col-md-12 col-sm-12 text-center feature-title">
                     <div id="cargando" style="width: 100%; height: 100%; text-align: center"><br><br><img src='/mysteryshopper/images/loading.gif'></div>
                     <!-- Section: inner-header -->
-                    <section class="inner-header divider layer-overlay overlay-dark-5" data-bg-img="/componentes/images/main/prueba.jpg">
+                    <section class="inner-header">
                         <div class="container pt-0 pb-0">
                             <!-- Section Content -->
                             <div class="section-content">
