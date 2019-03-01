@@ -63,19 +63,26 @@ function partPend(){
                 $idsecret = base64_encode($id);$correosecret = base64_encode($correo);
                 echo "<tr>";
                 ?>
-
                 <td><div class="btn-group">
                   <a href=<?php echo 'partEstado.php?a='.$idsecret.'&re='.$correosecret;?> onclick="window.open(this.href,'targetWindow','toolbar=no,location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=900, height=560, top=50, left=250'); return false;"><button type="button" class="btn btn-sm" id='aprobarSi'>Aprobar</button></a>
                   <a href=<?php echo 'partEstado.php?r='.$idsecret.'';?>><button type="button" class="btn btn-sm" id='aprobarNo'>Rechazar</button></a>
                 </div>
                 </td>
+                <style>
+                    .tooltip21 {position: relative;display: inline-block;}
+                    .tooltip21 .tooltiptext {visibility: hidden;width: 120px;background-color: #d34a4a;
+                        color: #fff;text-align: center;border-radius: 6px;
+                        font-size: 10px !important;position: absolute;z-index: 1;top: 100%;
+                        left: 50%;margin-left: -60px;}
+                    .tooltip21:hover .tooltiptext {visibility: visible;}
+                </style>
                 <?php
                 echo "<td><a href='#' data-toggle='tooltip' data-placement='top' title='Registrado el $year'>$nombre $apellido</a></td>
                         <td>$correo</td>
                         <td>$paises[$pais]</td>
                         <td>$ciudad, $estado</td>
-                        <td><a href='#' data-toggle='popover' data-trigger='focus' title='Edad: $edadf' data-content='Dirección: $direccion'>
-                        Más</a></td></tr>";
+                        <td><div class='tooltip21'><a href='#'>Mas</a><span class='tooltiptext'>Edad: $edadf - Direccion: $direccion</span></div>
+                        </td></tr>";
             }
                 echo "</tbody></table></div>";
             } else {
