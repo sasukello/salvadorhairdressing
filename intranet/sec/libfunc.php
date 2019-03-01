@@ -276,6 +276,17 @@ function menuheader($ubicacion, $accesos){
             </ul>
         </div>
        <?php break;
+       case 'academia':?>
+       <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+           <ul class="nav navbar-nav">
+                <?php foreach($accesos as $a){
+                   menu3($a);
+               } ?>
+               <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
+               <?php echo $useroptions;?>
+           </ul>
+       </div>
+       <?php break;
     }
 }
 
@@ -418,6 +429,9 @@ function menu3($nombre){
         <?php break;
         case 'Minutas1':?>
         <li><a href="/intranet/minutas"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Minutas <span id="notHead"></span></a></li>
+        <?php break;
+        case 'Academia':?>
+        <li><a href="/intranet/academia"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Academia <span id="notHead"></span></a></li>
         <?php break;
     }
 }
