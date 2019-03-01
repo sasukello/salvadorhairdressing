@@ -1,0 +1,61 @@
+.btn-default{
+	font-size: 17px;
+    margin: 30px 0 10px;
+    margin-right: 10px;
+    line-height: 20px;
+    padding: 15px 35px;
+    height: 50px;
+    border: 2px solid #d34a4a !important;
+    background: transparent !important;
+    transition: all 0.4s !important;
+    color: #d34a4a !important;
+    border-radius: 100px;
+}
+.btn-default:hover{
+	color: #fff !important;
+	background: #d34a4a !important;
+}
+
+.table>thead>tr>th{
+    background: #d34a4a !important;
+    color: #fff !important;
+    border-bottom: 0 !important;
+    text-transform: uppercase !important;
+    vertical-align: bottom !important;
+    padding: 10px !important;
+}
+#comment{
+    min-height: 0px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ccc !important;
+    padding: 6px 12px;
+    font-size: 14px;
+    resize: none;
+    background-color: #fff; 
+}
+.table>tbody>tr>th, .table>tfoot>tr>th, .table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle !important;
+}
+h6{
+    color:#777 !important;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+    padding: 10px !important;
+}
+#botonuno{
+    width: 100%;
+    background-color: #d34a4a !important;
+    color: white !important;
+}
+@media (max-width: 768px){
+    label.radio-inline{
+        display: initial !important;
+    }
+}
+ul.list-group{
+    font-size: 17px !important;
+}
+div.midiv{
+    padding-top: 56px !important;
+    padding-bottom: 44px !important;
+}
