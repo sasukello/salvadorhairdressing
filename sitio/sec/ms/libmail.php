@@ -1,5 +1,4 @@
 <?php
-
 function enviarAvisoNuevoUsuario($email, $nombrec, $pais, $dir1, $phone, $nac, $dir2){
 
 
@@ -28,6 +27,8 @@ function enviarAvisoNuevoUsuario($email, $nombrec, $pais, $dir1, $phone, $nac, $
 
           $mailcod = base64_encode($email);
 
+          $id = getIdByEmail($email);
+
     //$to = "mgiurdanella@gmail.com";
 
     $to = "prog.web@salvadorhairdressing.com";
@@ -54,7 +55,7 @@ function enviarAvisoNuevoUsuario($email, $nombrec, $pais, $dir1, $phone, $nac, $
 
                     <tr><td><b>Dirección:</b></td><td>$dir2.</td></tr>
 
-                    <tr><td colspan='2' style='text-align: center;'><br><b>¿Aprobar?</b></td></tr><tr><td style='text-align: center;background:lightcoral;color:#ffffff;border-top-left-radius: 5px;'><br><a href='http://www.salvadorhairdressing.com/mysteryshopper/loginExterno.php?mail=$mailcod&t=1' style='color:#ffffff;'> Si </a></td><td style='text-align: center;background:lightpink;color:#ffffff;border-top-right-radius: 5px;'><br><a href='http://www.salvadorhairdressing.com/mysteryshopper/loginExterno.php?mail=$mailcod&t=2' style='color:#ffffff;'> No </a></td></tr>";
+                    <tr><td colspan='2' style='text-align: center;'><br><b>¿Aprobar?</b></td></tr><tr><td style='text-align: center;background:lightcoral;color:#ffffff;border-top-left-radius: 5px;'><br><a href='http://www.salvadorhairdressing.com/mysteryshopper/admin/partEstado.php?mail=$mailcod&t=1' style='color:#ffffff;'> Si </a></td><td style='text-align: center;background:lightpink;color:#ffffff;border-top-right-radius: 5px;'><br><a href='http://www.salvadorhairdressing.com/mysteryshopper/loginExterno.php?mail=$mailcod&t=2' style='color:#ffffff;'> No </a></td></tr>";
 
     $htmlContent3 = file_get_contents("../sitio/sec/ms/correos/nuevoregistro2.php");
 
@@ -101,6 +102,30 @@ function enviarAvisoNuevoUsuario($email, $nombrec, $pais, $dir1, $phone, $nac, $
 
 
 }
+function getIdByEmail($email) {
+
+    require_once "libcon.php";
+
+    $dbh = dbconn();
+
+    mysqli_set_charset($dbh, "utf8");
+
+    if (!$dbh) {
+        die("Error en Conexión: " . mysqli_error($dbh));
+        exit();
+    }
+    $sql = "SELECT id FROM ms_usuario WHERE correo = $email";
+
+    $consulta = mysqli_query($dbh,$sql);
+
+    $resultado = mysqli_num_rows($consulta);
+    $id = null;
+    if ($resultado > 0) {
+        $rw = mysqli_fetch_array($consulta,MYSQLI_ASSOC);
+        $id = $rw["id"];
+    }
+    return $id;
+}
 
 
 
@@ -121,7 +146,6 @@ function getCorreo($idp){
     }
 
     $email = "";
-
 
 
     $sql = "SELECT correo FROM ms_usuario WHERE id = $idp LIMIT 1";
