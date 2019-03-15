@@ -30,7 +30,7 @@ function partPend(){
                     <th>País</th>
                     <th>Localidad</th>
                     <th>Más datos</th>
-                  </tr></thead><tbody>";
+                  </tr></thead><tbody id='myTable'>";
             while ($rw = mysqli_fetch_array($search)) {
                 $id = $rw['id'];
                 $nombre = ucwords($rw['nombre']);
@@ -61,10 +61,10 @@ function partPend(){
                 }
                 
                 $idsecret = base64_encode($id);$correosecret = base64_encode($correo);
-                echo "<tr>";
+                echo "<tr id='' class='principal'>";
                 ?>
                 <td><div class="btn-group">
-                  <a href=<?php echo 'partEstado.php?a='.$idsecret.'&re='.$correosecret;?> onclick="window.open(this.href,'targetWindow','toolbar=no,location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=900, height=560, top=50, left=250'); return false;"><button type="button" class="btn btn-sm" id='aprobarSi'>Aprobar</button></a>
+                  <a class="supp" href=<?php echo 'partEstado.php?a='.$idsecret.'&re='.$correosecret;?> onclick="window.open(this.href,'targetWindow','toolbar=no,location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=900, height=560, top=50, left=250'); return false;"><button type="button" class="btn btn-sm" id='aprobarSi'>Aprobar</button></a>
                   <a href=<?php echo 'partEstado.php?r='.$idsecret.'';?>><button type="button" class="btn btn-sm" id='aprobarNo'>Rechazar</button></a>
                 </div>
                 </td>
@@ -89,7 +89,6 @@ function partPend(){
             echo "No hay solicitudes pendientes en este momento.";
         }
     } 
-    
 function partAct($tipo,$id){
     require_once "../../sitio/sec/ms/libcon.php";    
         $dbh = dbconn();
