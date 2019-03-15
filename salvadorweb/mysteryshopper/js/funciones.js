@@ -227,3 +227,11 @@ function edDescripMS($id){
         });
     }
 }
+
+$(document).ready(function(){
+    $('body').on('click', '.supp', function(){
+      var elem = $(this);
+      pri = elem.parents('.principal');
+      pri.attr('style', 'display:none;');
+    });
+});
