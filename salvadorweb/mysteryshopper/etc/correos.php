@@ -73,6 +73,52 @@ function enviarMailBienvenida($emailDestino,$passDestino){
         $msg</div>";   
 }
 
+function enviarEmailRechazado($emailRech){
+
+    require_once "../../mysteryshopper/etc/phpmailer/class.phpmailer.php";
+    require_once "../../mysteryshopper/etc/phpmailer/class.smtp.php";
+
+    $mail = new PHPMailer();                         
+    $mail->isSMTP();                                    
+    $mail->Host = 'mail.salvadorhairdressing.com';               
+    $mail->SMTPAuth = true;                               
+    $mail->Username = 'atc@salvadorhairdressing.com';  
+    $mail->Password = 'atencion.14';                         
+    $mail->SMTPSecure = 'ssl';                            
+    $mail->Port = 465;     
+    $mail->CharSet = 'UTF-8';     
+
+    $message = "";
+    $status = "false";
+    $subject = 'Salvador Hairdressing: Mystery Shopper - Bienvenido';       
+
+    $toemail = $emailRech;   
+    $email = 'noreply@salvadorhairdressing.com';
+    $name = 'Salvador Hairdressing';                
+
+    $htmlContent1 = file_get_contents("../etc/correos/rechazado.php");
+
+    $variable = $htmlContent1;
+    $body = "$variable";
+
+    $mail->MsgHTML( $body );
+    $sendEmail = $mail->Send();
+
+    if ($sendEmail == true) {
+        $msg = "<b>¡Participante Rechazado Éxitosamente!</b>";
+        $clase = "alert alert-success alert-dismissable fade in";
+
+        return "1";
+
+    }else{
+        $msg = "<strong>Error</strong> al enviar Correo Informativo al Cliente.<br>";
+        $clase = "alert alert-danger alert-dismissable fade in";
+        
+        return "0";
+
+    }
+}
+
 function enviarRecordatorioBanco($user){
     $to = $user;
     $subject = "Salvador Hairdressing: Mystery Shopper - Completa tu Información Bancaria";
