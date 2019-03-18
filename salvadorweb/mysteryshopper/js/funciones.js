@@ -233,5 +233,13 @@ $(document).ready(function(){
       var elem = $(this);
       pri = elem.parents('.principal');
       pri.attr('style', 'display:none;');
+
+    });
+});
+$(document).ready(function(){
+    $('body').on('click','.suppDos', function(){
+      var elem = $(this);
+      prin = elem.parents('.principal');
+      prin.attr('style', 'display:none;');
     });
 });
