@@ -65,7 +65,7 @@ function partPend(){
                 ?>
                 <td><div class="btn-group">
                   <a class="supp" href=<?php echo 'partEstado.php?a='.$idsecret.'&re='.$correosecret;?> onclick="window.open(this.href,'targetWindow','toolbar=no,location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=900, height=560, top=50, left=250'); return false;"><button type="button" class="btn btn-sm" id='aprobarSi'>Aprobar</button></a>
-                  <a href=<?php echo 'partEstado.php?r='.$idsecret.'';?>><button type="button" class="btn btn-sm" id='aprobarNo'>Rechazar</button></a>
+                  <a class="suppDos" href=<?php echo 'partEstado.php?r='.$idsecret.'';?> onclick="window.open(this.href,'targetWindow','toolbar=no,location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=900, height=560, top=50, left=250'); return false;"><button type="button" class="btn btn-sm" id='aprobarNo'>Rechazar</button></a>
                 </div>
                 </td>
                 <style>
@@ -223,6 +223,7 @@ function partRechazarPend($userid){
     $sql = "UPDATE ms_usuario SET status = 2 where id = '$userid'";
     if (mysqli_query($dbh, $sql)) {    
         header("location:index.php?e=3");
+
     } else {
         header("location:index.php?e=4");
     }
