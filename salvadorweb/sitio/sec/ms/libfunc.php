@@ -62,7 +62,6 @@ function procesoRegistro(){
         if (mysqli_query($dbh, $sql)) {
             
             enviarAvisoNuevoUsuario($email, $nombre." ". $apellido, $pais, $estado." ".$ciudad, $phone, $nacimiento, $direccion);
-
             header('location: /mysteryshopper/index.php?e=1');
             //header('location: /mysteryshopper/cuenta/mailcontroller.php?reg=1');
             exit;
