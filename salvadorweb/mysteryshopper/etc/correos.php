@@ -152,7 +152,6 @@ function enviarNuevaCita($user, $fecha, $salones, $mensaje, $descripcion, $servi
 
 function enviarRecordatorioProgr($idpart){
 
-    
     $name = getNombre($idpart);
 
     $to = "prog.web@salvadorhairdressing.com";
@@ -181,8 +180,7 @@ function enviarRecordatorioProgr($idpart){
         header('location: /mysteryshopper/index.php?e=0');
 //        $msg = "<strong>Error</strong> al enviar Correo de Aviso al Cliente.<br>";
 //        $clase = "alert alert-danger alert-dismissable fade in";  
-    endif;
-    
+    endif;    
 //    echo "<div class='$clase'>
 //        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
 //        $msg</div>"; 
