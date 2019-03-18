@@ -41,7 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["banco"] = htmlspecialchars($_POST['banco']);
             $_SESSION["nrocta"] = htmlspecialchars($_POST['nrocta']);
             $_SESSION["swift"] = htmlspecialchars($_POST['swift']);
-            procesarEncuestaPart($iduser, $tipo); 
+            procesarEncuestaPart($iduser, $tipo);            
+
     } else if(isset ($_POST['enviarPV'])){
             $_SESSION["P1"] = htmlspecialchars($_POST['P1']);
             $_SESSION["P2"] = htmlspecialchars($_POST['P2']);
@@ -149,8 +150,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br><div class='form-group'><label class='control-label col-sm-5' for='tipocta'>Tipo de Cuenta:</label><div class='col-sm-5'><select name='tipocta' class='form-control' required><option value=''>Seleccione su opción</option><option value='1'>Corriente/ Checking</option><option value='2'>Ahorro/ Savings</option></select></div></div>
             <br><div class='form-group'><label class='control-label col-sm-5' for='banco'>Nombre del Banco:</label><div class='col-sm-5'><input type='text' class='form-control' id='banco' name='banco' placeholder="Nombre del Banco" required /></div></div>
             <br><div class='form-group'><label class='control-label col-sm-5' for='nrocta'>Nro. de Cuenta:</label><div class='col-sm-5'><input type='text' class='form-control' id='nrocta' name='nrocta' placeholder="Número de Cuenta" required /></div></div>
-            <br><div class='form-group'><label class='control-label col-sm-5' for='swift'>Código SWIFT (Si aplica):</label><div class='col-sm-5'><input type='text' class='form-control' id='swift' name='swift' placeholder="Código SWIFT"/></div></div>
-            <br><div class='form-group'><div class='col-sm-offset-3 col-sm-6'><button type='submit' class='btn-primary' name='submitEncuestaPart'><b>Enviar</b></button></div></div>                   
+            <br><div class='form-group'><label class='control-label col-sm-5' for='swift'>Código SWIFT o documento de identidad del titular dependiendo del caso que aplique:</label><div class='col-sm-5'><input type='text' class='form-control' id='swift' name='swift' placeholder="Código swift o documento" style="margin: 16px 0 0 0;" /></div></div>
+            <div class="row">
+            <br><div class='form-group'><div class='col-sm-offset-3 col-sm-6'><button type='submit' class='btn-primary' name='submitEncuestaPart'><b>Enviar</b></button></div></div></div>                   
             </form>
        <?php } else if($tipo == 3){
                 inputPostVisita($iduser, $pv);
