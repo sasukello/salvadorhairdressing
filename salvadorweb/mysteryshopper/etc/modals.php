@@ -210,18 +210,28 @@ function partAprobarPend($userid) {
         header("location:index.php?e=2");
     }
 }
-    
+
 function partRechazarPend($userid){
     require_once "../../sitio/sec/ms/libcon.php";
+    require_once "correos.php";
     $dbh = dbconn();
     mysqli_set_charset($dbh, 'utf8');
     if (!$dbh) {
         die('Error en Conexión: ' . mysqli_error($dbh));
         exit;
     }
+        
+        $sqlDos = "SELECT correo FROM ms_usuario WHERE id = '$userid'";
+        $consulta = mysqli_query($dbh, $sqlDos);
+        $rw = mysqli_fetch_array($consulta);
+        if ($rw > 0) {
+            $emailRec = $rw["correo"];            
+            enviarEmailRechazado($emailRec);
+        }     
 
     $sql = "UPDATE ms_usuario SET status = 2 where id = '$userid'";
-    if (mysqli_query($dbh, $sql)) {    
+    if (mysqli_query($dbh, $sql)) {
+
         header("location:index.php?e=3");
 
     } else {
