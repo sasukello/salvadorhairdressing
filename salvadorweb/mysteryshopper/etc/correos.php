@@ -5,7 +5,7 @@ function enviarMailBienvenida($emailDestino,$passDestino){
     require_once "../../mysteryshopper/etc/phpmailer/class.smtp.php";
 
     $mail = new PHPMailer();
-    //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+    //$mail->SMTPDebug = 3;                       // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'mail.salvadorhairdressing.com';                  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -78,7 +78,8 @@ function enviarEmailRechazado($emailRech){
     require_once "../../mysteryshopper/etc/phpmailer/class.phpmailer.php";
     require_once "../../mysteryshopper/etc/phpmailer/class.smtp.php";
 
-    $mail = new PHPMailer();                         
+    $mail = new PHPMailer();
+    $mail->SMTPDebug = 3;                        
     $mail->isSMTP();                                    
     $mail->Host = 'mail.salvadorhairdressing.com';               
     $mail->SMTPAuth = true;                               
@@ -86,26 +87,34 @@ function enviarEmailRechazado($emailRech){
     $mail->Password = 'atencion.14';                         
     $mail->SMTPSecure = 'ssl';                            
     $mail->Port = 465;     
+
     $mail->CharSet = 'UTF-8';     
 
     $message = "";
     $status = "false";
-    $subject = 'Salvador Hairdressing: Mystery Shopper - Bienvenido';       
+
+    $subject = 'Salvador Hairdressing: Mystery Shopper - Rechazado';       
 
     $toemail = $emailRech;   
-    $email = 'noreply@salvadorhairdressing.com';
-    $name = 'Salvador Hairdressing';                
 
-    $htmlContent1 = file_get_contents("../etc/correos/rechazado.php");
+    $email = 'noreply@salvadorhairdressing.com';
+    $name = 'Salvador Hairdressing';         
+
+    $mail->SetFrom( $email , $name );
+    $mail->AddAddress( $toemail );
+    $mail->Subject = $subject;       
+
+    $htmlContent1 = file_get_contents("correos/rechazado.php");
 
     $variable = $htmlContent1;
-    $body = "$variable";
 
+    $body = "$variable";
+    // var_dump($body);
     $mail->MsgHTML( $body );
     $sendEmail = $mail->Send();
-
+    
     if ($sendEmail == true) {
-        $msg = "<b>¡Participante Rechazado Éxitosamente!</b>";
+        $msg = "<b>¡Participante Rechazado!</b>";
         $clase = "alert alert-success alert-dismissable fade in";
 
         return "1";
@@ -114,9 +123,12 @@ function enviarEmailRechazado($emailRech){
         $msg = "<strong>Error</strong> al enviar Correo Informativo al Cliente.<br>";
         $clase = "alert alert-danger alert-dismissable fade in";
         
-        return "0";
+       return "0"; 
 
     }
+    echo "<div class='$clase'>
+    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+    $msg</div>"; 
 }
 
 function enviarRecordatorioBanco($user){
@@ -199,10 +211,10 @@ function enviarNuevaCita($user, $fecha, $salones, $mensaje, $descripcion, $servi
 function enviarRecordatorioProgr($idpart){
 
     $name = getNombre($idpart);
-
+  
     $to = "prog.web@salvadorhairdressing.com";
     
-    $subject = "Salvador Hairdressing: Mystery Shopper - ¡$name ha completado sus datos bancarios!";
+    $subject = "Salvador Hairdressing: Mystery Shopper - $name ¡ha completado sus datos bancarios!";
 
     $htmlContent = file_get_contents("../etc/correos/datosbancariosafter.php");
 
