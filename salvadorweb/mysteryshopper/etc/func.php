@@ -390,6 +390,7 @@ function procesarEncuestaPart($usuario, $tipo){
     $swift = $_SESSION["swift"];
             
     require_once "../../sitio/sec/ms/libcon.php";
+
     
 
     //enviarRecordatorioProgr
@@ -401,7 +402,10 @@ function procesarEncuestaPart($usuario, $tipo){
     }
     $sql = "INSERT INTO ms_encuesta_respuestas (id_encuesta, id_usuario, P1, P2, P3, P4, P5, P6, P7, P8, P9) 
             VALUES ($tipo, $usuario, '$nombre', '$apellido', '$id', '$tipocta', '$banco', '$nrocta', '$swift', '', '')";
+
     if (mysqli_query($dbh, $sql)) {
+        require_once "correos.php";
+        enviarRecordatorioProgr($usuario);
         header('location: /mysteryshopper/cuenta/index.php?e=2');
         
         exit;
