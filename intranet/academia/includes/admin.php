@@ -350,6 +350,29 @@ function cursos()
   return $tabla;
 }
 
+function confirmEliminarCT($id)
+{
+  $dbh = dbconnlocal2();
+  mysqli_set_charset($dbh, 'utf8');
+
+  if (!$dbh) {
+    die('Error en Conexión: ' . mysqli_error($dbh));
+    exit;
+  }
+
+  $sql = "DELETE FROM cursos WHERE id = $id";
+  if (mysqli_query($dbh, $sql)) {
+    header('Location: ../academia/?detCT=success');
+    die();
+    $result = 1;
+  } else {
+    header('Location: ../academia/?detCT=fail');
+    die();
+    $result = 0;
+  }
+  return $result;
+}
+
 function horarios()
 { // Consulta los cursos y talleres de la BD
   $dbh = dbconnlocal2();
@@ -983,7 +1006,7 @@ function updateCT($id, $tipo, $estado, $nombre, $descripcion, $usuario, $materia
 }
 
 function eliminarCT($idCT)
-{ // Muestra el formulario para modificar los cursos talleres
+{
   $dbh = dbconnlocal2();
   mysqli_set_charset($dbh, 'utf8');
 
@@ -992,33 +1015,57 @@ function eliminarCT($idCT)
     exit;
   }
 
-  // $sql = "SELECT * FROM cursos WHERE id =$idCT";
-
-  $final = array();
-  $resultado = "";
-  $nombrecurso = "";
-  $i = 0;
+  $sql = "SELECT * FROM horarios WHERE cursoid = $idCT AND fechafin > CURDATE()";
   $search = mysqli_query($dbh, $sql) or die(mysqli_error($dbh));
   $match = mysqli_num_rows($search);
-  $resultado = '<div class="p-30"><form class="mb-0" onsubmit="return validateForm()" action="/intranet/academia/api.php" method="POST" enctype="multipart/form-data">
-			<div class="row">
-				<div class="col-sm-12">
-				<div class="form-group mb-10">
-					<div class="styled-select">
-					<label>Seleccione el tipo</label>
-					<select name="tipoct" id="tipoct" class="form-control" required="">
-						' . $opciones . '
-					</select>
-					</div>
-				</div>
-				</div>
-			</div>
-				// <center class="mt-20">
-				<button type="submit" name="modCT" id="modCT" class="btn btn-colored btn-theme-colored btn-lg btn-flat border-left-theme-colored-4px">Guardar</button>
-			</center>
-			</form></div>';
+  $resultado = "";
+  if ($match > 0) {
+    $resultado = '<div class="p-30">
+      <form class="mb-0" action="/intranet/academia/api.php" method="POST">
+      <input type="hidden" id="id" name="id" value="'.$idCT.'" />
+      <input type="hidden" id="tipo" name="tipo" value="confirDelCT" />
+        <div class="row">
+        <div class="col-sm-12">
+            <b>Este curso posee horarios activos</b>, desea eliminar de todas formas?
+          </div>
+          <div class="col-sm-6 text-right">
+            <div class="form-group mb-10">
+            <button type="submit" class="btn btn-colored btn-theme-colored btn-lg btn-flat border-left-theme-colored-4px">Si</button>
+            </div>
+          </div>
+          <div class="col-sm-6 text-left">
+            <div class="form-group mb-10">
+            <button type="button" data-dismiss="modal" class="btn btn-colored btn-theme-colored btn-lg btn-flat border-left-theme-colored-4px">No</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>';
+  } else {
+    $resultado = '<div class="p-30">
+      <form class="mb-0" action="/intranet/academia/api.php" method="POST">
+        <input type="hidden" id="id" name="id" value="'.$idCT.'" />
+        <input type="hidden" id="tipo" name="tipo" value="confirDelCT" />
+        <div class="row">
+        <div class="col-sm-12">
+            <b>Este curso no posee horarios activos.</b>
+            Desea eliminar este curso?
+          </div>
+          <div class="col-sm-6 text-right">
+            <button type="submit" name="confirDelCT" id="confirDelCT" class="btn btn-colored btn-theme-colored btn-lg btn-flat border-left-theme-colored-4px">Si</button>
+          </div>
+          <div class="col-sm-6 text-left">
+            <div class="form-group mb-10">
+            <button type="button" data-dismiss="modal" class="btn btn-colored btn-theme-colored btn-lg btn-flat border-left-theme-colored-4px">No</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>';
+  }
+
   $final[0] = $resultado;
-  $final[1] = $nombrecurso;
+  $final[1] = "Eliminar Curso";
 
   return json_encode($final);
 }

@@ -126,6 +126,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 echo eliminarCT($idCT);
                 break;
+            case 'confirDelCT':
+                include "includes/conexion.php";
+                include "includes/admin.php";
+                $idCT = $_POST["id"];
+                echo confirmEliminarCT($idCT);
+                break;
             case 'formCT':
                 include "includes/conexion.php";
                 include "includes/admin.php";
