@@ -227,6 +227,8 @@ function partRechazarPend($userid){
         if ($rw > 0) {
             $emailRec = $rw["correo"];            
             enviarEmailRechazado($emailRec);
+            // $test = enviarEmailRechazado($emailRec);
+            // var_dump($test);
         }     
 
     $sql = "UPDATE ms_usuario SET status = 2 where id = '$userid'";
