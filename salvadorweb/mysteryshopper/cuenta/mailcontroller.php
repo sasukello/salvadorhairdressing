@@ -46,7 +46,9 @@
         $descripcion = base64_decode($_GET['d']);
         $servicios = base64_decode($_GET['ss']);
         
-        enviarNuevaCita($correo, $fecha, $salones, $mensaje, $descripcion, $servicios);            
+        enviarNuevaCita($correo, $fecha, $salones, $mensaje, $descripcion, $servicios);       
+
+        
     } else if(isset($_GET['t'])){
         $idp = base64_decode($_GET['t']);
         if($_GET['tt'] == 2){
