@@ -548,6 +548,7 @@ function progTres($participante, $salones){
         VALUES ($participante, '$salones', '$fecha', '$descripcion', '$mensaje', '$servicios', '$forma', '$obspago')";   
     
     if (mysqli_query($dbh, $sql)) {
+
         //echo "<script type='text/javascript'>alert('¡La visita fue programada éxitosamente!');</script>";
         $sql1 = "SELECT correo from ms_usuario WHERE id = $participante LIMIT 1";
         $search = mysqli_query($dbh, $sql1);
@@ -559,8 +560,8 @@ function progTres($participante, $salones){
             $salonese = base64_encode($salones);
             $mensajee = base64_encode($mensaje); 
             $descripcione = base64_encode($descripcion);
-            $serviciose = base64_encode($servicios);
-
+            $serviciose = base64_encode($servicios);        
+                        
             header("Location: ../../mysteryshopper/cuenta/mailcontroller.php?re=$correo&f=$fechae&s=$salonese&m=$mensajee&d=$descripcione&ss=$serviciose");
                 
             }        
