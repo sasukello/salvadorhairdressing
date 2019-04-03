@@ -159,8 +159,69 @@ function enviarRecordatorioBanco($user){
         <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
         $msg</div>";
 }
-
 function enviarNuevaCita($user, $fecha, $salones, $mensaje, $descripcion, $servicios){
+    //Correo que le envia al usuario cuando le asigan una nueva visita
+    require_once "phpmailer/class.phpmailer.php";
+    require_once "phpmailer/class.smtp.php";
+
+    list($salon,$salondir,$concepto,$imagen, $latitud, $longitud) = getSalon($salones);
+    $date = date("j-m-Y", strtotime($fecha));
+
+    $mail = new PHPMailer(true);
+
+try {
+    
+    $mail->SMTPDebug = 0;
+    $mail->isSMTP();
+    $mail->Host = "mail.salvadorhairdressing.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "atc@salvadorhairdressing.com";
+    $mail->Password = 'atencion.14';
+    $mail->SMTPSecure = "ssl";
+    $mail->Port = 465;
+    $mail->CharSet = 'UTF-8'; 
+
+    $email = 'noreply@salvadorhairdressing.com';
+    $name = 'Salvador Hairdressing';
+    
+    $mail->setFrom( $email , $name );
+    $mail->AddAddress($user);
+
+    $mail->isHTML(true);
+    $mail->Subject = 'Salvador Hairdressing: Mystery Shopper - ¡Nueva Visita!';
+    // $mail->Body = file_get_contents('../../mysteryshopper/etc/correos/nuevacita.php');
+    $htmlContent1 = file_get_contents("../../mysteryshopper/etc/correos/nuevacita.php");
+    $htmlContent2 = "<tr><td style='text-align:justify;'>
+                                      <span class='header-sm'>Salón:</span> <b>Salvador $concepto $salon</b><br />
+                                      <span class='header-sm'>Dirección del Salón:</span> <b>$salondir</b><br />
+                                      <span class='header-sm'>Fecha apróximada de la visita:</span> <b>$date</b><br />
+                                      <span class='header-sm'>Instrucciones:</span> <b>$mensaje</b><br />
+                                      <span class='header-sm'>Servicios a Pedir:</span> <b>$servicios</b><br /><br/>
+                                      <span style='text-align: justify;'>Una vez realizada tu visita como <b>Mystery Shopper</b> al salón, podrás rellenar un cuestionario sobre como te atendieron. Consulta <b>más detalles</b> de tu visita entrando a tu cuenta.</span><br><br>
+                                    </td></tr><tr>
+            <td align='center'><span class='header-sm'><i>Ver dirección en Mapa:</i></span>
+            <br><img src='https://maps.googleapis.com/maps/api/staticmap?center=$latitud,$longitud&zoom=16&size=280x280&markers=color:red%7CLabel:S%7C$latitud,$longitud&key=AIzaSyC58dYC8K9L2_0kTQXJx3I9pqpt1587Lxg'></img>
+            </td>";
+
+    $htmlContent3 = file_get_contents("../../mysteryshopper/etc/correos/nuevacita2.php");
+
+    $contenido = $htmlContent1.$htmlContent2.$htmlContent3;
+
+    $mail->Body = $contenido;
+    $mail->send();
+        $msg = "<strong>¡La visita fue programada éxitosamente!</strong><br><br>El correo con Aviso de Nueva Visita fue enviado al Cliente <strong>Éxitosamente</strong>.<br>";
+        $clase = "alert alert-success alert-dismissable fade in";
+
+} catch (Exception $e) {
+        $msg = "<strong>Error</strong> al enviar Correo de Aviso al Cliente.<br>";
+        $clase = "alert alert-danger alert-dismissable fade in";  
+}
+    echo "<div class='$clase'>
+        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+        $msg</div>"; 
+}
+
+/*function enviarNuevaCita($user, $fecha, $salones, $mensaje, $descripcion, $servicios){
 
     list($salon,$salondir,$concepto,$imagen, $latitud, $longitud) = getSalon($salones);
 
@@ -168,6 +229,7 @@ function enviarNuevaCita($user, $fecha, $salones, $mensaje, $descripcion, $servi
     //setlocale(LC_TIME, 'es_ES.UTF-8');
     $date = date("j-m-Y", strtotime($fecha));
     $to = $user;
+
     $subject = "Salvador Hairdressing: Mystery Shopper - ¡Nueva Visita!";
     $htmlContent1 = file_get_contents("../../mysteryshopper/etc/correos/nuevacita.php");
     $htmlContent2 = "<tr><td style='text-align:justify;'>
@@ -191,11 +253,12 @@ function enviarNuevaCita($user, $fecha, $salones, $mensaje, $descripcion, $servi
 
     // Additional headers
     $headers .= 'From: Salvador Hairdressing<noreply@salvadorhairdressing.com>' . "\r\n";
-    //$headers .= 'Cc: arm_lug@outlook.com' . "\r\n";
-    $headers .= 'Bcc: programacion@salvadorhairdressing.com' . "\r\n";
+    // $headers .= 'Cc: alejo.jesus.magne@gmail.com' . "\r\n";
+    // $headers .= 'Bcc: programacion@salvadorhairdressing.com' . "\r\n";
 
     // Send email
     if(mail($to,$subject,$htmlContent,$headers)):
+
         $msg = "<strong>¡La visita fue programada éxitosamente!</strong><br><br>El correo con Aviso de Nueva Visita fue enviado al Cliente <strong>Éxitosamente</strong>.<br>";
         $clase = "alert alert-success alert-dismissable fade in";
     else:
@@ -206,7 +269,8 @@ function enviarNuevaCita($user, $fecha, $salones, $mensaje, $descripcion, $servi
     echo "<div class='$clase'>
         <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
         $msg</div>"; 
-}
+
+}*/
 
 function enviarRecordatorioProgr($idpart){
 
