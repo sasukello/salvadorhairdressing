@@ -64,6 +64,10 @@ include '../etc/func.php';
 .inner{
     padding-top: 56px!important;
 }
+#input_archivo,.btn_class{
+    font-size: 15px !important;
+}
+
 </style>
 </head>
 <body>
@@ -96,6 +100,19 @@ include '../etc/func.php';
                 }
                 ?>
                 <?php listarVisitaCompleta($id, $iduser, 1);?>
+                <br>
+                <form id="formu_factura" method="post">
+                    <label>Adjuntar Factura de pago</label>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="file" id="input_archivo" name="archivo">
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" id="btn_factura" class="btn_class">Enviar</button>
+                        </div>    
+                    </div>              
+                    
+                </form>
                 <br><a href='index.php'><button type="button" class="btn-default" name="return">Volver a Cuenta</button></a>
                 <a href='logout.php'><button type="button" class="btn-default" data-toggle="modal" data-target="#elimreg">Cerrar Sesión</button></a>    
         </div>
