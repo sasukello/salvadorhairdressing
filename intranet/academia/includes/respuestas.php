@@ -167,6 +167,24 @@
         } elseif ($_GET["errorTDC"] == 99) {
           $mensaje = '<div class="alert alert-danger text-center"><strong>Erorr: Verifica los datos de tu TDC, puede que hayas ingresado los datos incorrectamente.</strong></div>';
         }
+    } elseif (isset($_GET["detCT"])) {
+      if ($_GET["detCT"] == 'success') {
+        $mensaje = '<div class="text-center mb-20">
+                      <h3 style="color: green; font-weight: bold;">
+                        <i class="fa fa-check-circle-o"></i> Curso eliminado exitosamente
+                      </h3>
+                      <center>
+                      <h5 style="width: 80%;">El curso ha sido eliminado exitosamente.</h5>
+                      </center>
+                    </div>';
+      } elseif ($_GET["detCT"] == 'fail') {
+        $mensaje = '<div class="text-center mb-20">
+                      <h3 style="color: #e32028; font-weight: bold;"><i class="fa fa-times"></i> Ha ocurrido un error</h3>
+                      <center>
+                        <h5 style="width: 80%;">El proceso no fue completado, intenta nuevamente el proceso seleccionando la sección <b>"Cursos"</b>.</h5>
+                      </center>
+                    </div>';
+      }
     }
   }
 
