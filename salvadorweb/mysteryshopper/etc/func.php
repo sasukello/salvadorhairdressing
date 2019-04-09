@@ -150,6 +150,7 @@ function inputPostVisita($iduser, $idpv){
             $fechaactual = date("Y-m-d");
             if($fecha <= $fechaactual){
                 echo "</tbody></table><input type='submit' class='btn-default' id='botonuno' name='enviarPV' value='Enviar Respuestas'></input>";
+
             } else{
                 echo "<thead><tr><th class='col-sm-6'><h6>Podrás enviar tus respuestas el día programado para la Visita.</h6></th>
                     <th class='col-sm-1'></th><th class='col-sm-3'></th></tr></thead></tbody></table>";
@@ -456,6 +457,19 @@ function procesarPostEncuesta($usuario, $pvid){
             VALUES ($pvid, $usuario, $idvisita, '$P1', '$P2', '$P3', '$P4', '$P5', '$P6', '$P7', '$P8', '$P9', '$P10', '$C1', '$C2', '$C3', '$C4', '$C5', '$C6', '$C7', '$C8', '$C9', '$C10')";
     if (mysqli_query($dbh, $sql)) {
         if($bandera == 1){
+
+            // $sql_Encuenta = "SELECT * FROM ms_encuesta where id > 2";
+            // $sql_Consulta = mysqli_query($dbh,$sql_Encuenta);
+            // $sql_resultado = mysqli_num_rows($sql_Consulta);
+            // if ($sql_resultado > 0) {
+            //     while ($res = mysqli_fetch_array($sql_Consulta)) {
+            //         var_dump($res);
+            //         die();
+            //     }
+            // }
+            require_once 'correos.php';
+            enviarAvisoEncueRespon($usuario);
+
             header('location: /mysteryshopper/cuenta/visita.php?t='.base64_encode($idvisita).'&e=5');
             exit;
         } else if ($bandera == 0){

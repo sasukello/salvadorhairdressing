@@ -272,6 +272,39 @@ try {
 
 }*/
 
+function enviarAvisoEncueRespon($idp){
+
+    $emailEn = getCorreo($idp);
+    $to = "prog.web@salvadorhairdressing.com";
+
+    $subject = "Salvador Hairdressing: Mystery Shopper - $emailEn ¡ha completado todas sus encuestas!";
+
+    $htmlContent = file_get_contents("../etc/correos/enviar_aviso_encuesta.php");
+
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+    $headers .= 'From: Salvador Hairdressing<noreply@salvadorhairdressing.com>' . "\r\n";
+    $headers .= 'Cc: eduardocolmenares@gmail.com' . "\r\n";
+    $headers .= 'Bcc: prog.web@salvadorhairdressing.com' . "\r\n";
+
+    
+    if(mail($to,$subject,$htmlContent,$headers)):
+
+        $msg = "<strong>¡El envio de correo ha sido exitoso!</strong>.<br>";
+        $clase = "alert alert-success alert-dismissable fade in";
+
+    else:
+
+       $msg = "<strong>Error</strong> al enviar Correo de Aviso al Administrador.<br>";
+       $clase = "alert alert-danger alert-dismissable fade in";  
+
+    endif;
+     echo "<div class='$clase'>
+        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+        $msg</div>"; 
+}
+
 function enviarRecordatorioProgr($idpart){
 
     $name = getNombre($idpart);
