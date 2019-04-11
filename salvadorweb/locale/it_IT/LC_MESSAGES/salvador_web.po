@@ -1022,7 +1022,7 @@ msgstr ""
 
 #: index.php:146
 msgid "¡Sé un Mystery Shopper!"
-msgstr "Essere un Mystery Shopper!"
+msgstr "Essere un Mysery Shopper!"
 
 #: index.php:158
 msgid ""

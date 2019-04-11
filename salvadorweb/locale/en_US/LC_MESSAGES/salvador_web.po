@@ -34,6 +34,10 @@ msgstr ""
 "Something went wrong!</strong> Please, try filling the form again so we can "
 "receive your information. Thanks."
 
+#: mysteryshopper/index.php:93
+msgid "INGRESA TU CORREO ELÉCTRONICO..."
+msgstr "SING YOUR EMAIL PRUEBA.."
+
 #: academy/index.php:36 app/index.php:25 careers/index.php:25 clientcard.php:25
 #: contact-backup.php:25 contacto.php:30 franquicias.php:32
 #: franquicias/faq/index.php:25 franquicias/franquicias.php:32

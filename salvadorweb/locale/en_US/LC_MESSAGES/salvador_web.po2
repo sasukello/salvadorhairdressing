@@ -122,6 +122,10 @@ msgstr "Mobile App"
 msgid "Síguenos"
 msgstr "Follow Us"
 
+#: mysteryshopper/index.php:93
+msgid "INGRESA TU CORREO ELÉCTRONICO..."
+msgstr "give your email"
+
 #: c/footer.php:84 footer.php:52
 msgid "<a class=\"link-footer\" href=\"/nosotros.php\">NOSOTROS</a>"
 msgstr ""
