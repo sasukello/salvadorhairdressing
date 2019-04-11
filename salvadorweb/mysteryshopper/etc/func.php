@@ -392,9 +392,6 @@ function procesarEncuestaPart($usuario, $tipo){
             
     require_once "../../sitio/sec/ms/libcon.php";
 
-    
-
-    //enviarRecordatorioProgr
     $dbh = dbconn();
     mysqli_set_charset($dbh, 'utf8');
     if (!$dbh) {
@@ -457,19 +454,15 @@ function procesarPostEncuesta($usuario, $pvid){
             VALUES ($pvid, $usuario, $idvisita, '$P1', '$P2', '$P3', '$P4', '$P5', '$P6', '$P7', '$P8', '$P9', '$P10', '$C1', '$C2', '$C3', '$C4', '$C5', '$C6', '$C7', '$C8', '$C9', '$C10')";
     if (mysqli_query($dbh, $sql)) {
         if($bandera == 1){
-
-            // $sql_Encuenta = "SELECT * FROM ms_encuesta where id > 2";
-            // $sql_Consulta = mysqli_query($dbh,$sql_Encuenta);
-            // $sql_resultado = mysqli_num_rows($sql_Consulta);
-            // if ($sql_resultado > 0) {
-            //     while ($res = mysqli_fetch_array($sql_Consulta)) {
-            //         var_dump($res);
-            //         die();
-            //     }
-            // }
-            require_once 'correos.php';
-            enviarAvisoEncueRespon($usuario);
-
+            $sql_enc = "SELECT COUNT(*) FROM ms_encuesta_respuestas WHERE id_usuario = $usuario AND id_visita = $idvisita";
+            $con_enc = mysqli_query($dbh,$sql_enc);
+            $results = mysqli_num_rows($con_enc);
+            while ($res = mysqli_fetch_array($con_enc)) {
+                if ($res[0] == 4) {
+                    require_once 'correos.php';    
+                    enviarAvisoEncueRespon($usuario);
+                }    
+            }         
             header('location: /mysteryshopper/cuenta/visita.php?t='.base64_encode($idvisita).'&e=5');
             exit;
         } else if ($bandera == 0){

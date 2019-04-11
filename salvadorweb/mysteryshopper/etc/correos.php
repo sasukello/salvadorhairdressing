@@ -87,16 +87,13 @@ function enviarEmailRechazado($emailRech){
     $mail->Password = 'atencion.14';                         
     $mail->SMTPSecure = 'ssl';                            
     $mail->Port = 465;     
-
     $mail->CharSet = 'UTF-8';     
 
     $message = "";
     $status = "false";
-
     $subject = 'Salvador Hairdressing: Mystery Shopper - Rechazado';       
 
     $toemail = $emailRech;   
-
     $email = 'noreply@salvadorhairdressing.com';
     $name = 'Salvador Hairdressing';         
 
@@ -105,11 +102,9 @@ function enviarEmailRechazado($emailRech){
     $mail->Subject = $subject;       
 
     $htmlContent1 = file_get_contents("correos/rechazado.php");
-
     $variable = $htmlContent1;
 
     $body = "$variable";
-    // var_dump($body);
     $mail->MsgHTML( $body );
     $sendEmail = $mail->Send();
     
@@ -275,9 +270,11 @@ try {
 function enviarAvisoEncueRespon($idp){
 
     $emailEn = getCorreo($idp);
+    // $descripc = getEncuesta($idEnc);
+    
     $to = "prog.web@salvadorhairdressing.com";
 
-    $subject = "Salvador Hairdressing: Mystery Shopper - $emailEn ¡ha completado todas sus encuestas!";
+    $subject = "Salvador Hairdressing: Mystery Shopper-Encuestas Post-Visitas: $emailEn ¡ha completado todas las encuestas";
 
     $htmlContent = file_get_contents("../etc/correos/enviar_aviso_encuesta.php");
 
@@ -287,22 +284,19 @@ function enviarAvisoEncueRespon($idp){
     $headers .= 'From: Salvador Hairdressing<noreply@salvadorhairdressing.com>' . "\r\n";
     $headers .= 'Cc: eduardocolmenares@gmail.com' . "\r\n";
     $headers .= 'Bcc: prog.web@salvadorhairdressing.com' . "\r\n";
-
     
     if(mail($to,$subject,$htmlContent,$headers)):
-
         $msg = "<strong>¡El envio de correo ha sido exitoso!</strong>.<br>";
         $clase = "alert alert-success alert-dismissable fade in";
 
     else:
-
        $msg = "<strong>Error</strong> al enviar Correo de Aviso al Administrador.<br>";
        $clase = "alert alert-danger alert-dismissable fade in";  
 
     endif;
-     echo "<div class='$clase'>
-        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-        $msg</div>"; 
+     // echo "<div class='$clase'>
+     //    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+     //    $msg</div>"; 
 }
 
 function enviarRecordatorioProgr($idpart){
@@ -444,6 +438,28 @@ function getCorreo($idp){
     } else{
         //NO HAY CORREO
     }
+}
+function getEncuesta($idEnc){
+    require_once "../../sitio/sec/ms/libcon.php";
+    $dbh = dbconn();
+    mysqli_set_charset($dbh, 'utf8');
+    if (!$dbh) {
+        die('Error en Conexión: ' . mysqli_error($dbh));
+        exit;
+    }
+    $descrip = "";
+    
+    $sql = "SELECT descripcion FROM ms_encuesta WHERE id = $idEnc LIMIT 1";
+    $consulta = mysqli_query($dbh, $sql);
+    $resultado = mysqli_num_rows($consulta);
+    if ($resultado > 0) {
+        while ($rw = mysqli_fetch_array($consulta)) {
+            $descrip = $rw['descripcion'];
+            return $descrip;
+        }
+    } else {
+    //No hay descripcion
+    }    
 }
 
 function getPassword($idp){
