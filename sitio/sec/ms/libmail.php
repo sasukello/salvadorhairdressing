@@ -89,13 +89,11 @@ function enviarAvisoNuevoUsuario($email, $nombrec, $pais, $dir1, $phone, $nac, $
 
     if(mail($to,$subject,$htmlContent,$headers)):
 
-      return "1";
-
-
+        return "1";
 
     else:
 
-    return "0";
+        return "0";
 
     endif;
 
