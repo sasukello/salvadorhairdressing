@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["idvisita"] = htmlspecialchars($_POST['idvisita']); 
             $pvid = $_POST['idpv'];
 
-            procesarPostEncuesta($iduser, $pvid); 
+            procesarPostEncuesta($iduser, $pvid);
         //echo count($_POST['enviarPV']);
         print_r($_POST);
         
