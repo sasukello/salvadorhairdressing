@@ -157,7 +157,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php include 'indexBody.php';?>
         <!-- /.footer -->
         <?php include '../componentes/footer.php' ?>
-
         <!-- /.javascript files
         <script src="/mysteryshopper/js/custom.js"></script> -->
         <script src="/mysteryshopper/js/funciones.js"></script>
@@ -165,6 +164,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $(document).ready(function(){
                 $('[data-toggle="popover"]').popover(); 
                 $('[data-toggle="tooltip"]').tooltip(); 
+
             });
             $(document).on("click", ".open-AddBookDialog", function () {
                 var myBookId = $(this).data('id');
@@ -180,8 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $("#cancel_edit").click(function(){
                 window.open('','_parent',''); 
                 window.close(); 
-            });
-
+            });         
         </script>
     </body>
 </html>
