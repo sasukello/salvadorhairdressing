@@ -55,8 +55,6 @@
             // PARTICIPANTE APROBADO
             $email = getCorreo($idp);
             $pass = getPassword($idp);
-            // var_dump($email);
-            // die();
             if(enviarMailBienvenida($email, $pass) == "1"){ // PARTICIPANTE APROBADO
                 $msg = "<b>¡Participante Aprobado Éxitosamente!</b> Este recibirá un correo siendo informado.<br><br><b>Aviso:</b> No se pueden programar visitas, hasta que el cliente no responda la encuesta inicial.";
                 $clase = "alert alert-success alert-dismissable fade in";
