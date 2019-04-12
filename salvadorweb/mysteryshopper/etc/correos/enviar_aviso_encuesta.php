@@ -265,8 +265,8 @@
           </tr>
           <tr>
             <td class="free-text">
-              El participante ha completado con éxito su cuatros(4) encuestas. <br>
-              Inicia sesión con tu cuenta corporativa para consultar los reportes.
+              El participante ha completado con éxito sus cuatros(4) encuestas. <br>
+              Inicia sesión con tu cuenta corporativa para consultar el reporte de sus respuestas.
             </td>
           </tr>
           <tr>
