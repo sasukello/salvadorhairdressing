@@ -213,31 +213,21 @@ function partAprobarPend($userid) {
 
 function partRechazarPend($userid){
     require_once "../../sitio/sec/ms/libcon.php";
-    require_once "correos.php";
+
     $dbh = dbconn();
     mysqli_set_charset($dbh, 'utf8');
     if (!$dbh) {
         die('Error en Conexión: ' . mysqli_error($dbh));
         exit;
     }
-        
-        $sqlDos = "SELECT correo FROM ms_usuario WHERE id = '$userid'";
-        $consulta = mysqli_query($dbh, $sqlDos);
-        $rw = mysqli_fetch_array($consulta);
-        if ($rw > 0) {
-            $emailRec = $rw["correo"];            
-            enviarEmailRechazado($emailRec);
-            // $test = enviarEmailRechazado($emailRec);
-            // var_dump($test);
-        }     
-
     $sql = "UPDATE ms_usuario SET status = 2 where id = '$userid'";
     if (mysqli_query($dbh, $sql)) {
-
         header("location:index.php?e=3");
 
     } else {
+
         header("location:index.php?e=4");
+        
     }
 }
 
@@ -263,6 +253,9 @@ function partAprobarCorreo($mail, $tipo){
         if($tipo == 1){
             header("location: ../../mysteryshopper/cuenta/mailcontroller.php?t=" . base64_encode($id) . "&tt=2"); // APROBADO
         } else if($tipo == 2) {
+            require "correos.php";
+            // enviarEmailRechazado($mail);
+            enviarEmailRechazado($mail);
             header("location: ../index.php?e=4"); // RECHAZADO
         }
     } else {

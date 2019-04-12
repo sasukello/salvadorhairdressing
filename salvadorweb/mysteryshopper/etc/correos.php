@@ -1,3 +1,4 @@
+
 <?php
 function enviarMailBienvenida($emailDestino,$passDestino){
 
@@ -79,7 +80,7 @@ function enviarEmailRechazado($emailRech){
     require_once "../../mysteryshopper/etc/phpmailer/class.smtp.php";
 
     $mail = new PHPMailer();
-    $mail->SMTPDebug = 3;                        
+    $mail->SMTPDebug = 0;                        
     $mail->isSMTP();                                    
     $mail->Host = 'mail.salvadorhairdressing.com';               
     $mail->SMTPAuth = true;                               
@@ -93,7 +94,8 @@ function enviarEmailRechazado($emailRech){
     $status = "false";
     $subject = 'Salvador Hairdressing: Mystery Shopper - Rechazado';       
 
-    $toemail = $emailRech;   
+    $toemail = $emailRech;  
+
     $email = 'noreply@salvadorhairdressing.com';
     $name = 'Salvador Hairdressing';         
 
@@ -101,29 +103,28 @@ function enviarEmailRechazado($emailRech){
     $mail->AddAddress( $toemail );
     $mail->Subject = $subject;       
 
-    $htmlContent1 = file_get_contents("correos/rechazado.php");
+    $htmlContent1 = file_get_contents("../etc/correos/rechazado.php");
     $variable = $htmlContent1;
 
-    $body = "$variable";
+    $body = $variable;
     $mail->MsgHTML( $body );
     $sendEmail = $mail->Send();
     
     if ($sendEmail == true) {
-        $msg = "<b>¡Participante Rechazado!</b>";
+        $msg = "<b>¡Participante Rechazado!</b><br><br>Este recibirá un correo siendo informado.";
         $clase = "alert alert-success alert-dismissable fade in";
-
-        return "1";
-
     }else{
         $msg = "<strong>Error</strong> al enviar Correo Informativo al Cliente.<br>";
         $clase = "alert alert-danger alert-dismissable fade in";
-        
-       return "0"; 
 
     }
-    echo "<div class='$clase'>
-    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-    $msg</div>"; 
+    echo "<div class='$clase' style='background-color: #dff0d8;color: #3c763d;border: none;border-radius: 0;position: relative;
+    font-size: 19px;line-height: 22px;padding: 16px;'>
+    <a href='#' class='close' data-dismiss='alert' aria-label='close'></a>
+    $msg</div><br><br>";
+    echo "<div style='width:200px;margin-left: auto;margin-right: auto;'><a href='../../../intranet/mysteryshopper/'><button type='button' class='btn-primary' style='padding: 9px;font-size: 17px;margin: 30px 0 10px;margin-right: 10px;
+    line-height: 20px;padding: 5px 35px;height: 50px;border: 2px solid #d34a4a;background: #d34a4a;transition: all 0.4s;
+    color: white;border-radius: 100px;cursor: pointer;'>Regresar a Intranet</button></a></div>";
 }
 
 function enviarRecordatorioBanco($user){

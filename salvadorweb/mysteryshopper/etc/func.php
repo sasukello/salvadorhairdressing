@@ -454,6 +454,7 @@ function procesarPostEncuesta($usuario, $pvid){
             VALUES ($pvid, $usuario, $idvisita, '$P1', '$P2', '$P3', '$P4', '$P5', '$P6', '$P7', '$P8', '$P9', '$P10', '$C1', '$C2', '$C3', '$C4', '$C5', '$C6', '$C7', '$C8', '$C9', '$C10')";
     if (mysqli_query($dbh, $sql)) {
         if($bandera == 1){
+            //CONSULTO SI EL PARTICIPANTE HA RESPONDIDO LAS ENCUESTA, DE TAL MANERA QUE SOLO RECIBIRA UN CORREO SI RESPONDE LAS 4 ENCUESTA
             $sql_enc = "SELECT COUNT(*) FROM ms_encuesta_respuestas WHERE id_usuario = $usuario AND id_visita = $idvisita";
             $con_enc = mysqli_query($dbh,$sql_enc);
             $results = mysqli_num_rows($con_enc);
