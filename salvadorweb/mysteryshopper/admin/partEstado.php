@@ -11,8 +11,7 @@
         $iden = $_GET['r'];
         $id = base64_decode($iden);
         //echo "RESUMEN DEL PARTICIPANTE #000" . $id . "<BR>";
-        partRechazarPend($id);
-        
+        partRechazarPend($id);       
     } else if(isset($_GET['mail'])){
         if($_GET['t'] == 1){
             $id = base64_decode($_GET['mail']);
