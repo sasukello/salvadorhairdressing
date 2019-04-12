@@ -1,7 +1,7 @@
 <?php
 
     include '../../mysteryshopper/etc/modals.php';
-
+    
     if (isset($_GET['a'])) {
         $iden = $_GET['a'];
         $id = base64_decode($iden);
