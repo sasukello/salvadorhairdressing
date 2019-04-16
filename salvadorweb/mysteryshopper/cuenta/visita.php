@@ -34,7 +34,18 @@ if(isset($_GET["e"])){
     $msg = "";
     $clase="";
 }
+
 include '../etc/func.php';
+if (isset($_POST['procesarFactura'])) {
+    if (isset($_FILES["file"])) {
+        $file   =   $_FILES["file"];
+        $nombre =   $file["name"];
+        $tipo   =   $file["type"];
+        $tamano =   $file["size"];
+        $rutaP  =   $file["tmp_name"];
+        procesarFacturaEncuesta($iduser);
+    }   
+}    
  /*
  * Pantalla de Resumen de Visita - Mistery Shopper.
  */
@@ -55,19 +66,14 @@ include '../etc/func.php';
 <title>Salvador Hairdressing - Mistery Shopper: Consulta tus Visitas Programadas</title>
  <link rel="stylesheet" type="text/css" href="../css/styleMystery.css"> 
 
-
     <?php include '../../c/header.php'; ?>
     <?php include '../../library/funciones.php'; ?>
 
-
 <style type="text/css" media="screen">
-.inner{
-    padding-top: 56px!important;
-}
-#input_archivo,.btn_class{
-    font-size: 15px !important;
-}
-
+.inner{padding-top: 56px!important;}#fileArchivo,.btn_class{font-size: 15px !important;}#btnEnvioFactura{border-radius: 5px;}
+.botonClass{border: 2px solid #d34a4a !important;background: transparent !important;transition: all 0.4s !important;
+            color: #d34a4a !important;border-radius: 100px;}.botonClass:hover{background: #d34a4a !important;
+            color: white !important;}
 </style>
 </head>
 <body>
@@ -101,18 +107,20 @@ include '../etc/func.php';
                 ?>
                 <?php listarVisitaCompleta($id, $iduser, 1);?>
                 <br>
-                <form id="formu_factura" method="post">
-                    <label>Adjuntar Factura de pago</label>
+                <form id="Formulario" action="" method="POST" enctype="multipart/form-data">
+                    <label style="color:#252424 !important;">Adjuntar Factura de pago</label>
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="file" id="input_archivo" name="archivo">
+                            <input type="file" name="file" id="fileArchivo" disabled>
                         </div>
-                        <div class="col-md-6">
-                            <button type="button" id="btn_factura" class="btn_class">Enviar</button>
+                        <div class="col-md-6" style="">
+                            <button type="submit" name="procesarFactura" value="Enviar">Enviar</button> 
+
+                            <!-- <button type="button" id="btnEnvioFactura" class="botonClass">Enviar</button> -->
                         </div>    
-                    </div>              
-                    
+                    </div>           
                 </form>
+                <div id="resp" style="color: #e91e63;text-align: left;margin: 13px 0 0 0;font-weight: bold;"></div>                
                 <br><a href='index.php'><button type="button" class="btn-default" name="return">Volver a Cuenta</button></a>
                 <a href='logout.php'><button type="button" class="btn-default" data-toggle="modal" data-target="#elimreg">Cerrar Sesión</button></a>    
         </div>
@@ -126,8 +134,22 @@ include '../etc/func.php';
 <script>
     $(document).ready(function(){
         $('[data-toggle="popover"]').popover();
-        
+       
+        $("#btnEnvioFactura").click(function(){ 
+            var formData = new FormData($("#Formulario")[0]);      
+            $.ajax({
+                url: 'factura.php',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(res){
+                    $("#resp").html(res);               
+                }
+            })  
+        });
     });
+ 
 </script> 
 <script>
     new WOW().init();
