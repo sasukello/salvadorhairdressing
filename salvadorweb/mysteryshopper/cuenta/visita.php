@@ -36,16 +36,17 @@ if(isset($_GET["e"])){
 }
 
 include '../etc/func.php';
-if (isset($_POST['procesarFactura'])) {
-    if (isset($_FILES["file"])) {
-        $file   =   $_FILES["file"];
-        $nombre =   $file["name"];
-        $tipo   =   $file["type"];
-        $tamano =   $file["size"];
-        $rutaP  =   $file["tmp_name"];
-        procesarFacturaEncuesta($iduser);
-    }   
-}    
+include '../etc/msfactura.php';
+    if (isset($_POST['btnEnvioFactura'])) {  
+        if (isset($_FILES["file"])) {
+            $file   =   $_FILES["file"];
+            $nombre =   $file["name"];
+            $tipo   =   $file["type"];
+            $tamano =   $file["size"];
+            $rutaP  =   $file["tmp_name"];
+            procesarFacturaEncuesta($iduser);
+        }  
+    }
  /*
  * Pantalla de Resumen de Visita - Mistery Shopper.
  */
@@ -64,16 +65,18 @@ if (isset($_POST['procesarFactura'])) {
 <meta name="description" content="">
 <meta name="author" content="UX WEB VE">
 <title>Salvador Hairdressing - Mistery Shopper: Consulta tus Visitas Programadas</title>
- <link rel="stylesheet" type="text/css" href="../css/styleMystery.css"> 
+
+<link rel="stylesheet" type="text/css" href="../css/styleMystery.css">
+<!-- <link rel="stylesheet" type="text/css" href="../cssAlert/alertify.min.css"> -->
 
     <?php include '../../c/header.php'; ?>
     <?php include '../../library/funciones.php'; ?>
-
 <style type="text/css" media="screen">
 .inner{padding-top: 56px!important;}#fileArchivo,.btn_class{font-size: 15px !important;}#btnEnvioFactura{border-radius: 5px;}
 .botonClass{border: 2px solid #d34a4a !important;background: transparent !important;transition: all 0.4s !important;
             color: #d34a4a !important;border-radius: 100px;}.botonClass:hover{background: #d34a4a !important;
             color: white !important;}
+
 </style>
 </head>
 <body>
@@ -108,15 +111,14 @@ if (isset($_POST['procesarFactura'])) {
                 <?php listarVisitaCompleta($id, $iduser, 1);?>
                 <br>
                 <form id="Formulario" action="" method="POST" enctype="multipart/form-data">
-                    <label style="color:#252424 !important;">Adjuntar Factura de pago</label>
+                    <label style="color:#252424 !important;">Adjuntar Factura de Pago</label>
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="file" name="file" id="fileArchivo" disabled>
+                            <input type="file" name="file" id="fileArchivo">
                         </div>
                         <div class="col-md-6" style="">
-                            <button type="submit" name="procesarFactura" value="Enviar">Enviar</button> 
-
-                            <!-- <button type="button" id="btnEnvioFactura" class="botonClass">Enviar</button> -->
+                            <!-- <button type="button" id="btnEnvioFactura" name="btnEnvioFactura2" class="botonClass">Enviar</button> -->
+                            <button type="submit" id="btnFac" name="btnEnvioFactura" class="" disabled="disabled">Enviar</button>
                         </div>    
                     </div>           
                 </form>
@@ -128,28 +130,26 @@ if (isset($_POST['procesarFactura'])) {
     </div>
   </div>
 </div>
-<script src="/mysteryshopper/js/jquery.js"></script>|
+<script src="/mysteryshopper/js/jquery.js"></script>
+<script src="/mysteryshopper/js/alertify.js"></script>
 <script src="/mysteryshopper/js/wow.min.js"></script>
-
+<link rel="stylesheet" type="text/css" href="../cssAlert/alertify.css">
 <script>
-    $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
-       
-        $("#btnEnvioFactura").click(function(){ 
-            var formData = new FormData($("#Formulario")[0]);      
-            $.ajax({
-                url: 'factura.php',
-                type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(res){
-                    $("#resp").html(res);               
-                }
-            })  
-        });
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+    $("#fileArchivo").change(function () {
+        var file_Extension = ['jpeg', 'jpg', 'png', 'pdf'];
+        if ($.inArray($(this).val().split('.').pop().toLowerCase(), file_Extension) == -1) {
+            alertify
+            .alert("Extensiones Permitidas: "+file_Extension.join(', '),function(){});
+            document.getElementById('fileArchivo').value = "";          
+            $("#btnFac").prop("disabled", this.files.length == 0).removeClass('botonClass');
+        }
+        else{
+            $("#btnFac").prop("disabled", this.files.length == 0).addClass('botonClass');
+        }    
     });
- 
+});
 </script> 
 <script>
     new WOW().init();
