@@ -1,5 +1,5 @@
 <?php
-function procesarFacturaEncuesta($usuario){
+function procesarFacturaEncuesta($usuario,$id_visita){
  	
     if (isset($_FILES["file"])) {    
     $file   =   $_FILES["file"];
@@ -8,6 +8,10 @@ function procesarFacturaEncuesta($usuario){
     $tamano =   $file["size"];
     $rutaP  =   $file["tmp_name"];
     $destin = "../facturasMs/";
+    if(isset($_SESSION["fecha_visita"])){
+        $fecha = $_SESSION["fecha_visita"];
+        $idvisita = $_SESSION["id_visita"];
+    }
 
     if ($tamano > 1024*1024) {
        // echo "Limite maximo es un 1MB";
@@ -20,7 +24,31 @@ function procesarFacturaEncuesta($usuario){
     else{
         $src = $destin.$nombre;
         move_uploaded_file($rutaP,$src);
-        echo "Archivo enviado exitosamente";
+        echo "Archivo enviado exitosamente <br>";
+
+        require_once "../../sitio/sec/ms/libcon.php";
+        $dbh = dbconn();
+        mysqli_set_charset($dbh, 'utf8');
+        if (!$dbh) {
+            die('Error en Conexión: ' . mysqli_error($dbh));
+            exit;
+        }
+        $archivo_objeto = fopen($destin . $nombre, "r");
+        $contenido = fread($archivo_objeto,$tamano);
+        $contenido = addslashes($contenido);
+        fclose($archivo_objeto);
+
+    $sql = "INSERT INTO ms_encuesta_factura (id_encuesta_factura,id_usuario,id_visita,nombre,tipo,contenido) VALUES (0,'$usuario','$id_visita','$nombre','$tipo','$contenido')";
+        
+        $resultado = mysqli_query($dbh,$sql);
+
+        if (mysqli_affected_rows($dbh)) {
+ 
+            echo "Se ha registrado la imagen";
+        }
+        else{
+             echo "No se ha registrado la imagen";
+        }
 
         require_once "../../mysteryshopper/etc/phpmailer/class.phpmailer.php";
         require_once "../../mysteryshopper/etc/phpmailer/class.smtp.php";         
