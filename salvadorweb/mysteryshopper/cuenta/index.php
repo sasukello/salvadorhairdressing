@@ -113,7 +113,7 @@ if(isset($_GET["e"])){
                   $msg</div>";        
                 } 
               ?>
-        <b style="color:font-weight: 700;">¡Bienvenido a nuestro grupo de Mistery Shoppers!</b>
+        <b style="color:font-weight: 700;">¡Bienvenido a nuestro grupo de Mystery Shoppers!</b>
         <br><br>ESTADO DE PARTICIPACIÓN: <?php consultaPartEstado($iduser); ?>
         <br><br><div class="cuentaTexto1"><b><i style="color:#e32028;">ENCUESTAS DISPONIBLES:</i></b></div> <?php listarEncuestas($iduser); ?>
         <br><div class="cuentaTexto1"><b><i style="color:#e32028;">VISITAS PROGRAMADAS:</i></b></div> <?php listarVisitas($iduser); ?>

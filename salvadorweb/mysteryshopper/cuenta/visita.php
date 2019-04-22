@@ -34,6 +34,10 @@ if(isset($_GET["e"])){
     $msg = "";
     $clase="";
 }
+if(isset($_SESSION["fecha_visita"])){
+    $fecha = $_SESSION["fecha_visita"];
+    $idvisita = $_SESSION["id_visita"];
+}
 
 include '../etc/func.php';
 include '../etc/msfactura.php';
@@ -44,7 +48,7 @@ include '../etc/msfactura.php';
             $tipo   =   $file["type"];
             $tamano =   $file["size"];
             $rutaP  =   $file["tmp_name"];
-            procesarFacturaEncuesta($iduser);
+            procesarFacturaEncuesta($iduser,$idvisita);
         }  
     }
  /*

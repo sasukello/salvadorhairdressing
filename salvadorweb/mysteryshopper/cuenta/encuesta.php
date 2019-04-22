@@ -8,10 +8,10 @@ if (session_status() === PHP_SESSION_NONE) {
         $hash = $_SESSION["hash"];
         if($hash == "465g5gf688gr"){
             $bandera = true;
-        } else{
+        }else{
         header("location:logout.php");
         }
-    } else{
+    }else{
         header("location:logout.php");
     }
 }
