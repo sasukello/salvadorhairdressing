@@ -43,11 +43,15 @@ include '../etc/func.php';
 include '../etc/msfactura.php';
     if (isset($_POST['btnEnvioFactura'])) {  
         if (isset($_FILES["file"])) {
-            $file   =   $_FILES["file"];
-            $nombre =   $file["name"];
-            $tipo   =   $file["type"];
-            $tamano =   $file["size"];
-            $rutaP  =   $file["tmp_name"];
+            // $file   =   $_FILES["file"];
+            // $nombre =   $file["name"];
+            // $tipo   =   $file["type"];
+            // $tamano =   $file["size"];
+            // $rutaP  =   $file["tmp_name"];
+            $nombre=$_FILES["file"]["name"];
+            $tipo = $_FILES["file"]["type"];
+            $tamano = $_FILES["file"]["size"];
+            $contenido_archivo=addslashes($_FILES["file"]["tmp_name"]);
             procesarFacturaEncuesta($iduser,$idvisita);
         }  
     }
@@ -151,7 +155,7 @@ $(document).ready(function(){
         }
         else{
             $("#btnFac").prop("disabled", this.files.length == 0).addClass('botonClass');
-        }    
+        }
     });
 });
 </script> 

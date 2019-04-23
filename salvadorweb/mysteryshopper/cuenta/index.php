@@ -35,7 +35,7 @@ if(isset($_GET["e"])){
         $msg = "<strong>¡Tus respuestas han sido enviados éxitosamente!</strong>";
         $clase = "alert alert-success alert-dismissable fade in";
     } else if($error == 6){ 
-        $msg = "<strong>El límite máximo para adjuntar un archivo es 1MB.</strong><br>";
+        $msg = "<strong>El límite máximo para adjuntar un archivo es 500KB.</strong><br>";
         $clase = "alert alert-warning alert-dismissable fade in";
     } else if($error == 7){
         $msg = "<strong>Las extensiones permitidas son: JPEG/JPG/PNG/PDF.</strong><br>";
@@ -43,7 +43,10 @@ if(isset($_GET["e"])){
     } else if($error == 8) {
       $msg = "<strong>¡La factura ha sido enviada éxitosamente!</strong>";
       $clase = "alert alert-success alert-dismissable fade in";
-    } 
+    } else if($error == 9) {
+      $msg = "<strong>¡El ancho y largo permitido es 500px!</strong>";
+      $clase = "alert alert-warning alert-dismissable fade in";
+    }
     else{
         $msg="";$clase="";
     }
