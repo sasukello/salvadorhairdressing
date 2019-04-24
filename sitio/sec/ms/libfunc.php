@@ -329,7 +329,7 @@ function comprobarLoginPart($user, $password){
     }else {
 
         header("location:/mysteryshopper/login.php?t=1&e=2");
-
+        
         return;
 
     }

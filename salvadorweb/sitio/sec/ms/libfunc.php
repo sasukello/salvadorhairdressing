@@ -31,7 +31,7 @@ function pasouno($user){
 }
 
 function procesoRegistro(){
-    // var_dump($_POST);
+
     require_once "libcon.php";
     require_once "libmail.php";
 
