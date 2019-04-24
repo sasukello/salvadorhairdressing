@@ -116,12 +116,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               <div class="row">
                               	<div class="col-md-6 col-sm-12 inner-addon left-addon">
                               		<i class="fa fa-key" id="icon-input"></i>
-                              		<input type="password" name="password" id="password" class="form-control" placeholder="<?php echo _('Contraseña');?>" required>
+                              		<input type="password" name="password" id="password" required class="form-control" placeholder="<?php echo _('Contraseña');?>" required>
                               		<span id="errorpassword"></span>
                               	</div>
                               	<div class="col-md-6 col-sm-12 inner-addon left-addon">
                               		<i class="fa fa-key" id="icon-input"></i>
-                              		<input type="password" name="cpassword" id="confir_passw" class="form-control" placeholder="<?php echo _('Confirma tu contraseña');?>">
+                              		<input type="password" name="cpassword" id="confir_passw" required class="form-control" placeholder="<?php echo _('Confirma tu contraseña');?>">
                               		<span id="errorpasswordconfir"></span>
                               	</div>
                               </div>
@@ -175,7 +175,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               	 </div>
                               	  <div class="col-md-6 col-sm-12 inner-addon left-addon">                	
         							              <i class="fas fa-phone" id="icon-input"></i>
-                                  	<input type="text" name="phone" id="phone" class="form-control" placeholder="<?php echo _('Teléfono'); ?>">
+                                  	<input type="text" name="phone" id="phone" required class="form-control" placeholder="<?php echo _('Teléfono'); ?>">
                                   	<span id="errorphone"></span>
                                 </div>
                               </div>	

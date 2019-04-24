@@ -130,6 +130,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-group last">
                     <input type="submit" name="ms_pasodos" class="btn btn-warning btn-block btn-lg" value="ENTRAR">
                 </div>
+                <?php 
+                if(isset($_GET["e"])){
+                    $emsg = $_GET["e"];
+                    if($emsg == 2){
+                        echo $msg="<div class='alert alert-warning'><strong>Error en Contraseña.</strong></div>";
+                    }
+                }  
+                ?>
                 <p class="privacy text-center">
                   <a href="#" onclick="cambiarLabel()">¿Usuario Corporativo?</a> -  <a href="#" onclick="regresarLabel()" style="text-decoration: none;">Participante</a><br>Tu información no será compartida. Lee nuestra <a href="privacy.html">política de privacidad</a>.
                 </p>
