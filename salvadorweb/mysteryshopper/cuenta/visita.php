@@ -73,20 +73,21 @@ include '../etc/msfactura.php';
 <meta name="description" content="">
 <meta name="author" content="UX WEB VE">
 <title>Salvador Hairdressing - Mistery Shopper: Consulta tus Visitas Programadas</title>
-
 <link rel="stylesheet" type="text/css" href="../css/styleMystery.css">
-<!-- <link rel="stylesheet" type="text/css" href="../cssAlert/alertify.min.css"> -->
 
     <?php include '../../c/header.php'; ?>
     <?php include '../../library/funciones.php'; ?>
+    
 <style type="text/css" media="screen">
 .inner{padding-top: 56px!important;}#fileArchivo,.btn_class{font-size: 15px !important;}#btnEnvioFactura{border-radius: 5px;}
 .botonClass{border: 2px solid #d34a4a !important;background: transparent !important;transition: all 0.4s !important;
-            color: #d34a4a !important;border-radius: 100px;}.botonClass:hover{background: #d34a4a !important;
-            color: white !important;}
-
+color: #d34a4a !important;border-radius: 100px;}.botonClass:hover{background: #d34a4a !important;
+color: white !important;}
+::-webkit-file-upload-button{border: 2px solid #d34a4a !important;background: none !important;color: red;padding: 1em;border-radius: 100px;}
+::-webkit-file-upload-button:hover{background: #d34a4a !important;color: white !important;}
 </style>
 </head>
+
 <body>
 <div id="preloade2r"><div class="textload"><?php echo _('Cargando'); ?></div><div id="status"><div class="spinner"></div></div></div>
 <main class="body-wrapper">
@@ -125,8 +126,7 @@ include '../etc/msfactura.php';
                             <input type="file" name="file" id="fileArchivo">
                         </div>
                         <div class="col-md-6" style="">
-                            <!-- <button type="button" id="btnEnvioFactura" name="btnEnvioFactura2" class="botonClass">Enviar</button> -->
-                            <button type="submit" id="btnFac" name="btnEnvioFactura" class="" disabled="disabled">Enviar</button>
+                        <button type="submit" id="btnFac" name="btnEnvioFactura" class="" disabled="disabled" style="margin: 5%;">Enviar</button>
                         </div>    
                     </div>           
                 </form>
