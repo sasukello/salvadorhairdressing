@@ -300,7 +300,7 @@ function enviarAvisoEncueRespon($idp){
 
 function enviarRecordatorioProgr($idpart){
 
-    $name = getNombre($idpart);
+    $name = getCorreo($idpart);
   
     $to = "prog.web@salvadorhairdressing.com";
     
