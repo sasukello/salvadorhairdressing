@@ -275,7 +275,7 @@
                   <w:anchorlock/>
                   <center style="color:#ffffff;font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;">Programar Visita</center>
                 </v:roundrect>
-              <![endif]--><a class="button-mobile" href="http://www.salvadorhairdressing.com/mysteryshopper"
+              <![endif]--><a class="button-mobile" href="http://www.salvadorhairdressing.com/intranet"
               style="background-color:#ff6f6f;border-radius:5px;color:#ffffff;display:inline-block;font-family:'Cabin', Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;line-height:45px;text-align:center;text-decoration:none;width: 225px;-webkit-text-size-adjust:none;mso-hide:all;">Programar Visita</a></div>
             </td>
           </tr>
