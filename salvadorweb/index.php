@@ -44,7 +44,7 @@
       <ul>
         <li data-transition="cube" data-masterspeed="800"> <img src="c/img/main/bg10.jpg"  alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
         </li>
-        <li data-transition="slideleft" data-masterspeed="800"> <img src="c/img/main/bg8.jpg"  alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
+        <li data-transition="slideleft" data-masterspeed="800"> <img src="c/img/main/barber62.jpg"  alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
         <li data-transition="incube" data-masterspeed="800"> <img src="c/img/main/bg9.jpg"  alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
         </li>
         <li data-transition="boxslide" data-masterspeed="800"> <img src="c/img/main/bg7.jpg"  alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
