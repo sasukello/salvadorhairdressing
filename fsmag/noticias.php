@@ -20,31 +20,35 @@
 	<!--slideshow-->
 	<div class="w3-content w3-display-container" style="margin-top: 10em">
 		<div class="w3-display-container mySlides">
-		  <img src="/componentes/images/explorer.jpg" style="width:100%;">
+		  <img src="/componentes/images/explorer.jpg" style="width:100%; height:500px;">
 		  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
 		    Dora la Exploradora se presenta en las salas de cine en 2019
 		  </div>
 		</div>
 
 		<div class="w3-display-container mySlides">
-		  <img src="/componentes/images/cafe.jpg" style="width:100%;">
+		  <img src="/componentes/images/cafe.jpg" style="width:100%; height:500px;">
 		  <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
 		    Cicara Caffe, un pedacito de Italia cómoda y estilo
 		  </div>
 		</div>
 
 		<div class="w3-display-container mySlides">
-		  <img src="/componentes/images/lavadora.jpg" style="width:100%;">
+		  <img src="/componentes/images/lavadora.jpg" style="width:100%; height:500px;">
 		  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
 		    Samsung nos vuelve a sorprende con la Lavadora AddWash Serie 6 
 		  </div>
 		</div>
 
 		<div class="w3-display-container mySlides">
-		  <img src="/componentes/images/ivanka.jpg" style="width:100%;">
+		  <img src="/componentes/images/ivanka.jpg" style="width:100%; height:500px;">
 		  <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
 		    La moda Low Cost de Ivanka Trump se impone en su guardarropa
 		  </div>
+		</div>
+
+		<div class="w3-display-container mySlides">
+			<img src="/componentes/images/image1cirugia.jpeg" style="width:100%; height:500px;">
 		</div>
 
 		<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
@@ -66,6 +70,10 @@
 		<div class="w3-col s4" style="padding-right: 0px;">
 		<img class="demo w3-opacity w3-hover-opacity-off" src="/componentes/images/ivanka2.jpg" style="width:100%;" onclick="currentDiv(4)">
 		</div>
+		<div class="w3-col s4" style="padding-right: 0px;">
+		<img class="demo w3-opacity w3-hover-opacity-off" src="/componentes/images/image1cirugia.jpeg" style="width:100%;" onclick="currentDiv(5)">
+		</div>
+
 	</div>
 	</div>
 
