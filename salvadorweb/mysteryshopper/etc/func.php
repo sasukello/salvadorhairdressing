@@ -144,7 +144,7 @@ function inputPostVisita($iduser, $idpv){
             echo"<tr><td class='danger text-justify'><h6>".$rw[$i-1]."</h6></td>
                 
           <td><label class='radio-inline'><input type='radio' name='P$id_num' value='1' required>Si</label><label class='radio-inline'><input type='radio' name='P$id_num' value='2'>No</label></td>
-          <td><div class='form-group'><textarea class='form-control' rows='1' id='comment' resize='no' name='C$id_num'></textarea></div></td></tr>";
+          <td><div class='form-group'><textarea class='form-control' rows='1' id='comment' resize='no' name='C$id_num' required></textarea><span id='coments'></span></div></td></tr>";
           $i++;
         } //echo "</tbody></table>";
             $fechaactual = date("Y-m-d");
@@ -158,6 +158,7 @@ function inputPostVisita($iduser, $idpv){
           echo "</form>";   
     }
 }
+
 
 function reportePostVisita($idencuestarespuesta, $idusuario){
     require_once "../../sitio/sec/ms/libcon.php";    
