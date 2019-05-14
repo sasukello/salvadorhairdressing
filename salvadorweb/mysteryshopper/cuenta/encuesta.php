@@ -169,5 +169,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php 
   include '../../c/footer.php';
 ?>
+<script src="/mysteryshopper/js/jquery.js"></script>
+<script src="/mysteryshopper/js/alertify.js"></script>
+<link rel="stylesheet" type="text/css" href="../cssAlert/alertify.css">
+<script type="text/javascript">
+
+</script>
 </body>
 </html>  
