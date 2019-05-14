@@ -41,9 +41,9 @@ $("#boletin5").on('show.bs.modal', function (event){
 
     document.getElementById("p2-desc").innerHTML = "Esto puede demorar un poco...";
 
-    // document.getElementById("p2-desc").innerHTML = '<iframe style="width:100%; height:500px;" src="//e.issuu.com/embed.html#30851590/66789419" frameborder="0" allowfullscreen></iframe>';
-    
+    document.getElementById("p2-desc").innerHTML = '<iframe style="width:100%; height:500px;" src="//e.issuu.com/embed.html#30851590/69762810" frameborder="0" allowfullscreen></iframe>';
 });
+                                                    
 
 $(document).ready(function () {
         // Menu.
