@@ -74,13 +74,12 @@ function armarUbicaciones($result, $paso){
     if($miniatura == ""){
       $miniatura = "13thumb.jpg";
     }
-    $st1 = numStars($re["ID"], $re["VOTOS"], $re["SUMAVOTOS"], 2);
     $element .= '<li class="item col-md-3 col-sm-6 marginbt10">
               <figure class="icon-overlay"><a href="#0" data-type="slide-portfolio-item-1" data-sid="'.$re["ID"].'" data-tipo="1"><img src="/c/img/salons/'.$miniatura.'" alt="" /></a></figure>
               <div class="slide-portfolio-item-info box">
                 <h4 class="post-title">'.$re["NOMBRECOMPLETO"].'</h4>
                 <div class="meta marginbt0">'.cambiarRegion($re["REGIONSALON"]).'</div>
-                <div><button type="button" class="rating-star" data-toggle="modal" data-cal="'.$st1.'" data-is="'.$re["ID"].'" data-target="#rating-modal">'.numStars($re["ID"], $re["VOTOS"], $re["SUMAVOTOS"],1).'</button></div>
+                <div class="text-center">'.numStars($re["ID"], $re["VOTOS"], $re["SUMAVOTOS"],1).'</div>
               </div>
             </li>';
     }
@@ -88,7 +87,6 @@ function armarUbicaciones($result, $paso){
 
 	return $element . '</ul>
         </div>
-        <!--/.items-wrapper --> 
       </div>';
 }
 
@@ -166,6 +164,9 @@ function cambiarRegion($entrada){
 		case '378':
 			$region = _("Perú");
 			break;
+        case '430':
+          $region = _("Italia");
+          break;
 	}
 	return $region;
 }
@@ -199,6 +200,9 @@ function abrevRegion($entrada){
       break;
     case '378':
       $region = _("per");
+      break;
+    case '430':
+      $region = _("it");
       break;
   }
   return $region;
@@ -282,7 +286,24 @@ function conceptosbar($ubi, $idioma){
                     <a href="/modelos/beautystore.php'.$url.'"><img src="/c/img/logos/beauty-logo.png"></a>
                   </div>                  
                 </div>
-              </div>              
+              </div>
+
+              <div class="col-md-2 col-sm-6 grid-view-post item">
+                <div class="item1 post">
+                  <div class="box text-center">
+                    <a href="/modelos/barbershop.php'.$url.'"><img src="/c/img/logos/barber-logo.png"></a>
+                  </div>                  
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-6 grid-view-post item">
+                <div class="item1 post">
+                  <div class="box text-center">
+                    <a href="/modelos/eyebrows.php'.$url.'"><img src="/c/img/logos/eyebrows-logo.png"></a>
+                  </div>                  
+                </div>
+              </div>
+
             </div>            
           </div>';
     return;
@@ -362,6 +383,28 @@ function miActionSQL($sql){
         $resultado = 1;
     } else{
         $resultado = "0;".mysqli_error($dbh);
+    }
+
+    mysqli_close($dbh);
+    return $resultado;
+}
+
+function miActionSQL_LastId($sql){
+    $dbh = conex();
+    mysqli_set_charset($dbh, 'utf8');
+    $resultado = array();
+    if (!$dbh) {
+        die('Error en Conexión: ' . mysqli_error($dbh));
+        $resultado = 0;
+        exit;
+    }
+    $textsql = $sql;
+    if (mysqli_query($dbh, $textsql)) {
+        $resultado[0] = 1;
+        $resultado[1] = mysqli_insert_id($dbh);
+    } else{
+        $resultado[0] = "0;".mysqli_error($dbh);
+        $resultado[1] = "";
     }
 
     mysqli_close($dbh);
@@ -462,7 +505,7 @@ function showFlag($idioma){
 }
 
 function ratingSalon($idsalon, $calificacion, $campo){
-  include '../library/libcon.php';
+  //include '../library/libcon.php';
 
   $sql = "SELECT id, votos, sumavotos FROM web_salones WHERE id = '".$idsalon."';";
   $result = (array) json_decode(miBusquedaSQL($sql), true);
@@ -480,12 +523,7 @@ function ratingSalon($idsalon, $calificacion, $campo){
       $sql = "UPDATE web_salones SET sumavotos = $newSuma, votos = $newVotos WHERE id = '$idsalon';";
       $result = miActionSQL($sql);
 
-      if ($result == 1) {
-        $mensaje = '<br><div class="alert alert-success">Su calificación ha sido enviada.</div>';
-      } else {
-        $mensaje = '<br><div class="alert alert-danger">Ha ocurrido un error inesperado, intente nuevamente.</div>'.$result;
-      }
-      return $mensaje;
+      return $result;
   }
 
 }
