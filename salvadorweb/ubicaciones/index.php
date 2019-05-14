@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es_VE">
 
-    <?php $country="";
+    <?php 
       $language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
       putenv("LC_ALL=$language");
       setlocale(LC_ALL, $language);
@@ -18,7 +18,6 @@
 <title><?php echo _('Ubicaciones'); ?> - Salvador Hairdressing</title>
 
     <?php include '../c/header.php'; ?>
-    <?php include '../library/funciones.php'; ?>
 <link href="/c/css/ubicaciones.css" rel="stylesheet">
 
 </head>
@@ -57,21 +56,20 @@
             <div class="col-md-12 lista-salon">
               <div class="col-md-6">
                   <h3 onclick="showRegionList(1);"><i class="budicon-pin"></i> Venezuela <img src="/c/img/lang/ve1.png"></h3>
-                  <h3 onclick="showRegionList(2);"><i class="budicon-pin"></i> <?php echo _('Panamá');?> <img src="/c/img/lang/pty1.png"></h3>
-                  <h3 onclick="showRegionList(72);"><i class="budicon-pin"></i> <?php echo _('Republica Dominicana');?> <img src="/c/img/lang/domrep1.png"></h3>
+                  <h3 onclick="showRegionList(2);"><i class="budicon-pin"></i> Panamá <img src="/c/img/lang/pty1.png"></h3>
+                  <h3 onclick="showRegionList(72);"><i class="budicon-pin"></i> <?php echo _('Republica Dominicana'); ?> <img src="/c/img/lang/domrep1.png"></h3>
               </div>
               <!--/column -->
 
               <div class="col-md-6">
-                  <!--<h3><i class="budicon-pin"></i> Ecuador</h3>-->
-                  <h3 onclick="showRegionList(304);"><i class="budicon-pin"></i> <?php echo _('Curazao');?> <img src="/c/img/lang/cu1.png"></h3>
-                  <h3 onclick="showRegionList(3);"><i class="budicon-pin"></i> <?php echo _('Estados Unidos');?> <img src="/c/img/lang/usa1.png"></h3>
+                  <h3 onclick="showRegionList(304);"><i class="budicon-pin"></i> Curazao <img src="/c/img/lang/cu1.png"></h3>
+                  <h3 onclick="showRegionList(3);"><i class="budicon-pin"></i> <?php echo _('Estados Unidos'); ?> <img src="/c/img/lang/usa1.png"></h3>
+                  <h3 onclick="showRegionList(430);"><i class="budicon-pin"></i> <?php echo _('Italia'); ?> <img src="/c/img/lang/langit.png" style="width: 6%;margin: 0 0 0 5px;"></h3>
               </div>
               <!--/column -->
             </div>
           </div>
         </div>
-
 
         <div class="row">
           <span id="ubi2"></span>
@@ -86,7 +84,7 @@
           function init() {
               var mapOptions = {
                   center: new google.maps.LatLng(10.644708, -71.617942),
-                  zoom: 3,
+                  zoom: 2,
                   zoomControl: true,
                   zoomControlOptions: {
                       style: google.maps.ZoomControlStyle.DEFAULT,
@@ -159,18 +157,16 @@
                   ['', 8.987183, -79.520249], 
                   ['', 9.053828, -79.451323], 
                   ['', 10.679074, -71.604191], 
-                  ['', -2.140465, -79.866841], 
-                  ['', -2.229505, -79.900817],
                   ['', 12.135799, -68.958284],
-                  ['', 10.690431, -71.6480738], 
                   ['', 10.6690453, -71.607989], 
                   ['', 10.641283, -71.618379], 
                   ['', 10.676095, -71.603723], 
                   ['', 9.0292993, -79.534041], 
                   ['', 9.0292993, -79.534041],
                   ['', 8.9823044, -79.5252941],
-                  ['', 9.0690751, -79.4554465]
-
+                  ['', 9.0690751, -79.4554465],
+                  ['Barber Shop Modica', 36.836046, 14.760930],
+                  ['Kids Modica', 36.836462, 14.761145]
               ];
               for (i = 0; i < locations.length; i++) {
                   marker = new google.maps.Marker({
@@ -221,25 +217,6 @@
     </div>
   </div>
 
-  <div class="slide-portfolio-overlay"></div><!-- overlay that appears when slide portfolio content is open -->
-
-  <div class="slide-portfolio-item-content dark-wrapper slide-portfolio-item-1">
-    <div class="slide-portfolio-item-detail">
-      <div class="inner2">
-        <span id="contentslideubi"></span>
-
-        <div class="divide25"></div>
-        <div class="row text-center">
-            <h3>Google Map</h3>
-            <div id="map" style="height: 360px;">
-              <span id="mapslideubi"></span>
-            </div>          
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <a href="#0" class="slide-portfolio-item-content-close"><i class="budicon-cancel-1"></i></a> <!-- close slide portfolio content --> 
 
   <?php include '../c/footer.php'; ?>
 
