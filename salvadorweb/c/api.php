@@ -1,4 +1,6 @@
 <?php
+ header("Access-Control-Allow-Origin: *");
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['action'])) {
     	$action = $_POST['action'];
@@ -44,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 } elseif ($data == 'S02') {
                     $view->showProf2($idioma, $data);
                 }
-                
+
                 break;
 
             case 'sendAcadProForm':
@@ -98,6 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 //var_dump($_POST);
                 saveFranqForm($datos, $ubicacion, $idioma);
+                enviarNotificationUser($datos, $ubicacion, $idioma);
+                //aprobacion1($datos, $ubicacion, $idioma);
+
                 break;
 
             case 'sendRating':
@@ -110,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 # code...
                 break;
 
-    		}	
+    		}
     }
 }
 
