@@ -44,8 +44,8 @@ function intra_uno($user, $contra){
         $_SESSION["permiso"] = $manage[0]->NIVEL;
         $_SESSION["todoinfo"] = $final;
 
-        $_SESSION["idiomaruta"] = "/home/sopor907/public_html/intranet/lang/";
-        //$_SESSION["idiomaruta"] = "C:/xampp/htdocs/Salvador/intranet/lang/";
+        // $_SESSION["idiomaruta"] = "/home/sopor907/public_html/intranet/lang/";
+        $_SESSION["idiomaruta"] = "C:/xampp/htdocs/salvadorapp/intranet/lang/";
 
 
         $_SESSION["hash"] = "s6a5486dasdas31";
@@ -230,7 +230,6 @@ function menuheader($ubicacion, $accesos){
         </div>
        <?php break;
         case 'default':?>
-
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
             <ul class="nav navbar-nav">
                 <?php
@@ -240,7 +239,6 @@ function menuheader($ubicacion, $accesos){
                 <!--<li><a href="/intranet/cp">Panel de Control</a></li>-->
                 <?php echo $useroptions;?>
             </ul>
-
         </div>
         <?php break;
         case 'ayuda':?>
@@ -275,6 +273,17 @@ function menuheader($ubicacion, $accesos){
                 <?php echo $useroptions;?>
             </ul>
         </div>
+       <?php break;
+       case 'noticias':?>
+       <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+           <ul class="nav navbar-nav">
+                <?php foreach($accesos as $a){
+                   menu3($a);
+               } ?>
+               <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
+               <?php echo $useroptions;?>                   
+           </ul>
+       </div>
        <?php break;
        case 'academia':?>
        <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
@@ -335,6 +344,7 @@ function menu3($nombre){
                     } */
                     if(isset($bandera1)){
                         if($bandera1=1){echo $contenido1;}
+
                     }
                     if (isset($bandera2)){
                         if($bandera2=1){echo $contenido2;}
@@ -350,6 +360,7 @@ function menu3($nombre){
                     <li><a href='#'><strong>Franquiciados:</strong></a></li>
                     <li class="divider"></li>
                     <li><a href='/intranet/apps'>Encuestas</a></li>
+                    <li><a href='/intranet/noticias'>Cargar Noticias</a></li>
                 </ul>
             </li>
             <!--<li>
@@ -432,6 +443,9 @@ function menu3($nombre){
         <?php break;
         case 'Academia':?>
         <li><a href="/intranet/academia"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Academia <span id="notHead"></span></a></li>
+        <?php break;
+        case 'noticias':?>
+        <li><a href="/intranet/noticias"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Noticias <span id="notHead"></span></a></li>
         <?php break;
     }
 }
@@ -851,6 +865,7 @@ function menu1HeaderIntranet($usuario, $ubicacion, $accesos){
                     <?php
                     if(isset($ubicacion)){
                         menuheader($usuario.";".$ubicacion, $accesos);
+                        
                     } else if(!isset($ubicacion)){
                         $ubi = "default";
                         menuheader($usuario.";".$ubi, $accesos);
