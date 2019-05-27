@@ -27,6 +27,9 @@
     <?php }
     } if($_SESSION["ubicacion"] == "ayuda" || $_SESSION["ubicacion"] == "cms"){
         echo '<link href="/intranet/componentes/css/ayuda.css" rel="stylesheet">';
-    } else if($_SESSION['ubicacion'] == "live" || $_SESSION['ubicacion'] == "apps"){
+    } else if ($_SESSION['ubicacion'] == "noticias" || $_SESSION['ubicacion'] == "apps"){
+        
+    }
+    else if($_SESSION['ubicacion'] == "live" || $_SESSION['ubicacion'] == "apps"){
         echo '<link href="/intranet/componentes/select/multi-select.css" rel="stylesheet">';
     } ?>

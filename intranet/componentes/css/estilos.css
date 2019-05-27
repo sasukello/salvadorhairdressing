@@ -680,3 +680,10 @@ input:checked + .slider:before {
 .monBouton:before{
      background-image : url(/intranet/componentes/images/minutas/operacion3.png);
 }
+#contenido{
+  width: 35%!important;
+}
+#archivo_file{
+::-webkit-file-upload-button{border: 2px solid #d34a4a !important;background: none !important;color: red;padding: 1em;border-radius: 100px;}
+::-webkit-file-upload-button:hover{background: #d34a4a !important;color: white !important;}
+}

@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="top"></div>
 
         <?php menu1HeaderIntranet($iduser, $_SESSION['ubicacion'], $arrayMenu); 
-            include ($_SESSION["idiomaruta"].$_SESSION["idioma"]."/crm.php"); ?>
+            include ($_SESSION["idiomaruta"].$_SESSION["idioma"]."/crm.php");?>
 
                         </div>
                     </div>
@@ -93,6 +93,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <li style="display: none;"><a data-toggle="tab" href="#menu3" onClick="limpiarTab();return;false;"><i class="pe-7s-phone pe-5x pe-va" style="visibility: visible;"></i> Convenios y Promociones</a></li>
                             <li><a data-toggle="tab" href="#forms" onClick="limpiarTab();return;false;"><i class="pe-7s-comment pe-5x pe-va" style="visibility: visible;"></i> Encuestas</a></li>
                             <?php if($peruser == 50 || $peruser == 1000){ echo'<li><a data-toggle="tab" href="#franquicias" onClick="limpiarTab();return;false;"><i class="pe-7s-box1 pe-5x pe-va" style="visibility: visible;"></i> Franquicias</a></li>';} ?>
+
+                             <!--  <li><a data-toggle="tab" href="#noticias" onClick="limpiarTab();return;false;"><i class="pe-7s-note2 pe-5x pe-va" style="visibility: visible;padding-right: 4px;"></i>Cargar Noticias</a></li> -->
                           </ul>
 
                         <div class="tab-content">
@@ -247,9 +249,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div><br>';
                             } ?>
 
-                          </div><!-- FIN FRANQUICIAS -->  
-
+                        </div><!-- FIN FRANQUICIAS -->  
                         </div>
+                        <!-- COMIENZO NOTIFICA -->  
+                        <!-- <div id="noticias" class="tab-pane fade"> 
+                           <h3><i class="pe-7s-note2 pe-5x pe-va" style="visibility: visible;;">&nbsp;<?php echo $crmnoti;?></i></h3>
+                           <p><?php //echo $crmnoti2;?></p>
+                           <div class="form-group">
+                               <form id="formu_notic" name="formu_notic" method="POST" enctype="multipart/form-data">
+                                   <input type="file" name="archivo" id="archivo_file" class="form-control-file">
+                                   <label style="font-weight: 100!important;">Contenido de la noticia:</label>
+                                   <textarea name="contenido" id="contenido" class="form-control" rows="10">
+                                       
+                                   </textarea>
+                                   <button type="submit" id="btn_noticia" name="btn_noticia" class="btn btn-info">Enviar</button>
+                               </form>
+                               <div id="resp" style="color: #e91e63;text-align: left;margin: 13px 0 0 0;font-weight: bold;"></div>
+                           </div>
+                        </div> -->
+                         <!--ENDNOTICIAS--> 
                       </div>
                     </div>
                     <div id="report-area">
