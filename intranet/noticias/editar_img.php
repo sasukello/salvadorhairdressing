@@ -1,5 +1,5 @@
 <?php 
-if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['archivo'])) {
+if (isset($_FILES['archivo'])) {
 	$url=$_FILES["archivo"]["name"];
 	$tipo = $_FILES["archivo"]["type"];
 	$tamano = $_FILES["archivo"]["size"];
@@ -26,16 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['archivo'])) {
 				La imagen ya existe, intente cargar otra imagen.
 			 </div>";	
 	}
-	else if ($ancho > 224){
+	else if ($ancho > 800){
        echo "<div class='alert alert-warning' role='alert'>
-				El ancho permitido es 225px.
+				El ancho permitido es 800px.
 			</div>";
     }
-    else if ($altura > 225){
+    else if ($altura > 800){
     	echo "<div class='alert alert-warning' role='alert'>
-				La altura permitida es 225px.
+				La altura permitida es 800px.
 			</div>";
     }else{
+    	$src = $destin.$url;
+		move_uploaded_file($contenido_archivo,$src);		
     	require "conexion.php";
     	$conex = mysqli_connect($server,$serveruser,$password,$name);
 		if (mysqli_connect_errno()) {
@@ -45,13 +47,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['archivo'])) {
 		mysqli_set_charset($conex,"utf8");
 		$sql = "UPDATE salvador_noticias SET url_img = '$url' WHERE id = '$id_editar'";
 		$res = mysqli_query($conex,$sql);
-		if ($res===true) {
-			$src = $destin.$url;
-			move_uploaded_file($contenido_archivo,$src);			
+
+		if ($res===true) {				
 			echo "<div class='alert alert-success' role='alert'>
-					La imagen ha sido editada correctamente "."<br>"."Haga clíck en el botón editar para enviar la información. 
+					La imagen ha sido editada correctamente 
+				  </div>";
+		}else{
+			echo "<div class='alert alert-warning' role='alert'>
+					Ha ocurrido un error al cargar la imagen por favor intente nuevamente.
 				  </div>";
 		}
     }
 }
+
  ?>

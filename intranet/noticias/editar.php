@@ -73,10 +73,9 @@ $conex = mysqli_connect($server,$serveruser,$password,$name);
 								<img id="img1" class="img-rounded glyphicon glyphicon-picture" src="img/<?php echo $url_image;?>" style="font-size: 47px;padding:44px;text-align: center !important;display: inline-block;">
 							</div><br>
 							<span class="btn btn-info btn-file"><span class="fileinput-new">Selecciona una imagen</span>
-							<span class="fileinput-exists"></span><input type="file" name="archivo" id="file_archivo" required onchange="cargar_imagen();"></span>
+							<span class="fileinput-exists"></span><input type="file" name="archivo" id="file_archivo" required onchange="cargar_imagen();"><input type="hidden" class="form-control" id="id_editar" value="<?php echo $id_editar;?>" name="id_editar"></span>
 							<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Cancelar</a>
-						</div>
-						<input type="hidden" name="img" id="img">
+						</div>						
 						<div id="msg_carga"></div>
 					</div>
 				</form>
@@ -84,7 +83,6 @@ $conex = mysqli_connect($server,$serveruser,$password,$name);
 		</div>
 	</div>
 <?php include "../componentes/footer.php"; ?>
-
 <script src="js/cargar_contenido.js"></script>
 <script src="/intranet/componentes/js/bootstrap-suggest.js"></script>
 </body>

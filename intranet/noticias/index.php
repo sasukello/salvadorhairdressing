@@ -13,28 +13,27 @@ require "conexion.php";
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Salvador Hairdressing - Noticias</title>
 	<?php include "../componentes/header.php"; ?>
+	<link rel="stylesheet" type="text/css" href="css/alertify.min.css">
 	<script>
-		function eliminar(id){
-			page=1;
-			var parametros = {"action":"ajax","page":page,"id":id};
-			if(alertify.confirm("Esta acción  eliminará de forma permanente la noticia \n\n ¿Desea continuar?.",
-			  function(){
-			    alertify.success('Ok');
-			  },
-			  function(){
-			    alertify.error('Cancel');
-			  }); 
+	function eliminar(id){
+		page=1;
+		var parametros = {"action":"ajax","page":page,"id":id};
+		alertify.confirm('Esta acción  eliminará de forma permanente el banner \n\n ¿Desea continuar?',
+			function(){
+				alertify.success('La noticia ha sido eliminada');
 				$.ajax({
-					url:'eliminar.php',
-					data: parametros,
+				url:'eliminar.php',
+				data: parametros,
 					success:function(data){
 						$(".mostrar_contenido").html(data).fadeIn('slow');
-						$("#elimi").remove();
-					}
-				});
-			}
-		}
-
+						$("#elimi").remove();		
+				  	}				
+				})	
+			},
+			function(){
+			    alertify.error('Ha cancelado esta acción');
+			})
+	}
 	</script>
 	
 	
@@ -86,6 +85,7 @@ require "conexion.php";
 		</div>
 	</div>
 <?php include "../componentes/footer.php"; ?>
+<script src="js/alertify.min.js"></script>
 <script src="/intranet/componentes/js/bootstrap-suggest.js"></script>
 </body>
 </html>

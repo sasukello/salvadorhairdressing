@@ -29,14 +29,14 @@ if (isset($_FILES["archivo"])) {
 				La imagen ya existe, intente cargar otra imagen.
 			 </div>";	
 	}
-	else if ($ancho > 224){
+	else if ($ancho > 800){
        echo "<div class='alert alert-warning' role='alert'>
-				El ancho permitido es 225px.
+				El ancho permitido es 800px.
 			</div>";
     }
-    else if ($altura > 225){
+    else if ($altura > 800){
     	echo "<div class='alert alert-warning' role='alert'>
-				La altura permitida es 225px.
+				La altura permitida es 800px.
 			</div>";
     }
 	else{		
