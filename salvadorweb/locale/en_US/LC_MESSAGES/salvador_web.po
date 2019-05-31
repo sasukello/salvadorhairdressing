@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: salvador_web\n"
 "POT-Creation-Date: 2018-06-06 11:57-0400\n"
-"PO-Revision-Date: 2018-06-06 11:57-0400\n"
+"PO-Revision-Date: 2019-05-30 16:50-0400\n"
 "Last-Translator: Armando Lugo <alugox@gmail.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _e;__;_p:1,2\n"
@@ -36,7 +36,7 @@ msgstr ""
 
 #: mysteryshopper/index.php:93
 msgid "INGRESA TU CORREO ELÉCTRONICO..."
-msgstr "SING YOUR EMAIL PRUEBA.."
+msgstr "ENTER YOUR EMAIL..."
 
 #: academy/index.php:36 app/index.php:25 careers/index.php:25 clientcard.php:25
 #: contact-backup.php:25 contacto.php:30 franquicias.php:32
@@ -146,7 +146,7 @@ msgstr ""
 "and capable of achieving the predefined objectives. Excellent communication "
 "and interpersonal skills, as well as being able to speak English fluently "
 "(any other languages are a plus). Team work ability, be collaborative and "
-"knowing of sales techniques it's what we seek for this position. "
+"knowing of sales techniques it's what we seek for this position."
 
 #: academy/index.php:110
 msgid ""
@@ -467,7 +467,7 @@ msgstr ""
 
 #: c/html/fq-gracias.php:59 c/html/franquicia.php:255
 msgid "Solicitud Enviada Exitosamente"
-msgstr "Message Sent Successfully!"
+msgstr "Message Sent Successfully"
 
 #: c/html/fq-gracias.php:60 c/html/franquicia.php:256
 msgid ""
@@ -692,7 +692,7 @@ msgstr "How many business units can you open?"
 
 #: c/html/franquicias/master.php:106
 msgid "Ingrese la cantidad"
-msgstr "Insert the quantity?"
+msgstr "Insert the quantity"
 
 #: c/html/franquicias/master.php:113
 msgid ""
@@ -1273,7 +1273,7 @@ msgstr ""
 
 #: mysteryshopper/index1bu.php:65
 msgid "Mystery Shopper"
-msgstr " Become a Mystery Shopper!"
+msgstr "  Become a Mystery Shopper"
 
 #: navbar.php:12
 msgid "<a href=\"/\">Inicio</a>"

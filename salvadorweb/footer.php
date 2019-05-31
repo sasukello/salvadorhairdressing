@@ -89,9 +89,10 @@
 <script src="/c/js/countries.js"></script> 
 
 <script>
-  $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip();   
-  });
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+        
+});
 </script>
 
 <script type="text/javascript">

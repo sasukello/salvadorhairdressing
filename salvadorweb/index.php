@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="es_VE">
-
-    <?php 
-
-
-      /*$path = $_SERVER['DOCUMENT_ROOT'];
-      $path .= "/library/AltoRouter.php";
-      require $path;*/
-
-      $language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
-      putenv("LC_ALL=$language");
-      setlocale(LC_ALL, $language);
-      bindtextdomain("salvador_web", "./locale");
-      textdomain("salvador_web");
-     ?>
-
+<?php
+/*$path = $_SERVER['DOCUMENT_ROOT'];
+$path .= "/library/AltoRouter.php";
+require $path;*/
+$language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
+putenv("LC_ALL=$language");
+setlocale(LC_ALL, $language);
+bindtextdomain("salvador_web", "./locale");
+textdomain("salvador_web");
+require "../intranet/noticias/conexion.php";
+$conex = mysqli_connect($server,$serveruser,$password,$name);
+if (mysqli_connect_errno()) {
+    echo "Fallo la conexión";
+    exit();
+}
+mysqli_set_charset($conex,"utf8");
+?>
 <head>
 <?php include 'c/ganalytics.html'; ?>  
 <meta charset="utf-8">
@@ -22,23 +24,18 @@
 <meta name="description" content="Bienvenido a la Excelencia! Salvador Hairdressing es la franquicia en crecimiento lider del sector de belleza en América Latina, con presencia en más de 5 países a lo largo del continenente americano.">
 <meta name="author" content="Salvador Hairdressing">
 <title>Salvador Hairdressing - <?php echo _('¡Bienvenido a la Excelencia!'); ?></title>
-
-    <?php include 'c/header.php'; ?>    
-
+<?php include 'c/header.php'; ?>    
 <style>
-.paraabajo{
-  bottom: 0px;
-  top: 0px;
-}
+.paraabajo{bottom: 0px;top: 0px;}#linknoti:hover{text-decoration: underline;}
+#imgN{border-radius:5px;}#imgN:
+div.desc1 {padding:15px;text-align: left;}
 </style>
 </head>
 <body>
 <div id="preloader"><div class="textload"><?php echo _('¡Bienvenido a la Excelencia!'); ?></div><div id="status"><div class="spinner"></div></div></div>
 <main class="body-wrapper">
   <div class="row">
-
-    <?php include 'c/navbar.php'; ?>
-
+<?php include 'c/navbar.php'; ?>
   <div class="tp-fullscreen-container revolution">
     <div class="tp-fullscreen">
       <ul>
@@ -55,7 +52,6 @@
       <div class="tp-bannertimer tp-bottom"></div>
     </div>
   </div>
-
   <div class="row" style="padding-right: 0px;background: #000;">
   <div class="col-md-12">
           <div style="padding-top:10px;padding-bottom: 10px;">
@@ -111,8 +107,39 @@
         </div>
   </div>
   </div>
+</div>  
+<!-- Seccion noticias -->  
+<!-- Top content -->
+<br><br>
+<div class="container">
+<div class="row">
+<?php echo _('<h3 class="section-title text-center">Noticias mas destacadas</h3>'); ?>
+<?php 
+$nums=1;
+$sql = "SELECT * FROM salvador_noticias ORDER BY id DESC";
+$res = mysqli_query($conex,$sql);
+while ($row = mysqli_fetch_array($res)){
+$id = $row['id'];
+$titulo = $row['titulo'];
+$descrip = $row['descripcion'];
+$url_img = $row['url_img'];
+$caracteres = 50;
+?>
+<div class="col-sm-3 col-md-3 col-lg-3">
+  <div class="desc1">
+      <img id="imgN" class="img-responsive" width="600px" align="center" src="intranet/noticias/img/<?php echo $url_img;?>">
+      <a target="_blank" href="snoticias.php?id=<?php echo $id;?>" data-toggle="tooltip" data-placement="right" title="¡Entérate de mas!" id="linknoti" class="" style=" padding:5px;font-size: 20px;"><b><?php echo $titulo;?></b></a> 
+      <div id="txtdescrip" class="descripcion2" style=""><?php echo substr($descrip,0,$caracteres).'...';?>
+      <br><br>           
+      </div>
+    </div>
 </div>
-
+<?php 
+}
+?>
+</div>
+</div>
+<br>
   <div class="row">
   <div class="dark-wrapper">
     <div class="container inner">
@@ -302,10 +329,7 @@
       </div> 
     </div>
   </div>
-
-
-    <?php include 'c/footer.php'; ?>
-
-
+<?php include 'c/footer.php'; ?>  
+            
 </body>
 </html>
