@@ -61,16 +61,16 @@ require "conexion.php";
 				}
 				mysqli_set_charset($conex,"utf8");
 				$nums=1;
-				$sql=mysqli_query($conex,"SELECT * FROM salvador_noticias ORDER BY fecha DESC");
+				$sql=mysqli_query($conex,"SELECT * FROM salvador_noticias ORDER BY id DESC");
 				while($res=mysqli_fetch_array($sql)){
 					$id = $res['id'];
 					$titulo = $res['titulo'];
 					$descri = $res['descripcion'];
 					$url_img = $res['url_img'];
 					?>					
-						<div id="elimi" class="col-sm-6 col-md-3 animate-box spac secnot fadeInUp animated-fast">
-						<div class="thumbnail imgHolder">
-						  <img src="img/<?php echo $url_img;?>" alt="..." class="img-responsive">
+						<div id="elimi" class="col-lg-4 col-md-4 col-xs-6 thumb animate-box spac secnot fadeInUp animated-fast">
+						<div class="thumbnail">
+						  <img src="img/<?php echo $url_img;?>" alt="..." class="img-responsive" width='300px' align="center">
 						</div>
 						<div class="caption fh5co-item notic" style="position: relative;bottom: 20px;">
 							<h3 id=""><?php echo $titulo;?></h3>

@@ -30,6 +30,7 @@
             <li><a href="/careers">Trabaja Con Nosotros</a></li>'); ?>
           </ul>
         </li>
+        <li class="" style="display:none;"><?php echo _('<a href="http://www.salvadorhairdressing.com/noticias.php">Noticias</a>'); ?>
         <li class=""><?php echo _('<a href="http://www.salvadorhairdressing.com/franquicias.php">Franquicias</a>'); ?>
         </li>
         <li class=""><?php echo _('<a href="/ubicaciones">Ubicaciones</a>'); ?>
