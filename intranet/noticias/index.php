@@ -4,7 +4,21 @@ $_SESSION["ubicacion"] = "noticias";
 $arrayMenu = unserialize($_SESSION["accesos"]);
 $code64 = base64_encode($iduser);
 include "../sec/libfunc.php";
-require "conexion.php";
+require "PDO_Pagination.php";
+require_once "conexion.php";
+$connection = new PDO("mysql:host=$server;dbname=$name;", $serveruser, $password);
+$connection->exec("SET CHARACTER SET utf8");
+$pagination = new PDO_Pagination($connection);
+$pagination->rowCount("SELECT * FROM salvador_noticias");
+$pagination->config(3, 8);
+$sql = "SELECT * FROM salvador_noticias ORDER BY id DESC LIMIT $pagination->start_row, $pagination->max_rows";
+$query = $connection->prepare($sql);
+$query->execute();
+$model = array();
+while($rows = $query->fetch())
+{
+    $model[] = $rows;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +28,17 @@ require "conexion.php";
 	<title>Salvador Hairdressing - Noticias</title>
 	<?php include "../componentes/header.php"; ?>
 	<link rel="stylesheet" type="text/css" href="css/alertify.min.css">
+	<style type="text/css">
+		<style>
+            .btn{
+				text-decoration: none;
+				background: #ad3b3b !important;
+    			color: #fff !important;
+    			font-size: 20px;
+          	}
+            .active{background: #ad3b3b;color:#fff; font-size: 15px;}
+        </style>
+	</style>
 	<script>
 	function eliminar(id){
 		page=1;
@@ -25,7 +50,7 @@ require "conexion.php";
 				url:'eliminar.php',
 				data: parametros,
 					success:function(data){
-						$(".mostrar_contenido").html(data).fadeIn('slow');
+						$("#mostrar_contenido").html(data).fadeIn('slow');
 						$("#elimi").remove();		
 				  	}				
 				})	
@@ -34,54 +59,46 @@ require "conexion.php";
 			    alertify.error('Ha cancelado esta acción');
 			})
 	}
-	</script>
-	
-	
+	</script>	
 </head>
 <body data-spy="scroll" data-target="#navbar-scroll">
 	<div id="top"></div>	
     <?php menu1HeaderIntranet($iduser, $_SESSION['ubicacion'], $arrayMenu); 
         include ($_SESSION["idiomaruta"].$_SESSION["idioma"]."/crm.php");         
     ?>
-	<div class="container">
+	<div class="container">		
+		<div class="text-right">
+			<a href='anadir.php' class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>Agregar Noticia</a>
+		</div>
+		<br>
+		<div id="mostrar_contenido"></div>
 		<div class="row">
-			<div class="col-md-12 text-right">
-				<a href='anadir.php' class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>Agregar Noticia</a>
-			</div>
-			<br>
-			
-			<div id="mostrar_contenido"></div>
-			<div class="row">
-				<?php
-				require_once "conexion.php";
-				$conex = mysqli_connect($server,$serveruser,$password,$name);
-				if (mysqli_connect_errno()) {
-					echo "Fallo la conexión";
-					exit();
-				}
-				mysqli_set_charset($conex,"utf8");
-				$nums=1;
-				$sql=mysqli_query($conex,"SELECT * FROM salvador_noticias ORDER BY id DESC");
-				while($res=mysqli_fetch_array($sql)){
-					$id = $res['id'];
-					$titulo = $res['titulo'];
-					$descri = $res['descripcion'];
-					$url_img = $res['url_img'];
-					?>					
-						<div id="elimi" class="col-lg-4 col-md-4 col-xs-6 thumb animate-box spac secnot fadeInUp animated-fast">
-						<div class="thumbnail">
-						  <img src="img/<?php echo $url_img;?>" alt="..." class="img-responsive" width='300px' align="center">
-						</div>
-						<div class="caption fh5co-item notic" style="position: relative;bottom: 20px;">
-							<h3 id=""><?php echo $titulo;?></h3>
-							<p id="descrip" style=""><?php echo $descri;?></p>							
-							<p class='text-right'><a href="editar.php?id=<?php echo $id;?>" class="btn btn-info" role="button"><i class='glyphicon glyphicon-edit'></i> Editar</a> <button type="button" class="btn btn-danger" role="button" onclick="eliminar('<?php echo $id;?>');"><i class='glyphicon glyphicon-trash'></i> Eliminar</button></p>
-						</div>						
-					  </div>
-				<?php					
-				}
-				?>						
-			</div>
+			<?php
+				foreach ($model as $key) {						
+				$id = $key['id'];
+				$titulo = $key['titulo'];
+				$descri = $key['descripcion'];
+				$url_img = $key['url_img'];
+				$caracteres = 100;
+				?>
+				<div id="elimi" class="col-sm-6 col-md-3 clearfix">					
+					<div class="thumbnail">
+						<img src="img/<?php echo $url_img;?>" alt="...">
+					<div class="caption">	
+						<h3 id=""><?php echo $titulo;?></h3>
+						<p><?php echo $descri;?></p>
+						<p class='text-right'><a href="editar.php?id=<?php echo $id;?>" class="btn btn-info" role="button"><i class='glyphicon glyphicon-edit'></i> Editar</a> <button type="button" class="btn btn-danger" role="button" onclick="eliminar('<?php echo $id;?>');"><i class='glyphicon glyphicon-trash'></i> Eliminar</button></p>
+					</div>
+				</div>
+			  </div>					
+			<?php					
+			}
+			?>						
+		</div>
+		<div class="paginado" style="float: left!important;">
+		<?php
+			$pagination->pages("btn");
+		?>
 		</div>
 	</div>
 <?php include "../componentes/footer.php"; ?>

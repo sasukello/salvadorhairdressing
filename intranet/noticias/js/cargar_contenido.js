@@ -57,6 +57,7 @@ $(document).ready(function(){
 		},4000)
 	});
 });
+
 function cargar_imagen(){
 	$("#msg_carga").text('Cargando...');
 	var id_editar=$("#id_editar").val();

@@ -53,7 +53,7 @@ $conex = mysqli_connect($server,$serveruser,$password,$name);
 						<input type="hidden" class="form-control" id="id_editar" value="<?php echo $id_editar;?>" name="id_editar">
 						<div class="errorti" style="color:red;font-weight:bold"></div>	
 					<label for="Descripción">Descripción:</label>
-						<textarea class='form-control' name="descripcion" id="descripcion" rows="5"><?php echo $descrip;?></textarea>					
+						<textarea class='form-control' name="descripcion" id="descripcion" rows="10"><?php echo $descrip;?></textarea>					
 						<div class="errordes" style="color:red;font-weight:bold"></div>	
 					<label for="titulo">Fecha:</label>
 						<input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo $fecha;?>">
