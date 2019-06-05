@@ -7,7 +7,6 @@ $page = $_GET['page'];
 $rowsPerPage = NUM_ITEMS_BY_PAGE;
 $offset = ($page - 1) * $rowsPerPage;
 sleep(1);
-
 $result = $connexion->query(
     'SELECT * FROM salvador_noticias ORDER BY id DESC LIMIT '.$offset.', '.$rowsPerPage);
 if ($result->num_rows > 0) {
@@ -27,4 +26,5 @@ if ($result->num_rows > 0) {
     }
 }
 echo $html;
+
 ?>

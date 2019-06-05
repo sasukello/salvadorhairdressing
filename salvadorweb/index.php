@@ -109,9 +109,8 @@ div.desc1 {padding:15px;text-align: left;}
   </div>
 </div>  
 <!-- Seccion noticias -->  
-<!-- Top content -->
 <br><br>
-<div class="container">
+<div class="container"> 
 <div class="row">
 <?php echo _('<h3 class="section-title text-center">Últimas <span style="color: #e32028;">noticias</span></h3>'); ?>
 <div id="content" class="col-lg-12">
