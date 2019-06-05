@@ -27,7 +27,7 @@ public function __construct($connection) {
         $this->btn_last_page = 'Last';
         $this->btn_next_page = 'Next';
         $this->btn_back_page = 'Back';
-        $this->btn_page = 'Pag.';
+        $this->btn_page = 'Pagina.';
         $this->btn_active = 'active';
     return $this->connection = $connection;
 }

@@ -95,7 +95,7 @@ while($rows = $query->fetch())
 			}
 			?>						
 		</div>
-		<div class="paginado" style="float: left!important;">
+		<div class="paginado">
 		<?php
 			$pagination->pages("btn");
 		?>
