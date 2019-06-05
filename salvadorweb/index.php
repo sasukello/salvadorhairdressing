@@ -10,13 +10,12 @@ setlocale(LC_ALL, $language);
 bindtextdomain("salvador_web", "./locale");
 textdomain("salvador_web");
 require "../intranet/noticias/conexion.php";
-$conex = mysqli_connect($server,$serveruser,$password,$name);
-if (mysqli_connect_errno()) {
-    echo "Fallo la conexión";
-    exit();
-}
-mysqli_set_charset($conex,"utf8");
+$connexion = new mysqli($server,$serveruser,$password,$name);
+$result = $connexion->query('SELECT COUNT(*) as total FROM salvador_noticias ORDER BY id DESC');
+$row = $result->fetch_assoc();
+$num_total_rows = $row['total'];
 ?>
+
 <head>
 <?php include 'c/ganalytics.html'; ?>  
 <meta charset="utf-8">
@@ -29,6 +28,7 @@ mysqli_set_charset($conex,"utf8");
 .paraabajo{bottom: 0px;top: 0px;}#linknoti:hover{text-decoration: underline;}
 #imgN{border-radius:5px;}#imgN:
 div.desc1 {padding:15px;text-align: left;}
+.active{background: #e32028!important;color:#fff!important; font-size: 18px!important;}
 </style>
 </head>
 <body>
@@ -113,32 +113,58 @@ div.desc1 {padding:15px;text-align: left;}
 <br><br>
 <div class="container">
 <div class="row">
-<?php echo _('<h3 class="section-title text-center">Noticias mas destacadas</h3>'); ?>
-<?php 
-$nums=1;
-$sql = "SELECT * FROM salvador_noticias ORDER BY id DESC";
-$res = mysqli_query($conex,$sql);
-while ($row = mysqli_fetch_array($res)){
-$id = $row['id'];
-$titulo = $row['titulo'];
-$descrip = $row['descripcion'];
-$url_img = $row['url_img'];
-$caracteres = 50;
-?>
-<div class="col-sm-3 col-md-3 col-lg-3">
-  <div class="desc1">
-      <img id="imgN" class="img-responsive" width="600px" align="center" src="intranet/noticias/img/<?php echo $url_img;?>">
-      <a target="_blank" href="snoticias.php?id=<?php echo $id;?>" data-toggle="tooltip" data-placement="right" title="¡Entérate de mas!" id="linknoti" class="" style=" padding:5px;font-size: 20px;"><b><?php echo $titulo;?></b></a> 
-      <div id="txtdescrip" class="descripcion2" style=""><?php echo substr($descrip,0,$caracteres).'...';?>
-      <br><br>           
-      </div>
-    </div>
+<?php echo _('<h3 class="section-title text-center">Últimas <span style="color: #e32028;">noticias</span></h3>'); ?>
+<div id="content" class="col-lg-12">
+      <?php
+      if ($num_total_rows > 0) {
+          $num_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
+          $result = $connexion->query('SELECT * FROM salvador_noticias ORDER BY id DESC LIMIT 0, '.NUM_ITEMS_BY_PAGE);
+
+              if ($result->num_rows > 0) {
+              echo '<ul class="row items">';
+              while ($row = $result->fetch_assoc()) {
+                  $id = $row['id'];
+                  $titulo = $row['titulo'];
+                  $descrip = $row['descripcion'];
+                  $url_img = $row['url_img'];
+                  $caracteres = 70;
+                  ?>
+                   <li class="col-lg-4">
+                   <div class="item" style="text-align: center !important; margin: auto;">               
+                   <img id="imgN" class="img-fluid mx-auto d-block" width="500"  src="intranet/noticias/img/<?php echo $url_img;?>">
+                   <a target="_blank" href="snoticias.php?id=<?php echo $id;?>" data-toggle="tooltip" data-placement="right" title="¡Entérate de mas!" id="linknoti" class="" style=" padding:5px;font-size: 20px;"><b><?php echo $titulo;?></b></a>
+                   <div><?php echo substr($descrip,0,$caracteres).'...';?></div>
+                   </div>
+                   </li>
+              <?php 
+              }              
+               ?>     
+              </ul>
+          <?php 
+          }
+          if ($num_pages > 1) {
+              echo '<div class="row">';
+              echo '<div class="col-lg-12">';
+              echo '<nav aria-label="Page navigation example">';
+              echo '<ul class="pagination justify-content-end">';
+              for ($i=1;$i<=$num_pages;$i++) {
+                  $class_active = '';
+                  if ($i == 1) {
+                      $class_active = 'active';
+                  }
+                  echo '<li class="page-item '.$class_active.'"><a class="page-link" href="#" data="'.$i.'">'.$i.'</a></li>';
+              }
+              echo '</ul>';
+              echo '</nav>';
+              echo '</div>';
+              echo '</div>';
+          }
+      }
+ ?>         
 </div>
-<?php 
-}
-?>
 </div>
 </div>
+
 <br>
   <div class="row">
   <div class="dark-wrapper">
@@ -329,7 +355,7 @@ $caracteres = 50;
       </div> 
     </div>
   </div>
-<?php include 'c/footer.php'; ?>  
-            
+<?php include 'c/footer.php'; ?>
+
 </body>
 </html>

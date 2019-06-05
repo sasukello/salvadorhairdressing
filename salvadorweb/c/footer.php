@@ -133,7 +133,24 @@
 
 <script>
   $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip();   
+      $('[data-toggle="tooltip"]').tooltip(); 
+      $('.pagination li a').on('click', function(){
+      $('.items').html('<div class="loading"><img src="/c/img/loading.gif" width="" height=""/><br><br></div>');
+      var page = $(this).attr('data');    
+      var dataString = 'page='+page;
+
+      $.ajax({
+          type: "GET",
+          url: "ajax.php",
+          data: dataString,
+          success: function(data) {
+              $('.items').fadeIn(2000).html(data);
+              $('.pagination li').removeClass('active');
+              $('.pagination li a[data="'+page+'"]').parent().addClass('active');
+          }
+      });
+      return false;
+    });              
   });
 </script>
 
