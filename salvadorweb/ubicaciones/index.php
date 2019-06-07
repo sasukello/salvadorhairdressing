@@ -58,7 +58,7 @@
             <div class="col-md-12 lista-salon">
               <div class="col-md-6">
                   <h3 onclick="showRegionList(1);"><i class="budicon-pin"></i> Venezuela <img src="/c/img/lang/ve1.png"></h3>
-                  <h3 onclick="showRegionList(2);"><i class="budicon-pin"></i> Panamá <img src="/c/img/lang/pty1.png"></h3>
+                  <h3 id="Panamab" onclick="showRegionList(2);"><i class="budicon-pin"></i> Panamá <img src="/c/img/lang/pty1.png"></h3>
                   <h3 onclick="showRegionList(72);"><i class="budicon-pin"></i> <?php echo _('Republica Dominicana'); ?> <img src="/c/img/lang/domrep1.png"></h3>
               </div>
               <!--/column -->

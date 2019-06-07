@@ -436,10 +436,13 @@ function showRegDet($data, $paso){ /* PARA UBICACIONES, CUANDO HAGO CLICK EN REG
     if($miniatura == ""){
       $miniatura = "13thumb.jpg";
     }
-    $salon .= '<li class="item col-md-3 col-sm-6 marginbt10">
+    $salon .= '<li class="listP item col-md-4 col-sm-6 marginbt10">
               <figure class="icon-overlay"><a href="#0" data-type="slide-portfolio-item-1" data-sid="'.$r["id"].'" data-tipo="1"><img src="/c/img/salons/'.$miniatura.'" alt="" /></a></figure>
               <div class="slide-portfolio-item-info box">
                 <h4 class="post-title">'.$r["nombrecompleto"].'</h4>
+                 <div class="meta marginbt0"><b>'. _("Teléfono") .':</b> '.$r["telefono1"].' / '.$r["telefono2"].'</div>
+                 <div class="meta marginbt0"><b>'. _("Dirección") .':</b> '.$r["direccion"].'</div>
+                  <a href="//www.instagram.com/'.$r["instagram"].'" target="_blank" style="font-size: 14px;"><i class="fab fa-instagram"></i> @'.$r["instagram"].'</a>
                 <div class="meta marginbt0">'.cambiarRegion($r["regionsalon"]).'</div>
               </div>
             </li>';

@@ -150,7 +150,16 @@
           }
       });
       return false;
-    });              
+    });
+      $('body').on('click','#Panamab', function(){
+        var elem = $(this);
+        var elem = document.getElementById("Panamab").getAttribute("onclick").valueOf();
+        elem = $(".listP");
+        console.log(elem);
+        // for (var i=0;i<elem.length;i++) {
+        // }
+            
+    });   
   });
 </script>
 
