@@ -21,7 +21,7 @@
 				<div class="col-md-12 text-center">
 					<div class="display-t js-fullheight">
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-							<h1><em>Edición Actual: #36</em></h1>
+							<h1><em>Edición Actual: #38</em></h1>
 							<h2>&ldquo; Quantum ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ab debitis sit itaque totam, a maiores nihil, nulla magnam porro minima officiis! &rdquo;</h2>
 							<a href="actual.php" class="btn btn-elegant">Ver Edición Actual</a>
 						</div>
@@ -65,6 +65,12 @@
 	  </div>
 	</div>
 
+		<div class="container">
+			<div class="row">
+				
+			</div>
+		</div>
+
 	<div id="fh5co-featured-menu">
 		<div class="container">
 			<div class="row">
@@ -72,6 +78,12 @@
 					<div class="fh5co-item animate-box">
 						<a href="#" data-toggle="modal" data-id="36" data-target="#myModal"><img src="/componentes//images/ediciones/036.jpg" class="img-responsive"></a>
 						<p><a href="#" data-toggle="modal" data-id="36" data-target="#myModal"><b>Edición 36</b></a></p>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-6 col-xs-6 col-xxs-12 fh5co-item-wrap" style="float: right;">
+					<div class="fh5co-item animate-box">
+						<a href="#" data-toggle="modal" data-id="37" data-target="#myModal"><img src="/componentes//images/ediciones/fs-ad-1.jpg" class="img-responsive"></a>
+						<p><a href="#" data-toggle="modal" data-id="37" data-target="#myModal"><b>Edición 37</b></a></p>
 					</div>
 				</div>
 			</div>
