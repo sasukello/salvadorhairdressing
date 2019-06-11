@@ -3,6 +3,7 @@ if (isset($_FILES["archivo"])) {
 	
 	$titulo = $_POST['titulo'];
 	$descrip = $_POST['descripcion'];
+	$idioma = $_POST['idioma'];
 	$url=$_FILES["archivo"]["name"];
 	$tipo = $_FILES["archivo"]["type"];
 	$tamano = $_FILES["archivo"]["size"];
@@ -47,7 +48,7 @@ if (isset($_FILES["archivo"])) {
 			exit();
 		}
 		mysqli_set_charset($conex,"utf8");
-		$sql = "INSERT INTO salvador_noticias (titulo,descripcion,url_img,tipo,fecha) VALUES ('$titulo','$descrip','$url','$tipo','$fechaactual')";
+		$sql = "INSERT INTO salvador_noticias (titulo,descripcion,url_img,tipo,fecha,idioma) VALUES ('$titulo','$descrip','$url','$tipo','$fechaactual','$idioma')";
 		$res = mysqli_query($conex,$sql);
 		if ($res) {			
 			$src = $destin.$url;

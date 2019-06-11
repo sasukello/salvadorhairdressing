@@ -49,9 +49,14 @@ while($rows = $query->fetch())
 				$.ajax({
 				url:'eliminar.php',
 				data: parametros,
+				beforeSend: function(objeto){
+					$("#loader").html("<img src='img/loading.gif'>");
+		  		},
 					success:function(data){
 						$("#mostrar_contenido").html(data).fadeIn('slow');
-						$("#elimi").remove();		
+						$("#elimi").remove();	
+						$("#loader").html("");
+
 				  	}				
 				})	
 			},
@@ -68,10 +73,10 @@ while($rows = $query->fetch())
     ?>
 	<div class="container">		
 		<div class="text-right">
-			<a href='anadir.php' class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>Agregar Noticia</a>
+			<a href='anadir.php' class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>Agregar una noticia</a>
 		</div>
 		<br>
-		<div id="mostrar_contenido"></div>
+
 		<div class="row">
 			<?php
 				foreach ($model as $key) {						
@@ -95,6 +100,8 @@ while($rows = $query->fetch())
 			}
 			?>						
 		</div>
+		<div id="loader" class="text-center"></div>
+		<div id="mostrar_contenido" style="color:red;"></div>
 		<div class="paginado">
 		<?php
 			$pagination->pages("btn");
