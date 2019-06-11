@@ -135,10 +135,10 @@
   $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip(); 
       $('.pagination li a').on('click', function(){
-      $('.items').html('<div class="loading"><img src="/c/img/loading.gif" width="" height=""/><br><br></div>');
-      var page = $(this).attr('data');    
+      $('.items').html('<div class="loading" style="text-align:center;"><img src="/c/img/loading.gif" width="" height=""/><br><br></div>');
+      var page = $(this).attr('data');
       var dataString = 'page='+page;
-
+      console.log(dataString);
       $.ajax({
           type: "GET",
           url: "ajax.php",

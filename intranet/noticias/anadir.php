@@ -28,7 +28,7 @@ include "../sec/libfunc.php";
 			</div>
 		</div>
 		<div class="row">		
-			<form class="form-horizontal" id="Formulario" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" enctype="multipart/form-data">
+			<form class="form-horizontal" id="Formulario" action="" method="POST" enctype="multipart/form-data">
 				<div class="form-group">
 					<br>
 					<div class="col-md-4 col-sm-offset-3">
@@ -40,7 +40,15 @@ include "../sec/libfunc.php";
 						<div class="errordes" style="color:red;font-weight:bold"></div>	
 					<label for="titulo">Fecha:</label>
 						<input type="date" class="form-control" id="fecha" name="fecha">
-						<div class="errorfe" style="color:red;font-weight:bold"></div>	
+						<div class="errorfe" style="color:red;font-weight:bold"></div><br>	
+					<label for="Idioma">Idioma:</label>
+					<select name="idioma" required id="idioma">
+							<option value="">Seleccione una opción</option>
+							<option value="es_VE">Español</option>
+							<option value="en_US">Inglés</option>
+							<option value="it_IT">Italiano</option>							
+					</select>	
+					<div class="erroridio" style="color:red;font-weight:bold"></div><br>	
 					</div>
 					<div class="col-md-4"><br>
 						<div class="fileinput fileinput-new" data-provides="fileinput">

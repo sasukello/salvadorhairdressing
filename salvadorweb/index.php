@@ -4,13 +4,15 @@
 /*$path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/library/AltoRouter.php";
 require $path;*/
-$language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
+$language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "";
 putenv("LC_ALL=$language");
 setlocale(LC_ALL, $language);
 bindtextdomain("salvador_web", "./locale");
 textdomain("salvador_web");
+
 require "../intranet/noticias/conexion.php";
 $connexion = new mysqli($server,$serveruser,$password,$name);
+mysqli_set_charset($connexion,"utf8");
 $result = $connexion->query('SELECT COUNT(*) as total FROM salvador_noticias ORDER BY id DESC');
 $row = $result->fetch_assoc();
 $num_total_rows = $row['total'];
@@ -26,7 +28,7 @@ $num_total_rows = $row['total'];
 <?php include 'c/header.php'; ?>    
 <style>
 .paraabajo{bottom: 0px;top: 0px;}#linknoti:hover{text-decoration: underline;}
-#imgN{border-radius:5px;}#imgN:
+#imgN{border-radius:5px;}
 div.desc1 {padding:15px;text-align: left;}
 .active{background: #e32028!important;color:#fff!important; font-size: 18px!important;}
 </style>
@@ -117,8 +119,7 @@ div.desc1 {padding:15px;text-align: left;}
       <?php
       if ($num_total_rows > 0) {
           $num_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
-          $result = $connexion->query('SELECT * FROM salvador_noticias ORDER BY id DESC LIMIT 0, '.NUM_ITEMS_BY_PAGE);
-
+          $result = $connexion->query("SELECT * FROM salvador_noticias WHERE idioma ='$language' ORDER BY id DESC LIMIT 0, ".NUM_ITEMS_BY_PAGE);
               if ($result->num_rows > 0) {
               echo '<ul class="row items">';
               while ($row = $result->fetch_assoc()) {
@@ -128,13 +129,13 @@ div.desc1 {padding:15px;text-align: left;}
                   $url_img = $row['url_img'];
                   $caracteres = 70;
                   ?>
-                   <li class="col-lg-4">
-                   <div class="item" style="text-align: center !important; margin: auto;">               
-                   <img id="imgN" class="img-fluid mx-auto d-block" width="500"  src="intranet/noticias/img/<?php echo $url_img;?>">
-                   <a target="_blank" href="snoticias.php?id=<?php echo $id;?>" data-toggle="tooltip" data-placement="right" title="¡Entérate de mas!" id="linknoti" class="" style=" padding:5px;font-size: 20px;"><b><?php echo $titulo;?></b></a>
-                   <div><?php echo substr($descrip,0,$caracteres).'...';?></div>
-                   </div>
-                   </li>
+                  <li class="col-lg-4">
+                    <div class="item" style="">               
+                      <img id="imgN" class="img-fluid mx-auto d-block" width="500" src="intranet/noticias/img/<?php echo $url_img;?>">
+                      <a target="_blank" href="snoticias.php?id=<?php echo $id;?>" data-toggle="tooltip" data-placement="right" title="¡Entérate de mas!" id="linknoti" class="" style=" padding:5px;font-size: 20px;"><b><?php echo $titulo;?></b></a>
+                      <div><?php echo substr($descrip,0,$caracteres).'...';?><a target="_blank" id="linknoti" href="snoticias.php?id=<?php echo $id;?>">Leer Mas</a></div>
+                    </div>
+                  </li>
               <?php 
               }              
                ?>     
@@ -145,7 +146,7 @@ div.desc1 {padding:15px;text-align: left;}
               echo '<div class="row">';
               echo '<div class="col-lg-12">';
               echo '<nav aria-label="Page navigation example">';
-              echo '<ul class="pagination justify-content-end">';
+              echo '<ul class="pagination justify-content-end" style="float:right;">';
               for ($i=1;$i<=$num_pages;$i++) {
                   $class_active = '';
                   if ($i == 1) {
@@ -163,7 +164,6 @@ div.desc1 {padding:15px;text-align: left;}
 </div>
 </div>
 </div>
-
 <br>
   <div class="row">
   <div class="dark-wrapper">

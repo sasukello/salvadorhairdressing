@@ -8,7 +8,8 @@ $(document).ready(function(){
 			$(".errorti").html('Ingrese un título');
 			$(".errordes").html('Ingrese una descripción');			
 			$(".errorfe").html('Ingrese una fecha');
-		}else{
+		}
+		else{
 			var formData = new FormData($("#Formulario")[0]);      
     		$.post({
 				url: 'insertar.php',
@@ -25,7 +26,8 @@ $(document).ready(function(){
 			$(".errorti").html('');
 			$(".errordes").html('');
 			$(".errorfe").html('');
-		},4000)
+			$("#mostrar").html('');
+		},5000)
 	});
 	$("#editar_info").click(function(){
 		var elem = $(this);
@@ -54,10 +56,10 @@ $(document).ready(function(){
 			$(".errorti").html('');
 			$(".errordes").html('');
 			$(".errorfe").html('');
+			$("#mostrar").html('');
 		},4000)
 	});
 });
-
 function cargar_imagen(){
 	$("#msg_carga").text('Cargando...');
 	var id_editar=$("#id_editar").val();
