@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: salvador_web\n"
-"POT-Creation-Date: 2018-06-06 11:57-0400\n"
-"PO-Revision-Date: 2019-05-30 16:50-0400\n"
+"POT-Creation-Date: 2019-06-10 14:33-0400\n"
+"PO-Revision-Date: 2019-06-10 14:34-0400\n"
 "Last-Translator: Armando Lugo <alugox@gmail.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -17,46 +17,30 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: ../ajax\n"
 "X-Poedit-SearchPathExcluded-1: ../style\n"
 
-#: academy/index.php:14
-msgid ""
-"¡Mensaje Enviado Exitosamente!</strong> Gracias por querer formar parte de "
-"nuestro equipo de trabajo, evaluaremos toda la información suministrada y "
-"pronto nos comunicaremos contigo."
-msgstr ""
-"Your message was sent successfully!</strong> Thanks for your interest in "
-"joining our growing working team, we'll get back to you soon!"
-
-#: academy/index.php:16
-msgid ""
-"¡Lo sentimos, ha ocurrido un error inesperado!</strong> Te invitamos a "
-"completar la información nuevamente para así recibir todos tus datos."
-msgstr ""
-"Something went wrong!</strong> Please, try filling the form again so we can "
-"receive your information. Thanks."
-
-#: mysteryshopper/index.php:93
-msgid "INGRESA TU CORREO ELÉCTRONICO..."
-msgstr "ENTER YOUR EMAIL..."
-
-#: academy/index.php:36 app/index.php:25 careers/index.php:25 clientcard.php:25
-#: contact-backup.php:25 contacto.php:30 franquicias.php:32
-#: franquicias/faq/index.php:25 franquicias/franquicias.php:32
-#: franquicias3.php:31 fsmag.php:25 intranet/login.php:38 modelos/index.php:26
-#: mysteryshopper/index.php:32 mysteryshopper/index1bu.php:72 nosotros.php:25
-#: salvadoracademy/index - copia.php:25 salvadoracademy/index.php:25
-#: servicios.php:25 ubicaciones/index.php:25
+#: academy/index.php:26 app/index.php:25 backup/franquicias/franquicias.php:32
+#: careers/index.php:36 clientcard.php:25 contact-backup.php:25 contacto.php:30
+#: franquicias.php:31 franquicias/faq/index.php:25
+#: franquicias/franquicias.php:32 fsmag.php:25 modelos/index.php:26
+#: mysteryshopper/cuenta/encuesta.php:101 mysteryshopper/cuenta/index.php:90
+#: mysteryshopper/cuenta/visita.php:92 mysteryshopper/index.php:64
+#: mysteryshopper/login.php:89 mysteryshopper/registro.php:56
+#: mysteryshopper2/backUp_index_viejo.php:73 mysteryshopper2/index.php:65
+#: mysteryshopper2/index1bu.php:72 mysteryshopper2/index_nuevo.php:73
+#: mysteryshopper2/registro.php:62 nosotros.php:25 salvadoracademy/index -
+#: copia.php:25 salvadoracademy/index.php:25 servicios.php:25 snoticias.php:37
+#: ubicaciones/index.php:27
 msgid "Cargando"
 msgstr "Loading"
 
-#: academy/index.php:46
+#: academy/index.php:36
 msgid "The Academy"
 msgstr ""
 
-#: academy/index.php:66
+#: academy/index.php:51
 msgid "La formación de nuestra esencia"
 msgstr "Shaping our Essence"
 
-#: academy/index.php:67
+#: academy/index.php:52
 msgid ""
 "<p>Somos una <b>escuela de belleza</b>, cuya misión es formar profesionales "
 "en el área de la belleza y el estilismo, desde cualquier <b>latitud</b>.</p> "
@@ -77,96 +61,8 @@ msgstr ""
 "international training</b> with the most up-to-date trends in beauty, "
 "raising our teachers' integral capacity.</p>"
 
-#: academy/index.php:80 careers/index.php:18 careers/index.php:67
-msgid "Trabaja con Nosotros"
-msgstr "Work With Us"
-
-#: academy/index.php:96
-msgid "Una ventana a tú futuro"
-msgstr "A Window to Your Future"
-
-#: academy/index.php:97
-msgid ""
-"<h5 class=\"text-center\">¿Quieres ser parte de una de las franquicias con "
-"mayor crecimiento en Latinoamérica?</h5>\n"
-"            <p>Constantemente nos encontramos en la búsqueda de personal en "
-"las siguientes áreas:"
-msgstr ""
-"<h5 class=\"text-center\">Do you want to join one of Latin America's biggest "
-"growing Franchise?</h5><p>We are constantly searching for new talent in the "
-"following areas:"
-
-#: academy/index.php:100
-msgid "BARBERO"
-msgstr "BARBER"
-
-#: academy/index.php:101
-msgid "Si eres..."
-msgstr ""
-"The Barbers of our team, must be kind and polite, have the ease of talking "
-"with customers. Experience in hair cutting is required with particular "
-"attention to North American latest trendy styles, shaving and adjustment of "
-"beard, knowledge of traditional cuts and the traditional culture of "
-"barberies (which also provides rigorous order and cleanliness of your work "
-"station and strumnti ). You must know the color of the hair to meet the "
-"needs of fashion and customers.</p>\n"
-"<p>We seek excellent proffesionals with great communication and "
-"interpersonal skills, with the know-how to diagnose the conditions of the "
-"hair and scalp and the ability to offer products to better advise the "
-"client. Knowledge of the English language. Must have a licence or permit for "
-"the exercise of the activity.</p>"
-
-#: academy/index.php:103
-msgid "ESTILISTA"
-msgstr "BASIC MANICURIST"
-
-#: academy/index.php:104
-msgid "El Estilista Salvador embarca varias áreas..."
-msgstr ""
-"A basic manicurist of our team needs to be kind and polite, have the ease of "
-"talking with customers. Must know lastest hair and massages techniques to "
-"diagnose the condition of the skin around the nails and the ability to offer "
-"products to better advise the client.\n"
-"<p>A summary of the profile of a basic manicurist of our team:</p>\n"
-"<ul><li>Cut, profile and polish the nails.</li>\n"
-"<li>Condition the skin around the nails with oils and creams.</li>\n"
-"<li>Know the massages techniques in hands or arms to improve circulation.</"
-"li>\n"
-"<li>Tailor-made nail reinforcement treatments</li></ul>"
-
-#: academy/index.php:106
-msgid "GERENTE DE NEGOCIOS/ STORE MANAGER"
-msgstr "STORE MANAGER"
-
-#: academy/index.php:107
-msgid ""
-"El Gerente de Negocios debe estar apegado a nuestros valores de marca..."
-msgstr ""
-"The Store Manager must be someone with a strong customer service orientation "
-"and capable of achieving the predefined objectives. Excellent communication "
-"and interpersonal skills, as well as being able to speak English fluently "
-"(any other languages are a plus). Team work ability, be collaborative and "
-"knowing of sales techniques it's what we seek for this position."
-
-#: academy/index.php:110
-msgid ""
-"Si sientes que tienes lo necesario para formar parte de nuestro equipo, "
-"rellena uno de los siguientes formularios y comienza tu camino al éxito con "
-"nosotros."
-msgstr ""
-"If you feel confident to be part of our team, fill one of the following "
-"forms, and start your path to success with us."
-
-#: academy/index.php:119
-msgid "<img src=\"/c/img/careers/prof-trabaja-con-nosotros.jpg\" alt=\"\" />"
-msgstr "<img src=\"/c/img/careers/prof-work-with-us.jpg\" alt=\"\" />"
-
-#: academy/index.php:124
-msgid "<img src=\"/c/img/careers/admin-trabaja-con-nosotros.jpg\" alt=\"\" />"
-msgstr "<img src=\"/c/img/careers/admin-work-with-us.jpg\" alt=\"\" />"
-
-#: academy/index.php:141 academy/index.php:157 careers/index.php:106
-#: index.php:18 index.php:30 nosotros.php:127
+#: academy/index.php:63 careers/index.php:115 careers/index.php:131
+#: index.php:25 index.php:35 nosotros.php:127 snoticias.php:72
 msgid "¡Bienvenido a la Excelencia!"
 msgstr "Welcome to the Excellence!"
 
@@ -174,41 +70,56 @@ msgstr "Welcome to the Excellence!"
 msgid "App Móvil"
 msgstr "Mobile App"
 
+#: backup/franquicias/franquicias.php:19 franquicias.php:24
+#: franquicias/franquicias.php:19
+msgid "Franquicias"
+msgstr "Franchises"
+
+#: backup/franquicias/franquicias.php:50 franquicias/franquicias.php:50
+#: franquicias/index.php:46
+msgid "Solicita tu Franquicia"
+msgstr "Request Your Franchise"
+
+#: backup/franquicias/franquicias.php:51 franquicias/franquicias.php:51
+#: franquicias/index.php:47
+msgid "Preguntas Frecuentes"
+msgstr "Frequent Ask Questions"
+
 #: c/footer-barber.php:45 footer.php:17
 msgid "Síguenos"
 msgstr "Follow Us"
 
-#: c/footer-barber.php:66 c/footer.php:12 footer.php:52
+#: c/footer-barber.php:66 c/footer.php:11 footer.php:52
 msgid "<a class=\"link-footer\" href=\"/nosotros.php\">NOSOTROS</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/nosotros.php?lang=en_US\">ABOUT US</a>"
 
-#: c/footer-barber.php:67 c/footer.php:13 footer.php:53
+#: c/footer-barber.php:67 c/footer.php:12 footer.php:53
 msgid "<a class=\"link-footer\" href=\"/servicios.php\">SERVICIOS</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/servicios.php?lang=en_US\">SERVICES</a>"
 
-#: c/footer-barber.php:68 c/footer.php:14 footer.php:54
+#: c/footer-barber.php:68 c/footer.php:13 footer.php:54
 msgid "<a class=\"link-footer\" href=\"/modelos/\">MODELOS DE NEGOCIO</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/modelos/?lang=en_US\">BUSINESS MODELS</a>"
 
-#: c/footer-barber.php:69 c/footer.php:15
+#: c/footer-barber.php:69 c/footer.php:14
 msgid "<a class=\"link-footer\" href=\"/franquicias.php\">FRANQUICIAS</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/franquicias.php?lang=en_US\">FRANCHISES</a>"
 
-#: c/footer-barber.php:70 c/footer.php:16 footer.php:56
+#: c/footer-barber.php:70 c/footer.php:15 footer.php:56
 msgid "<a class=\"link-footer\" href=\"/ubicaciones\">UBICACIONES</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/ubicaciones/?lang=en_US\">LOCATIONS</a>"
 
-#: c/footer-barber.php:71 c/footer.php:17
+#: c/footer-barber.php:71 c/footer.php:16
 msgid "<a class=\"link-footer\" href=\"/novedades\">NOVEDADES</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/nosotros.php?lang=en_US\">ABOUT US</a>"
 
-#: c/footer-barber.php:72 c/footer.php:18 footer.php:57
+#: c/footer-barber.php:72 c/footer.php:17 footer.php:57
 msgid "<a class=\"link-footer\" href=\"/contacto.php\">CONTACTO</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/contacto.php?lang=en_US\">CONTACT US</a>"
@@ -217,7 +128,7 @@ msgstr ""
 msgid "© 2011-2017 Salvador Hairdressing. Todos los derechos reservados."
 msgstr "© 2011-2017 Salvador Hairdressing. All Rights Reserved."
 
-#: c/footer.php:53
+#: c/footer.php:51 intranet/login.php:125
 msgid "Salvador Hairdressing &copy; 2018. Todos los derechos reservados."
 msgstr "Salvador Hairdressing &copy; 2018. All Rights Reserved."
 
@@ -226,28 +137,29 @@ msgid "Formulario de Contacto"
 msgstr "Contact Form"
 
 #: c/html/contacto.php:14 c/html/error.php:8 c/html/gracias.php:8
+#: mysteryshopper2/registro.php:85
 msgid ""
 "¿Qué te pareció tu visita a nuestros salones? Haznos llegar tus comentarios."
 msgstr "What did you think of your visit? Let us know of your experience."
 
-#: c/html/contacto.php:22 c/html/error.php:16 c/html/fq-error.php:22
-#: c/html/fq-gracias.php:22 c/html/franquicia.php:22 c/html/gracias.php:16
+#: c/html/contacto.php:22 c/html/error.php:16 c/html/fq-error.php:23
+#: c/html/fq-gracias.php:23 c/html/franquicia.php:24 c/html/gracias.php:16
 msgid "Información del Cliente"
 msgstr "Client Information"
 
 #: c/html/contacto.php:30 c/html/contacto.php:93 c/html/error.php:24
-#: c/html/fq-error.php:30 c/html/fq-gracias.php:30 c/html/franquicia.php:30
+#: c/html/fq-error.php:31 c/html/fq-gracias.php:31 c/html/franquicia.php:32
 #: c/html/gracias.php:24
 msgid "Información del Salón"
 msgstr "Location Information"
 
-#: c/html/contacto.php:37 c/html/error.php:31 c/html/fq-error.php:37
-#: c/html/fq-gracias.php:37 c/html/franquicia.php:37 c/html/gracias.php:31
+#: c/html/contacto.php:37 c/html/error.php:31 c/html/fq-error.php:38
+#: c/html/fq-gracias.php:38 c/html/franquicia.php:39 c/html/gracias.php:31
 msgid "Detalle del Servicio"
 msgstr "Service Details"
 
-#: c/html/contacto.php:45 c/html/error.php:39 c/html/fq-error.php:45
-#: c/html/fq-gracias.php:45 c/html/franquicia.php:45 c/html/gracias.php:39
+#: c/html/contacto.php:45 c/html/error.php:39 c/html/fq-error.php:46
+#: c/html/fq-gracias.php:46 c/html/franquicia.php:47 c/html/gracias.php:39
 msgid "Completado"
 msgstr "Completed"
 
@@ -255,34 +167,46 @@ msgstr "Completed"
 msgid "Información Personal"
 msgstr "Personal Information"
 
-#: c/html/contacto.php:59 c/html/franquicia.php:136
+#: c/html/contacto.php:59 c/html/franquicia.php:141
 msgid "Ingresa tus datos personales para que podamos contactarte."
 msgstr "Please submit your personal data so we can contact you."
 
-#: c/html/contacto.php:64 c/html/franquicia.php:146 library/formularios.php:42
-#: library/formularios.php:43 library/formularios.php:134
-#: library/formularios.php:135
+#: c/html/contacto.php:64 c/html/franquicia.php:151
+#: legacy/library/formularios.php:42 legacy/library/formularios.php:43
+#: legacy/library/formularios.php:134 legacy/library/formularios.php:135
+#: library/formularios.php:42 library/formularios.php:43
+#: library/formularios.php:134 library/formularios.php:135
+#: mysteryshopper/registro.php:95 mysteryshopper2/registro.php:100
 msgid "Nombre"
 msgstr "Name"
 
-#: c/html/contacto.php:69 c/html/franquicia.php:151 library/formularios.php:48
-#: library/formularios.php:49 library/formularios.php:140
-#: library/formularios.php:141
+#: c/html/contacto.php:69 c/html/franquicia.php:156
+#: legacy/library/formularios.php:48 legacy/library/formularios.php:49
+#: legacy/library/formularios.php:140 legacy/library/formularios.php:141
+#: library/formularios.php:48 library/formularios.php:49
+#: library/formularios.php:140 library/formularios.php:141
+#: mysteryshopper/registro.php:100 mysteryshopper2/registro.php:105
 msgid "Apellido"
 msgstr "Last Name"
 
-#: c/html/contacto.php:76 library/funciones.php:303
+#: c/html/contacto.php:76 legacy/library/funciones.php:305
+#: library/funciones.php:326 library/funciones.php:443
+#: library/funciones2.php:326 library/funciones2.php:443
+#: mysteryshopper/registro.php:178 mysteryshopper2/registro.php:183
 msgid "Teléfono"
 msgstr "Phone"
 
-#: c/html/contacto.php:81 c/html/franquicia.php:204 library/formularios.php:81
-#: library/formularios.php:82 library/formularios.php:183
-#: library/formularios.php:184
+#: c/html/contacto.php:81 c/html/franquicia.php:209
+#: legacy/library/formularios.php:81 legacy/library/formularios.php:82
+#: legacy/library/formularios.php:183 legacy/library/formularios.php:184
+#: library/formularios.php:81 library/formularios.php:82
+#: library/formularios.php:183 library/formularios.php:184
+#: mysteryshopper/registro.php:112 mysteryshopper2/registro.php:117
 msgid "Correo Electrónico"
 msgstr "Email"
 
-#: c/html/contacto.php:86 c/html/contacto.php:127 c/html/franquicia.php:128
-#: c/html/franquicia.php:216
+#: c/html/contacto.php:86 c/html/contacto.php:127 c/html/franquicia.php:133
+#: c/html/franquicia.php:221 mysteryshopper2/registro.php:189
 msgid "Continuar"
 msgstr "Continue"
 
@@ -298,8 +222,8 @@ msgstr "Stylist Name"
 msgid "Fecha de la visita"
 msgstr "Visit Date"
 
-#: c/html/contacto.php:126 c/html/contacto.php:209 c/html/franquicia.php:215
-#: c/html/franquicia.php:243
+#: c/html/contacto.php:126 c/html/contacto.php:209 c/html/franquicia.php:220
+#: c/html/franquicia.php:248
 msgid "Anterior"
 msgstr "Previous"
 
@@ -331,11 +255,11 @@ msgstr "Did you receive the \"Welcome to the Excellence\" upon arrival?"
 #: c/html/franquicias/inversionista.php:185 c/html/franquicias/master.php:36
 #: c/html/franquicias/master.php:48 c/html/franquicias/master.php:75
 #: c/html/franquicias/master.php:87 c/html/franquicias/master.php:116
-#: c/html/franquicias/master.php:135 c/html/franquicias/master.php:147
+#: c/html/franquicias/master.php:135 c/html/franquicias/master.php:148
 #: c/html/franquicias/operador.php:36 c/html/franquicias/operador.php:48
 #: c/html/franquicias/operador.php:90 c/html/franquicias/operador.php:110
 #: c/html/franquicias/operador.php:130 c/html/franquicias/operador.php:149
-#: c/html/franquicias/operador.php:175 c/html/franquicias/unidad.php:36
+#: c/html/franquicias/operador.php:176 c/html/franquicias/unidad.php:36
 #: c/html/franquicias/unidad.php:48 c/html/franquicias/unidad.php:89
 #: c/html/franquicias/unidad.php:101 c/html/franquicias/unidad.php:120
 msgid "Si"
@@ -351,11 +275,11 @@ msgstr "Yes"
 #: c/html/franquicias/inversionista.php:186 c/html/franquicias/master.php:37
 #: c/html/franquicias/master.php:49 c/html/franquicias/master.php:76
 #: c/html/franquicias/master.php:88 c/html/franquicias/master.php:117
-#: c/html/franquicias/master.php:136 c/html/franquicias/master.php:148
+#: c/html/franquicias/master.php:136 c/html/franquicias/master.php:149
 #: c/html/franquicias/operador.php:37 c/html/franquicias/operador.php:49
 #: c/html/franquicias/operador.php:91 c/html/franquicias/operador.php:111
 #: c/html/franquicias/operador.php:131 c/html/franquicias/operador.php:150
-#: c/html/franquicias/operador.php:176 c/html/franquicias/unidad.php:37
+#: c/html/franquicias/operador.php:177 c/html/franquicias/unidad.php:37
 #: c/html/franquicias/unidad.php:49 c/html/franquicias/unidad.php:90
 #: c/html/franquicias/unidad.php:102 c/html/franquicias/unidad.php:121
 msgid "No"
@@ -417,8 +341,10 @@ msgstr "Comments"
 msgid "Escriba sus comentarios aquí..."
 msgstr "Write your comments here..."
 
-#: c/html/contacto.php:214 c/html/franquicia.php:248
+#: c/html/contacto.php:214 c/html/franquicia.php:253
+#: legacy/library/formularios.php:113 legacy/library/formularios.php:222
 #: library/formularios.php:113 library/formularios.php:222
+#: mysteryshopper/registro.php:184
 msgid "Enviar"
 msgstr "Send"
 
@@ -432,7 +358,7 @@ msgid ""
 "poderte contactar pronto."
 msgstr "Thanks for leaving us your comments, we'll be in touch soon."
 
-#: c/html/error.php:54 c/html/fq-error.php:59
+#: c/html/error.php:54 c/html/fq-error.php:60
 msgid "Lo sentimos, ha ocurrido un error."
 msgstr ""
 "We are sorry, an error ocurred during this operation. Please, try again."
@@ -445,11 +371,11 @@ msgstr ""
 "Sorry, an unexpected error ocurred when sending your message. Please, try "
 "again."
 
-#: c/html/fq-error.php:13 c/html/fq-gracias.php:13 c/html/franquicia.php:13
+#: c/html/fq-error.php:14 c/html/fq-gracias.php:14 c/html/franquicia.php:14
 msgid "Formulario de Franquicias"
 msgstr "Franchise Form"
 
-#: c/html/fq-error.php:14 c/html/fq-gracias.php:14 c/html/franquicia.php:14
+#: c/html/fq-error.php:15 c/html/fq-gracias.php:15 c/html/franquicia.php:15
 msgid ""
 "Obtén toda la información referente a franquicias Salvador Hairdressing "
 "dejando toda tu información en este formulario."
@@ -457,7 +383,7 @@ msgstr ""
 "Get all the related information about our Franchises by filling the "
 "following form with your information."
 
-#: c/html/fq-error.php:60
+#: c/html/fq-error.php:61
 msgid ""
 "Lamentablemente, ha ocurrido un error inesperado al momento de enviar los "
 "datos, te invitamos a ingresar nuevamente los datos de la solicitud."
@@ -465,131 +391,145 @@ msgstr ""
 "Sorry, an unexpected error ocurred when sending your message. Please, try "
 "again."
 
-#: c/html/fq-gracias.php:59 c/html/franquicia.php:255
+#: c/html/fq-error.php:65 c/html/fq-gracias.php:65 c/html/franquicia.php:131
+#: c/html/franquicia.php:265
+#, fuzzy
+#| msgid "FAQ: Preguntas Frecuentes"
+msgid " FAQ: Preguntas Frecuentes"
+msgstr "FAQ"
+
+#: c/html/fq-gracias.php:60 c/html/franquicia.php:260
 msgid "Solicitud Enviada Exitosamente"
 msgstr "Message Sent Successfully"
 
-#: c/html/fq-gracias.php:60 c/html/franquicia.php:256
+#: c/html/fq-gracias.php:61 c/html/franquicia.php:261
 msgid ""
 "Muchas gracias por tu solicitud, revisaremos todos los datos suministrados y "
 "te contactaremos muy pronto."
 msgstr "Thanks for leaving us your comments! We'll be in touch soon."
 
-#: c/html/franquicia.php:58
+#: c/html/franquicia.php:60
 msgid "Tipo de Franquicia"
 msgstr "Franchise Type"
 
-#: c/html/franquicia.php:59
+#: c/html/franquicia.php:61
 msgid "Seleccione una opción para ver las características."
 msgstr "Select an option to see it's features."
 
-#: c/html/franquicia.php:66 library/formularios.php:451
+#: c/html/franquicia.php:68 legacy/library/formularios.php:451
+#: legacy/library/formularios.php:474 library/formularios.php:451
 #: library/formularios.php:474
 msgid "Seleccione una opción"
 msgstr "Select an option"
 
-#: c/html/franquicia.php:67 c/html/franquicia.php:88
+#: c/html/franquicia.php:69 c/html/franquicia.php:90
 msgid "Franquiciado Operador"
 msgstr "Franchisee Operator"
 
-#: c/html/franquicia.php:68 c/html/franquicia.php:96
+#: c/html/franquicia.php:70 c/html/franquicia.php:98
 msgid "Franquiciado Inversionista"
 msgstr ""
 
-#: c/html/franquicia.php:69 c/html/franquicia.php:104
+#: c/html/franquicia.php:71 c/html/franquicia.php:106
 msgid "Franquiciado Master"
 msgstr ""
 
-#: c/html/franquicia.php:70 c/html/franquicia.php:112
+#: c/html/franquicia.php:72 c/html/franquicia.php:114
 msgid "Franquiciado con Unidad de Negocio"
 msgstr ""
 
-#: c/html/franquicia.php:71 c/html/franquicia.php:120
+#: c/html/franquicia.php:73 c/html/franquicia.php:122
 #: c/html/franquicias/flag.php:4
 msgid "Franquiciado Flag Ship"
 msgstr ""
 
-#: c/html/franquicia.php:89
+#: c/html/franquicia.php:91
 msgid ""
 "Es aquel que es emprendedor, que desea establecer un negocio o "
 "diversificarse con un nuevo negocio."
 msgstr ""
 
-#: c/html/franquicia.php:97
+#: c/html/franquicia.php:99
 msgid ""
 "Es aquel que es emprendedor que desea establecer un negocio o diversificarse "
 "con un nuevo negocio, dejando su operación en manos de terceros."
 msgstr ""
 
-#: c/html/franquicia.php:105
+#: c/html/franquicia.php:107
 msgid ""
 "Es el inversionista que adquiere los derechos para el desarrollo operativo y "
 "de crecimiento de la marca en una región o país."
 msgstr ""
 
-#: c/html/franquicia.php:113
+#: c/html/franquicia.php:115
 msgid ""
 "Es aquel que tiene condiciones profesionales, económica y actitudinales para "
 "establecerse como socio de una unidad de negocio ya establecida, remodelar "
 "un salón existente."
 msgstr ""
 
-#: c/html/franquicia.php:121 c/html/franquicias/flag.php:5
+#: c/html/franquicia.php:123 c/html/franquicias/flag.php:5
 msgid ""
 "Es cuando se tiene un negocio salón de belleza ya existente y quieres "
 "adquirir los derechos de conocimiento (know how) para el funcionamiento de "
 "la unidad de negocio."
 msgstr ""
 
-#: c/html/franquicia.php:135
+#: c/html/franquicia.php:140
 msgid "Datos Personales"
 msgstr "Personal Data"
 
-#: c/html/franquicia.php:141
+#: c/html/franquicia.php:146
 msgid "Documento de Identidad"
 msgstr "ID document"
 
-#: c/html/franquicia.php:158
+#: c/html/franquicia.php:163 mysteryshopper/registro.php:161
+#: mysteryshopper2/registro.php:166
 msgid "Fecha de Nacimiento"
 msgstr "Date of Birth"
 
-#: c/html/franquicia.php:163
+#: c/html/franquicia.php:168
 msgid "Dirección de Residencia"
 msgstr "Address"
 
-#: c/html/franquicia.php:175
+#: c/html/franquicia.php:180
 msgid "Provincia / Estado"
 msgstr "Province / State"
 
-#: c/html/franquicia.php:180
+#: c/html/franquicia.php:185 mysteryshopper/registro.php:157
+#: mysteryshopper2/registro.php:162
 msgid "Ciudad"
 msgstr "City"
 
-#: c/html/franquicia.php:187 library/formularios.php:61
+#: c/html/franquicia.php:192 legacy/library/formularios.php:61
+#: legacy/library/formularios.php:62 legacy/library/formularios.php:153
+#: legacy/library/formularios.php:154 library/formularios.php:61
 #: library/formularios.php:62 library/formularios.php:153
 #: library/formularios.php:154
 msgid "Teléfono de Habitación"
 msgstr "Landline Number"
 
-#: c/html/franquicia.php:192
+#: c/html/franquicia.php:197
 msgid "Teléfono de Oficina"
 msgstr "Office Number"
 
-#: c/html/franquicia.php:197 library/formularios.php:68
+#: c/html/franquicia.php:202 legacy/library/formularios.php:68
+#: legacy/library/formularios.php:69 legacy/library/formularios.php:160
+#: legacy/library/formularios.php:161 library/formularios.php:68
 #: library/formularios.php:69 library/formularios.php:160
 #: library/formularios.php:161
 msgid "Teléfono Móvil"
 msgstr "Mobile Phone"
 
-#: c/html/franquicia.php:209
+#: c/html/franquicia.php:214
 msgid "Nivel Académico"
 msgstr "Academic Level"
 
-#: c/html/franquicia.php:221
+#: c/html/franquicia.php:226
 msgid "Cuestionario de Solicitud"
 msgstr "Application Form"
 
-#: c/html/franquicia.php:222
+#: c/html/franquicia.php:227
 msgid ""
 "Responde las siguientes preguntas para conocer más sobre sus necesidades de "
 "negocio."
@@ -649,11 +589,11 @@ msgstr ""
 "Do you have the necessary personnel to carry on the operation? <small>If the "
 "answer is yes, please specify more. </small>"
 
-#: c/html/franquicias/inversionista.php:148 c/html/franquicias/operador.php:158
+#: c/html/franquicias/inversionista.php:148 c/html/franquicias/operador.php:159
 msgid "¿En cuánto tiempo quiere aperturar su negocio?"
 msgstr "How long do you wish to open your business?"
 
-#: c/html/franquicias/inversionista.php:162 c/html/franquicias/master.php:144
+#: c/html/franquicias/inversionista.php:162 c/html/franquicias/master.php:145
 msgid ""
 "¿Está interesado en operar toda una región o país? <small>Si la respuesta es "
 "sí, por favor especifique. </small>"
@@ -661,7 +601,7 @@ msgstr ""
 "Are you interested in running the operations of a whole region or country? "
 "<small>If the answer is yes, please specify more. </small>"
 
-#: c/html/franquicias/inversionista.php:182 c/html/franquicias/operador.php:172
+#: c/html/franquicias/inversionista.php:182 c/html/franquicias/operador.php:173
 msgid ""
 "¿Cuenta con un lugar para la franquicia? <small>Si la respuesta es sí, por "
 "favor indique la dirección del local. </small>"
@@ -750,12 +690,20 @@ msgid "Nosotros"
 msgstr "About Us"
 
 #: c/navbar.php:25
+#, fuzzy
+#| msgid ""
+#| "<li><a href=\"/nosotros.php\">Nuestra Marca</a></li>\n"
+#| "            <li><a href=\"/modelos\">Modelos de Negocio</a></li>\n"
+#| "            <li><a href=\"/servicios.php\">Nuestros Servicios</a></li>\n"
+#| "            <li><a href=\"/fsmag.php\">FS magazine</a></li>\n"
+#| "            <li><a href=\"/salvadoracademy\">Salvador Academy</a></li>"
 msgid ""
 "<li><a href=\"/nosotros.php\">Nuestra Marca</a></li>\n"
 "            <li><a href=\"/modelos\">Modelos de Negocio</a></li>\n"
 "            <li><a href=\"/servicios.php\">Nuestros Servicios</a></li>\n"
 "            <li><a href=\"/fsmag.php\">FS magazine</a></li>\n"
-"            <li><a href=\"/salvadoracademy\">Salvador Academy</a></li>"
+"            <li><a href=\"/salvadoracademy\">Salvador Academy</a></li>\n"
+"            <li><a href=\"/careers\">Trabaja Con Nosotros</a></li>"
 msgstr ""
 "<li><a href=\"/nosotros.php?lang=en_US\">Our Brand</a></li><li><a href=\"/"
 "modelos/?lang=en_US\">Business Models</a></li><li><a href=\"/servicios.php?"
@@ -763,7 +711,18 @@ msgstr ""
 "magazine</a></li><li><a href=\"/salvadoracademy/?lang=en_US\">Salvador "
 "Academy</a></li>"
 
-#: c/navbar.php:32 navbar.php:23
+#: c/navbar.php:33
+#, fuzzy
+#| msgid ""
+#| "<a href=\"http://www.salvadorhairdressing.com/franquicias.php"
+#| "\">Franquicias</a>"
+msgid ""
+"<a href=\"http://www.salvadorhairdressing.com/noticias.php\">Noticias</a>"
+msgstr ""
+"<a href=\"http://www.salvadorhairdressing.com/franquicias.php?lang=en_US"
+"\">Franchises</a>"
+
+#: c/navbar.php:34 navbar.php:23
 msgid ""
 "<a href=\"http://www.salvadorhairdressing.com/franquicias.php\">Franquicias</"
 "a>"
@@ -771,45 +730,156 @@ msgstr ""
 "<a href=\"http://www.salvadorhairdressing.com/franquicias.php?lang=en_US"
 "\">Franchises</a>"
 
-#: c/navbar.php:34 index.php:284 navbar.php:25
+#: c/navbar.php:36 index.php:347 navbar.php:25
 msgid "<a href=\"/ubicaciones\">Ubicaciones</a>"
 msgstr "<a href=\"/ubicaciones/?lang=en_US\">Locations</a>"
 
-#: c/navbar.php:36
+#: c/navbar.php:38
 msgid "<a href=\"/academy\">The Academy</a>"
 msgstr "<a href=\"/academy/?lang=en_US\">The Academy</a>"
 
-#: c/navbar.php:38 navbar.php:27
+#: c/navbar.php:40 navbar.php:27
 msgid "<a href=\"/contacto.php\">Contacto</a>"
 msgstr "<a href=\"/contacto.php?lang=en_US\">Contact Us</a>"
 
-#: c/navbar.php:40 navbar.php:29
+#: c/navbar.php:42 navbar.php:29
 msgid "Aplicaciones"
 msgstr "Apps & More"
 
-#: c/navbar.php:42 navbar.php:31
+#: c/navbar.php:44 navbar.php:31
 msgid "<a href=\"/app/\">Salvador Hairdressing App</a>"
 msgstr "<a href=\"/app/?lang=en_US\">Salvador Hairdressing App</a>"
 
-#: c/navbar.php:43 navbar.php:32
+#: c/navbar.php:45 navbar.php:32
 msgid "<a href=\"/cc\">ClientCard</a>"
 msgstr "<a href=\"/cc/?lang=en_US\">ClientCard</a>"
 
-#: c/navbar.php:44 navbar.php:33
+#: c/navbar.php:46 navbar.php:33
 msgid "<a href=\"/mysteryshopper\">Mystery Shopper</a>"
 msgstr "<a href=\"/mysteryshopper/?lang=en_US\">Mystery Shopper</a>"
 
-#: c/navbar.php:49
+#: c/navbar.php:51
 msgid " Español"
 msgstr " Spanish"
 
-#: c/navbar.php:50
+#: c/navbar.php:52
 msgid " Inglés"
 msgstr " English"
 
-#: c/navbar.php:51
+#: c/navbar.php:53
 msgid " Italiano"
 msgstr " Italian"
+
+#: careers/index.php:14
+msgid ""
+"¡Mensaje Enviado Exitosamente!</strong> Gracias por querer formar parte de "
+"nuestro equipo de trabajo, evaluaremos toda la información suministrada y "
+"pronto nos comunicaremos contigo."
+msgstr ""
+"Your message was sent successfully!</strong> Thanks for your interest in "
+"joining our growing working team, we'll get back to you soon!"
+
+#: careers/index.php:16
+msgid ""
+"¡Lo sentimos, ha ocurrido un error inesperado!</strong> Te invitamos a "
+"completar la información nuevamente para así recibir todos tus datos."
+msgstr ""
+"Something went wrong!</strong> Please, try filling the form again so we can "
+"receive your information. Thanks."
+
+#: careers/index.php:29 careers/index.php:48
+msgid "Trabaja con Nosotros"
+msgstr "Work With Us"
+
+#: careers/index.php:70
+msgid "Una ventana a tú futuro"
+msgstr "A Window to Your Future"
+
+#: careers/index.php:71
+#, fuzzy
+#| msgid ""
+#| "<h5 class=\"text-center\">¿Quieres ser parte de una de las franquicias "
+#| "con mayor crecimiento en Latinoamérica?</h5>\n"
+#| "            <p>Constantemente nos encontramos en la búsqueda de personal "
+#| "en las siguientes áreas:"
+msgid ""
+"<h5 class=\"text-center\">Únete a una de las franquicias con mayor "
+"crecimiento internacional.</h5>\n"
+"            <p>Constantemente nos encontramos en la búsqueda de personal en "
+"las siguientes áreas:"
+msgstr ""
+"<h5 class=\"text-center\">Do you want to join one of Latin America's biggest "
+"growing Franchise?</h5><p>We are constantly searching for new talent in the "
+"following areas:"
+
+#: careers/index.php:74
+msgid "BARBERO"
+msgstr "BARBER"
+
+#: careers/index.php:75
+msgid "Si eres..."
+msgstr ""
+"The Barbers of our team, must be kind and polite, have the ease of talking "
+"with customers. Experience in hair cutting is required with particular "
+"attention to North American latest trendy styles, shaving and adjustment of "
+"beard, knowledge of traditional cuts and the traditional culture of "
+"barberies (which also provides rigorous order and cleanliness of your work "
+"station and strumnti ). You must know the color of the hair to meet the "
+"needs of fashion and customers.</p>\n"
+"<p>We seek excellent proffesionals with great communication and "
+"interpersonal skills, with the know-how to diagnose the conditions of the "
+"hair and scalp and the ability to offer products to better advise the "
+"client. Knowledge of the English language. Must have a licence or permit for "
+"the exercise of the activity.</p>"
+
+#: careers/index.php:77
+msgid "ESTILISTA"
+msgstr "BASIC MANICURIST"
+
+#: careers/index.php:78
+msgid "El Estilista Salvador embarca varias áreas..."
+msgstr ""
+"A basic manicurist of our team needs to be kind and polite, have the ease of "
+"talking with customers. Must know lastest hair and massages techniques to "
+"diagnose the condition of the skin around the nails and the ability to offer "
+"products to better advise the client.\n"
+"<p>A summary of the profile of a basic manicurist of our team:</p>\n"
+"<ul><li>Cut, profile and polish the nails.</li>\n"
+"<li>Condition the skin around the nails with oils and creams.</li>\n"
+"<li>Know the massages techniques in hands or arms to improve circulation.</"
+"li>\n"
+"<li>Tailor-made nail reinforcement treatments</li></ul>"
+
+#: careers/index.php:80
+msgid "GERENTE DE NEGOCIOS/ STORE MANAGER"
+msgstr "STORE MANAGER"
+
+#: careers/index.php:81
+msgid ""
+"El Gerente de Negocios debe estar apegado a nuestros valores de marca..."
+msgstr ""
+"The Store Manager must be someone with a strong customer service orientation "
+"and capable of achieving the predefined objectives. Excellent communication "
+"and interpersonal skills, as well as being able to speak English fluently "
+"(any other languages are a plus). Team work ability, be collaborative and "
+"knowing of sales techniques it's what we seek for this position."
+
+#: careers/index.php:84
+msgid ""
+"Si sientes que tienes lo necesario para formar parte de nuestro equipo, "
+"rellena uno de los siguientes formularios y comienza tu camino al éxito con "
+"nosotros."
+msgstr ""
+"If you feel confident to be part of our team, fill one of the following "
+"forms, and start your path to success with us."
+
+#: careers/index.php:93
+msgid "<img src=\"/c/img/careers/prof-trabaja-con-nosotros.jpg\" alt=\"\" />"
+msgstr "<img src=\"/c/img/careers/prof-work-with-us.jpg\" alt=\"\" />"
+
+#: careers/index.php:98
+msgid "<img src=\"/c/img/careers/admin-trabaja-con-nosotros.jpg\" alt=\"\" />"
+msgstr "<img src=\"/c/img/careers/admin-work-with-us.jpg\" alt=\"\" />"
 
 #: clientcard.php:43 salvadoracademy/index - copia.php:43 copia.php:64
 #: salvadoracademy/index.php:43 salvadoracademy/index.php:64
@@ -874,18 +944,6 @@ msgid "<a class=\"link-footer\" href=\"/franquicias\">FRANQUICIAS</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/franquicias.php?lang=en_US\">FRANCHISES</a>"
 
-#: franquicias.php:19 franquicias/franquicias.php:19 franquicias3.php:24
-msgid "Franquicias"
-msgstr "Franchises"
-
-#: franquicias.php:50 franquicias/franquicias.php:50 franquicias/index.php:46
-msgid "Solicita tu Franquicia"
-msgstr "Request Your Franchise"
-
-#: franquicias.php:51 franquicias/franquicias.php:51 franquicias/index.php:47
-msgid "Preguntas Frecuentes"
-msgstr "Frequent Ask Questions"
-
 #: franquicias/faq/index.php:18 franquicias/faq/index.php:35
 msgid "FAQ: Preguntas Frecuentes"
 msgstr "FAQ"
@@ -894,12 +952,16 @@ msgstr "FAQ"
 msgid "Regresar a Franquicias"
 msgstr "Return to Franchises"
 
-#: fsmag.php:59 ubicaciones/index.php:193
-msgid "Edición 37"
+#: fsmag.php:59 ubicaciones/index.php:278
+#, fuzzy
+#| msgid "Edición 37"
+msgid "Edición 38"
 msgstr "37th Edition"
 
 #: fsmag.php:60
-msgid "Revista fs magazine. Edición 37."
+#, fuzzy
+#| msgid "Revista fs magazine. Edición 37."
+msgid "Revista fs magazine. Edición 38."
 msgstr "FS magazine - #37."
 
 #: fsmag.php:70
@@ -918,7 +980,7 @@ msgstr ""
 "today's fashion looks. We bring our readers the most current in the world of "
 "fashion and it's runaways."
 
-#: index.php:67
+#: index.php:71
 msgid ""
 "<h3>Tips: Aceite de Argán Salvador</h3>\n"
 "                  <p>El cabello dañado, normalmente también está seco, "
@@ -931,7 +993,7 @@ msgstr ""
 "<b>the one</b>. It brings back your hair's natural glow without leaving any "
 "trace.</p>"
 
-#: index.php:82
+#: index.php:86
 msgid ""
 "<h3>¡Llegó el gran día!</h3>\n"
 "                  <p>Hoy recibimos con felicidad y orgullo el <b>Mara De "
@@ -941,7 +1003,7 @@ msgstr ""
 "just received the <b>Mara De Oro</b> for being \"Venezuela's Franchise with "
 "Greater International Expansion\".</p>"
 
-#: index.php:98
+#: index.php:102
 msgid ""
 "<h3>¡Sé un cliente VIP!</h3>\n"
 "                <p>Solicita tu ClientCard en tu salón preferido para que te "
@@ -955,7 +1017,19 @@ msgstr ""
 "salvadorhairdressing.com/cc/?lang=en_US\" target=\"_blank\">Learn more!</a></"
 "h3>"
 
-#: index.php:112
+#: index.php:115
+#, fuzzy
+#| msgid ""
+#| "<h3 class=\"section-title text-center\">Un mundo, <span style=\"font-"
+#| "style: underline;\">tú mundo</span></h3>"
+msgid ""
+"<h3 class=\"section-title text-center\">Últimas <span style=\"color: #e32028;"
+"\">noticias</span></h3>"
+msgstr ""
+"<h3 class=\"section-title text-center\">One world, <span style=\"font-style: "
+"underline;\">your world</span></h3>"
+
+#: index.php:170
 msgid ""
 "<h3 class=\"section-title text-center\">Un mundo, <span style=\"font-style: "
 "underline;\">tú mundo</span></h3>"
@@ -963,11 +1037,11 @@ msgstr ""
 "<h3 class=\"section-title text-center\">One world, <span style=\"font-style: "
 "underline;\">your world</span></h3>"
 
-#: index.php:122
+#: index.php:180
 msgid "Conoce nuestros 6 Modelos de Negocio y Franquicias."
 msgstr "Get to know Our Six Business Models."
 
-#: index.php:135
+#: index.php:193
 msgid ""
 "<h3>Bienvenido a la Excelencia Salvador</h3>\n"
 "              <p>¡Celebra nuestro 60° Aniversario con nosotros!</p>\n"
@@ -978,11 +1052,11 @@ msgstr ""
 "</p><p><a href=\"/modelos/?lang=en_US\"><b>Get to know everything about our "
 "Business Models and Franchises.</b></a></p>"
 
-#: index.php:146
+#: index.php:204
 msgid "¡Sé un Mystery Shopper!"
 msgstr "Become a Mystery Shopper!"
 
-#: index.php:158
+#: index.php:216
 msgid ""
 "<h3>Sé un Mystery Shopper para Salvador Hairdressing</h3>\n"
 "              <p>Forma parte de nuestro exclusivo programa de Clientes "
@@ -993,11 +1067,11 @@ msgstr ""
 "our exclusive program of Mystery Shoppers.</p><p><a href=\"/mysteryshopper/?"
 "lang=en_US\"><b>Apply now!</b></a></p>"
 
-#: index.php:170
+#: index.php:228
 msgid "¡Programa tu cita con nuestra App para dispositivos móvil!"
 msgstr "Schedule your appointment with our mobile App!"
 
-#: index.php:183
+#: index.php:241
 msgid ""
 "<h3>Conoce todo sobre la App Salvador Hairdressing</h3>\n"
 "              <p>Programa tus citas con días de antelación, consulta "
@@ -1010,11 +1084,11 @@ msgstr ""
 "Hairdressing's salon. All from the palm of your hand!</p><p><a href=\"/app/?"
 "lang=en_US\"><b>Start now!</b></a></p>"
 
-#: index.php:206
+#: index.php:264
 msgid "<h3>¿Quieres ser VIP?</h3>"
 msgstr "<h3>Do You Want to Become a VIP?</h3>"
 
-#: index.php:207
+#: index.php:265
 #, no-php-format
 msgid ""
 "Acumula puntos al tener una ClientCard Salvador, los cuales podrás cambiar "
@@ -1023,11 +1097,11 @@ msgstr ""
 "Start gaining points the moment you get your \"ClientCard\" by Salvador. "
 "Exchange those points for up to 75% percent of discount on your payment."
 
-#: index.php:208
+#: index.php:266
 msgid "<a href=\"/cc\">¡Conoce más!</a>"
 msgstr "<a href=\"/cc/?lang=en_US\">Learn more!</a>"
 
-#: index.php:215
+#: index.php:273
 msgid ""
 "<img src=\"c/img/main/4c.jpg\" alt=\"\" /> \n"
 "              <div class=\"desc\">\n"
@@ -1036,7 +1110,7 @@ msgstr ""
 "<img src=\"c/img/main/4c.jpg\" alt=\"\" /><div class=\"desc\"><p class="
 "\"desc_content\" style=\"\"><b>Learn the Art of Styling!"
 
-#: index.php:229
+#: index.php:287
 msgid ""
 "<h3>Academia Salvador - <i>Aprende un arte</i></h3>\n"
 "              <p>Formamos estilistas con iniciativas que mejoren la calidad "
@@ -1050,11 +1124,11 @@ msgstr ""
 "quality of life, under our quality seal.</p><p><b><a href=\"http://www."
 "salvadoracademy.com/?lang=en_US\" target=\"_blank\">Visit our Web</a></b></p>"
 
-#: index.php:240
+#: index.php:298
 msgid "Esmaltes Salvador Professional"
 msgstr "Salvador Professional Nail Enamel"
 
-#: index.php:252
+#: index.php:310
 msgid ""
 "<h3>Esmaltes Salvador Profesional</h3>\n"
 "              <p>Conoce los 23 tonos de los nuevos Esmaltes de la línea "
@@ -1065,175 +1139,221 @@ msgstr ""
 "the newest member of our Salvador Professional's line of products.</"
 "p><p><b><a href=\"#\">Get to know them!</a></b></p>"
 
-#: index.php:285
+#: index.php:348
 msgid "<a href=\"/ubicaciones\"> Cada vez más cerca de tí</a>"
 msgstr "<a href=\"/ubicaciones/?lang=en_US\"> Always close to you</a>"
 
-#: intranet/login.php:31 intranet/login.php:48
-msgid "Intranet"
-msgstr ""
+#: intranet/componentes/footer.php:35
+#, fuzzy
+#| msgid "Salvador Hairdressing &copy; 2018. Todos los derechos reservados."
+msgid ""
+"Salvador Hairdressing &copy; 2016 - 2018. Todos los derechos reservados."
+msgstr "Salvador Hairdressing &copy; 2018. All Rights Reserved."
 
-#: intranet/login.php:55
-msgid "¡Bienvenido!"
-msgstr "Welcome to the Excellence!"
-
-#: library/formularios.php:35
+#: legacy/library/formularios.php:35 library/formularios.php:35
 msgid "Formulario para Equipo de Profesionales"
 msgstr "Professional Team Form"
 
+#: legacy/library/formularios.php:36 legacy/library/formularios.php:128
 #: library/formularios.php:36 library/formularios.php:128
 msgid "Rellena el siguiente formulario:"
 msgstr "Fill out the following form:"
 
+#: legacy/library/formularios.php:55 legacy/library/formularios.php:56
+#: legacy/library/formularios.php:147 legacy/library/formularios.php:148
 #: library/formularios.php:55 library/formularios.php:56
 #: library/formularios.php:147 library/formularios.php:148
 msgid "Documento de Identificación"
 msgstr "ID number"
 
+#: legacy/library/formularios.php:74 legacy/library/formularios.php:166
 #: library/formularios.php:74 library/formularios.php:166
 msgid "Fecha Nacimiento"
 msgstr "Date of Birth"
 
+#: legacy/library/formularios.php:88 legacy/library/formularios.php:89
+#: legacy/library/formularios.php:190 legacy/library/formularios.php:191
 #: library/formularios.php:88 library/formularios.php:89
 #: library/formularios.php:190 library/formularios.php:191
 msgid "Nacionalidad"
 msgstr "Nationality"
 
+#: legacy/library/formularios.php:94 legacy/library/formularios.php:95
 #: library/formularios.php:94 library/formularios.php:95
 msgid "Especialidad"
 msgstr "Speciality"
 
+#: legacy/library/formularios.php:101 legacy/library/formularios.php:210
 #: library/formularios.php:101 library/formularios.php:210
 msgid "Adjunte su CV en formato PDF o Word (máx. 5mb)"
 msgstr "Please Attach your CV in either PDF or Word Format (5mb maximum)"
 
-#: library/formularios.php:127
+#: legacy/library/formularios.php:127 library/formularios.php:127
 msgid "Formulario para Equipo Administrativo"
 msgstr "Administrative Team Form"
 
-#: library/formularios.php:173
+#: legacy/library/formularios.php:173 library/formularios.php:173
 msgid "Género"
 msgstr "Gender"
 
-#: library/formularios.php:175
+#: legacy/library/formularios.php:175 library/formularios.php:175
 msgid "Seleccione"
 msgstr "Select"
 
-#: library/formularios.php:176
+#: legacy/library/formularios.php:176 library/formularios.php:176
 msgid "Femenino"
 msgstr "Woman"
 
-#: library/formularios.php:177
+#: legacy/library/formularios.php:177 library/formularios.php:177
 msgid "Masculino"
 msgstr "Men"
 
+#: legacy/library/formularios.php:196 legacy/library/formularios.php:197
 #: library/formularios.php:196 library/formularios.php:197
 msgid "Área de Interés"
 msgstr "Interest Area"
 
-#: library/formularios.php:203
+#: legacy/library/formularios.php:203 library/formularios.php:203
 msgid "Experiencia Laboral"
 msgstr "Work Experience"
 
-#: library/formularios.php:204
+#: legacy/library/formularios.php:204 library/formularios.php:204
 msgid "Describa brevemente su experiencia laboral"
 msgstr "Please, describe shortly your work experience"
 
+#: legacy/library/formularios.php:457 legacy/library/formularios.php:480
 #: library/formularios.php:457 library/formularios.php:480
 msgid "No disponible"
 msgstr "Not available"
 
-#: library/funciones.php:104 library/funciones.php:304
+#: legacy/library/funciones.php:106 legacy/library/funciones.php:306
+#: library/funciones.php:104 library/funciones.php:327
+#: library/funciones.php:444 library/funciones2.php:104
+#: library/funciones2.php:327 library/funciones2.php:444
+#: mysteryshopper/registro.php:173 mysteryshopper2/registro.php:178
 msgid "Dirección"
 msgstr "Address"
 
-#: library/funciones.php:105
+#: legacy/library/funciones.php:107 library/funciones.php:105
+#: library/funciones2.php:105
 msgid "Teléfonos"
 msgstr "Phones"
 
-#: library/funciones.php:111
+#: legacy/library/funciones.php:113 library/funciones.php:111
+#: library/funciones2.php:111
 msgid "Síguenos en:"
 msgstr "Follow Us:"
 
-#: library/funciones.php:128
+#: legacy/library/funciones.php:130 library/funciones.php:128
+#: library/funciones2.php:128
 msgid "Ubicación no disponible."
 msgstr "Location not avalaible."
 
-#: library/funciones.php:144 ubicaciones/index.php:59
+#: legacy/library/funciones.php:146 library/funciones.php:144
+#: library/funciones2.php:144
 msgid "Panamá"
 msgstr "Panama"
 
-#: library/funciones.php:147 ubicaciones/index.php:67
+#: legacy/library/funciones.php:149 library/funciones.php:147
+#: library/funciones2.php:147 ubicaciones/index.php:68
 msgid "Estados Unidos"
 msgstr "U.S.A (Miami)"
 
-#: library/funciones.php:150
+#: legacy/library/funciones.php:152 library/funciones.php:150
+#: library/funciones2.php:150
 msgid "República Dominicana"
 msgstr "Dominican Republic"
 
-#: library/funciones.php:153
+#: legacy/library/funciones.php:155 library/funciones.php:153
+#: library/funciones2.php:153
 msgid "Colombia"
 msgstr "Colombia"
 
-#: library/funciones.php:156
+#: legacy/library/funciones.php:158 library/funciones.php:156
+#: library/funciones2.php:156
 msgid "Ecuador"
 msgstr ""
 
-#: library/funciones.php:159 ubicaciones/index.php:66
+#: legacy/library/funciones.php:161 library/funciones.php:159
+#: library/funciones2.php:159
 msgid "Curazao"
 msgstr "Curacao"
 
-#: library/funciones.php:162
+#: legacy/library/funciones.php:164 library/funciones.php:162
+#: library/funciones2.php:162
 msgid "México"
 msgstr "Mexico"
 
-#: library/funciones.php:165
+#: legacy/library/funciones.php:167 library/funciones.php:165
+#: library/funciones2.php:165
 msgid "Perú"
 msgstr "Peru"
 
-#: library/funciones.php:178
+#: legacy/library/funciones.php:180 library/funciones.php:181
+#: library/funciones2.php:181
 msgid "pty"
 msgstr ""
 
-#: library/funciones.php:181
+#: legacy/library/funciones.php:183 library/funciones.php:184
+#: library/funciones2.php:184
 msgid "usa"
 msgstr "usa"
 
-#: library/funciones.php:184
+#: legacy/library/funciones.php:186 library/funciones.php:187
+#: library/funciones2.php:187
 msgid "rd"
 msgstr ""
 
-#: library/funciones.php:187
+#: legacy/library/funciones.php:189 library/funciones.php:190
+#: library/funciones2.php:190
 msgid "col"
 msgstr ""
 
-#: library/funciones.php:190
+#: legacy/library/funciones.php:192 library/funciones.php:193
+#: library/funciones2.php:193
 msgid "ec"
 msgstr ""
 
-#: library/funciones.php:193
+#: legacy/library/funciones.php:195 library/funciones.php:196
+#: library/funciones2.php:196
 msgid "crz"
 msgstr ""
 
-#: library/funciones.php:196
+#: legacy/library/funciones.php:198 library/funciones.php:199
+#: library/funciones2.php:199
 msgid "mex"
 msgstr ""
 
-#: library/funciones.php:199
+#: legacy/library/funciones.php:201 library/funciones.php:202
+#: library/funciones2.php:202
 msgid "per"
 msgstr ""
 
-#: library/funciones.php:213 modelos/index.php:19
+#: legacy/library/funciones.php:215 library/funciones.php:219
+#: library/funciones2.php:219 modelos/index.php:19
 msgid "Modelos de Negocio"
 msgstr "Business Models"
 
-#: library/funciones.php:225
+#: legacy/library/funciones.php:227 library/funciones.php:231
+#: library/funciones2.php:231
 msgid "Nuestros Modelos de Negocio"
 msgstr "Our Business Models"
 
-#: library/funciones.php:314
+#: legacy/library/funciones.php:316 library/funciones.php:337
+#: library/funciones2.php:337
 msgid "No hay Resultados"
 msgstr "No results"
+
+#: library/funciones.php:168 library/funciones2.php:168
+#: ubicaciones/index.php:69
+#, fuzzy
+#| msgid " Italiano"
+msgid "Italia"
+msgstr " Italian"
+
+#: library/funciones.php:205 library/funciones2.php:205
+msgid "it"
+msgstr ""
 
 #: modelos/index.php:50
 msgid "<a href=\"/modelos/instituto.php\">"
@@ -1259,21 +1379,111 @@ msgstr "<a href=\"/modelos/nailsbar.php?lang=en_US\">"
 msgid "<a href=\"/modelos/beautystore.php\">"
 msgstr "<a href=\"/modelos/beautystore.php?lang=en_US\">"
 
-#: mysteryshopper/index.php:83
-msgid "LAVORA CON NOI"
-msgstr "WORK WITH US"
-
-#: mysteryshopper/index.php:86
+#: mysteryshopper/index.php:84
 msgid ""
-"¿Quieres ser parte del Equipo de Profesionales de <b>Salvador Hairdressing</"
-"b>? Rellena el siguiente formulario, y estaremos en contacto contigo."
+"Salvador se esfuerza en prestar a su clientela un servicio de excelencia, "
+"demostrando en todo momento que día a día nos enfocamos en superarnos a "
+"nosotros mismos y a las expectativas de quienes requieren de nuestros "
+"servicios y productos.<br><br>Por este motivo, nace el programa <b>Mystery "
+"Shopper de Salvador Hairdressing</b>, con la finalidad de obtener una "
+"evaluación completa de parte de nuestros clientes al momento de visitar "
+"nuestras unidades de negocio.<br><br>Te invitamos a ser una herramienta "
+"clave en nuestro objetivo de mejora continua, siendo nuestro Mystery Shopper "
+"(Cliente Misterioso), y así ayudarnos a detectar aquellos aspectos que "
+"debemos mejorar."
 msgstr ""
-"Do you want to be part of <b>Salvador Hairdressing's</b> Professional Team? "
-"Fill out the following form and we'll be in touch with you."
+"Salvador strives to provide its clientele with a service of excellence, "
+"proving at all times that day by day we focus on overcoming ourselves and "
+"the expectations of those who require our services and products.\n"
+"            <br> <br> For this reason, the program <b> Mystery Shopper of "
+"Salvador Hairdressing </b> is born, with the purpose of obtaining a complete "
+"evaluation of part of our clients when visiting our business units.\n"
+"            <br> <br> We invite you to be a key tool in our objective of "
+"continuous improvement, being our Mystery Shopper, and thus help us to "
+"detect those aspects that we must improve."
 
-#: mysteryshopper/index1bu.php:65
+#: mysteryshopper/index.php:91
+msgid "INGRESA TU CORREO ELÉCTRONICO..."
+msgstr "ENTER YOUR EMAIL..."
+
+#: mysteryshopper/index.php:97
+msgid "Ingresa tu correo eléctronico"
+msgstr "ENTER YOUR EMAIL..."
+
+#: mysteryshopper/index.php:101
+msgid "COMENZAR"
+msgstr "Start"
+
+#: mysteryshopper/index.php:104
+msgid "¿Usuario Corporativo?"
+msgstr "Corporate user?"
+
+#: mysteryshopper/index.php:104
+msgid "Participante"
+msgstr "Participant"
+
+#: mysteryshopper/index.php:104
+msgid "Tu información no será compartida. Lee nuestra"
+msgstr "Your information will not be shared. Read our"
+
+#: mysteryshopper/index.php:104
+msgid "política de privacidad"
+msgstr "privacy policy"
+
+#: mysteryshopper/registro.php:50 mysteryshopper2/registro.php:56
+msgid "Mystery Shopper: Registro de usuario"
+msgstr ""
+
+#: mysteryshopper/registro.php:78 mysteryshopper2/registro.php:84
+#, fuzzy
+#| msgid "Formulario de Contacto"
+msgid "Formulario de Registro"
+msgstr "Contact Form"
+
+#: mysteryshopper/registro.php:79
+#, fuzzy
+#| msgid ""
+#| "¿Qué te pareció tu visita a nuestros salones? Haznos llegar tus "
+#| "comentarios."
+msgid "Ayudanos a mejorar nuestros servicios. Haznos llegar tus comentarios."
+msgstr "What did you think of your visit? Let us know of your experience."
+
+#: mysteryshopper/registro.php:107
+#, fuzzy
+#| msgid "Documento de Identificación"
+msgid "Número de Identificación"
+msgstr "ID number"
+
+#: mysteryshopper/registro.php:119 mysteryshopper2/registro.php:124
+msgid "Contraseña"
+msgstr ""
+
+#: mysteryshopper/registro.php:124 mysteryshopper2/registro.php:129
+msgid "Confirma tu contraseña"
+msgstr ""
+
+#: mysteryshopper/registro.php:132
+#, fuzzy
+#| msgid "Seleccione una opción"
+msgid "Seleccione su país"
+msgstr "Select an option"
+
+#: mysteryshopper/registro.php:149 mysteryshopper2/registro.php:154
+#, fuzzy
+#| msgid "Estados Unidos"
+msgid "Estado"
+msgstr "U.S.A (Miami)"
+
+#: mysteryshopper2/backUp_index_viejo.php:66 mysteryshopper2/index1bu.php:65
+#: mysteryshopper2/index_nuevo.php:66
 msgid "Mystery Shopper"
 msgstr "  Become a Mystery Shopper"
+
+#: mysteryshopper2/registro.php:112
+#, fuzzy
+#| msgid "Documento de Identificación"
+msgid "Número de Identificacion"
+msgstr "ID number"
 
 #: navbar.php:12
 msgid "<a href=\"/\">Inicio</a>"
@@ -2477,37 +2687,61 @@ msgstr "Request here"
 msgid "Ubicaciones"
 msgstr "Locations"
 
-#: ubicaciones/index.php:36
+#: ubicaciones/index.php:38
 msgid "Ubica un Salón Salvador"
 msgstr "Find a Location Near You"
 
-#: ubicaciones/index.php:41
+#: ubicaciones/index.php:43
 msgid "Encuentra un salón."
 msgstr "Find a salon."
 
-#: ubicaciones/index.php:44
+#: ubicaciones/index.php:46
 msgid "Buscar un salón Salvador"
 msgstr "Search a Salvador salon"
 
-#: ubicaciones/index.php:45
+#: ubicaciones/index.php:47
 msgid "Buscar"
 msgstr "Search"
 
-#: ubicaciones/index.php:55
+#: ubicaciones/index.php:57
 msgid "Estamos en..."
 msgstr "We're in..."
 
-#: ubicaciones/index.php:60
+#: ubicaciones/index.php:62
 msgid "Republica Dominicana"
 msgstr "Dominican Republic"
 
-#: ubicaciones/index.php:209
+#: ubicaciones/index.php:294
 msgid "Maquina Salvador"
 msgstr "Salvador Professional's Trim Machine"
 
-#: ubicaciones/index.php:210
+#: ubicaciones/index.php:295
 msgid "Tienda On Line"
 msgstr "Online Store"
+
+#~ msgid ""
+#~ "Salvador se esfuerza en prestar a su clientela un servicio de excelencia, "
+#~ "demostrando en todo momento que día a día nos enfocamos en superarnos a "
+#~ "nosotros mismos y a las expectativas de quienes requieren de nuestros "
+#~ "servicios y productos."
+#~ msgstr ""
+#~ "Salvador strives to provide its clientele with a service of excellence, "
+#~ "proving at all times that day by day we focus on overcoming ourselves and "
+#~ "the expectations of those who require our services and products."
+
+#~ msgid "¡Bienvenido!"
+#~ msgstr "Welcome to the Excellence!"
+
+#~ msgid "LAVORA CON NOI"
+#~ msgstr "WORK WITH US"
+
+#~ msgid ""
+#~ "¿Quieres ser parte del Equipo de Profesionales de <b>Salvador "
+#~ "Hairdressing</b>? Rellena el siguiente formulario, y estaremos en "
+#~ "contacto contigo."
+#~ msgstr ""
+#~ "Do you want to be part of <b>Salvador Hairdressing's</b> Professional "
+#~ "Team? Fill out the following form and we'll be in touch with you."
 
 #, fuzzy
 #~| msgid "Documento de Identificación"
