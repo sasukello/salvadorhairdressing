@@ -81,9 +81,7 @@ if (isset($_GET["e"])) {
         <div class="box text-center">
           <h3 class="post-title padding-bottom3"  style="color: #e32028;">Mystery Shopper</h3>
           <div class="post-content text-left">
-            <p style="text-align: justify;"><?php echo _('Salvador se esfuerza en prestar a su clientela un servicio de excelencia, demostrando en todo momento que día a día nos enfocamos en superarnos a nosotros mismos y a las expectativas de quienes requieren de nuestros servicios y productos.
-            <br><br>Por este motivo, nace el programa <b>Mystery Shopper de Salvador Hairdressing</b>, con la finalidad de obtener una evaluación completa de parte de nuestros clientes al momento de visitar nuestras unidades de negocio.
-            <br><br>Te invitamos a ser una herramienta clave en nuestro objetivo de mejora continua, siendo nuestro Mystery Shopper (Cliente Misterioso), y así ayudarnos a detectar aquellos aspectos que debemos mejorar.');?></p>
+            <p style="text-align: justify;"><?php echo _('Salvador se esfuerza en prestar a su clientela un servicio de excelencia, demostrando en todo momento que día a día nos enfocamos en superarnos a nosotros mismos y a las expectativas de quienes requieren de nuestros servicios y productos.<br><br>Por este motivo, nace el programa <b>Mystery Shopper de Salvador Hairdressing</b>, con la finalidad de obtener una evaluación completa de parte de nuestros clientes al momento de visitar nuestras unidades de negocio.<br><br>Te invitamos a ser una herramienta clave en nuestro objetivo de mejora continua, siendo nuestro Mystery Shopper (Cliente Misterioso), y así ayudarnos a detectar aquellos aspectos que debemos mejorar.');?></p>
           </div>
           <!-- .post-footer --> 
         </div>
@@ -96,14 +94,14 @@ if (isset($_GET["e"])) {
                 <input type="hidden" name="u" value="503bdae81fde8612ff4944435">
                 <input type="hidden" name="id" value="bfdba52708">
                 <div class="form-group">
-                    <input class="form-control input-lg" name="email" id="email" type="text" placeholder="Ingresa tu correo eléctronico" required>
+                    <input class="form-control input-lg" name="email" id="email" type="text" placeholder="<?php echo _('Ingresa tu correo eléctronico')?>" required>
                 </div>
                 <input type="hidden" name="tipo" value="a">
                 <div class="form-group last">
-                    <input type="submit" name="ms_pasouno" class="btn btn-warning btn-block btn-lg" value="COMENZAR">
+                    <input type="submit" name="ms_pasouno" class="btn btn-warning btn-block btn-lg" value="<?php echo _('COMENZAR');?>">
                 </div>
                 <p class="privacy text-center">
-                  <a href="#" onclick="cambiarLabel()">¿Usuario Corporativo?</a> -  <a href="#" onclick="regresarLabel()" style="text-decoration: none;">Participante</a><br>Tu información no será compartida. Lee nuestra <a href="privacy.html">política de privacidad</a>.
+                  <a href="#" onclick="cambiarLabel()"><?php echo _('¿Usuario Corporativo?');?></a> - <a href="#" onclick="regresarLabel()" style="text-decoration: none;"><?php echo _('Participante');?></a><br><?php echo _('Tu información no será compartida. Lee nuestra');?> <a href="privacy.html"><?php echo _('política de privacidad')?></a>.
                 </p>
             </form>
         </div>
