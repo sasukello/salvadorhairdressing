@@ -4,7 +4,7 @@
 /*$path = $_SERVER['DOCUMENT_ROOT'];
 $path .= "/library/AltoRouter.php";
 require $path;*/
-$language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "";
+$language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
 putenv("LC_ALL=$language");
 setlocale(LC_ALL, $language);
 bindtextdomain("salvador_web", "./locale");
@@ -119,7 +119,7 @@ div.desc1 {padding:15px;text-align: left;}
       <?php
       if ($num_total_rows > 0) {
           $num_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
-          $result = $connexion->query("SELECT * FROM salvador_noticias WHERE idioma ='$language' ORDER BY id DESC LIMIT 0, ".NUM_ITEMS_BY_PAGE);
+          $result = $connexion->query("SELECT * FROM salvador_noticias WHERE idioma ='$language' ORDER BY id DESC LIMIT 0".NUM_ITEMS_BY_PAGE);
               if ($result->num_rows > 0) {
               echo '<ul class="row items">';
               while ($row = $result->fetch_assoc()) {
@@ -146,7 +146,7 @@ div.desc1 {padding:15px;text-align: left;}
               echo '<div class="row">';
               echo '<div class="col-lg-12">';
               echo '<nav aria-label="Page navigation example">';
-              echo '<ul class="pagination justify-content-end" style="float:right;">';
+              echo '<ul class="pagination justify-content-end">';
               for ($i=1;$i<=$num_pages;$i++) {
                   $class_active = '';
                   if ($i == 1) {

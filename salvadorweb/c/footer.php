@@ -1,3 +1,10 @@
+  <?php 
+$language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
+putenv("LC_ALL=$language");
+setlocale(LC_ALL, $language);
+bindtextdomain("salvador_web", "./locale");
+textdomain("salvador_web");
+?>
   <div class="dark-wrapper">
     <div class="container">
  
@@ -132,35 +139,38 @@
 <script src="/c/js/formhelpers/lang/es_ES/bootstrap-formhelpers-countries.es_ES.js"></script>
 
 <script>
-  $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip(); 
-      $('.pagination li a').on('click', function(){
-      $('.items').html('<div class="loading" style="text-align:center;"><img src="/c/img/loading.gif" width="" height=""/><br><br></div>');
-      var page = $(this).attr('data');
-      var dataString = 'page='+page;
-      console.log(dataString);
+//Function que captura los parametros de la url del idioma
+function GetURLParameter(sParam){
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++){
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam){ 
+            return sParameterName[1];
+        }
+    }
+}
+var lenguaje = GetURLParameter("lang");
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+    $('.pagination li a').on('click', function(){
+    $('.items').html('<div class="loading" style="text-align:center;"><img src="/c/img/loading.gif" width="" height=""/><br><br></div>');
+    var page = $(this).attr('data');
+    var dataPagin = 'page='+page; 
       $.ajax({
-          type: "GET",
-          url: "ajax.php",
-          data: dataString,
-          success: function(data) {
-              $('.items').fadeIn(2000).html(data);
-              $('.pagination li').removeClass('active');
-              $('.pagination li a[data="'+page+'"]').parent().addClass('active');
-          }
-      });
-      return false;
+        type: "GET",
+        url: "ajax.php",
+        data:{page:page,lenguaje:lenguaje},
+        // data:dataPagin,
+        success: function(data) {            
+          $('.items').fadeIn(2000).html(data);
+          $('.pagination li').removeClass('active');
+          $('.pagination li a[data="'+page+'"]').parent().addClass('active');
+        }
     });
-      $('body').on('click','#Panamab', function(){
-        var elem = $(this);
-        var elem = document.getElementById("Panamab").getAttribute("onclick").valueOf();
-        elem = $(".listP");
-        console.log(elem);
-        // for (var i=0;i<elem.length;i++) {
-        // }
-            
-    });   
+    return false;
   });
+});
 </script>
 
 <!--Start of Tawk.to Script-->
