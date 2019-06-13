@@ -56,12 +56,11 @@ $sql = "SELECT * FROM salvador_noticias WHERE id = '$id'";
           <figure><img src="intranet/noticias/img/<?php echo $url_image;?>" alt=""/></figure>
         </div>
         <div class="col-sm-6" style="text-align: justify;">
-          <h3 class="section-title"><?php echo _($titulo); ?></h3>
-          <?php echo _($descrip); ?>
+          <h3 class="section-title"><?php echo $titulo; ?></h3>
+          <?php echo $descrip; ?>
           <br>
-          <a href="index.php" class="btn btn-default">Más noticias</a>
+          <a href="index.php" class="btn btn-default"><?php echo _("Más noticia")?></a>
         </div>
-
       </div>
     </div>
   </div>

@@ -13,11 +13,10 @@ textdomain("salvador_web");
 require "../intranet/noticias/conexion.php";
 $connexion = new mysqli($server,$serveruser,$password,$name);
 mysqli_set_charset($connexion,"utf8");
-$result = $connexion->query('SELECT COUNT(*) as total FROM salvador_noticias ORDER BY id DESC');
+$result = $connexion->query("SELECT COUNT(*) as total FROM salvador_noticias WHERE idioma = '$language' ORDER BY id DESC");
 $row = $result->fetch_assoc();
 $num_total_rows = $row['total'];
 ?>
-
 <head>
 <?php include 'c/ganalytics.html'; ?>  
 <meta charset="utf-8">
@@ -117,7 +116,7 @@ div.desc1 {padding:15px;text-align: left;}
 <?php echo _('<h3 class="section-title text-center">Últimas <span style="color: #e32028;">noticias</span></h3>'); ?>
 <div id="content" class="col-lg-12">
       <?php
-      if ($num_total_rows > 0) {
+      if ($num_total_rows>0) {
           $num_pages = ceil($num_total_rows / NUM_ITEMS_BY_PAGE);
           $result = $connexion->query("SELECT * FROM salvador_noticias WHERE idioma ='$language' ORDER BY id DESC LIMIT 0".NUM_ITEMS_BY_PAGE);
               if ($result->num_rows > 0) {
@@ -129,6 +128,7 @@ div.desc1 {padding:15px;text-align: left;}
                   $url_img = $row['url_img'];
                   $caracteres = 70;
                   ?>
+
                   <li class="col-lg-4">
                     <div class="item" style="">               
                       <img id="imgN" class="img-fluid mx-auto d-block" width="500" src="intranet/noticias/img/<?php echo $url_img;?>">
@@ -142,7 +142,7 @@ div.desc1 {padding:15px;text-align: left;}
               </ul>
           <?php 
           }
-          if ($num_pages > 1) {
+          if ($num_pages > 0) {
               echo '<div class="row">';
               echo '<div class="col-lg-12">';
               echo '<nav aria-label="Page navigation example">';

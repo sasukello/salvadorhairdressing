@@ -150,13 +150,16 @@ function GetURLParameter(sParam){
         }
     }
 }
+//Se guarda la llamada de la funcion en una varible
 var lenguaje = GetURLParameter("lang");
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
     $('.pagination li a').on('click', function(){
     $('.items').html('<div class="loading" style="text-align:center;"><img src="/c/img/loading.gif" width="" height=""/><br><br></div>');
     var page = $(this).attr('data');
-    var dataPagin = 'page='+page; 
+    var dataPagin = 'page='+page;
+    //aqui se verifica si el idioma es ingles o italiano llame una funcion ajax
+    if (lenguaje === "en_US") {
       $.ajax({
         type: "GET",
         url: "ajax.php",
@@ -167,8 +170,34 @@ $(document).ready(function(){
           $('.pagination li').removeClass('active');
           $('.pagination li a[data="'+page+'"]').parent().addClass('active');
         }
-    });
-    return false;
+      });
+      return false;
+    }else if (lenguaje === "it_IT"){
+      $.ajax({
+        type: "GET",
+        url: "ajax.php",
+        data:{page:page,lenguaje:lenguaje},
+        success: function(data) {            
+          $('.items').fadeIn(2000).html(data);
+          $('.pagination li').removeClass('active');
+          $('.pagination li a[data="'+page+'"]').parent().addClass('active');
+        }
+      });
+      return false;
+      //por ultimo se comprueba que si el idioma por defecto al cargar la pag es español llamara ajax_ve
+    }else{
+      $.ajax({
+        type: "GET",
+        url: "ajax_ve.php",
+        data:dataPagin,
+        success: function(data) {            
+          $('.items').fadeIn(2000).html(data);
+          $('.pagination li').removeClass('active');
+          $('.pagination li a[data="'+page+'"]').parent().addClass('active');
+        }
+      });
+      return false;  
+    }
   });
 });
 </script>

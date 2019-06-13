@@ -1,14 +1,19 @@
 <?php 
+$language = (isset($_REQUEST["lang"])) ? trim(strip_tags($_REQUEST["lang"])) : "es_VE";
+putenv("LC_ALL=$language");
+setlocale(LC_ALL, $language);
+bindtextdomain("salvador_web", "./locale");
+textdomain("salvador_web");
+
 require "../intranet/noticias/conexion.php";
 $connexion = new mysqli($server,$serveruser,$password,$name);
 $connexion->set_charset('utf8');
 $html = '';
-$lenguaje = $_GET['lenguaje'];
 $page = $_GET['page'];
 $rowsPerPage = NUM_ITEMS_BY_PAGE;
 $offset = ($page - 1) * $rowsPerPage;
 sleep(1);
-$result = $connexion->query("SELECT * FROM salvador_noticias WHERE idioma = '$lenguaje' ORDER BY id DESC LIMIT ".$offset.', '.$rowsPerPage);
+$result = $connexion->query("SELECT * FROM salvador_noticias WHERE idioma = '$language' ORDER BY id DESC LIMIT ".$offset.', '.$rowsPerPage);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $id = $row['id'];
