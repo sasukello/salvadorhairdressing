@@ -4,12 +4,13 @@ $(document).ready(function(){
 		var titulo = document.getElementById("titulo").value;
 		var descri = document.getElementById("descripcion").value;
 		var fecha = document.getElementById("fecha").value;
-		if (titulo=="" && descri=="" && fecha== "") {
+		var select = $("#idioma").val();
+		if (titulo== "" && descri== "" && fecha== "" && select== "") {
 			$(".errorti").html('Ingrese un título');
 			$(".errordes").html('Ingrese una descripción');			
 			$(".errorfe").html('Ingrese una fecha');
-		}
-		else{
+			$(".erroridio").html('Ingrese un idioma correspodiente');
+		}else{
 			var formData = new FormData($("#Formulario")[0]);      
     		$.post({
 				url: 'insertar.php',
@@ -26,6 +27,7 @@ $(document).ready(function(){
 			$(".errorti").html('');
 			$(".errordes").html('');
 			$(".errorfe").html('');
+			$(".erroridio").html('');
 			$("#mostrar").html('');
 		},5000)
 	});

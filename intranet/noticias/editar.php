@@ -20,6 +20,7 @@ $conex = mysqli_connect($server,$serveruser,$password,$name);
 	$descrip=$res['descripcion'];
 	$url_image=$res['url_img'];
 	$fecha = $res['fecha'];
+	$idio = $res['idioma']
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,8 +58,13 @@ $conex = mysqli_connect($server,$serveruser,$password,$name);
 						<div class="errordes" style="color:red;font-weight:bold"></div>	
 					<label for="titulo">Fecha:</label>
 						<input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo $fecha;?>">
-						<div class="errorfe" style="color:red;font-weight:bold"></div>	
+						<div class="errorfe" style="color:red;font-weight:bold"></div>
 						<br>
+					<label for="Idioma">Idioma:</label>
+					<select name="idioma" required id="idioma" disabled>
+							<option value=""><?php echo $idio?></option>
+					</select>
+					<br>	
 						<input type="button" id="editar_info" name="edit" value="Editar" class="btn btn-default"><br>
 						<span style="color:red;font-weight: bold;" id="mostrar"></span>
 	

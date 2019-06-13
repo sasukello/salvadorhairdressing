@@ -13,7 +13,6 @@ include "../sec/libfunc.php";
 	<title>Salvador Hairdressing - Subir Noticias</title>
 	<?php include "../componentes/header.php"; ?>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
-
 </head>
 <body data-spy="scroll" data-target="#navbar-scroll">
 	<div id="top"></div>	
@@ -53,7 +52,7 @@ include "../sec/libfunc.php";
 					<div class="col-md-4"><br>
 						<div class="fileinput fileinput-new" data-provides="fileinput">
 							<div class="fileinput-new thumbnail">
-								<img id="img1" class="img-rounded glyphicon glyphicon-picture" src="" style="font-size: 117px;padding:44px;text-align: center !important;display: inline-block;">
+								<img id="img1" class="img-rounded" src="img/picture.png" style="font-size: 100px;padding:44px;text-align: center !important;display: inline-block;width: 90%;">
 							</div>
 							<br>
 							<span class="btn btn-info btn-file" style="display: list-item;"><span class="fileinput-new">Selecciona una imagen</span>

@@ -1,7 +1,4 @@
 <?php
-//http://php-estudios.blogspot.com
-//http://jquery-manual.blogspot.com
-// Autor: manudg_1@msn.com
 class PDO_Pagination
 {
 public $connection;

@@ -9,7 +9,7 @@ if (isset($_FILES["archivo"])) {
 	$tamano = $_FILES["archivo"]["size"];
 	$contenido_archivo=$_FILES["archivo"]["tmp_name"];
 	$destin = "img/";
-	$target_file = $destin . basename($_FILES['archivo']["name"]);
+	// $target_file = $destin . basename($_FILES['archivo']["name"]);
 	$fechaactual = date("Y-m-d");
 	$dimensiones = getimagesize($_FILES["archivo"]["tmp_name"]);
     $ancho = $dimensiones[0];
@@ -25,11 +25,11 @@ if (isset($_FILES["archivo"])) {
 				Solo se permiten extensiones JPEG/JPG/PNG.
 			  </div>";	
 	}	
-	else if (file_exists($target_file)) {
-		echo "<div class='alert alert-warning' role='alert'>
-				La imagen ya existe, intente cargar otra imagen.
-			 </div>";	
-	}
+	// else if (file_exists($target_file)) {
+	// 	echo "<div class='alert alert-warning' role='alert'>
+	// 			La imagen ya existe, intente cargar otra imagen.
+	// 		 </div>";	
+	// }
 	else if ($ancho > 800){
        echo "<div class='alert alert-warning' role='alert'>
 				El ancho permitido es 800px.
