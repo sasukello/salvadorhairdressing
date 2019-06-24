@@ -170,7 +170,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               	 <div class="col-md-6 col-sm-12 inner-addon left-addon">
                               	 	<i class="fas fa-map-marker-alt" id="icon-input"></i>
                               	 	<input type="text" name="direccion" id="direccion" 
-                              	 	placeholder="<?php echo _('Dirección')?>" required>
+                              	 	placeholder="<?php echo _('Dirección');?>" required>
                               	 	<span id="errordirection"></span>
                               	 </div>
                               	  <div class="col-md-6 col-sm-12 inner-addon left-addon">                	
