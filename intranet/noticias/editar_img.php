@@ -11,7 +11,7 @@ if (isset($_FILES['archivo'])) {
     $altura = $dimensiones[1];
     $id_editar = $_POST['id_editar'];
 
-    if ($tamano > 500*500) {
+    if ($tamano > 524288) {
 		echo "<div class='alert alert-warning' role='alert'>
 				El tamaño maximo es 500KB.
 			  </div>";

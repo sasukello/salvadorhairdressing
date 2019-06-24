@@ -10,7 +10,7 @@ $connection = new PDO("mysql:host=$server;dbname=$name;", $serveruser, $password
 $connection->exec("SET CHARACTER SET utf8");
 $pagination = new PDO_Pagination($connection);
 $pagination->rowCount("SELECT * FROM salvador_noticias");
-$pagination->config(3, 8);
+$pagination->config(3, 6);
 $sql = "SELECT * FROM salvador_noticias ORDER BY id DESC LIMIT $pagination->start_row, $pagination->max_rows";
 $query = $connection->prepare($sql);
 $query->execute();
@@ -75,8 +75,8 @@ while($rows = $query->fetch())
 		<div class="text-right">
 			<a href='anadir.php' class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>Agregar una noticia</a>
 		</div>
-		<br>
-
+		<h4 style='text-align: center;'>Panel Administrativo de noticias</h4>
+		<br><br>
 		<div class="row">
 			<?php
 				foreach ($model as $key) {						
