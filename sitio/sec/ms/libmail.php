@@ -31,8 +31,8 @@ function enviarAvisoNuevoUsuario($email, $nombrec, $pais, $dir1, $phone, $nac, $
 
     //$to = "mgiurdanella@gmail.com";
 
-    $to = "prog.web@salvadorhairdressing.com";
-
+    // $to = "prog.web@salvadorhairdressing.com";
+    $to = "ceo@salvadorhairdressing.com";
     $subject = "Salvador Hairdressing: Mystery Shopper - ¡Nueva Solicitud de Participante!";
 
 
@@ -81,7 +81,8 @@ function enviarAvisoNuevoUsuario($email, $nombrec, $pais, $dir1, $phone, $nac, $
 
     //$headers .= 'Cc: oym@salvadorhairdressing.com, sistemas@salvadorhairdressing.com' . "\r\n";
 
-    $headers .= 'Bcc: prog.web@salvadorhairdressing.com' . "\r\n";
+    $headers .= 'Cc: eduardocolmenares@gmail.com' . "\r\n";
+    $headers .= 'Cc: operaciones@salvadorhairdressing.com' . "\r\n";
 
 
 
