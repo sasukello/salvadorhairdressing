@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <meta name="description" content="">
 <meta name="author" content="UX WEB VE">
 <link rel="stylesheet" type="text/css" href="../css/styleMystery.css">
-<title>Salvador Hairdressing - Mystery Shopper: Completa la Encuesta</title>
+<title>Salvador Hairdressing - Mystery Shopper: <?php echo _('Completa la Encuesta');?></title>
 
     <?php include '../../c/header.php'; ?>
     <?php include '../../library/funciones.php'; ?>
@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="container inner midiv">
     <div class="row ">
       <div class='alert alert-warning alert-dismissable fade in'>
-          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>Aviso de Confidencialidad:</b> La información recolectada en este programa, así como tus datos son confidenciales. <b>Salvador Hairdressing</b> nunca revelará tu identidad a terceros. Igualmente, como participante, estás comprometido a no revelar tu involucramiento en este programa.
+          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><?php echo _('Aviso de Confidencialidad:</b> La información recolectada en este programa, así como tus datos son confidenciales. <b>Salvador Hairdressing</b> nunca revelará tu identidad a terceros. Igualmente, como participante, estás comprometido a no revelar tu involucramiento en este programa.');?>
       </div>
     </div>
   </div>
@@ -140,19 +140,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php } else if($tipo == 3){?>
     <div class="col-md-9 wow slideInRight"></div> 
     <?php }?>
-        <h2 style="font-size: 30px !important;">Mystery Shopper: Encuestas</h2>
+        <h2 style="font-size: 30px !important;">Mystery Shopper: <?php echo _('Encuestas');?></h2>
         <?php if($tipo == 2){ echo "<h3>Encuesta #0$tipo: Completa tus Datos</h3>"?>
             <form name="encuestaMS" method="post">
             <?php inputLocal($user) ;
             include '../../sitio/sec/ms/libfunc.php';?>
-            <br><h3>Completa con tus datos bancarios:</h3>
+            <br><h3><?php echo _('Completa con tus datos bancarios:');?></h3>
             
-            <br><div class='form-group'><label class='control-label col-sm-5' for='tipocta'>Tipo de Cuenta:</label><div class='col-sm-5'><select name='tipocta' class='form-control' required><option value=''>Seleccione su opción</option><option value='1'>Corriente/ Checking</option><option value='2'>Ahorro/ Savings</option></select></div></div>
-            <br><div class='form-group'><label class='control-label col-sm-5' for='banco'>Nombre del Banco:</label><div class='col-sm-5'><input type='text' class='form-control' id='banco' name='banco' placeholder="Nombre del Banco" required /></div></div>
-            <br><div class='form-group'><label class='control-label col-sm-5' for='nrocta'>Nro. de Cuenta:</label><div class='col-sm-5'><input type='text' class='form-control' id='nrocta' name='nrocta' placeholder="Número de Cuenta" required /></div></div>
-            <br><div class='form-group'><label class='control-label col-sm-5' for='swift'>Código SWIFT o documento de identidad del titular dependiendo del caso que aplique:</label><div class='col-sm-5'><input type='text' class='form-control' id='swift' name='swift' placeholder="Código swift o documento" style="margin: 16px 0 0 0;" /></div></div>
+            <br><div class='form-group'><label class='control-label col-sm-5' for='tipocta'><?php echo _("Tipo de Cuenta:");?></label><div class='col-sm-5'><select name='tipocta' class='form-control' required><option value=''><?php echo _("Seleccione su opción");?></option><option value='1'>Corriente/ Checking</option><option value='2'>Ahorro/ Savings</option></select></div></div>
+            <br><div class='form-group'><label class='control-label col-sm-5' for='banco'><?php echo _("Nombre del Banco:");?></label><div class='col-sm-5'><input type='text' class='form-control' id='banco' name='banco' placeholder="Nombre del Banco" required /></div></div>
+            <br><div class='form-group'><label class='control-label col-sm-5' for='nrocta'><?php echo _("Nro. de Cuenta:");?></label><div class='col-sm-5'><input type='text' class='form-control' id='nrocta' name='nrocta' placeholder="Número de Cuenta" required /></div></div>
+            <br><div class='form-group'><label class='control-label col-sm-5' for='swift'><?php echo _("Código SWIFT o documento de identidad del titular dependiendo del caso que aplique:");?></label><div class='col-sm-5'><input type='text' class='form-control' id='swift' name='swift' placeholder="Código swift o documento" style="margin: 16px 0 0 0;" /></div></div>
             <div class="row">
-            <br><div class='form-group'><div class='col-sm-offset-3 col-sm-6'><button type='submit' class='btn-primary' name='submitEncuestaPart'><b>Enviar</b></button></div></div></div>                   
+            <br><div class='form-group'><div class='col-sm-offset-3 col-sm-6'><button type='submit' class='btn-primary' name='submitEncuestaPart'><b><?php echo _("Enviar");?></b></button></div></div></div>                   
             </form>
        <?php } else if($tipo == 3){
                 inputPostVisita($iduser, $pv);
@@ -160,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            echo "   <div class='form-group'><label class='control-label col-sm-7' for='mensaje'>Encuesta no disponible</label></div><br>";
         } if($tipo == 2){ echo "<a href='index.php'><button type='button' class='btn-default' name='return'>Volver a Cuenta</button></a>"; }
         else if ($tipo == 3) { echo "<a href='visita.php?t=".base64_encode($idvisita)."'><button type='button' class='btn-default' name='return'>Regresar a Resumen de Visita</button></a>"; }?>
-        <a href='logout.php'><button type="button" class="btn-default" data-toggle="modal" data-target="#elimreg">Cerrar Sesión</button></a>
+        <a href='logout.php'><button type="button" class="btn-default" data-toggle="modal" data-target="#elimreg"><?php echo _("Cerrar Sesión");?></button></a>
     </div>
     </div>
 </div>

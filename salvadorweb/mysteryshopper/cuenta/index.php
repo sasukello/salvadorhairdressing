@@ -104,11 +104,11 @@ if(isset($_GET["e"])){
   <div class="container inner">
     <diw class="row ">
       <div class='alert alert-warning alert-dismissable fade in'>
-          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>Aviso de Confidencialidad:</b> La información recolectada en este programa, así como tus datos son confidenciales. <b>Salvador Hairdressing</b> nunca revelará tu identidad a terceros. Igualmente, como participante, estás comprometido a no revelar tu involucramiento en este programa.
+          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><?php echo _('Aviso de Confidencialidad:</b> La información recolectada en este programa, así como tus datos son confidenciales. <b>Salvador Hairdressing</b> nunca revelará tu identidad a terceros. Igualmente, como participante, estás comprometido a no revelar tu involucramiento en este programa.');?>
       </div>
       <div class="col-md-7 blog-content col-md-offset-2">
         <div class="box text-center ">
-             <h2 style="color:#e32028;">Mystery Shopper: Participante</h2>
+             <h2 style="color:#e32028;"><?php echo _('Mystery Shopper: Participante');?></h2>
               <?php 
                 if(isset($_GET["e"])){
                   echo "<div class='$clase'>
@@ -116,13 +116,13 @@ if(isset($_GET["e"])){
                   $msg</div>";        
                 } 
               ?>
-        <b style="color:font-weight: 700;">¡Bienvenido a nuestro grupo de Mystery Shoppers!</b>
-        <br><br>ESTADO DE PARTICIPACIÓN: <?php consultaPartEstado($iduser); ?>
-        <br><br><div class="cuentaTexto1"><b><i style="color:#e32028;">ENCUESTAS DISPONIBLES:</i></b></div> <?php listarEncuestas($iduser); ?>
-        <br><div class="cuentaTexto1"><b><i style="color:#e32028;">VISITAS PROGRAMADAS:</i></b></div> <?php listarVisitas($iduser); ?>
-        <br><div class="cuentaTexto1"><b><i style="color:#e32028;">MANUAL DE PARTICIPANTE:</i></b></div>
-        <a href="#" data-toggle="modal" data-target="#manualMS" style="text-decoration: none; color:#e32028;">Consultar Manual de Mystery Shopper</a>
-        <br><a href='logout.php'><button type="button" class="btn-default" data-toggle="modal" data-target="#elimreg">Cerrar Sesión</button></a>
+        <b style="color:font-weight: 700;"><?php echo _("¡Bienvenido a nuestro grupo de Mystery Shoppers!");?></b>
+        <br><br><?php echo _("ESTADO DE PARTICIPACIÓN:");?> <?php consultaPartEstado($iduser); ?>
+        <br><br><div class="cuentaTexto1"><b><i style="color:#e32028;"><?php echo _("ENCUESTAS DISPONIBLES:");?></i></b></div> <?php listarEncuestas($iduser); ?>
+        <br><div class="cuentaTexto1"><b><i style="color:#e32028;"><?php echo _("VISITAS PROGRAMADAS:");?></i></b></div> <?php listarVisitas($iduser); ?>
+        <br><div class="cuentaTexto1"><b><i style="color:#e32028;"><?php echo _("MANUAL DE PARTICIPANTE:");?></i></b></div>
+        <a href="#" data-toggle="modal" data-target="#manualMS" style="text-decoration: none; color:#e32028;"><?php echo _('Consultar Manual de Mystery Shopper'); ?></a>
+        <br><a href='logout.php'><button type="button" class="btn-default" data-toggle="modal" data-target="#elimreg"><?php echo _('Cerrar Sesión');?></button></a>
         </div>
       </div>
     </div>

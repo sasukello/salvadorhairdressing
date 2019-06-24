@@ -72,7 +72,7 @@ include '../etc/msfactura.php';
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="UX WEB VE">
-<title>Salvador Hairdressing - Mistery Shopper: Consulta tus Visitas Programadas</title>
+<title>Salvador Hairdressing - Mystery Shopper: <?php echo _("Consulta tus Visitas Programadas"); ?></title>
 <link rel="stylesheet" type="text/css" href="../css/styleMystery.css">
 
     <?php include '../../c/header.php'; ?>
@@ -106,11 +106,11 @@ color: white !important;}
   <div class="container inner">
     <diw class="row ">
       <div class='alert alert-warning alert-dismissable fade in'>
-          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>Aviso de Confidencialidad:</b> La información recolectada en este programa, así como tus datos son confidenciales. <b>Salvador Hairdressing</b> nunca revelará tu identidad a terceros. Igualmente, como participante, estás comprometido a no revelar tu involucramiento en este programa.
+          <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b><?php echo _('Aviso de Confidencialidad:</b> La información recolectada en este programa, así como tus datos son confidenciales. <b>Salvador Hairdressing</b> nunca revelará tu identidad a terceros. Igualmente, como participante, estás comprometido a no revelar tu involucramiento en este programa.');?>
       </div>
     <div class="col-md-7 blog-content col-md-offset-2 wow slideInRight">
         <div class="box text-center" style="background: white; border: 1px solid #ddd;">
-            <h2 style="color:#e32028;">Mystery Shopper: Resumen de Visita</h2>
+            <h2 style="color:#e32028;">Mystery Shopper: <?php echo _("Resumen de Visita"); ?></h2>
                  <?php if(isset($_GET["e"])){
                     echo "<div class='$clase'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -120,19 +120,19 @@ color: white !important;}
                 <?php listarVisitaCompleta($id, $iduser, 1);?>
                 <br>
                 <form id="Formulario" action="" method="POST" enctype="multipart/form-data">
-                    <label style="color:#252424 !important;">Adjuntar Factura de Pago</label>
+                    <label style="color:#252424 !important;"><?php echo _("Adjuntar Factura de Pago"); ?></label>
                     <div class="row">
                         <div class="col-md-6">
                             <input type="file" name="file" id="fileArchivo">
                         </div>
                         <div class="col-md-6" style="">
-                        <button type="submit" id="btnFac" name="btnEnvioFactura" class="" disabled="disabled" style="margin: 5%;">Enviar</button>
+                        <button type="submit" id="btnFac" name="btnEnvioFactura" class="" disabled="disabled" style="margin: 5%;"><?php echo _("Enviar");?></button>
                         </div>    
                     </div>           
                 </form>
                 <div id="resp" style="color: #e91e63;text-align: left;margin: 13px 0 0 0;font-weight: bold;"></div>                
-                <br><a href='index.php'><button type="button" class="btn-default" name="return">Volver a Cuenta</button></a>
-                <a href='logout.php'><button type="button" class="btn-default" data-toggle="modal" data-target="#elimreg">Cerrar Sesión</button></a>    
+                <br><a href='index.php'><button type="button" class="btn-default" name="return"><?php echo _("Volver a Cuenta"); ?></button></a>
+                <a href='logout.php'><button type="button" class="btn-default" data-toggle="modal" data-target="#elimreg"><?php echo _("Cerrar Sesión"); ?></button></a>    
         </div>
       </div>    
     </div>
