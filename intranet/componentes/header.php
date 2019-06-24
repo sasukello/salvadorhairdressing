@@ -27,7 +27,7 @@
     <?php }
     } if($_SESSION["ubicacion"] == "ayuda" || $_SESSION["ubicacion"] == "cms"){
         echo '<link href="/intranet/componentes/css/ayuda.css" rel="stylesheet">';
-    } else if ($_SESSION['ubicacion'] == "noticias" || $_SESSION['ubicacion'] == "apps"){
+    } else if ($_SESSION['ubicacion'] == "noticias" || $_SESSION['ubicacion'] == "noticias"){
         
     }
     else if($_SESSION['ubicacion'] == "live" || $_SESSION['ubicacion'] == "apps"){
