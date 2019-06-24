@@ -2,7 +2,6 @@
 //*********************************************
 //*** funcion para manejar el Login Web     ***
 //*********************************************
-
 set_time_limit(30);
 //error_reporting(1);
 function validate_input($data) {
@@ -11,7 +10,6 @@ function validate_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-
 function intra_uno($user, $contra){
     $resulta = "";
     $user = mb_strtoupper($user, "UTF-8");
@@ -58,8 +56,7 @@ function intra_uno($user, $contra){
     }
 
     return $resulta;
-    }
-
+}
 //*********************************************
 //*** funcion para hacer post desde php     ***
 //*********************************************
@@ -92,7 +89,6 @@ function hacerpost($url, $parametros, &$resultado){
         return $remote_server_output;
     }
 }
-
 //*********************************************
 //*** funcion para poblar el menu principal ***
 //*********************************************
@@ -153,9 +149,17 @@ function menu($nombre){
             </div>
         </div>
         <?php break;
+        case 'NoticiasWeb1':?>
+        <div class="col-sm-6 feat-list">
+            <i class="pe-7s-cart pe-5x pe-va wow fadeInUp" data-wow-delay="0.3s"></i>
+            <div class="inner">
+                <a href="noticias" target="_blank"><h4>Noticias Salvador</h4></a>
+                <!-- <p>Acceso directo al panel de Administrador de Salvador Beauty Store. ¡La excelencia online en compras!</p> -->
+            </div>
+        </div>
+        <?php break;
     }
 }
-
 function menuheader($ubicacion, $accesos){
     list($usuario, $ubica) = explode(";", $ubicacion);
     $useroptions = '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-user pe-5x pe-va wow fadeInUp"></i> '.$usuario.'<span class="caret"></span><span id="notHead"><span id="notHead" class="notificationHead"><i class="pe-7s-info pe-5x pe-va"></i></span></span></a>
@@ -180,7 +184,7 @@ function menuheader($ubicacion, $accesos){
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
             <ul class="nav navbar-nav">
             <?php foreach($accesos as $a){
-                    menu3($a);
+                   menu3($a); 
                 } ?>
                 <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
                 <?php echo $useroptions;?>
@@ -200,7 +204,7 @@ function menuheader($ubicacion, $accesos){
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
             <ul class="nav navbar-nav">
                 <?php foreach($accesos as $a){
-                    menu3($a);
+                     menu3($a); 
                 } ?>
                 <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
                     <?php echo $useroptions;?>
@@ -211,7 +215,7 @@ function menuheader($ubicacion, $accesos){
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
             <ul class="nav navbar-nav">
                  <?php foreach($accesos as $a){
-                    menu3($a);
+                    menu3($a); 
                 } ?>
                 <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
                 <?php echo $useroptions;?>
@@ -222,7 +226,7 @@ function menuheader($ubicacion, $accesos){
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
             <ul class="nav navbar-nav">
                 <?php foreach($accesos as $a){
-                    menu3($a);
+                    menu3($a); 
                 } ?>
                 <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
                 <?php echo $useroptions;?>
@@ -234,10 +238,17 @@ function menuheader($ubicacion, $accesos){
             <ul class="nav navbar-nav">
                 <?php
                 foreach($accesos as $a){
-                    menu3($a);
-                } ?>
+                    if($a == 'CRM1'){
+                        menu3($a,$accesos);          
+                    }
+                    else{
+                        menu3($a);                   
+                    }
+               }    
+               ?>  
                 <!--<li><a href="/intranet/cp">Panel de Control</a></li>-->
                 <?php echo $useroptions;?>
+                    
             </ul>
         </div>
         <?php break;
@@ -245,7 +256,7 @@ function menuheader($ubicacion, $accesos){
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
             <ul class="nav navbar-nav">
                 <?php foreach($accesos as $a){
-                    menu3($a);
+                    menu3($a); 
                 } ?>
                 <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
                 <?php echo $useroptions;?>
@@ -256,7 +267,7 @@ function menuheader($ubicacion, $accesos){
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
             <ul class="nav navbar-nav">
                 <?php foreach($accesos as $a){
-                    menu3($a);
+                    menu3($a); 
                 } ?>
                 <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
                 <?php echo $useroptions;?>
@@ -267,23 +278,12 @@ function menuheader($ubicacion, $accesos){
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
             <ul class="nav navbar-nav">
                 <?php foreach($accesos as $a){
-                    menu3($a);
+                    menu3($a); 
                 } ?>
                 <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
                 <?php echo $useroptions;?>
             </ul>
         </div>
-       <?php break;
-       case 'noticias':?>
-       <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
-           <ul class="nav navbar-nav">
-                <?php foreach($accesos as $a){
-                   menu3($a);
-               } ?>
-               <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
-               <?php echo $useroptions;?>                   
-           </ul>
-       </div>
        <?php break;
        case 'academia':?>
        <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
@@ -293,6 +293,18 @@ function menuheader($ubicacion, $accesos){
                } ?>
                <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
                <?php echo $useroptions;?>
+           </ul>
+       </div>
+       <?php break;
+        case 'noticias':?>
+       <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+           <ul class="nav navbar-nav">
+              <?php foreach($accesos as $a){
+                   menu3($a);
+               }               
+               ?>  
+           <li><a href="/intranet/"><i class="pe-7s-global pe-5x pe-va wow fadeInUp"></i> Intranet</a></li>
+           <?php echo $useroptions;?>    
            </ul>
        </div>
        <?php break;
@@ -307,149 +319,148 @@ function debug_to_console( $data ) {
     echo "<script>console.log( 'Debug: " . $output . "' );</script>";
 }
 
-function menu3($nombre){
-    //debug_to_console($nombre);
-    switch($nombre){
-        case 'Accesoremoto1':?>
-            <li><a href="/intranet/live"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Salvador+ Live</a></li>
-        <?php break;
-        case 'CRM1':
-        $bandera1=$bandera2=$bandera3=0;?>
-            <li class="dropdown">
+function menu3($nombre,$varr=False){
+    if($varr){
+        ?>
+        <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> CRM <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href='#'><strong>Apps:</strong></a></li>
-                  <li class="divider"></li>
-                  <?php
-                    switch('CRMClientCard1'){
-                        case 'CRMClientCard1':
-                        $bandera1 = 1;
-                        $contenido1 = "<li><a href='/intranet/apps'>ClientCard</a></li>";
-                        break;
-                    }
-                    switch ('CRMApp1') {
-                        case 'CRMApp1':
-                        $bandera2 = 1;
-                        $contenido2 = "<li><a href='/intranet/apps'>Salvador App</a></li>";
-                        break;
-                    }
-                    /*switch ('CRMConvenios1') {
-                        case 'CRMConvenios1':
-                        $bandera3 = 1;
-                        $contenido3 = "<li class='divider'></li>
-                                <li><a href='#'><strong>Mercadeo:</strong></a></li>
-                                <li class='divider'></li>
-                              <li><a href='/intranet/apps'>Promociones y Convenios</a></li>";
-                        break;
-                    } */
-                    if(isset($bandera1)){
-                        if($bandera1=1){echo $contenido1;}
-
-                    }
-                    if (isset($bandera2)){
-                        if($bandera2=1){echo $contenido2;}
-
-                    }
-                    if(isset($bandera3) && isset($contenido3)){
-                        if($bandera3=1){echo $contenido3;}
-
-                    }
-
-                    ?>
+                <ul class="dropdown-menu">                      
+                    <li><a href='#'><strong>Apps:</strong></a></li>
                     <li class="divider"></li>
-                    <li><a href='#'><strong>Franquiciados:</strong></a></li>
-                    <li class="divider"></li>
-                    <li><a href='/intranet/apps'>Encuestas</a></li>
-                    <li><a href='/intranet/noticias'>Cargar Noticias</a></li>
-                </ul>
-            </li>
-            <!--<li>
-                <a href="/intranet/cms" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> CMS <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href='/intranet/cms'> Principal</a></li>
-                  <li class="divider"></li>
-                  <li><a href='/intranet/cms/web'>Salvador Web</a></li>
-                  <li><a href='/intranet/cms/fs'>FS Magazine</a></li>
-                  <li><a href='/intranet/cms/cicara'> Cicara</a></li>
-                </ul>
-            </li>-->
-            <li>
-                <a href="/intranet/corporativo/" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Corporativo <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href='/intranet/corporativo'> Principal</a></li>
-                  <li class="divider"></li>
-                  <li><a href='/intranet/corporativo/admin'>Administracion</a></li>
-                 </ul>
-            </li>
-
-        <?php break;
-        case 'Directorio1':
-            echo '<li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-calendar pe-5x pe-va wow fadeInUp"></i> Directorio <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="/intranet/directorio"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Directorio de Proveedores</a></li>
-                </ul>
-            </li>';
-            break;
-        case 'Descargas1':
-        $bandera4=0;$bandera5=0;
-        switch ('MantenimientodeDescargas1') {
-            case 'MantenimientodeDescargas1':
-                $bandera4=1;
-                $contenido1="<li><a href='/intranet/descargas/admin'>Actualizar Contenidos</a></li>";
-                break;
+        <?php
+        $bandera1=$bandera2=$bandera3=0;
+        foreach($varr as $key){
+            if($key=='CRMClientCard1'){
+                echo "<li><a href='/intranet/apps'>ClientCard</a></li>
+                <li class='divider'></li>
+                        <li><a href='#'><strong>Franquiciados:</strong></a></li>
+                        <li><a href='/intranet/apps'>Encuestas</a></li>";
+            }
+            //esta condición es si el usuario logeado tiene permiso para esta sección de la app y encuesta
+            if($key=='CRMApp1'){
+                echo "<li><a href='/intranet/apps'>Salvador App</a></li>";
+            }
+            //esta condición es si el usuario logeado tiene permiso para esta sección de noticias
+            if($key=='NoticiasWeb1'){
+                echo "<li><a href='#'><strong>Salvador-Hairdressing:</strong></a></li>
+                    <li class='divider'></li>
+                    <li><a href='/intranet/noticias'>Subir Noticias</a></li>"; 
+            }
+            // if(isset($bandera1)){
+            //     if($bandera1=1){echo $contenido1;}
+            // }
+            // if (isset($bandera2)){
+            //     if($bandera2=1){echo $contenido2;}
+            // }
+            // if(isset($bandera3) && isset($contenido3)){
+            //     if($bandera3=1){echo $contenido3;}
+            // }
         }
-        switch ('DescargarArchivos1') {
-            case 'DescargarArchivos1':
-                $bandera5=1;
-                $contenido2="<li><a href='/intranet/descargas/cuenta'>Descargar Contenidos</a></li>";
+        ?>
+            </ul>
+        </li>
+        <li>
+            <a href="/intranet/corporativo/" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Corporativo <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href='/intranet/corporativo'> Principal</a></li>
+              <li class="divider"></li>
+              <li><a href='/intranet/corporativo/admin'>Administracion</a></li>
+             </ul>
+        </li>
+    <?php
+    }else{
+        switch($nombre){
+            case 'Accesoremoto1':?>
+                <li><a href="/intranet/live"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Salvador+ Live</a></li>
+            <?php break;            
+            case 'Directorio1':
+                echo '<li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-calendar pe-5x pe-va wow fadeInUp"></i> Directorio <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/intranet/directorio"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Directorio de Proveedores</a></li>
+                    </ul>
+                </li>';
+            break;
+            case 'Descargas1':
+            $bandera4=0;$bandera5=0;
+            switch ('MantenimientodeDescargas1') {
+                case 'MantenimientodeDescargas1':
+                    $bandera4=1;
+                    $contenido1="<li><a href='/intranet/descargas/admin'>Actualizar Contenidos</a></li>";
                 break;
-        } ?>
-
-        <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-cloud-download pe-5x pe-va wow fadeInUp"></i> Descargas <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <?php
-              if(isset($bandera4)){
-                if($bandera4=1){
-                //echo $contenido1;
-                }
-              }
-              if (isset($bandera5)){
-                if($bandera5=1){
-                echo $contenido2;
-                }
-              } ?>
-            </ul>
-        </li>
-        <?php break;
-        case 'MysteryShopper1':?>
-        <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-users pe-5x pe-va wow fadeInUp"></i> Mystery Shopper <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href='/intranet/mysteryshopper'>Sección de Administrador</a></li>
-              <li><a href='/mysteryshopper'>Sección de Participante</a></li>
-            </ul>
-        </li>
-        <?php break;
-        case 'Auditoria1':?>
-            <li><a href="/intranet/auditorias"><i class="pe-7s-note2 pe-5x pe-va wow fadeInUp"></i> Auditorias</a></li>
-       <?php break;
-        case 'Salvadorstore1':?>
-        <li><a href="//www.salvadorstore.com/store/admin123"><i class="pe-7s-cart pe-5x pe-va wow fadeInUp"></i> Salvador Store</a></li>
-        <?php break;
-        case 'Minutas1':?>
-        <li><a href="/intranet/minutas"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Minutas <span id="notHead"></span></a></li>
-        <?php break;
-        case 'Academia':?>
-        <li><a href="/intranet/academia"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Academia <span id="notHead"></span></a></li>
-        <?php break;
-        case 'noticias':?>
-        <li><a href="/intranet/noticias"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Noticias <span id="notHead"></span></a></li>
-        <?php break;
-    }
+            }
+            switch ('DescargarArchivos1') {
+                case 'DescargarArchivos1':
+                    $bandera5=1;
+                    $contenido2="<li><a href='/intranet/descargas/cuenta'>Descargar Contenidos</a></li>";
+                break;
+            } ?>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-cloud-download pe-5x pe-va wow fadeInUp"></i> Descargas <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <?php
+                  if(isset($bandera4)){
+                    if($bandera4=1){
+                    //echo $contenido1;
+                    }
+                  }
+                  if (isset($bandera5)){
+                    if($bandera5=1){
+                    echo $contenido2;
+                    }
+                  } ?>
+                </ul>
+            </li>
+            <?php break;
+            case 'MysteryShopper1':?>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-users pe-5x pe-va wow fadeInUp"></i> Mystery Shopper <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href='/intranet/mysteryshopper'>Sección de Administrador</a></li>
+                  <li><a href='/mysteryshopper'>Sección de Participante</a></li>
+                </ul>
+            </li>
+            <?php break;
+            case 'Auditoria1':?>
+                <li><a href="/intranet/auditorias"><i class="pe-7s-note2 pe-5x pe-va wow fadeInUp"></i> Auditorias</a></li>
+           <?php break;
+            case 'Salvadorstore1':?>
+            <li><a href="//www.salvadorstore.com/store/admin123"><i class="pe-7s-cart pe-5x pe-va wow fadeInUp"></i> Salvador Store</a></li>
+            <?php break;
+            case 'Minutas1':?>
+            <li><a href="/intranet/minutas"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Minutas <span id="notHead"></span></a></li>
+            <?php break;
+            case 'Academia':?>
+            <li><a href="/intranet/academia"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Academia <span id="notHead"></span></a></li>
+            <?php break;
+            case 'noticias':?>
+            <li><a href="/intranet/noticias"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Noticias Salvador <span id="notHead"></span></a></li>
+            <?php break;
+        }
+    }          
 }
-
+/*switch ('CRMConvenios1') {
+    case 'CRMConvenios1':
+    $bandera3 = 1;
+    $contenido3 = "<li class='divider'></li>
+            <li><a href='#'><strong>Mercadeo:</strong></a></li>
+            <li class='divider'></li>
+          <li><a href='/intranet/apps'>Promociones y Convenios</a></li>";
+    break;
+} */
+// <!-- <li>-->
+//             <!--    <a href="/intranet/noticias" class="" data-toggle=""><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> Noticias Salvador <span class=""></span></a>-->
+//             <!--</li>-->
+//             <!--<li>
+//                 <a href="/intranet/cms" class="dropdown-toggle" data-toggle="dropdown"><i class="pe-7s-note pe-5x pe-va wow fadeInUp"></i> CMS <span class="caret"></span></a>
+//                 <ul class="dropdown-menu">
+//                   <li><a href='/intranet/cms'> Principal</a></li>
+//                   <li class="divider"></li>
+//                   <li><a href='/intranet/cms/web'>Salvador Web</a></li>
+//                   <li><a href='/intranet/cms/fs'>FS Magazine</a></li>
+//                   <li><a href='/intranet/cms/cicara'> Cicara</a></li>
+//                 </ul>
+//             </li>-->
 //*********************************************
 //*** funcion para poblar el menu principal ***
 //*********************************************
@@ -827,7 +838,8 @@ function opcionesLlamar($op, $salon){
     }
 }
 
-function menu1HeaderIntranet($usuario, $ubicacion, $accesos){
+function menu1HeaderIntranet($usuario, $ubicacion, $accesos){//esta es la q llama 
+
     ?>
         <div class="fullscreen landing parallax" style="background-image:url('/intranet/componentes/images/bg/miniheader.jpg');background-repeat: no-repeat;height:175px;" data-img-width="2000" data-img-height="1333" data-diff="100">
             <div class="overlay">
