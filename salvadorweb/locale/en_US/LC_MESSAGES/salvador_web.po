@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: salvador_web\n"
-"POT-Creation-Date: 2019-06-10 14:33-0400\n"
-"PO-Revision-Date: 2019-06-10 14:34-0400\n"
+"POT-Creation-Date: 2019-06-19 10:41-0400\n"
+"PO-Revision-Date: 2019-06-19 10:44-0400\n"
 "Last-Translator: Armando Lugo <alugox@gmail.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -62,7 +62,7 @@ msgstr ""
 "raising our teachers' integral capacity.</p>"
 
 #: academy/index.php:63 careers/index.php:115 careers/index.php:131
-#: index.php:25 index.php:35 nosotros.php:127 snoticias.php:72
+#: index.php:26 index.php:36 nosotros.php:127 snoticias.php:71
 msgid "¡Bienvenido a la Excelencia!"
 msgstr "Welcome to the Excellence!"
 
@@ -89,37 +89,37 @@ msgstr "Frequent Ask Questions"
 msgid "Síguenos"
 msgstr "Follow Us"
 
-#: c/footer-barber.php:66 c/footer.php:11 footer.php:52
+#: c/footer-barber.php:66 c/footer.php:18 footer.php:52
 msgid "<a class=\"link-footer\" href=\"/nosotros.php\">NOSOTROS</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/nosotros.php?lang=en_US\">ABOUT US</a>"
 
-#: c/footer-barber.php:67 c/footer.php:12 footer.php:53
+#: c/footer-barber.php:67 c/footer.php:19 footer.php:53
 msgid "<a class=\"link-footer\" href=\"/servicios.php\">SERVICIOS</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/servicios.php?lang=en_US\">SERVICES</a>"
 
-#: c/footer-barber.php:68 c/footer.php:13 footer.php:54
+#: c/footer-barber.php:68 c/footer.php:20 footer.php:54
 msgid "<a class=\"link-footer\" href=\"/modelos/\">MODELOS DE NEGOCIO</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/modelos/?lang=en_US\">BUSINESS MODELS</a>"
 
-#: c/footer-barber.php:69 c/footer.php:14
+#: c/footer-barber.php:69 c/footer.php:21
 msgid "<a class=\"link-footer\" href=\"/franquicias.php\">FRANQUICIAS</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/franquicias.php?lang=en_US\">FRANCHISES</a>"
 
-#: c/footer-barber.php:70 c/footer.php:15 footer.php:56
+#: c/footer-barber.php:70 c/footer.php:22 footer.php:56
 msgid "<a class=\"link-footer\" href=\"/ubicaciones\">UBICACIONES</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/ubicaciones/?lang=en_US\">LOCATIONS</a>"
 
-#: c/footer-barber.php:71 c/footer.php:16
+#: c/footer-barber.php:71 c/footer.php:23
 msgid "<a class=\"link-footer\" href=\"/novedades\">NOVEDADES</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/nosotros.php?lang=en_US\">ABOUT US</a>"
 
-#: c/footer-barber.php:72 c/footer.php:17 footer.php:57
+#: c/footer-barber.php:72 c/footer.php:24 footer.php:57
 msgid "<a class=\"link-footer\" href=\"/contacto.php\">CONTACTO</a>"
 msgstr ""
 "<a class=\"link-footer\" href=\"/contacto.php?lang=en_US\">CONTACT US</a>"
@@ -128,7 +128,7 @@ msgstr ""
 msgid "© 2011-2017 Salvador Hairdressing. Todos los derechos reservados."
 msgstr "© 2011-2017 Salvador Hairdressing. All Rights Reserved."
 
-#: c/footer.php:51 intranet/login.php:125
+#: c/footer.php:58 intranet/login.php:125
 msgid "Salvador Hairdressing &copy; 2018. Todos los derechos reservados."
 msgstr "Salvador Hairdressing &copy; 2018. All Rights Reserved."
 
@@ -344,6 +344,7 @@ msgstr "Write your comments here..."
 #: c/html/contacto.php:214 c/html/franquicia.php:253
 #: legacy/library/formularios.php:113 legacy/library/formularios.php:222
 #: library/formularios.php:113 library/formularios.php:222
+#: mysteryshopper/cuenta/encuesta.php:155 mysteryshopper/cuenta/visita.php:129
 #: mysteryshopper/registro.php:184
 msgid "Enviar"
 msgstr "Send"
@@ -730,7 +731,7 @@ msgstr ""
 "<a href=\"http://www.salvadorhairdressing.com/franquicias.php?lang=en_US"
 "\">Franchises</a>"
 
-#: c/navbar.php:36 index.php:347 navbar.php:25
+#: c/navbar.php:36 index.php:349 navbar.php:25
 msgid "<a href=\"/ubicaciones\">Ubicaciones</a>"
 msgstr "<a href=\"/ubicaciones/?lang=en_US\">Locations</a>"
 
@@ -980,7 +981,7 @@ msgstr ""
 "today's fashion looks. We bring our readers the most current in the world of "
 "fashion and it's runaways."
 
-#: index.php:71
+#: index.php:72
 msgid ""
 "<h3>Tips: Aceite de Argán Salvador</h3>\n"
 "                  <p>El cabello dañado, normalmente también está seco, "
@@ -993,7 +994,7 @@ msgstr ""
 "<b>the one</b>. It brings back your hair's natural glow without leaving any "
 "trace.</p>"
 
-#: index.php:86
+#: index.php:87
 msgid ""
 "<h3>¡Llegó el gran día!</h3>\n"
 "                  <p>Hoy recibimos con felicidad y orgullo el <b>Mara De "
@@ -1003,7 +1004,7 @@ msgstr ""
 "just received the <b>Mara De Oro</b> for being \"Venezuela's Franchise with "
 "Greater International Expansion\".</p>"
 
-#: index.php:102
+#: index.php:103
 msgid ""
 "<h3>¡Sé un cliente VIP!</h3>\n"
 "                <p>Solicita tu ClientCard en tu salón preferido para que te "
@@ -1017,7 +1018,7 @@ msgstr ""
 "salvadorhairdressing.com/cc/?lang=en_US\" target=\"_blank\">Learn more!</a></"
 "h3>"
 
-#: index.php:115
+#: index.php:116
 #, fuzzy
 #| msgid ""
 #| "<h3 class=\"section-title text-center\">Un mundo, <span style=\"font-"
@@ -1029,7 +1030,7 @@ msgstr ""
 "<h3 class=\"section-title text-center\">One world, <span style=\"font-style: "
 "underline;\">your world</span></h3>"
 
-#: index.php:170
+#: index.php:172
 msgid ""
 "<h3 class=\"section-title text-center\">Un mundo, <span style=\"font-style: "
 "underline;\">tú mundo</span></h3>"
@@ -1037,11 +1038,11 @@ msgstr ""
 "<h3 class=\"section-title text-center\">One world, <span style=\"font-style: "
 "underline;\">your world</span></h3>"
 
-#: index.php:180
+#: index.php:182
 msgid "Conoce nuestros 6 Modelos de Negocio y Franquicias."
 msgstr "Get to know Our Six Business Models."
 
-#: index.php:193
+#: index.php:195
 msgid ""
 "<h3>Bienvenido a la Excelencia Salvador</h3>\n"
 "              <p>¡Celebra nuestro 60° Aniversario con nosotros!</p>\n"
@@ -1052,11 +1053,11 @@ msgstr ""
 "</p><p><a href=\"/modelos/?lang=en_US\"><b>Get to know everything about our "
 "Business Models and Franchises.</b></a></p>"
 
-#: index.php:204
+#: index.php:206
 msgid "¡Sé un Mystery Shopper!"
 msgstr "Become a Mystery Shopper!"
 
-#: index.php:216
+#: index.php:218
 msgid ""
 "<h3>Sé un Mystery Shopper para Salvador Hairdressing</h3>\n"
 "              <p>Forma parte de nuestro exclusivo programa de Clientes "
@@ -1067,11 +1068,11 @@ msgstr ""
 "our exclusive program of Mystery Shoppers.</p><p><a href=\"/mysteryshopper/?"
 "lang=en_US\"><b>Apply now!</b></a></p>"
 
-#: index.php:228
+#: index.php:230
 msgid "¡Programa tu cita con nuestra App para dispositivos móvil!"
 msgstr "Schedule your appointment with our mobile App!"
 
-#: index.php:241
+#: index.php:243
 msgid ""
 "<h3>Conoce todo sobre la App Salvador Hairdressing</h3>\n"
 "              <p>Programa tus citas con días de antelación, consulta "
@@ -1084,11 +1085,11 @@ msgstr ""
 "Hairdressing's salon. All from the palm of your hand!</p><p><a href=\"/app/?"
 "lang=en_US\"><b>Start now!</b></a></p>"
 
-#: index.php:264
+#: index.php:266
 msgid "<h3>¿Quieres ser VIP?</h3>"
 msgstr "<h3>Do You Want to Become a VIP?</h3>"
 
-#: index.php:265
+#: index.php:267
 #, no-php-format
 msgid ""
 "Acumula puntos al tener una ClientCard Salvador, los cuales podrás cambiar "
@@ -1097,11 +1098,11 @@ msgstr ""
 "Start gaining points the moment you get your \"ClientCard\" by Salvador. "
 "Exchange those points for up to 75% percent of discount on your payment."
 
-#: index.php:266
+#: index.php:268
 msgid "<a href=\"/cc\">¡Conoce más!</a>"
 msgstr "<a href=\"/cc/?lang=en_US\">Learn more!</a>"
 
-#: index.php:273
+#: index.php:275
 msgid ""
 "<img src=\"c/img/main/4c.jpg\" alt=\"\" /> \n"
 "              <div class=\"desc\">\n"
@@ -1110,7 +1111,7 @@ msgstr ""
 "<img src=\"c/img/main/4c.jpg\" alt=\"\" /><div class=\"desc\"><p class="
 "\"desc_content\" style=\"\"><b>Learn the Art of Styling!"
 
-#: index.php:287
+#: index.php:289
 msgid ""
 "<h3>Academia Salvador - <i>Aprende un arte</i></h3>\n"
 "              <p>Formamos estilistas con iniciativas que mejoren la calidad "
@@ -1124,11 +1125,11 @@ msgstr ""
 "quality of life, under our quality seal.</p><p><b><a href=\"http://www."
 "salvadoracademy.com/?lang=en_US\" target=\"_blank\">Visit our Web</a></b></p>"
 
-#: index.php:298
+#: index.php:300
 msgid "Esmaltes Salvador Professional"
 msgstr "Salvador Professional Nail Enamel"
 
-#: index.php:310
+#: index.php:312
 msgid ""
 "<h3>Esmaltes Salvador Profesional</h3>\n"
 "              <p>Conoce los 23 tonos de los nuevos Esmaltes de la línea "
@@ -1139,7 +1140,7 @@ msgstr ""
 "the newest member of our Salvador Professional's line of products.</"
 "p><p><b><a href=\"#\">Get to know them!</a></b></p>"
 
-#: index.php:348
+#: index.php:350
 msgid "<a href=\"/ubicaciones\"> Cada vez más cerca de tí</a>"
 msgstr "<a href=\"/ubicaciones/?lang=en_US\"> Always close to you</a>"
 
@@ -1379,6 +1380,104 @@ msgstr "<a href=\"/modelos/nailsbar.php?lang=en_US\">"
 msgid "<a href=\"/modelos/beautystore.php\">"
 msgstr "<a href=\"/modelos/beautystore.php?lang=en_US\">"
 
+#: mysteryshopper/cuenta/encuesta.php:94
+msgid "Completa la Encuesta"
+msgstr "Complete the Survey"
+
+#: mysteryshopper/cuenta/encuesta.php:119 mysteryshopper/cuenta/index.php:107
+#: mysteryshopper/cuenta/visita.php:109
+msgid ""
+"Aviso de Confidencialidad:</b> La información recolectada en este programa, "
+"así como tus datos son confidenciales. <b>Salvador Hairdressing</b> nunca "
+"revelará tu identidad a terceros. Igualmente, como participante, estás "
+"comprometido a no revelar tu involucramiento en este programa."
+msgstr ""
+"Privacy Notice:</b> The information collected in this program as well as "
+"your data are confidential. <b>Salvador Hairdressing</b> will never disclose "
+"your identity to third parties. Likewise, as a participant, you are "
+"committed not to disclose your involvement in this program."
+
+#: mysteryshopper/cuenta/encuesta.php:143
+msgid "Encuestas"
+msgstr "AVAILABLE SURVEYS:"
+
+#: mysteryshopper/cuenta/encuesta.php:148
+msgid "Completa con tus datos bancarios:"
+msgstr "Complete with your bank details:"
+
+#: mysteryshopper/cuenta/encuesta.php:150
+msgid "Tipo de Cuenta:"
+msgstr "Account Type"
+
+#: mysteryshopper/cuenta/encuesta.php:150
+#, fuzzy
+#| msgid "Seleccione una opción"
+msgid "Seleccione su opción"
+msgstr "Select an option"
+
+#: mysteryshopper/cuenta/encuesta.php:151
+msgid "Nombre del Banco:"
+msgstr "Name of the bank"
+
+#: mysteryshopper/cuenta/encuesta.php:152
+msgid "Nro. de Cuenta:"
+msgstr "Account number"
+
+#: mysteryshopper/cuenta/encuesta.php:153
+msgid ""
+"Código SWIFT o documento de identidad del titular dependiendo del caso que "
+"aplique:"
+msgstr "SWIFT code or holder's ID depending on the case you apply:"
+
+#: mysteryshopper/cuenta/encuesta.php:163 mysteryshopper/cuenta/index.php:125
+#: mysteryshopper/cuenta/visita.php:135
+msgid "Cerrar Sesión"
+msgstr "Log out"
+
+#: mysteryshopper/cuenta/index.php:111
+msgid "Mystery Shopper: Participante"
+msgstr "Mystery Shopper: Participant"
+
+#: mysteryshopper/cuenta/index.php:119
+msgid "¡Bienvenido a nuestro grupo de Mystery Shoppers!"
+msgstr "Welcome to our group of Mystery Shoppers!"
+
+#: mysteryshopper/cuenta/index.php:120
+msgid "ESTADO DE PARTICIPACIÓN:"
+msgstr "PARTICIPATION STATUS:"
+
+#: mysteryshopper/cuenta/index.php:121
+msgid "ENCUESTAS DISPONIBLES:"
+msgstr "AVAILABLE SURVEYS:"
+
+#: mysteryshopper/cuenta/index.php:122
+msgid "VISITAS PROGRAMADAS:"
+msgstr "PROGRAMMED VISITS:"
+
+#: mysteryshopper/cuenta/index.php:123
+msgid "MANUAL DE PARTICIPANTE:"
+msgstr "PARTICIPANT MANUAL:"
+
+#: mysteryshopper/cuenta/index.php:124
+msgid "Consultar Manual de Mystery Shopper"
+msgstr "See Mystery Shopper Manual"
+
+#: mysteryshopper/cuenta/visita.php:75
+msgid "Consulta tus Visitas Programadas"
+msgstr "Check out your Scheduled Visits"
+
+#: mysteryshopper/cuenta/visita.php:113
+msgid "Resumen de Visita"
+msgstr "Summary of Visit"
+
+#: mysteryshopper/cuenta/visita.php:123
+msgid "Adjuntar Factura de Pago"
+msgstr "Attach Payment Invoice"
+
+#: mysteryshopper/cuenta/visita.php:134
+msgid "Volver a Cuenta"
+msgstr "Back to Account"
+
 #: mysteryshopper/index.php:84
 msgid ""
 "Salvador se esfuerza en prestar a su clientela un servicio de excelencia, "
@@ -1414,37 +1513,84 @@ msgstr "ENTER YOUR EMAIL..."
 msgid "COMENZAR"
 msgstr "Start"
 
-#: mysteryshopper/index.php:104
+#: mysteryshopper/index.php:104 mysteryshopper/login.php:142
+#: mysteryshopper/login.php:165
 msgid "¿Usuario Corporativo?"
 msgstr "Corporate user?"
 
-#: mysteryshopper/index.php:104
+#: mysteryshopper/index.php:104 mysteryshopper/login.php:142
+#: mysteryshopper/login.php:165
 msgid "Participante"
 msgstr "Participant"
 
-#: mysteryshopper/index.php:104
+#: mysteryshopper/index.php:104 mysteryshopper/login.php:142
+#: mysteryshopper/login.php:165
 msgid "Tu información no será compartida. Lee nuestra"
 msgstr "Your information will not be shared. Read our"
 
-#: mysteryshopper/index.php:104
+#: mysteryshopper/index.php:104 mysteryshopper/login.php:142
+#: mysteryshopper/login.php:165
 msgid "política de privacidad"
 msgstr "privacy policy"
 
+#: mysteryshopper/login.php:109
+#, fuzzy
+#| msgid ""
+#| "Salvador se esfuerza en prestar a su clientela un servicio de excelencia, "
+#| "demostrando en todo momento que día a día nos enfocamos en superarnos a "
+#| "nosotros mismos y a las expectativas de quienes requieren de nuestros "
+#| "servicios y productos.<br><br>Por este motivo, nace el programa "
+#| "<b>Mystery Shopper de Salvador Hairdressing</b>, con la finalidad de "
+#| "obtener una evaluación completa de parte de nuestros clientes al momento "
+#| "de visitar nuestras unidades de negocio.<br><br>Te invitamos a ser una "
+#| "herramienta clave en nuestro objetivo de mejora continua, siendo nuestro "
+#| "Mystery Shopper (Cliente Misterioso), y así ayudarnos a detectar aquellos "
+#| "aspectos que debemos mejorar."
+msgid ""
+"Salvador se esfuerza en prestar a su clientela un servicio de excelencia, "
+"demostrando en todo momento que día a día nos enfocamos en superarnos a "
+"nosotros mismos y a las expectativas de quienes requieren de nuestros "
+"servicios y productos.\n"
+"            <br><br>Por este motivo, nace el programa <b>Mystery Shopper de "
+"Salvador Hairdressing</b>, con la finalidad de obtener una evaluación "
+"completa de parte de nuestros clientes al momento de visitar nuestras "
+"unidades de negocio.\n"
+"            <br><br>Te invitamos a ser una herramienta clave en nuestro "
+"objetivo de mejora continua, siendo nuestro Mystery Shopper (Cliente "
+"Misterioso), y así ayudarnos a detectar aquellos aspectos que debemos "
+"mejorar."
+msgstr ""
+"Salvador strives to provide its clientele with a service of excellence, "
+"proving at all times that day by day we focus on overcoming ourselves and "
+"the expectations of those who require our services and products.\n"
+"            <br> <br> For this reason, the program <b> Mystery Shopper of "
+"Salvador Hairdressing </b> is born, with the purpose of obtaining a complete "
+"evaluation of part of our clients when visiting our business units.\n"
+"            <br> <br> We invite you to be a key tool in our objective of "
+"continuous improvement, being our Mystery Shopper, and thus help us to "
+"detect those aspects that we must improve."
+
+#: mysteryshopper/login.php:119 mysteryshopper/login.php:150
+msgid "INICIA SESIÓN"
+msgstr "Login to your account!"
+
+#: mysteryshopper/login.php:127 mysteryshopper/login.php:158
+msgid "Ingresa tu contraseña"
+msgstr "Enter your password"
+
+#: mysteryshopper/login.php:131 mysteryshopper/login.php:162
+msgid "ENTRAR"
+msgstr "Enter"
+
 #: mysteryshopper/registro.php:50 mysteryshopper2/registro.php:56
 msgid "Mystery Shopper: Registro de usuario"
-msgstr ""
+msgstr "Mystery Shopper: User Registration"
 
 #: mysteryshopper/registro.php:78 mysteryshopper2/registro.php:84
-#, fuzzy
-#| msgid "Formulario de Contacto"
 msgid "Formulario de Registro"
 msgstr "Contact Form"
 
 #: mysteryshopper/registro.php:79
-#, fuzzy
-#| msgid ""
-#| "¿Qué te pareció tu visita a nuestros salones? Haznos llegar tus "
-#| "comentarios."
 msgid "Ayudanos a mejorar nuestros servicios. Haznos llegar tus comentarios."
 msgstr "What did you think of your visit? Let us know of your experience."
 
@@ -1456,23 +1602,19 @@ msgstr "ID number"
 
 #: mysteryshopper/registro.php:119 mysteryshopper2/registro.php:124
 msgid "Contraseña"
-msgstr ""
+msgstr "Enter your password"
 
 #: mysteryshopper/registro.php:124 mysteryshopper2/registro.php:129
 msgid "Confirma tu contraseña"
-msgstr ""
+msgstr "Enter your password"
 
 #: mysteryshopper/registro.php:132
-#, fuzzy
-#| msgid "Seleccione una opción"
 msgid "Seleccione su país"
 msgstr "Select an option"
 
 #: mysteryshopper/registro.php:149 mysteryshopper2/registro.php:154
-#, fuzzy
-#| msgid "Estados Unidos"
 msgid "Estado"
-msgstr "U.S.A (Miami)"
+msgstr "Province / State"
 
 #: mysteryshopper2/backUp_index_viejo.php:66 mysteryshopper2/index1bu.php:65
 #: mysteryshopper2/index_nuevo.php:66
@@ -2682,6 +2824,10 @@ msgstr ""
 #: servicios.php:663
 msgid "Solicitar"
 msgstr "Request here"
+
+#: snoticias.php:62
+msgid "Más noticia"
+msgstr "More news"
 
 #: ubicaciones/index.php:18
 msgid "Ubicaciones"
