@@ -76,7 +76,7 @@ function procesarFacturaEncuesta($usuario,$id_visita){
         $name = 'Salvador Hairdressing';    
 
         $mail->SetFrom( $email , $name );
-        $mail->AddAddress( 'prog.web@salvadorhairdressing.com' );
+        $mail->AddAddress( 'eduardocolmenares@gmail.com');
         // $archivo = $contenido_archivo;
            
         $mail->Subject = $subject;

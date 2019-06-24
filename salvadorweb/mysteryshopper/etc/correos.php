@@ -271,8 +271,8 @@ function enviarAvisoEncueRespon($idp){
     $emailEn = getCorreo($idp);
     // $descripc = getEncuesta($idEnc);
     
-    $to = "prog.web@salvadorhairdressing.com";
-
+    // $to = "prog.web@salvadorhairdressing.com";
+    $to = "ceo@salvadorhairdressing.com"
     $subject = "Salvador Hairdressing: Mystery Shopper-Encuestas Post-Visitas: $emailEn ¡ha completado todas las encuestas";
 
     $htmlContent = file_get_contents("../etc/correos/enviar_aviso_encuesta.php");
@@ -302,8 +302,8 @@ function enviarRecordatorioProgr($idpart){
 
     $name = getCorreo($idpart);
   
-    $to = "prog.web@salvadorhairdressing.com";
-    
+    $to = "ceo@salvadorhairdressing.com";
+    // $to = "prog.web@salvadorhairdressing.com";
     $subject = "Salvador Hairdressing: Mystery Shopper - $name ¡ha completado sus datos bancarios!";
 
     $htmlContent = file_get_contents("../etc/correos/datosbancariosafter.php");
